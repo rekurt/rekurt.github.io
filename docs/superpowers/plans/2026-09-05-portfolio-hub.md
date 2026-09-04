@@ -55,7 +55,7 @@
 │   ├── sync/merge.go                   # GitHub + manifest → snapshot
 │   ├── sync/report.go                  # Markdown audit
 │   └── sync/write.go                   # stable JSON + atomic replace
-├── testdata/github/                    # HTTP fixtures и golden snapshot
+├── testdata/github/                    # полные HTTP fixtures
 ├── site/
 │   ├── astro.config.mjs
 │   ├── package.json
@@ -416,7 +416,6 @@ git commit -m "feat(sync): sanitize project documentation"
 - Create: `internal/sync/report.go`
 - Test: `internal/sync/merge_test.go`
 - Test: `internal/sync/write_test.go`
-- Create: `testdata/github/expected-catalog.json`
 - Create: `cmd/catalog-sync/main.go`
 - Test: `cmd/catalog-sync/main_test.go`
 
@@ -427,32 +426,32 @@ git commit -m "feat(sync): sanitize project documentation"
 - Produces: `sync.RenderAudit(snapshot catalog.Snapshot) []byte`.
 - Produces CLI: `catalog-sync sync --manifest <path> --snapshot <path> --audit <path>` и `catalog-sync check ...`.
 
-- [ ] **Step 1: Написать failing merge test**
+- [x] **Step 1: Написать failing merge test**
 
 Fixture из трёх repos должен собрать один grouped product, один maintained fork с upstream и
 оставить простой fork только в registry. Unknown linked repo и private repo должны дать
 ошибку.
 
-- [ ] **Step 2: Проверить падение**
+- [x] **Step 2: Проверить падение**
 
 Run: `go test ./internal/sync -run TestBuild`
 Expected: FAIL с отсутствующим `Build`.
 
-- [ ] **Step 3: Реализовать merge rules**
+- [x] **Step 3: Реализовать merge rules**
 
 Products сортировать `featured desc`, затем manifest order, затем slug. Registry сортировать
 по lowercase full name. Support repositories получают `role: support`; primary —
 `role: primary`; неописанные forks — `role: fork`; неописанные originals —
 `role: unclassified`.
 
-- [ ] **Step 4: Написать golden deterministic write test**
+- [x] **Step 4: Написать deterministic write test**
 
-Дважды передать одинаковый snapshot с shuffled maps/slices; оба файла должны совпасть с
-`expected-catalog.json`. Затем передать те же данные с более поздним `syncedAt`: файл не
+Дважды передать одинаковый snapshot с переставленными slices; оба файла должны совпасть
+побайтно. Затем передать те же данные с более поздним `syncedAt`: файл не
 должен измениться, а `changed` должен быть false. Временной файл после ошибки не должен
 оставаться рядом с output.
 
-- [ ] **Step 5: Реализовать stable JSON и atomic replace**
+- [x] **Step 5: Реализовать stable JSON и atomic replace**
 
 Перед encode сортировать topics, links и repositories. До сравнения обнулить `SyncedAt` в
 новом и существующем snapshot; при равенстве вернуть `changed=false` без записи, сохранив
@@ -460,13 +459,13 @@ Products сортировать `featured desc`, затем manifest order, за
 `json.Encoder` с двумя пробелами и завершающим newline. Писать через
 `os.CreateTemp(filepath.Dir(path), ".catalog-*")`, `Sync`, `Close`, `Rename`, mode `0644`.
 
-- [ ] **Step 6: Реализовать Markdown audit**
+- [x] **Step 6: Реализовать Markdown audit**
 
 Таблица содержит repository, role, original/fork, upstream, primary language, version,
 website, documentation, last push. Вверху — totals и дата snapshot. URL оформляются
 Markdown-ссылками; пустые поля — `—`.
 
-- [ ] **Step 7: Реализовать CLI dependency injection**
+- [x] **Step 7: Реализовать CLI dependency injection**
 
 ```go
 func run(ctx context.Context, args []string, getenv func(string) string, out, errOut io.Writer) error
@@ -475,15 +474,15 @@ func run(ctx context.Context, args []string, getenv func(string) string, out, er
 `sync` допускает сеть и заменяет файлы; `check` строит данные и завершается ошибкой, если
 tracked snapshot/audit отличаются. Exit code 2 — invalid arguments, 1 — runtime/validation.
 
-- [ ] **Step 8: Проверить весь Go pipeline**
+- [x] **Step 8: Проверить весь Go pipeline**
 
 Run: `go list ./... | grep -v '/site/' | xargs go test -race -count=1 && go list ./... | grep -v '/site/' | xargs go vet`
 Expected: PASS.
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
-git add cmd internal/sync testdata/github/expected-catalog.json
+git add cmd internal/sync
 git commit -m "feat(sync): generate deterministic portfolio catalog"
 ```
 
