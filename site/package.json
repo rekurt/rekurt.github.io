@@ -20,7 +20,7 @@
     "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.63.0",
-    "@types/node": "24.13.3",
+    "@types/node": "26.4.1",
     "eslint": "^10.10.0",
     "parse5": "^8.0.1",
     "prettier": "^3.9.6",
