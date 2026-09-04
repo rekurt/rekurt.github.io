@@ -6,7 +6,7 @@
 
 **Architecture:** Go CLI получает публичные GitHub-метаданные, объединяет их с кураторским YAML и атомарно создаёт детерминированный snapshot. Astro 7 читает snapshot без сети и генерирует статический EN/RU-сайт; GitHub Actions почасово синхронизирует данные и развёртывает неизменяемый Pages artifact.
 
-**Tech Stack:** Go 1.27, YAML v3.0.1, goldmark v1.8.6, bluemonday v1.0.27, Node.js 22.18+, Astro 7.3.1, TypeScript 7.0.2, Vitest 5.0.0, Playwright 1.63.0, Axe 4.13.0, parse5 8.0.1, GitHub Actions, GitHub Pages.
+**Tech Stack:** Go 1.27, YAML v3.0.1, goldmark v1.8.6, bluemonday v1.0.27, Node.js 24.20 LTS, Astro 7.3.1, TypeScript 6.0.3, Vitest 5.0.0, Playwright 1.63.0, Axe 4.13.0, parse5 8.0.1, GitHub Actions, GitHub Pages.
 
 **Spec:** `docs/superpowers/specs/2026-09-05-portfolio-hub-design.md`
 
@@ -74,6 +74,7 @@
 │   ├── tests/                          # Vitest и Playwright
 │   └── tsconfig.json
 ├── .gitignore
+├── .nvmrc
 ├── .golangci.yml
 ├── go.mod
 ├── go.sum
@@ -85,6 +86,7 @@
 
 **Files:**
 - Create: `.gitignore`
+- Create: `.nvmrc`
 - Create: `go.mod`
 - Create: `internal/buildinfo/buildinfo.go`
 - Test: `internal/buildinfo/buildinfo_test.go`
@@ -96,7 +98,7 @@
 **Interfaces:**
 - Produces: `buildinfo.Version string`, команды `make test`, `make build`, `make check`.
 
-- [ ] **Step 1: Зафиксировать падающий тест build metadata**
+- [x] **Step 1: Зафиксировать падающий тест build metadata**
 
 ```go
 package buildinfo
@@ -110,12 +112,12 @@ func TestVersionIsSemver(t *testing.T) {
 }
 ```
 
-- [ ] **Step 2: Проверить ожидаемое падение**
+- [x] **Step 2: Проверить ожидаемое падение**
 
 Run: `go test ./internal/buildinfo`
 Expected: FAIL с `undefined: Version`.
 
-- [ ] **Step 3: Создать Go module и минимальную реализацию**
+- [x] **Step 3: Создать Go module и минимальную реализацию**
 
 ```go
 // internal/buildinfo/buildinfo.go
@@ -126,14 +128,14 @@ const Version = "0.1.0"
 
 `go.mod` должен содержать `module github.com/rekurt/rekurt.github.io` и `go 1.27.0`.
 
-- [ ] **Step 4: Создать Astro shell с фиксированными scripts**
+- [x] **Step 4: Создать Astro shell с фиксированными scripts**
 
 ```json
 {
   "name": "rekurt-portfolio-site",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22.18.0" },
+  "engines": { "node": ">=24.20.0 <25" },
   "scripts": {
     "dev": "astro dev",
     "check": "astro check && tsc --noEmit",
@@ -150,10 +152,10 @@ const Version = "0.1.0"
 ```bash
 cd site
 npm install astro@7.3.1
-npm install -D @astrojs/check@0.9.10 typescript@7.0.2 vitest@5.0.0 eslint@10.10.0 prettier@3.9.6 @playwright/test@1.63.0 @axe-core/playwright@4.13.0 parse5@8.0.1
+npm install -D @astrojs/check@0.9.10 typescript@6.0.3 vitest@5.0.0 eslint@10.10.0 prettier@3.9.6 @playwright/test@1.63.0 @axe-core/playwright@4.13.0 parse5@8.0.1
 ```
 
-- [ ] **Step 5: Добавить общие команды**
+- [x] **Step 5: Добавить общие команды**
 
 ```make
 .PHONY: test check build
@@ -172,15 +174,15 @@ build:
 `site/dist`, `site/.astro`, `coverage`, `playwright-report`, `test-results`, но не generated
 snapshot.
 
-- [ ] **Step 6: Проверить foundation**
+- [x] **Step 6: Проверить foundation**
 
 Run: `go test ./internal/buildinfo && cd site && npm run check`
 Expected: PASS; Astro сообщает 0 errors.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
-git add .gitignore go.mod internal/buildinfo site/package.json site/package-lock.json site/astro.config.mjs site/tsconfig.json Makefile
+git add .gitignore .nvmrc go.mod internal/buildinfo site/package.json site/package-lock.json site/astro.config.mjs site/tsconfig.json Makefile docs/superpowers/plans/2026-09-05-portfolio-hub.md
 git commit -m "build: initialize portfolio toolchain"
 ```
 

@@ -1,0 +1,8 @@
+.DS_Store
+default.profraw
+coverage/
+playwright-report/
+test-results/
+site/.astro/
+site/dist/
+site/node_modules/
