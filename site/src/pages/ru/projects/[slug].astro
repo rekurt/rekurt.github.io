@@ -1,0 +1,9 @@
+---
+import ProjectDetailPage from "../../../views/ProjectDetailPage.astro";
+import { productPaths } from "../../../lib/routes";
+
+export function getStaticPaths() { return productPaths("ru"); }
+const { locale, product } = Astro.props;
+---
+
+<ProjectDetailPage locale={locale} product={product} />

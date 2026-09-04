@@ -1,0 +1,21 @@
+---
+import type { Locale, LocalizedProduct, Repository } from "../lib/catalog";
+
+interface Entry { product: LocalizedProduct; repository: Repository }
+interface Props { entries: Entry[]; locale: Locale }
+const { entries, locale } = Astro.props;
+const prefix = locale === "ru" ? "/ru" : "";
+const formatter = new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeZone: "UTC" });
+---
+
+<ol class="release-list">
+  {entries.map(({ product, repository }) => (
+    <li>
+      <a href={`${prefix}/projects/${product.slug}/`}>
+        <span class="release-name">{product.name}</span>
+        <span class="release-version">{product.version?.value}</span>
+        <time datetime={repository.pushedAt}>{formatter.format(new Date(repository.pushedAt))}</time>
+      </a>
+    </li>
+  ))}
+</ol>

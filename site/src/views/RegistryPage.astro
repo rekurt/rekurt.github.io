@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RepositoryTable from "../components/RepositoryTable.astro";
+import { copy } from "../i18n/copy";
+import { getCatalog, type Locale } from "../lib/catalog";
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+const catalog = getCatalog();
+const repositories = catalog.repositories.toSorted((a, b) => a.nameWithOwner.localeCompare(b.nameWithOwner));
+const canonicalPath = locale === "ru" ? "/ru/registry/" : "/registry/";
+---
+
+<BaseLayout title={`${t.navRegistry} — rekurt`} description={t.registryIntro} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt}>
+  <header class="page-intro registry-intro">
+    <p class="eyebrow">{t.registryEyebrow}</p>
+    <h1>{t.registryTitle}</h1>
+    <p>{t.registryIntro}</p>
+  </header>
+  <section class="section" aria-label={t.navRegistry}>
+    <RepositoryTable repositories={repositories} t={t} locale={locale} />
+  </section>
+</BaseLayout>

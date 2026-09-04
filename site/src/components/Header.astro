@@ -21,7 +21,7 @@ const normalizedPath = currentPath.endsWith("/") ? currentPath : `${currentPath}
       <span class="brand-mark" aria-hidden="true">R</span>
       <span>{t.siteName}</span>
     </a>
-    <nav class="site-nav" aria-label={locale === "ru" ? "Основная навигация" : "Primary navigation"}>
+    <nav class="site-nav" aria-label={t.primaryNavigation}>
       {links.map((link) => (
         <a href={link.href} aria-current={normalizedPath.startsWith(link.href) ? "page" : undefined}>{link.label}</a>
       ))}

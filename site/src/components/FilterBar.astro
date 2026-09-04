@@ -1,0 +1,71 @@
+---
+interface FilterGroup { key: string; label: string; values: string[] }
+interface Props { groups: FilterGroup[]; allLabel: string; resetLabel: string; resultsLabel: string; total: number }
+const { groups, allLabel, resetLabel, resultsLabel, total } = Astro.props;
+---
+
+<div class="filter-panel" data-filter-panel>
+  <div class="filter-groups">
+    {groups.map((group) => (
+      <fieldset class="filter-group" data-filter-group={group.key}>
+        <legend>{group.label}</legend>
+        <div>
+          <button type="button" class="filter-button is-active" data-filter-value="*" aria-pressed="true">{allLabel}</button>
+          {group.values.map((value) => (
+            <button type="button" class="filter-button" data-filter-value={value.toLowerCase()} aria-pressed="false">{value}</button>
+          ))}
+        </div>
+      </fieldset>
+    ))}
+  </div>
+  <div class="filter-status" aria-live="polite">
+    <span><strong data-filter-count>{total}</strong> {resultsLabel}</span>
+    <button type="button" class="reset-button" data-filter-reset>{resetLabel}</button>
+  </div>
+</div>
+
+<script>
+  const panel = document.querySelector<HTMLElement>("[data-filter-panel]");
+  const cards = [...document.querySelectorAll<HTMLElement>("[data-project-card]")];
+  if (panel && cards.length) {
+    const active = new Map<string, string>();
+    const count = panel.querySelector<HTMLElement>("[data-filter-count]");
+    const apply = () => {
+      let visible = 0;
+      for (const card of cards) {
+        const show = [...active].every(([key, value]) => value === "*" || card.dataset[key] === value || card.dataset[key]?.split(" ").includes(value));
+        card.hidden = !show;
+        if (show) visible += 1;
+      }
+      if (count) count.textContent = String(visible);
+    };
+    for (const group of panel.querySelectorAll<HTMLElement>("[data-filter-group]")) {
+      const key = group.dataset.filterGroup;
+      if (!key) continue;
+      active.set(key, "*");
+      for (const button of group.querySelectorAll<HTMLButtonElement>("[data-filter-value]")) {
+        button.addEventListener("click", () => {
+          active.set(key, button.dataset.filterValue ?? "*");
+          group.querySelectorAll("button").forEach((candidate) => {
+            const selected = candidate === button;
+            candidate.classList.toggle("is-active", selected);
+            candidate.setAttribute("aria-pressed", String(selected));
+          });
+          apply();
+        });
+      }
+    }
+    panel.querySelector<HTMLButtonElement>("[data-filter-reset]")?.addEventListener("click", () => {
+      for (const group of panel.querySelectorAll<HTMLElement>("[data-filter-group]")) {
+        const key = group.dataset.filterGroup;
+        if (key) active.set(key, "*");
+        group.querySelectorAll<HTMLButtonElement>("[data-filter-value]").forEach((button) => {
+          const selected = button.dataset.filterValue === "*";
+          button.classList.toggle("is-active", selected);
+          button.setAttribute("aria-pressed", String(selected));
+        });
+      }
+      apply();
+    });
+  }
+</script>

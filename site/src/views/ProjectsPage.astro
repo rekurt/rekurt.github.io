@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FilterBar from "../components/FilterBar.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { copy } from "../i18n/copy";
+import { getCatalog, getProducts, type Locale } from "../lib/catalog";
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+const products = getProducts(locale);
+const catalog = getCatalog();
+const canonicalPath = locale === "ru" ? "/ru/projects/" : "/projects/";
+const unique = (values: string[]) => [...new Set(values)].sort();
+const groups = [
+  { key: "domain", label: t.filterDomain, values: unique(products.map((product) => product.domain)) },
+  { key: "kind", label: t.filterKind, values: unique(products.map((product) => product.kind)) },
+  { key: "language", label: t.filterLanguage, values: unique(products.flatMap((product) => product.languages)) },
+];
+---
+
+<BaseLayout title={`${t.navProjects} — rekurt`} description={t.projectsIntro} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt}>
+  <header class="page-intro">
+    <p class="eyebrow">{t.projectsEyebrow}</p>
+    <h1>{t.projectsTitle}</h1>
+    <p>{t.projectsIntro}</p>
+  </header>
+  <section class="section catalog-section" aria-label={t.navProjects}>
+    <FilterBar groups={groups} allLabel={t.filterAll} resetLabel={t.filterReset} resultsLabel={t.results} total={products.length} />
+    <div class="card-grid" id="catalog">
+      {products.map((product) => <ProjectCard product={product} locale={locale} t={t} />)}
+    </div>
+  </section>
+</BaseLayout>

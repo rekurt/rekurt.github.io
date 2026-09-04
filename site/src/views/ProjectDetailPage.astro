@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LinkGroup from "../components/LinkGroup.astro";
+import VersionBadge from "../components/VersionBadge.astro";
+import { copy } from "../i18n/copy";
+import { getCatalog, type LinkKind, type Locale, type LocalizedProduct } from "../lib/catalog";
+
+interface Props { locale: Locale; product: LocalizedProduct }
+const { locale, product } = Astro.props;
+const t = copy[locale];
+const catalog = getCatalog();
+const prefix = locale === "ru" ? "/ru" : "";
+const canonicalPath = `${prefix}/projects/${product.slug}/`;
+const repositories = product.repositories.map((name) => catalog.repositories.find((repository) => repository.nameWithOwner === name)).filter((repository) => repository !== undefined);
+const labels: Record<LinkKind, string> = { website: t.linkWebsite, documentation: t.linkDocumentation, source: t.linkSource, release: t.linkRelease };
+const date = new Intl.DateTimeFormat(locale, { dateStyle: "long", timeZone: "UTC" });
+const schema = { "@context": "https://schema.org", "@type": "SoftwareSourceCode", name: product.name, description: product.summary, codeRepository: `https://github.com/${product.primaryRepo}`, programmingLanguage: product.languages };
+---
+
+<BaseLayout title={`${product.name} — rekurt`} description={product.summary} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt} jsonLd={schema}>
+  <a class="back-link" href={`${prefix}/projects/`}>← {t.navProjects}</a>
+  <header class="project-hero">
+    <div>
+      <p class="eyebrow">{product.domain} / {product.kind}</p>
+      <h1>{product.name}</h1>
+      <p class="hero-intro">{product.summary}</p>
+      {product.maintainedFork && product.upstream && <p class="attribution">{t.upstreamAttribution}: <a href={`https://github.com/${product.upstream}`} target="_blank" rel="noreferrer">{product.upstream}</a></p>}
+    </div>
+    <aside class="project-status">
+      <div><span>{t.version}</span><VersionBadge version={product.version} fallback={t.unversioned} /></div>
+      <div><span>{t.versionSource}</span><strong>{product.version?.source ?? "—"}</strong></div>
+      <div><span>{t.lastCatalogSync}</span><time datetime={catalog.syncedAt}>{date.format(new Date(catalog.syncedAt))}</time></div>
+    </aside>
+  </header>
+  <div class="project-actions"><LinkGroup links={product.links} labels={labels} /></div>
+
+  {product.install.length > 0 && <section class="detail-section"><p class="eyebrow">{t.install}</p><h2>{t.install}</h2><div class="install-list">{product.install.map((command) => <pre><code>{command}</code></pre>)}</div></section>}
+
+  <section class="detail-section">
+    <p class="eyebrow">{t.repositories}</p><h2>{t.repositorySet}</h2>
+    <ul class="repository-set">{repositories.map((repository) => <li><a href={repository.url} target="_blank" rel="noreferrer"><span>{repository.nameWithOwner}</span><small>{repository.role} · {repository.language ?? "—"}</small></a></li>)}</ul>
+  </section>
+
+  {product.readme?.html && <section class="detail-section readme-section" aria-labelledby="readme-title"><div class="readme-heading"><div><p class="eyebrow">{t.projectOverview}</p><h2 id="readme-title">{t.sourceReadme}</h2><p>{t.readmeNotice}</p></div><a class="secondary-button" href={product.readme.sourceUrl} target="_blank" rel="noreferrer">{product.readme.sha.slice(0, 7)} ↗</a></div><article class="readme" set:html={product.readme.html} /></section>}
+</BaseLayout>

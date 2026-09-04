@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { copy } from "../i18n/copy";
+import { getCatalog, type Locale } from "../lib/catalog";
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+const catalog = getCatalog();
+const canonicalPath = locale === "ru" ? "/ru/about/" : "/about/";
+const schema = { "@context": "https://schema.org", "@type": "Person", name: "rekurt", url: "https://rekurt.github.io/", sameAs: ["https://github.com/rekurt"] };
+---
+
+<BaseLayout title={`${t.navAbout} — rekurt`} description={t.aboutIntro} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt} jsonLd={schema}>
+  <header class="page-intro">
+    <p class="eyebrow">{t.aboutEyebrow}</p>
+    <h1>{t.aboutTitle}</h1>
+    <p>{t.aboutIntro}</p>
+  </header>
+  <div class="about-grid section">
+    <section><span class="section-index">01</span><h2>{t.aboutFocusTitle}</h2><p>{t.aboutFocusBody}</p></section>
+    <section><span class="section-index">02</span><h2>{t.aboutPrinciplesTitle}</h2><ol><li>{t.aboutPrincipleOne}</li><li>{t.aboutPrincipleTwo}</li><li>{t.aboutPrincipleThree}</li></ol></section>
+    <section><span class="section-index">03</span><h2>{t.aboutContactTitle}</h2><p>{t.aboutContactBody}</p><a class="primary-button" href="https://github.com/rekurt" target="_blank" rel="noreferrer">{t.githubProfile} <span aria-hidden="true">↗</span></a></section>
+  </div>
+</BaseLayout>

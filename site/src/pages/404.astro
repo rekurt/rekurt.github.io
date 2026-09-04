@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { copy } from "../i18n/copy";
+const t = copy.en;
+---
+
+<BaseLayout title="404 — rekurt" description={t.notFoundBody} locale="en" canonicalPath="/404.html">
+  <section class="not-found"><p class="eyebrow">404 / not found</p><h1>{t.notFoundTitle}</h1><p class="hero-intro">{t.notFoundBody}</p><div class="hero-actions"><a class="primary-button" href="/">{t.backHome}</a><a class="secondary-button" href="/projects/">{t.navProjects}</a></div></section>
+</BaseLayout>

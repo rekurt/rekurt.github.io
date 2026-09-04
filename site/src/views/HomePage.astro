@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ReleaseList from "../components/ReleaseList.astro";
+import { copy } from "../i18n/copy";
+import { getCatalog, getProducts, getRepository, type Locale } from "../lib/catalog";
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+const prefix = locale === "ru" ? "/ru" : "";
+const canonicalPath = locale === "ru" ? "/ru/" : "/";
+const catalog = getCatalog();
+const products = getProducts(locale);
+const featured = products.filter((product) => product.featured);
+const websites = catalog.repositories.filter((repository) => repository.links.some((link) => link.kind === "website")).length;
+const releases = products
+  .filter((product) => product.version)
+  .map((product) => ({ product, repository: getRepository(product.primaryRepo) }))
+  .sort((a, b) => b.repository.pushedAt.localeCompare(a.repository.pushedAt))
+  .slice(0, 6);
+const title = locale === "ru" ? "rekurt — инженерные системы и open source" : "rekurt — engineered systems and open source";
+---
+
+<BaseLayout title={title} description={t.homeIntro} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt}>
+  <section class="hero">
+    <p class="eyebrow">{t.homeEyebrow}</p>
+    <h1>{t.homeTitle}</h1>
+    <p class="hero-intro">{t.homeIntro}</p>
+    <div class="hero-actions">
+      <a class="primary-button" href={`${prefix}/projects/`}>{t.browseProjects} <span aria-hidden="true">→</span></a>
+      <a class="secondary-button" href={`${prefix}/registry/`}>{t.inspectRegistry}</a>
+    </div>
+  </section>
+
+  <dl class="metrics" aria-label={locale === "ru" ? "Сводка каталога" : "Catalog summary"}>
+    <div><dt>{t.metricProducts}</dt><dd>{products.length}</dd></div>
+    <div><dt>{t.metricRepositories}</dt><dd>{catalog.repositories.length}</dd></div>
+    <div><dt>{t.metricOriginals}</dt><dd>{catalog.repositories.filter((repository) => !repository.fork).length}</dd></div>
+    <div><dt>{t.metricWebsites}</dt><dd>{websites}</dd></div>
+  </dl>
+
+  <section class="section" aria-labelledby="featured-heading">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">{t.featured}</p>
+        <h2 id="featured-heading">{t.featuredProjects}</h2>
+        <p class="section-description">{t.featuredDescription}</p>
+      </div>
+      <a class="text-link" href={`${prefix}/projects/`}>{t.allProjects} <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="card-grid">
+      {featured.map((product) => <ProjectCard product={product} locale={locale} t={t} />)}
+    </div>
+  </section>
+
+  <section class="section release-section" aria-labelledby="release-heading">
+    <div>
+      <p class="eyebrow">{t.version}</p>
+      <h2 id="release-heading">{t.recentVersions}</h2>
+      <p class="section-description">{t.recentVersionsDescription}</p>
+    </div>
+    <ReleaseList entries={releases} locale={locale} />
+  </section>
+</BaseLayout>

@@ -658,18 +658,18 @@ git commit -m "feat(site): add portfolio design system"
 - Consumes: selectors and components from Task 7.
 - Produces: every route in spec, static product paths for 14 slugs × 2 locales.
 
-- [ ] **Step 1: Написать route contract test**
+- [x] **Step 1: Написать route contract test**
 
 Тест вызывает exported `getStaticPaths` helpers и проверяет 14 EN + 14 RU slugs, canonical
 URL, `hreflang=en`, `hreflang=ru`, уникальные titles и отсутствие fork homepage в author
 website actions.
 
-- [ ] **Step 2: Проверить падение**
+- [x] **Step 2: Проверить падение**
 
 Run: `cd site && npm test -- pages.test.ts`
 Expected: FAIL, страницы ещё отсутствуют.
 
-- [ ] **Step 3: Реализовать Home и About**
+- [x] **Step 3: Реализовать Home и About**
 
 Hero: `Backend systems, developer tools, and open source built to be operated.`; RU:
 `Backend-системы, инструменты разработчика и open source, готовые к эксплуатации.`
@@ -677,20 +677,20 @@ Featured grid показывает шесть выбранных продукт�
 About перечисляет Go, Rust, TypeScript, fintech/crypto, безопасные релизы и observability без
 непроверяемых работодателей или биографических утверждений.
 
-- [ ] **Step 4: Реализовать Projects и details**
+- [x] **Step 4: Реализовать Projects и details**
 
 Filter controls используют настоящие `<button>` и query-independent client filtering по
 `data-domain`, `data-kind`, `data-language`; без JavaScript все карточки видимы. Detail page
 показывает summary, version source, last sync, install commands, связанные repos, upstream
 attribution, safe README HTML и четыре раздельных типа ссылок.
 
-- [ ] **Step 5: Реализовать Registry**
+- [x] **Step 5: Реализовать Registry**
 
 Desktop — table, mobile — stacked rows. Обязательные колонки: repository, role, origin,
 language, version, website/docs, last push. `original`, `maintained fork`, `fork/mirror`,
 `support`, `portfolio hub` имеют разные текстовые labels, а не только цвета.
 
-- [ ] **Step 6: Реализовать SEO и 404**
+- [x] **Step 6: Реализовать SEO и 404**
 
 Каждая страница получает canonical, description, Open Graph, `hreflang`, JSON-LD
 `Person`/`SoftwareSourceCode` только из проверенных полей. `robots.txt.ts` возвращает
@@ -698,13 +698,13 @@ language, version, website/docs, last push. `original`, `maintained fork`, `fork
 статических страниц и 28 product detail routes с `xhtml:link` alternate EN/RU; XML escaping
 покрывается route contract test. 404 содержит ссылки Home/Projects.
 
-- [ ] **Step 7: Проверить production build и маршруты**
+- [x] **Step 7: Проверить production build и маршруты**
 
 Run: `cd site && npm test && npm run check && npm run build`
 Expected: PASS; `dist` содержит EN/RU index, 28 product detail pages, registry, about, 404,
 robots и sitemap.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add site/src site/public

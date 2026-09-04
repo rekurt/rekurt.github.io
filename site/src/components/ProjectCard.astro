@@ -15,7 +15,7 @@ const labels: Record<LinkKind, string> = {
 };
 ---
 
-<article class="project-card" data-domain={product.domain} data-kind={product.kind} data-language={product.languages.join(" ").toLowerCase()}>
+<article class="project-card" data-project-card data-domain={product.domain} data-kind={product.kind} data-language={product.languages.join(" ").toLowerCase()}>
   <div class="card-meta">
     <span class="tag">{product.domain}</span>
     <VersionBadge version={product.version} fallback={t.unversioned} />
