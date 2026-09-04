@@ -1,0 +1,4 @@
+[
+  {"name": "nightly", "commit": {"sha": "aaa"}},
+  {"name": "v0.2.1", "commit": {"sha": "bbb"}}
+]

@@ -298,7 +298,7 @@ git commit -m "feat(catalog): add validated project manifest"
 - Produces: `(*Client).ListOwnedPublic(ctx context.Context, owner string) ([]catalog.Repository, error)`.
 - Produces: `(*Client).Enrich(ctx context.Context, repo catalog.Repository, withReadme bool) (catalog.Repository, error)`.
 
-- [ ] **Step 1: Написать failing pagination/retry test**
+- [x] **Step 1: Написать failing pagination/retry test**
 
 ```go
 func TestListOwnedPublicPaginatesAndFilters(t *testing.T) {
@@ -312,32 +312,32 @@ func TestListOwnedPublicPaginatesAndFilters(t *testing.T) {
 
 В отдельном тесте сервер возвращает `429`, `Retry-After: 0`, затем `200`; ожидать два запроса.
 
-- [ ] **Step 2: Проверить падение**
+- [x] **Step 2: Проверить падение**
 
 Run: `go test ./internal/githubapi -run 'TestList|TestRetry'`
 Expected: FAIL с отсутствующим `New`/`ListOwnedPublic`.
 
-- [ ] **Step 3: Реализовать HTTP boundary**
+- [x] **Step 3: Реализовать HTTP boundary**
 
 `Client` задаёт `User-Agent: rekurt-portfolio-sync/0.1.0`, GitHub media/version headers,
 Bearer token только если он непустой, timeout из переданного `http.Client`. Retry разрешён
 для `429`, `502`, `503`, `504` максимум три попытки с `Retry-After` или exponential backoff.
 Тело error response ограничить 8 KiB.
 
-- [ ] **Step 4: Реализовать repository pagination**
+- [x] **Step 4: Реализовать repository pagination**
 
 Запрашивать `/users/{owner}/repos?type=owner&sort=full_name&direction=asc&per_page=100&page=N`,
 продолжать по `Link`, жёстко отбрасывать `private`/не-public записи и сортировать
 `NameWithOwner` case-insensitively.
 
-- [ ] **Step 5: Написать failing enrichment tests**
+- [x] **Step 5: Написать failing enrichment tests**
 
 Проверить parent форка, latest published non-draft release, fallback на SemVer tag, затем на
 `Cargo.toml`/`package.json`, default-branch SHA, README payload и сохранение `has_pages`
 отдельно от homepage. Отдельно проверить, что `go.mod` не интерпретируется как источник
 версии.
 
-- [ ] **Step 6: Реализовать enrichment**
+- [x] **Step 6: Реализовать enrichment**
 
 Для каждого репозитория использовать REST endpoints `/repos/{full_name}`,
 `/releases?per_page=20`, `/tags?per_page=20`, `/branches/{branch}` и `/readme`. Draft и
@@ -345,12 +345,12 @@ prerelease не становятся latest version. `v1.2.3` сохраняет
 игнорируется. Если release/tag отсутствуют, прочитать `Cargo.toml` или `package.json` из
 корня и сохранить version source `manifest`; `go.mod` как version source запрещён.
 
-- [ ] **Step 7: Проверить client**
+- [x] **Step 7: Проверить client**
 
 Run: `go test ./internal/githubapi -race -count=1`
 Expected: PASS; race detector не находит конфликтов.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add internal/githubapi testdata/github

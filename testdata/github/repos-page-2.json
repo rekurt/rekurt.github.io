@@ -1,0 +1,21 @@
+[
+  {
+    "name": "beta",
+    "full_name": "rekurt/beta",
+    "html_url": "https://github.com/rekurt/beta",
+    "description": "Beta tool",
+    "private": false,
+    "visibility": "public",
+    "fork": false,
+    "language": "TypeScript",
+    "topics": ["frontend"],
+    "homepage": null,
+    "has_pages": false,
+    "default_branch": "main",
+    "license": {"spdx_id": "Apache-2.0"},
+    "updated_at": "2026-07-01T10:00:00Z",
+    "pushed_at": "2026-07-01T09:00:00Z",
+    "archived": false,
+    "stargazers_count": 3
+  }
+]

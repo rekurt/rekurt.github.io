@@ -1,0 +1,20 @@
+{
+  "name": "Mac-Coffee",
+  "full_name": "rekurt/Mac-Coffee",
+  "html_url": "https://github.com/rekurt/Mac-Coffee",
+  "description": "Native macOS menu bar app",
+  "private": false,
+  "visibility": "public",
+  "fork": true,
+  "parent": {"full_name": "Elliotwu-7/Mac-Coffee"},
+  "language": "Swift",
+  "topics": ["macos", "swiftui"],
+  "homepage": "https://rekurt.github.io/Mac-Coffee/",
+  "has_pages": true,
+  "default_branch": "main",
+  "license": {"spdx_id": "MIT"},
+  "updated_at": "2026-09-03T12:06:16Z",
+  "pushed_at": "2026-09-03T12:00:56Z",
+  "archived": false,
+  "stargazers_count": 4
+}

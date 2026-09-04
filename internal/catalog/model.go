@@ -37,6 +37,7 @@ type Readme struct {
 	HTML      string `json:"html,omitempty"`
 	SourceURL string `json:"sourceUrl,omitempty"`
 	SHA       string `json:"sha,omitempty"`
+	Source    string `json:"-"`
 }
 
 type Link struct {
