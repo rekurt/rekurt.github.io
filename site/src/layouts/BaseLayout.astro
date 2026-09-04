@@ -12,9 +12,10 @@ interface Props {
   canonicalPath: string;
   syncedAt?: string;
   jsonLd?: Record<string, unknown>;
+  alternateLocales?: boolean;
 }
 
-const { title, description, locale, canonicalPath, syncedAt, jsonLd } = Astro.props;
+const { title, description, locale, canonicalPath, syncedAt, jsonLd, alternateLocales = true } = Astro.props;
 const t = copy[locale];
 const canonical = new URL(canonicalPath, Astro.site);
 const english = new URL(alternatePath(canonicalPath, "en"), Astro.site);
@@ -35,15 +36,15 @@ const russian = new URL(alternatePath(canonicalPath, "ru"), Astro.site);
     <meta property="og:locale" content={locale === "ru" ? "ru_RU" : "en_US"} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={english} />
-    <link rel="alternate" hreflang="ru" href={russian} />
-    <link rel="alternate" hreflang="x-default" href={english} />
+    {alternateLocales && <link rel="alternate" hreflang="en" href={english} />}
+    {alternateLocales && <link rel="alternate" hreflang="ru" href={russian} />}
+    {alternateLocales && <link rel="alternate" hreflang="x-default" href={english} />}
     <title>{title}</title>
     {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
     <a class="skip-link" href="#content">{t.skipToContent}</a>
-    <Header locale={locale} currentPath={canonicalPath} />
+    <Header locale={locale} currentPath={canonicalPath} showLanguage={alternateLocales} />
     <main id="content" class="container page-shell">
       <slot />
     </main>

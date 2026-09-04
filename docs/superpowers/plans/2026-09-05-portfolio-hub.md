@@ -725,44 +725,44 @@ git commit -m "feat(site): publish bilingual project catalog"
 - Consumes: production Astro build.
 - Produces: `npm run test:e2e`, `npm run check:links`, screenshots as CI artifacts.
 
-- [ ] **Step 1: Написать failing link checker test**
+- [x] **Step 1: Написать failing link checker test**
 
 Создать temp dist с `index.html` → `/missing/`; ожидать сообщение
 `index.html: broken internal link /missing/`. Fixture с `/projects/` и соответствующим
 `projects/index.html` должна пройти.
 
-- [ ] **Step 2: Реализовать deterministic internal link checker**
+- [x] **Step 2: Реализовать deterministic internal link checker**
 
 Парсить HTML через `parse5@8.0.1`, нормализовать trailing slash,
 игнорировать `mailto`, fragments и external origins, проверять файлы и directory index.
 
-- [ ] **Step 3: Добавить Playwright configuration**
+- [x] **Step 3: Добавить Playwright configuration**
 
 `webServer.command = "npm run build && npm exec astro preview -- --host 127.0.0.1"`,
 `baseURL = http://127.0.0.1:4321`, projects: Chromium desktop 1440×1000 и mobile 390×844.
 Retries 1 только в CI; trace сохранять on-first-retry.
 
-- [ ] **Step 4: Добавить navigation и filter tests**
+- [x] **Step 4: Добавить navigation и filter tests**
 
 Проверить skip-link, EN↔RU round trip, переход Project → Website/Docs labels, фильтр domain,
 страницу maintained fork с upstream attribution и registry row count не меньше 49 до remote.
 
-- [ ] **Step 5: Добавить Axe smoke tests**
+- [x] **Step 5: Добавить Axe smoke tests**
 
 Запустить Axe на `/`, `/projects/`, `/projects/mac-coffee/`, `/registry/`, `/ru/`; zero serious
 и critical violations. Дополнительно пройти header/filter/cards клавишей Tab.
 
-- [ ] **Step 6: Добавить responsive screenshot tests**
+- [x] **Step 6: Добавить responsive screenshot tests**
 
 Снимать home, projects, registry в desktop/mobile. Проверять отсутствие horizontal overflow:
 `document.documentElement.scrollWidth === document.documentElement.clientWidth`.
 
-- [ ] **Step 7: Запустить полный локальный QA**
+- [x] **Step 7: Запустить полный локальный QA**
 
 Run: `cd site && npx playwright install chromium && npm run build && npm run check:links && npm run test:e2e`
 Expected: PASS; screenshots читаемы на обоих viewport.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add site/playwright.config.ts site/tests site/scripts site/package.json site/package-lock.json
