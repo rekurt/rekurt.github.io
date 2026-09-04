@@ -498,7 +498,7 @@ git commit -m "feat(sync): generate deterministic portfolio catalog"
 - Consumes: CLI Task 5.
 - Produces: 14 validated product records and current full GitHub snapshot.
 
-- [ ] **Step 1: Написать repository-level contract test**
+- [x] **Step 1: Написать repository-level contract test**
 
 ```go
 func TestProductionManifestContract(t *testing.T) {
@@ -506,23 +506,27 @@ func TestProductionManifestContract(t *testing.T) {
     if err != nil { t.Fatal(err) }
     if err := catalog.ValidateManifest(m); err != nil { t.Fatal(err) }
     if len(m.Products) != 14 { t.Fatalf("products = %d, want 14", len(m.Products)) }
-    // Assert Mac-Coffee upstream and that tsql is absent from product primary repos.
+    mac := findProduct(t, m, "mac-coffee")
+    if mac.Upstream != "Elliotwu-7/Mac-Coffee" { t.Fatal("missing upstream attribution") }
+    for _, p := range m.Products {
+        if p.PrimaryRepo == "rekurt/tsql" { t.Fatal("tsql must remain registry-only") }
+    }
 }
 ```
 
-- [ ] **Step 2: Проверить падение**
+- [x] **Step 2: Проверить падение**
 
 Run: `go test ./catalog`
 Expected: FAIL, production manifest отсутствует.
 
-- [ ] **Step 3: Создать 14 полных product records**
+- [x] **Step 3: Создать 14 полных product records**
 
 Каждая запись содержит фактические repositories из спецификации, разные EN/RU summary,
 корректный domain (`fintech`, `developer-tools`, `infrastructure`, `sdk`, `ai`), kind
 (`library`, `cli`, `desktop`, `platform`, `skill`) и рабочие install commands. Featured:
 `openkline`, `Mac-Coffee`, `git-barber`, `vpn-hub`, `ymsdk`, `gost-crypto`.
 
-- [ ] **Step 4: Выполнить live sync без вывода токена**
+- [x] **Step 4: Выполнить live sync без вывода токена**
 
 ```bash
 GITHUB_TOKEN="$(gh auth token)" go run ./cmd/catalog-sync sync \
@@ -533,18 +537,18 @@ GITHUB_TOKEN="$(gh auth token)" go run ./cmd/catalog-sync sync \
 
 Expected до создания remote: 49 registry entries, 14 products, 19 originals, 30 forks.
 
-- [ ] **Step 5: Проверить содержимое snapshot**
+- [x] **Step 5: Проверить содержимое snapshot**
 
 Run: `jq '{products:(.products|length),repos:(.repositories|length),private:[.repositories[]|select(.visibility!="public")]}' site/src/data/generated/catalog.json`
 Expected: `products: 14`, `repos: 49`, `private: []`.
 
-- [ ] **Step 6: Проверить известные site/doc categories**
+- [x] **Step 6: Проверить известные site/doc categories**
 
 Run: `go test ./catalog ./internal/sync -count=1`
 Expected: шесть исходных Pages URL имеют link kind `website`; pkg.go.dev/crates.io имеют kind
 `documentation`; upstream homepage простых forks не становится author website.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add catalog site/src/data/generated/catalog.json docs/repository-audit.md

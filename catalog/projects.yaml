@@ -1,0 +1,247 @@
+owner: rekurt
+products:
+  - slug: openkline
+    primary_repo: rekurt/openkline
+    repositories:
+      - rekurt/openkline
+      - rekurt/openkline-react
+      - rekurt/openkline-vue
+      - rekurt/openkline.tech
+    kind: library
+    domain: fintech
+    featured: true
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Framework-agnostic OHLCV charting engine with indicators, drawing tools, and React and Vue adapters.
+      ru: Независимый от фреймворка движок OHLCV-графиков с индикаторами, инструментами рисования и адаптерами React и Vue.
+    install:
+      - npm install @rekurt/openkline-core
+    website: https://openkline.tech/
+    documentation: https://rekurt.github.io/openkline/
+
+  - slug: mac-coffee
+    primary_repo: rekurt/Mac-Coffee
+    repositories:
+      - rekurt/Mac-Coffee
+      - rekurt/homebrew-maccoffee
+      - rekurt/maccoffee-dist
+    kind: desktop
+    domain: developer-tools
+    featured: true
+    maintained_fork: true
+    upstream: Elliotwu-7/Mac-Coffee
+    summary:
+      en: Native macOS menu bar utility for timed wake sessions, battery protection, and optional local MCP control.
+      ru: Нативная утилита строки меню macOS с таймерами бодрствования, защитой батареи и опциональным локальным MCP-управлением.
+    install:
+      - brew tap rekurt/maccoffee
+      - brew install --cask maccoffee
+    website: https://rekurt.github.io/Mac-Coffee/
+    documentation: https://github.com/rekurt/Mac-Coffee#readme
+
+  - slug: git-barber
+    primary_repo: rekurt/git-barber
+    repositories:
+      - rekurt/git-barber
+      - rekurt/homebrew-tap
+    kind: cli
+    domain: developer-tools
+    featured: true
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Safe terminal UI for removing stale branches after classic, squash, and rebase merges.
+      ru: Безопасный терминальный интерфейс для удаления устаревших веток после обычных, squash- и rebase-слияний.
+    install:
+      - brew install rekurt/tap/git-barber
+    website: ""
+    documentation: https://github.com/rekurt/git-barber#readme
+
+  - slug: vpn-hub
+    primary_repo: rekurt/vpn-hub
+    repositories:
+      - rekurt/vpn-hub
+    kind: platform
+    domain: infrastructure
+    featured: true
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Self-hosted multi-VPN hub with explicit policy routing, drift detection, safe rollback, and Telegram operations.
+      ru: Самостоятельно размещаемый multi-VPN hub с явной policy routing, обнаружением drift, безопасным rollback и Telegram-управлением.
+    install:
+      - git clone https://github.com/rekurt/vpn-hub.git
+    website: https://rekurt.github.io/vpn-hub/
+    documentation: https://rekurt.github.io/vpn-hub/docs/
+
+  - slug: ymsdk
+    primary_repo: rekurt/ymsdk
+    repositories:
+      - rekurt/ymsdk
+    kind: sdk
+    domain: sdk
+    featured: true
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Type-safe Go SDK for all Yandex Messenger Bot API methods with retries and rate-limit handling.
+      ru: Типобезопасный Go SDK для всех методов Yandex Messenger Bot API со встроенными повторами и обработкой rate limit.
+    install:
+      - go get github.com/rekurt/ymsdk
+    website: ""
+    documentation: https://pkg.go.dev/github.com/rekurt/ymsdk
+
+  - slug: gost-crypto
+    primary_repo: rekurt/gost-crypto
+    repositories:
+      - rekurt/gost-crypto
+    kind: library
+    domain: fintech
+    featured: true
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Go bindings for GOST signatures, Streebog hashing, Kuznechik encryption, MGM AEAD, and key agreement.
+      ru: Go-библиотека для подписей ГОСТ, хеша Стрибог, шифра Кузнечик, MGM AEAD и согласования ключей.
+    install:
+      - go get github.com/rekurt/gost-crypto
+    website: ""
+    documentation: https://pkg.go.dev/github.com/rekurt/gost-crypto
+
+  - slug: chislo
+    primary_repo: rekurt/chislo
+    repositories:
+      - rekurt/chislo
+    kind: library
+    domain: fintech
+    featured: false
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Rust number-to-words library for grammatically correct money, percentages, dates, durations, fractions, and WASM.
+      ru: Rust-библиотека чисел прописью с правильной грамматикой для денег, процентов, дат, длительностей, дробей и WASM.
+    install:
+      - cargo add chislo
+    website: https://rekurt.github.io/chislo/
+    documentation: https://docs.rs/chislo
+
+  - slug: cortex-forge
+    primary_repo: rekurt/cortex-forge
+    repositories:
+      - rekurt/cortex-forge
+    kind: platform
+    domain: ai
+    featured: false
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Experimental Docker Compose lab for isolated AI assistants, quota proxies, routing, and per-user personas.
+      ru: Экспериментальный Docker Compose-стенд для изолированных AI-ассистентов, quota proxy, маршрутизации и персональных профилей.
+    install:
+      - git clone https://github.com/rekurt/cortex-forge.git
+    website: ""
+    documentation: https://github.com/rekurt/cortex-forge#readme
+
+  - slug: dbdiff
+    primary_repo: rekurt/dbdiff
+    repositories:
+      - rekurt/dbdiff
+    kind: cli
+    domain: developer-tools
+    featured: false
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Rust CLI for comparing database schemas across environments and generating reviewable migration SQL.
+      ru: Rust CLI для сравнения схем баз данных между окружениями и генерации проверяемого миграционного SQL.
+    install:
+      - cargo install dbdiff
+    website: ""
+    documentation: https://github.com/rekurt/dbdiff#readme
+
+  - slug: depth
+    primary_repo: rekurt/depth
+    repositories:
+      - rekurt/depth
+    kind: library
+    domain: fintech
+    featured: false
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: High-performance canvas order-book depth chart for framework-independent web trading interfaces.
+      ru: Высокопроизводительный canvas-график глубины стакана для независимых от фреймворка торговых интерфейсов.
+    install:
+      - npm install @rekurt/depth
+    website: ""
+    documentation: https://github.com/rekurt/depth#readme
+
+  - slug: gitlab-downloader
+    primary_repo: rekurt/gitlab-downloader
+    repositories:
+      - rekurt/gitlab-downloader
+    kind: cli
+    domain: developer-tools
+    featured: false
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Conservative GitLab group cloning and instance transfer toolkit with a shared CLI and Electron core.
+      ru: Инструментарий безопасного клонирования групп и переноса между GitLab-инстансами с общим ядром CLI и Electron.
+    install:
+      - git clone https://github.com/rekurt/gitlab-downloader.git
+      - npm ci
+    website: ""
+    documentation: https://github.com/rekurt/gitlab-downloader#readme
+
+  - slug: go-propisyu
+    primary_repo: rekurt/go-propisyu
+    repositories:
+      - rekurt/go-propisyu
+    kind: library
+    domain: fintech
+    featured: false
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Go library for Russian number words, currencies, decimals, ordinals, and noun declension.
+      ru: "Go-библиотека чисел прописью на русском: валюты, дроби, порядковые числительные и склонения существительных."
+    install:
+      - go get github.com/rekurt/go-propisyu
+    website: ""
+    documentation: https://pkg.go.dev/github.com/rekurt/go-propisyu
+
+  - slug: prt
+    primary_repo: rekurt/prt
+    repositories:
+      - rekurt/prt
+    kind: cli
+    domain: infrastructure
+    featured: false
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Real-time TUI for ports, processes, containers, firewall events, alerts, and network diagnostics.
+      ru: TUI реального времени для портов, процессов, контейнеров, firewall-событий, оповещений и сетевой диагностики.
+    install:
+      - cargo install prt
+    website: ""
+    documentation: https://crates.io/crates/prt
+
+  - slug: sprint-velocity
+    primary_repo: rekurt/sprint-velocity
+    repositories:
+      - rekurt/sprint-velocity
+    kind: skill
+    domain: infrastructure
+    featured: false
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: OpenClaw skill that turns Yandex Tracker activity into a weekly sprint velocity digest.
+      ru: OpenClaw skill, формирующий еженедельный отчёт о скорости спринта из данных Яндекс Трекера.
+    install:
+      - git clone https://github.com/rekurt/sprint-velocity.git
+    website: ""
+    documentation: https://github.com/rekurt/sprint-velocity#readme
