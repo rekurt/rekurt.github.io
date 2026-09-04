@@ -21,17 +21,17 @@ func WriteSnapshot(path string, snapshot catalog.Snapshot) (bool, error) {
 	}
 
 	if existing, err := ReadSnapshot(path); err == nil {
-		normalizedExisting, err := normalizeSnapshot(existing)
+		normalizedExisting, err := normalizeForComparison(existing)
 		if err != nil {
 			return false, fmt.Errorf("normalize existing snapshot: %w", err)
 		}
-		candidateTime := normalized.SyncedAt
-		normalized.SyncedAt = time.Time{}
-		normalizedExisting.SyncedAt = time.Time{}
-		if reflect.DeepEqual(normalizedExisting, normalized) {
+		normalizedCandidate, err := normalizeForComparison(normalized)
+		if err != nil {
+			return false, fmt.Errorf("normalize candidate snapshot: %w", err)
+		}
+		if reflect.DeepEqual(normalizedExisting, normalizedCandidate) {
 			return false, nil
 		}
-		normalized.SyncedAt = candidateTime
 	} else if !os.IsNotExist(err) {
 		return false, err
 	}
@@ -54,16 +54,14 @@ func SnapshotChanged(path string, snapshot catalog.Snapshot) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	normalizedExisting, err := normalizeSnapshot(existing)
+	normalizedExisting, err := normalizeForComparison(existing)
 	if err != nil {
 		return false, err
 	}
-	normalizedCandidate, err := normalizeSnapshot(snapshot)
+	normalizedCandidate, err := normalizeForComparison(snapshot)
 	if err != nil {
 		return false, err
 	}
-	normalizedExisting.SyncedAt = time.Time{}
-	normalizedCandidate.SyncedAt = time.Time{}
 	return !reflect.DeepEqual(normalizedExisting, normalizedCandidate), nil
 }
 
@@ -116,6 +114,22 @@ func normalizeSnapshot(snapshot catalog.Snapshot) (catalog.Snapshot, error) {
 		return strings.ToLower(clone.Repositories[i].NameWithOwner) < strings.ToLower(clone.Repositories[j].NameWithOwner)
 	})
 	return clone, nil
+}
+
+func normalizeForComparison(snapshot catalog.Snapshot) (catalog.Snapshot, error) {
+	normalized, err := normalizeSnapshot(snapshot)
+	if err != nil {
+		return catalog.Snapshot{}, err
+	}
+	normalized.SyncedAt = time.Time{}
+	for index := range normalized.Repositories {
+		if normalized.Repositories[index].Role == "portfolio-hub" {
+			normalized.Repositories[index].HeadSHA = ""
+			normalized.Repositories[index].UpdatedAt = time.Time{}
+			normalized.Repositories[index].PushedAt = time.Time{}
+		}
+	}
+	return normalized, nil
 }
 
 func sortLinks(links []catalog.Link) {

@@ -74,6 +74,29 @@ func TestWriteSnapshotUpdatesMaterialChange(t *testing.T) {
 	}
 }
 
+func TestSnapshotComparisonIgnoresSelfReferentialHubCommitFields(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "catalog.json")
+	first := unorderedSnapshot(time.Date(2026, 9, 5, 1, 0, 0, 0, time.UTC))
+	first.Repositories[0].Role = "portfolio-hub"
+	first.Repositories[0].HeadSHA = "first"
+	if _, err := WriteSnapshot(path, first); err != nil {
+		t.Fatal(err)
+	}
+
+	second := unorderedSnapshot(first.SyncedAt.Add(time.Hour))
+	second.Repositories[0].Role = "portfolio-hub"
+	second.Repositories[0].HeadSHA = "second"
+	second.Repositories[0].UpdatedAt = second.Repositories[0].UpdatedAt.Add(time.Hour)
+	second.Repositories[0].PushedAt = second.Repositories[0].PushedAt.Add(time.Hour)
+	changed, err := SnapshotChanged(path, second)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if changed {
+		t.Fatal("portfolio hub commit metadata caused a self-referential change")
+	}
+}
+
 func TestRenderAuditSummarizesRepositories(t *testing.T) {
 	snapshot := unorderedSnapshot(time.Date(2026, 9, 5, 1, 2, 3, 0, time.UTC))
 	report := string(RenderAudit(snapshot))
