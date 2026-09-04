@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-09-04T23:44:35Z",
+  "syncedAt": "2026-09-04T23:52:21Z",
   "products": [
     {
       "slug": "openkline",
@@ -2068,6 +2068,33 @@
         {
           "kind": "release",
           "url": "https://github.com/rekurt/prt/releases/tag/v0.5.0"
+        }
+      ]
+    },
+    {
+      "nameWithOwner": "rekurt/rekurt.github.io",
+      "name": "rekurt.github.io",
+      "description": "Unified portfolio and live catalog of rekurt open-source projects",
+      "url": "https://github.com/rekurt/rekurt.github.io",
+      "visibility": "public",
+      "fork": false,
+      "language": "Go",
+      "hasPages": true,
+      "defaultBranch": "main",
+      "headSha": "0ad6a1105c42b4998edc0db8ef4cf34a34589e8d",
+      "updatedAt": "2026-09-04T23:51:32Z",
+      "pushedAt": "2026-09-04T23:52:17Z",
+      "archived": false,
+      "stars": 0,
+      "role": "portfolio-hub",
+      "links": [
+        {
+          "kind": "website",
+          "url": "https://rekurt.github.io/"
+        },
+        {
+          "kind": "source",
+          "url": "https://github.com/rekurt/rekurt.github.io"
         }
       ]
     },

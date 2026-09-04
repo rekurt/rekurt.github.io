@@ -853,12 +853,12 @@ git commit -m "ci: automate catalog sync and Pages deployment"
 - Consumes: весь локально проверенный проект.
 - Produces: public `rekurt/rekurt.github.io`, green Actions, live Pages URL и доказательства.
 
-- [ ] **Step 1: Проверить локальный release candidate**
+- [x] **Step 1: Проверить локальный release candidate**
 
 Run: `git status --short --branch && git log --oneline --decorate -12 && make check && make test && make build`
 Expected: только игнорируемые artifacts; все проверки PASS; conventional history на `main`.
 
-- [ ] **Step 2: Создать public remote и выполнить первый push**
+- [x] **Step 2: Создать public remote и выполнить первый push**
 
 ```bash
 gh repo create rekurt/rekurt.github.io --public --source=. --remote=origin --push \
@@ -868,7 +868,7 @@ gh repo create rekurt/rekurt.github.io --public --source=. --remote=origin --pus
 Expected: `origin` указывает на `https://github.com/rekurt/rekurt.github.io.git`; `main`
 отслеживает `origin/main`.
 
-- [ ] **Step 3: Включить GitHub Pages workflow mode**
+- [x] **Step 3: Включить GitHub Pages workflow mode**
 
 ```bash
 gh api --method POST repos/rekurt/rekurt.github.io/pages -f build_type=workflow
@@ -877,7 +877,7 @@ gh api --method POST repos/rekurt/rekurt.github.io/pages -f build_type=workflow
 Если endpoint возвращает `409 Already exists`, проверить
 `gh api repos/rekurt/rekurt.github.io/pages --jq .build_type`; ожидается `workflow`.
 
-- [ ] **Step 4: Повторить sync после появления самого hub**
+- [x] **Step 4: Повторить sync после появления самого hub**
 
 ```bash
 GITHUB_TOKEN="$(gh auth token)" go run ./cmd/catalog-sync sync \
@@ -889,7 +889,7 @@ jq '.repositories | length' site/src/data/generated/catalog.json
 
 Expected: 50 или больше, `rekurt/rekurt.github.io` имеет роль `portfolio-hub`, private count 0.
 
-- [ ] **Step 5: Зафиксировать self-discovery и push**
+- [x] **Step 5: Зафиксировать self-discovery и push**
 
 ```bash
 git add site/src/data/generated/catalog.json docs/repository-audit.md

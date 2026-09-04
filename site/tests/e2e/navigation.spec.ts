@@ -34,6 +34,6 @@ test("maintained fork keeps upstream attribution", async ({ page }) => {
 
 test("registry contains the complete snapshot", async ({ page }) => {
   await page.goto("/registry/");
-  await expect(page.locator("tbody tr")).toHaveCount(49);
+  await expect(page.locator("tbody tr")).toHaveCount(50);
   await expect(page.getByRole("link", { name: "tsql", exact: true })).toBeVisible();
 });

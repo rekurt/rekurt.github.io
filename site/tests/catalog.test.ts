@@ -8,7 +8,8 @@ describe("catalog selectors", () => {
     expect(catalog.schemaVersion).toBe(1);
     expect(catalog.owner).toBe("rekurt");
     expect(catalog.products).toHaveLength(14);
-    expect(catalog.repositories).toHaveLength(49);
+    expect(catalog.repositories).toHaveLength(50);
+    expect(catalog.repositories.find((repository) => repository.nameWithOwner === "rekurt/rekurt.github.io")?.role).toBe("portfolio-hub");
   });
 
   it("localizes without changing project identity", () => {
