@@ -24,7 +24,7 @@
     "eslint": "^10.10.0",
     "parse5": "^8.0.1",
     "prettier": "^3.9.6",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^5.0.0"
   },
   "allowScripts": {
