@@ -785,13 +785,13 @@ git commit -m "test(site): add accessibility and navigation QA"
 **Interfaces:**
 - Produces: required CI, hourly sync commit, Pages artifact deployment, dependency PRs.
 
-- [ ] **Step 1: Добавить CI workflow**
+- [x] **Step 1: Добавить CI workflow**
 
 Использовать `actions/checkout@v7`, `actions/setup-go@v7` с cache, `actions/setup-node@v7`
 с npm cache `site/package-lock.json`. Jobs: Go race/vet/gofmt; site install/check/test/build;
 Playwright Chromium; upload test artifacts on failure. Permissions: `contents: read`.
 
-- [ ] **Step 2: Добавить sync workflow**
+- [x] **Step 2: Добавить sync workflow**
 
 Triggers: cron `17 * * * *`, `workflow_dispatch`, push paths для `catalog/**`, `cmd/**`,
 `internal/**`. Permissions: `contents: write`. Concurrency group `catalog-sync`,
@@ -805,14 +805,14 @@ git diff --cached --quiet || git commit -m "chore(catalog): sync project metadat
 git push
 ```
 
-- [ ] **Step 3: Добавить Pages deployment**
+- [x] **Step 3: Добавить Pages deployment**
 
 Использовать `actions/configure-pages@v6`, `actions/upload-pages-artifact@v5`,
 `actions/deploy-pages@v5`. Build job permissions `contents: read`, deploy permissions
 `pages: write`, `id-token: write`; environment URL берётся из deployment output. Deploy
 только push в `main` и manual dispatch, с concurrency `pages` и `cancel-in-progress: false`.
 
-- [ ] **Step 4: Добавить dependency/release automation**
+- [x] **Step 4: Добавить dependency/release automation**
 
 Dependabot еженедельно обновляет `gomod`, `npm` в `/site`, `github-actions`; лимит 5 PR на
 ecosystem. `release-please.yml` использует `googleapis/release-please-action@v5`, permissions
@@ -820,22 +820,22 @@ ecosystem. `release-please.yml` использует `googleapis/release-please-
 config/manifest. Release Please использует simple release type, package name
 `rekurt-portfolio`, начальную версию `0.1.0` и conventional commits.
 
-- [ ] **Step 5: Документировать эксплуатацию**
+- [x] **Step 5: Документировать эксплуатацию**
 
 README содержит architecture diagram в Mermaid, локальные prerequisites, `make check`, live
 sync, добавление продукта одной YAML-записью, правило forks, generated files, расписание,
 failure recovery и production URL. CONTRIBUTING фиксирует Conventional Commits и запрет
 ручного редактирования snapshot/audit.
 
-- [ ] **Step 6: Локально проверить workflow YAML и полный pipeline**
+- [x] **Step 6: Локально проверить workflow YAML и полный pipeline**
 
-Run: `ruby -e 'require "yaml"; Dir[".github/workflows/*.yml"].each { |f| YAML.load_file(f, aliases: true); puts f }'`
+Run: `ruby -e 'require "yaml"; Dir[".github/workflows/*.yml"].each { |f| YAML.load_file(f); puts f }'`
 Expected: четыре пути workflow без YAML parse errors.
 
 Run: `make check && make test && make build && cd site && npm run check:links`
 Expected: PASS.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add .github release-please-config.json .release-please-manifest.json README.md CONTRIBUTING.md

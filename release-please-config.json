@@ -1,0 +1,9 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "package-name": "rekurt-portfolio",
+      "include-component-in-tag": false
+    }
+  }
+}

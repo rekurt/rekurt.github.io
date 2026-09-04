@@ -1,0 +1,54 @@
+name: Sync catalog
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - catalog/**
+      - cmd/**
+      - internal/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalog-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: true
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+        working-directory: site
+      - name: Synchronize GitHub metadata
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: go run ./cmd/catalog-sync sync --manifest catalog/projects.yaml --snapshot site/src/data/generated/catalog.json --audit docs/repository-audit.md
+      - name: Verify generated result
+        run: make check && make test && make build && cd site && npm run check:links
+      - name: Commit material changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/src/data/generated/catalog.json docs/repository-audit.md
+          if git diff --cached --quiet; then
+            echo "Catalog is current"
+            exit 0
+          fi
+          git commit -m "chore(catalog): sync project metadata"
+          git push
