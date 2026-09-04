@@ -1,0 +1,29 @@
+---
+import type { Copy } from "../i18n/copy";
+import type { LinkKind, LocalizedProduct, Locale } from "../lib/catalog";
+import LinkGroup from "./LinkGroup.astro";
+import VersionBadge from "./VersionBadge.astro";
+
+interface Props { product: LocalizedProduct; locale: Locale; t: Copy }
+const { product, locale, t } = Astro.props;
+const prefix = locale === "ru" ? "/ru" : "";
+const labels: Record<LinkKind, string> = {
+  website: t.linkWebsite,
+  documentation: t.linkDocumentation,
+  source: t.linkSource,
+  release: t.linkRelease,
+};
+---
+
+<article class="project-card" data-domain={product.domain} data-kind={product.kind} data-language={product.languages.join(" ").toLowerCase()}>
+  <div class="card-meta">
+    <span class="tag">{product.domain}</span>
+    <VersionBadge version={product.version} fallback={t.unversioned} />
+  </div>
+  <h3><a href={`${prefix}/projects/${product.slug}/`}>{product.name}</a></h3>
+  <p class="project-summary">{product.summary}</p>
+  <div class="card-footer">
+    <span class="tag">{product.kind}</span>
+    <LinkGroup links={product.links} labels={labels} />
+  </div>
+</article>

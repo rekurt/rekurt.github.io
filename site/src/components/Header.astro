@@ -1,0 +1,31 @@
+---
+import { alternatePath, copy } from "../i18n/copy";
+import type { Locale } from "../lib/catalog";
+
+interface Props { locale: Locale; currentPath: string }
+const { locale, currentPath } = Astro.props;
+const t = copy[locale];
+const prefix = locale === "ru" ? "/ru" : "";
+const links = [
+  { href: `${prefix}/projects/`, label: t.navProjects },
+  { href: `${prefix}/registry/`, label: t.navRegistry },
+  { href: `${prefix}/about/`, label: t.navAbout },
+];
+const targetLocale: Locale = locale === "en" ? "ru" : "en";
+const normalizedPath = currentPath.endsWith("/") ? currentPath : `${currentPath}/`;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={`${prefix}/`}>
+      <span class="brand-mark" aria-hidden="true">R</span>
+      <span>{t.siteName}</span>
+    </a>
+    <nav class="site-nav" aria-label={locale === "ru" ? "Основная навигация" : "Primary navigation"}>
+      {links.map((link) => (
+        <a href={link.href} aria-current={normalizedPath.startsWith(link.href) ? "page" : undefined}>{link.label}</a>
+      ))}
+      <a class="language-link" href={alternatePath(currentPath, targetLocale)} hreflang={targetLocale}>{t.switchLanguage}</a>
+    </nav>
+  </div>
+</header>

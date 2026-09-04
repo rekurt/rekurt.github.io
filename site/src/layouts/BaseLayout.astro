@@ -1,0 +1,45 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { alternatePath, copy } from "../i18n/copy";
+import type { Locale } from "../lib/catalog";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  locale: Locale;
+  canonicalPath: string;
+  syncedAt?: string;
+}
+
+const { title, description, locale, canonicalPath, syncedAt } = Astro.props;
+const t = copy[locale];
+const canonical = new URL(canonicalPath, Astro.site);
+const english = new URL(alternatePath(canonicalPath, "en"), Astro.site);
+const russian = new URL(alternatePath(canonicalPath, "ru"), Astro.site);
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#080b10" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={english} />
+    <link rel="alternate" hreflang="ru" href={russian} />
+    <link rel="alternate" hreflang="x-default" href={english} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">{t.skipToContent}</a>
+    <Header locale={locale} currentPath={canonicalPath} />
+    <main id="content" class="container page-shell">
+      <slot />
+    </main>
+    <Footer locale={locale} syncedAt={syncedAt} />
+  </body>
+</html>

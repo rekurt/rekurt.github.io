@@ -577,7 +577,7 @@ git commit -m "feat(catalog): add curated public project inventory"
   `getProduct(slug: string, locale: Locale): LocalizedProduct`, `alternatePath(path, locale)`.
 - Produces Astro props: `BaseLayout({title, description, locale, canonicalPath})`.
 
-- [ ] **Step 1: Написать failing selector/i18n tests**
+- [x] **Step 1: Написать failing selector/i18n tests**
 
 ```ts
 it('localizes without changing project identity', () => {
@@ -593,40 +593,40 @@ it('maps alternate paths symmetrically', () => {
 });
 ```
 
-- [ ] **Step 2: Проверить падение**
+- [x] **Step 2: Проверить падение**
 
 Run: `cd site && npm test -- catalog.test.ts i18n.test.ts`
 Expected: FAIL с отсутствующими modules/functions.
 
-- [ ] **Step 3: Реализовать runtime-free selectors**
+- [x] **Step 3: Реализовать runtime-free selectors**
 
 JSON импортируется статически. На старте модуль проверяет `schemaVersion === 1`; selectors
 возвращают readonly copies и выбрасывают `Unknown product: <slug>` для неверного slug.
 
-- [ ] **Step 4: Определить системный EN/RU copy**
+- [x] **Step 4: Определить системный EN/RU copy**
 
 В `copy.ts` тип `CopyKey` выводится из English object; Russian object обязан
 `satisfies Record<CopyKey, string>`, чтобы пропущенный перевод ломал typecheck.
 
-- [ ] **Step 5: Реализовать дизайн-токены и layout**
+- [x] **Step 5: Реализовать дизайн-токены и layout**
 
 CSS variables: graphite `#080b10`, surface `#10151d`, border `#283241`, text `#f3f7fb`,
 muted `#9aa8b8`, cyan `#50d4ff`, emerald `#55e6a5`, warning `#ffca68`. Использовать системный
 sans stack и `ui-monospace`; spacing 4/8 px; focus outline 2 px; min touch target 44 px;
 breakpoints 640/960/1280 px; reduced-motion media query.
 
-- [ ] **Step 6: Реализовать базовые компоненты**
+- [x] **Step 6: Реализовать базовые компоненты**
 
 Компоненты не содержат hardcoded language strings, используют semantic elements, видимый
 focus, `aria-current`, безопасный external link `rel`. `ProjectCard` показывает только
 существующие Website/Documentation/Source/Release actions.
 
-- [ ] **Step 7: Проверить unit/type/build shell**
+- [x] **Step 7: Проверить unit/type/build shell**
 
 Run: `cd site && npm test && npm run check`
 Expected: PASS и 0 Astro errors.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add site/src site/public site/tests

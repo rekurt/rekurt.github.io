@@ -1,0 +1,17 @@
+---
+import type { CatalogLink, LinkKind } from "../lib/catalog";
+
+interface Props {
+  links: CatalogLink[];
+  labels: Record<LinkKind, string>;
+}
+const { links, labels } = Astro.props;
+---
+
+<div class="link-group">
+  {links.map((link) => (
+    <a class="action-link" href={link.url} target="_blank" rel="noreferrer noopener">
+      {labels[link.kind]} <span aria-hidden="true">↗</span>
+    </a>
+  ))}
+</div>

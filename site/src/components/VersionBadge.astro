@@ -1,0 +1,8 @@
+---
+import type { Version } from "../lib/catalog";
+
+interface Props { version?: Version; fallback: string }
+const { version, fallback } = Astro.props;
+---
+
+<span class="version-badge" title={version?.source}>{version?.value ?? fallback}</span>

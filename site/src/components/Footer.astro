@@ -1,0 +1,16 @@
+---
+import { copy } from "../i18n/copy";
+import type { Locale } from "../lib/catalog";
+
+interface Props { locale: Locale; syncedAt?: string }
+const { locale, syncedAt } = Astro.props;
+const t = copy[locale];
+const formatted = syncedAt ? new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeZone: "UTC" }).format(new Date(syncedAt)) : undefined;
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>{t.footerStatus}{formatted ? ` · ${t.updated} ${formatted}` : ""}</p>
+    <a href="https://github.com/rekurt/rekurt.github.io" rel="noreferrer">{t.footerSource}</a>
+  </div>
+</footer>
