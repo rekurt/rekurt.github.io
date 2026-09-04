@@ -159,11 +159,12 @@ npm install -D @astrojs/check@0.9.10 typescript@6.0.3 vitest@5.0.0 eslint@10.10.
 
 ```make
 .PHONY: test check build
+GO_PACKAGES := $(shell go list ./... | grep -v '/site/')
 test:
-	go test ./...
+	go test $(GO_PACKAGES)
 	cd site && npm test
 check:
-	go vet ./...
+	go vet $(GO_PACKAGES)
 	test -z "$$(gofmt -l $$(find . -name '*.go' -not -path './site/*'))"
 	cd site && npm run check
 build:
@@ -201,7 +202,7 @@ git commit -m "build: initialize portfolio toolchain"
 - Produces: `catalog.ValidateManifest(Manifest) error`.
 - Produces: `Manifest`, `ProductConfig`, `Repository`, `Product`, `Snapshot`, `Link`, `Version`.
 
-- [ ] **Step 1: Написать тест загрузки и точных полей**
+- [x] **Step 1: Написать тест загрузки и точных полей**
 
 ```go
 func TestLoadManifest(t *testing.T) {
@@ -213,12 +214,12 @@ func TestLoadManifest(t *testing.T) {
 }
 ```
 
-- [ ] **Step 2: Проверить ожидаемое падение**
+- [x] **Step 2: Проверить ожидаемое падение**
 
 Run: `go test ./internal/catalog -run TestLoadManifest`
 Expected: FAIL, пакет и функция ещё отсутствуют.
 
-- [ ] **Step 3: Определить типы без presentation logic**
+- [x] **Step 3: Определить типы без presentation logic**
 
 ```go
 type LocalizedText struct { EN string `yaml:"en" json:"en"`; RU string `yaml:"ru" json:"ru"` }
@@ -244,18 +245,18 @@ type Manifest struct { Owner string `yaml:"owner"`; Products []ProductConfig `ya
 `Topics`, `Homepage`, `HasPages`, `DefaultBranch`, `HeadSHA`, `License`, `UpdatedAt`,
 `PushedAt`, `Archived`, `Version`, `Readme`; `Version` — `Value`, `Source`, `URL`.
 
-- [ ] **Step 4: Реализовать YAML decoder со strict known fields**
+- [x] **Step 4: Реализовать YAML decoder со strict known fields**
 
 Использовать `yaml.Decoder.KnownFields(true)`, отклонять второй YAML document и возвращать
 ошибки с путём файла.
 
-- [ ] **Step 5: Добавить table-driven validation tests**
+- [x] **Step 5: Добавить table-driven validation tests**
 
 Проверить duplicate slug, duplicate primary repo, пустой EN/RU summary, maintained fork без
 upstream, неизвестную URL-схему, primary repo вне repositories и slug вне regex
 `^[a-z0-9]+(?:-[a-z0-9]+)*$`.
 
-- [ ] **Step 6: Реализовать агрегированную детерминированную ошибку**
+- [x] **Step 6: Реализовать агрегированную детерминированную ошибку**
 
 ```go
 func ValidateManifest(m Manifest) error
@@ -264,12 +265,12 @@ func ValidateManifest(m Manifest) error
 Ошибка сортирует все нарушения по `product slug + field` и возвращает их одной строкой через
 `errors.Join`.
 
-- [ ] **Step 7: Проверить пакет**
+- [x] **Step 7: Проверить пакет**
 
 Run: `go test ./internal/catalog -count=1`
 Expected: PASS.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add go.mod go.sum internal/catalog
@@ -476,7 +477,7 @@ tracked snapshot/audit отличаются. Exit code 2 — invalid arguments, 
 
 - [ ] **Step 8: Проверить весь Go pipeline**
 
-Run: `go test ./... -race -count=1 && go vet ./...`
+Run: `go list ./... | grep -v '/site/' | xargs go test -race -count=1 && go list ./... | grep -v '/site/' | xargs go vet`
 Expected: PASS.
 
 - [ ] **Step 9: Commit**

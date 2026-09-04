@@ -1,0 +1,20 @@
+owner: rekurt
+products:
+  - slug: mac-coffee
+    primary_repo: rekurt/Mac-Coffee
+    repositories:
+      - rekurt/Mac-Coffee
+      - rekurt/homebrew-maccoffee
+      - rekurt/maccoffee-dist
+    kind: desktop
+    domain: developer-tools
+    featured: true
+    maintained_fork: true
+    upstream: Elliotwu-7/Mac-Coffee
+    summary:
+      en: Native macOS utility for controlled wake sessions.
+      ru: Нативная macOS-утилита для управляемых сессий бодрствования.
+    install:
+      - brew install --cask maccoffee
+    website: https://rekurt.github.io/Mac-Coffee/
+    documentation: https://github.com/rekurt/Mac-Coffee#readme
