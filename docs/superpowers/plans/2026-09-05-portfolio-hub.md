@@ -366,7 +366,7 @@ git commit -m "feat(sync): add resilient GitHub client"
 **Interfaces:**
 - Produces: `markdown.RenderREADME(source []byte, repo, branch, sha string) (catalog.Readme, error)`.
 
-- [ ] **Step 1: Написать security и rewrite tests**
+- [x] **Step 1: Написать security и rewrite tests**
 
 ```go
 func TestRenderREADMERewritesAndSanitizes(t *testing.T) {
@@ -379,29 +379,29 @@ func TestRenderREADMERewritesAndSanitizes(t *testing.T) {
 }
 ```
 
-- [ ] **Step 2: Проверить падение**
+- [x] **Step 2: Проверить падение**
 
 Run: `go test ./internal/markdown`
 Expected: FAIL с отсутствующим `RenderREADME`.
 
-- [ ] **Step 3: Реализовать AST rewrite и render**
+- [x] **Step 3: Реализовать AST rewrite и render**
 
 Использовать goldmark AST walk до render: относительные `Link` направлять на GitHub blob по
 SHA, относительные `Image` — на raw.githubusercontent.com по SHA. Абсолютные `https`, `http`
 и `mailto` сохранять; fragment сохранять локальным.
 
-- [ ] **Step 4: Реализовать allowlist sanitizer**
+- [x] **Step 4: Реализовать allowlist sanitizer**
 
 Использовать bluemonday UGC policy, дополнительно разрешить `class` только на `code`,
 запретить inline style, iframe, form, svg, data URI. Добавить `rel="noreferrer noopener"` к
 внешним ссылкам. Ограничить source README 256 KiB и HTML 512 KiB.
 
-- [ ] **Step 5: Проверить renderer**
+- [x] **Step 5: Проверить renderer**
 
 Run: `go test ./internal/markdown -count=1`
 Expected: PASS для XSS table и relative URL table.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add go.mod go.sum internal/markdown
