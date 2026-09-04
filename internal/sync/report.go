@@ -22,7 +22,7 @@ func RenderAudit(snapshot catalog.Snapshot) []byte {
 	var output bytes.Buffer
 	fmt.Fprintln(&output, "# Public repository audit")
 	fmt.Fprintln(&output)
-	fmt.Fprintf(&output, "Snapshot: %s  \n", snapshot.SyncedAt.UTC().Format("2006-01-02T15:04:05Z"))
+	fmt.Fprintf(&output, "Snapshot: %s\n", snapshot.SyncedAt.UTC().Format("2006-01-02T15:04:05Z"))
 	fmt.Fprintf(&output, "%d public repositories · %d original · %d fork\n\n", len(snapshot.Repositories), originals, forks)
 	fmt.Fprintln(&output, "| Repository | Role | Origin | Language | Version | Website | Documentation | Last push |")
 	fmt.Fprintln(&output, "|---|---|---|---|---|---|---|---|")

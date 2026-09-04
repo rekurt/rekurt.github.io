@@ -60,3 +60,28 @@ func TestRenderREADMEUsesBranchWhenCommitIsUnavailable(t *testing.T) {
 		t.Fatalf("branch fallback missing: %#v", got)
 	}
 }
+
+func TestRenderREADMERewritesRelativeURLsInRawHTML(t *testing.T) {
+	got, err := RenderREADME([]byte(`<a href="docs/guide.md"><img src="assets/banner.jpg" width="1200"></a>`), "rekurt/demo", "main", "abc123")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(got.HTML, `href="https://github.com/rekurt/demo/blob/abc123/docs/guide.md"`) {
+		t.Fatalf("raw HTML link was not pinned: %s", got.HTML)
+	}
+	if !strings.Contains(got.HTML, `src="https://raw.githubusercontent.com/rekurt/demo/abc123/assets/banner.jpg"`) {
+		t.Fatalf("raw HTML image was not pinned: %s", got.HTML)
+	}
+}
+
+func TestRenderREADMEMakesScrollableContentKeyboardFocusable(t *testing.T) {
+	got, err := RenderREADME([]byte("```sh\nlong command\n```\n\n| key | value |\n| --- | --- |\n| a | b |"), "rekurt/demo", "main", "abc123")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, element := range []string{`<pre tabindex="0">`, `<table tabindex="0">`} {
+		if !strings.Contains(got.HTML, element) {
+			t.Fatalf("missing focusable scroll region %s: %s", element, got.HTML)
+		}
+	}
+}

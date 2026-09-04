@@ -82,6 +82,11 @@ func TestRenderAuditSummarizesRepositories(t *testing.T) {
 			t.Fatalf("report lacks %q:\n%s", want, report)
 		}
 	}
+	for _, line := range strings.Split(report, "\n") {
+		if strings.HasSuffix(line, " ") {
+			t.Fatalf("report contains trailing whitespace: %q", line)
+		}
+	}
 }
 
 func unorderedSnapshot(syncedAt time.Time) catalog.Snapshot {
