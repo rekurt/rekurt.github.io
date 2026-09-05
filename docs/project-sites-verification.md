@@ -16,10 +16,12 @@ Verified on 2026-09-05. The public repository inventory contains 50 repositories
 | cortex-forge | Generated site | `1ef96d5` | [33945486659](https://github.com/rekurt/cortex-forge/actions/runs/33945486659) | <https://rekurt.github.io/cortex-forge/> |
 | dbdiff | Generated site | `2d66cdd` | [33945488192](https://github.com/rekurt/dbdiff/actions/runs/33945488192) | <https://rekurt.github.io/dbdiff/> |
 | depth | Generated site | `c434c6b` | [33945490153](https://github.com/rekurt/depth/actions/runs/33945490153) | <https://rekurt.github.io/depth/> |
-| gitlab-downloader | Generated site | `9c90ca0` | [33946842873](https://github.com/rekurt/gitlab-downloader/actions/runs/33946842873) | <https://rekurt.github.io/gitlab-downloader/> |
+| gitlab-downloader | Generated site | `db05663` | [33946972800](https://github.com/rekurt/gitlab-downloader/actions/runs/33946972800) | <https://rekurt.github.io/gitlab-downloader/> |
 | go-propisyu | Generated site | `bb58783` | [33945493779](https://github.com/rekurt/go-propisyu/actions/runs/33945493779) | <https://rekurt.github.io/go-propisyu/> |
 | prt | Generated site | `607a7d6` | [33946540177](https://github.com/rekurt/prt/actions/runs/33946540177) | <https://rekurt.github.io/prt/> |
 | sprint-velocity | Generated site | `7087582` | [33945497251](https://github.com/rekurt/sprint-velocity/actions/runs/33945497251) | <https://rekurt.github.io/sprint-velocity/> |
+
+The central hub revision `5f476d3` was published by successful [Deploy Pages run 33946939278](https://github.com/rekurt/rekurt.github.io/actions/runs/33946939278) at <https://rekurt.github.io/>.
 
 Every production endpoint is checked from the central repository with `make site-fleet-check`. The checker validates the build manifest, canonical URL, JSON-LD, shared family navigation, reciprocal links, locale routes, sitemaps, robots policy, HTTP status, redirect behavior, and mixed-content safety. Generated sites expose English, Russian, and Simplified Chinese routes; decorated sites preserve their existing product experience and receive the common project-family layer.
 
@@ -35,6 +37,6 @@ The central site passed Go tests, JavaScript unit tests, type checks, Astro prod
 
 - gost-crypto CI was migrated to a golangci-lint version compatible with the current Go toolchain.
 - PRT updated `anyhow` and `crossbeam-epoch` to resolve two RustSec advisories; tests, clippy, and Cargo Deny pass.
-- gitlab-downloader re-enabled Actions and corrected its Webpack-result assertion to support plural warning output.
+- gitlab-downloader re-enabled Actions, corrected ANSI-sensitive Webpack assertions, and updated `fast-uri`; all tests, production audit, build, and package smoke checks pass in [CI run 33946972440](https://github.com/rekurt/gitlab-downloader/actions/runs/33946972440).
 
-Historical Pages failures produced before Pages was enabled are superseded by the successful runs listed above. Existing dependency-audit findings in openkline, depth, and gitlab-downloader are product-maintenance items and are not introduced by the site family.
+Historical Pages failures produced before Pages was enabled are superseded by the successful runs listed above. Existing dependency-audit findings below the enforced production thresholds in openkline, depth, and gitlab-downloader are product-maintenance items and are not introduced by the site family.
