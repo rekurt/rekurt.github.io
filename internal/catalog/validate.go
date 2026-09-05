@@ -10,8 +10,11 @@ import (
 )
 
 var (
-	slugPattern = regexp.MustCompile(`^[a-z0-9]+(?:-[a-z0-9]+)*$`)
-	repoPattern = regexp.MustCompile(`^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$`)
+	slugPattern  = regexp.MustCompile(`^[a-z0-9]+(?:-[a-z0-9]+)*$`)
+	repoPattern  = regexp.MustCompile(`^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$`)
+	validAccents = map[string]struct{}{
+		"amber": {}, "coral": {}, "cyan": {}, "emerald": {}, "violet": {},
+	}
 )
 
 func ValidateManifest(manifest Manifest) error {
@@ -81,6 +84,12 @@ func ValidateManifest(manifest Manifest) error {
 		}
 		if strings.TrimSpace(product.Summary.RU) == "" {
 			add("summary.ru is required")
+		}
+		if strings.TrimSpace(product.Summary.ZHCN) == "" {
+			add("summary.zh-cn is required")
+		}
+		if _, ok := validAccents[product.Accent]; !ok {
+			add("accent must be one of amber, coral, cyan, emerald, violet")
 		}
 		if product.MaintainedFork && strings.TrimSpace(product.Upstream) == "" {
 			add("upstream is required for maintained fork")

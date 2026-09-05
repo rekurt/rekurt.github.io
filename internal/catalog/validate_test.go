@@ -32,9 +32,19 @@ func TestValidateManifestRejectsInvalidProducts(t *testing.T) {
 			want:   "invalid slug",
 		},
 		{
-			name:   "missing translation",
+			name:   "missing Russian translation",
 			mutate: func(m *Manifest) { m.Products[0].Summary.RU = "" },
 			want:   "summary.ru is required",
+		},
+		{
+			name:   "missing Chinese translation",
+			mutate: func(m *Manifest) { m.Products[0].Summary.ZHCN = "" },
+			want:   "summary.zh-cn is required",
+		},
+		{
+			name:   "unknown accent",
+			mutate: func(m *Manifest) { m.Products[0].Accent = "rainbow" },
+			want:   "accent must be one of amber, coral, cyan, emerald, violet",
 		},
 		{
 			name:   "fork without upstream",
@@ -79,11 +89,12 @@ func TestValidateManifestSortsErrors(t *testing.T) {
 	m.Owner = ""
 	m.Products[0].Summary.RU = ""
 	m.Products[0].Summary.EN = ""
+	m.Products[0].Summary.ZHCN = ""
 	err := ValidateManifest(m)
 	if err == nil {
 		t.Fatal("ValidateManifest() error = nil")
 	}
-	want := "manifest owner is required\nmac-coffee: summary.en is required\nmac-coffee: summary.ru is required"
+	want := "manifest owner is required\nmac-coffee: summary.en is required\nmac-coffee: summary.ru is required\nmac-coffee: summary.zh-cn is required"
 	if err.Error() != want {
 		t.Fatalf("error = %q, want %q", err, want)
 	}

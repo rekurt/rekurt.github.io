@@ -15,14 +15,14 @@ func TestBuildGroupsProductsAndClassifiesRegistry(t *testing.T) {
 		Products: []catalog.ProductConfig{
 			{
 				Slug: "tool", PrimaryRepo: "rekurt/tool",
-				Repositories: []string{"rekurt/tool", "rekurt/tap"}, Kind: "cli", Domain: "developer-tools",
-				Summary: catalog.LocalizedText{EN: "Tool summary", RU: "Описание инструмента"},
+				Repositories: []string{"rekurt/tool", "rekurt/tap"}, Kind: "cli", Domain: "developer-tools", Accent: "cyan",
+				Summary: catalog.LocalizedText{EN: "Tool summary", RU: "Описание инструмента", ZHCN: "工具简介"},
 			},
 			{
 				Slug: "forked", PrimaryRepo: "rekurt/forked", Repositories: []string{"rekurt/forked"},
 				Kind: "desktop", Domain: "developer-tools", Featured: true, MaintainedFork: true,
-				Upstream: "upstream/forked", Website: "https://rekurt.github.io/forked/",
-				Summary: catalog.LocalizedText{EN: "Maintained fork", RU: "Поддерживаемый форк"},
+				Upstream: "upstream/forked", Website: "https://rekurt.github.io/forked/", Accent: "amber",
+				Summary: catalog.LocalizedText{EN: "Maintained fork", RU: "Поддерживаемый форк", ZHCN: "维护分支"},
 			},
 		},
 	}
@@ -68,6 +68,9 @@ func TestBuildGroupsProductsAndClassifiesRegistry(t *testing.T) {
 		}
 	}
 	tool := snapshot.Products[1]
+	if tool.Accent != "cyan" || tool.Summary.ZHCN != "工具简介" {
+		t.Fatalf("localized presentation metadata = %#v", tool)
+	}
 	if linkByKind(tool.Links, "website") != "https://rekurt.github.io/tool/" {
 		t.Fatalf("derived Pages URL missing: %#v", tool.Links)
 	}
@@ -82,7 +85,7 @@ func TestBuildGroupsProductsAndClassifiesRegistry(t *testing.T) {
 func TestBuildRejectsUnknownAndPrivateRepositories(t *testing.T) {
 	base := catalog.Manifest{Owner: "rekurt", Products: []catalog.ProductConfig{{
 		Slug: "tool", PrimaryRepo: "rekurt/tool", Repositories: []string{"rekurt/tool"},
-		Kind: "cli", Domain: "developer-tools", Summary: catalog.LocalizedText{EN: "Tool", RU: "Инструмент"},
+		Kind: "cli", Domain: "developer-tools", Accent: "cyan", Summary: catalog.LocalizedText{EN: "Tool", RU: "Инструмент", ZHCN: "工具"},
 	}}}
 	tests := []struct {
 		name  string

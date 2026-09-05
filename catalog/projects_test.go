@@ -34,6 +34,12 @@ func TestProductionManifestContract(t *testing.T) {
 		if product.Featured {
 			featured = append(featured, product.Slug)
 		}
+		if product.Summary.ZHCN == "" {
+			t.Fatalf("Chinese summary for %s is empty", product.Slug)
+		}
+		if product.Accent == "" {
+			t.Fatalf("accent for %s is empty", product.Slug)
+		}
 		for _, repo := range product.Repositories {
 			if repo == "rekurt/tsql" {
 				t.Fatal("tsql must remain registry-only")

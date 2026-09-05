@@ -9,12 +9,14 @@ products:
       - rekurt/openkline.tech
     kind: library
     domain: fintech
+    accent: cyan
     featured: true
     maintained_fork: false
     upstream: ""
     summary:
       en: Framework-agnostic OHLCV charting engine with indicators, drawing tools, and React and Vue adapters.
       ru: Независимый от фреймворка движок OHLCV-графиков с индикаторами, инструментами рисования и адаптерами React и Vue.
+      zh-cn: 与框架无关的 OHLCV 图表引擎，支持指标、绘图工具以及 React 和 Vue 适配器。
     install:
       - npm install @rekurt/openkline-core
     website: https://openkline.tech/
@@ -28,12 +30,14 @@ products:
       - rekurt/maccoffee-dist
     kind: desktop
     domain: developer-tools
+    accent: amber
     featured: true
     maintained_fork: true
     upstream: Elliotwu-7/Mac-Coffee
     summary:
       en: Native macOS menu bar utility for timed wake sessions, battery protection, and optional local MCP control.
       ru: Нативная утилита строки меню macOS с таймерами бодрствования, защитой батареи и опциональным локальным MCP-управлением.
+      zh-cn: 原生 macOS 菜单栏工具，提供定时唤醒会话、电池保护和可选的本地 MCP 控制。
     install:
       - brew tap rekurt/maccoffee
       - brew install --cask maccoffee
@@ -47,12 +51,14 @@ products:
       - rekurt/homebrew-tap
     kind: cli
     domain: developer-tools
+    accent: violet
     featured: true
     maintained_fork: false
     upstream: ""
     summary:
       en: Safe terminal UI for removing stale branches after classic, squash, and rebase merges.
       ru: Безопасный терминальный интерфейс для удаления устаревших веток после обычных, squash- и rebase-слияний.
+      zh-cn: 安全的终端界面，用于清理普通、squash 和 rebase 合并后的陈旧分支。
     install:
       - brew install rekurt/tap/git-barber
     website: ""
@@ -64,12 +70,14 @@ products:
       - rekurt/vpn-hub
     kind: platform
     domain: infrastructure
+    accent: emerald
     featured: true
     maintained_fork: false
     upstream: ""
     summary:
       en: Self-hosted multi-VPN hub with explicit policy routing, drift detection, safe rollback, and Telegram operations.
       ru: Самостоятельно размещаемый multi-VPN hub с явной policy routing, обнаружением drift, безопасным rollback и Telegram-управлением.
+      zh-cn: 自托管多 VPN 中枢，提供显式策略路由、漂移检测、安全回滚和 Telegram 运维。
     install:
       - git clone https://github.com/rekurt/vpn-hub.git
     website: https://rekurt.github.io/vpn-hub/
@@ -81,12 +89,14 @@ products:
       - rekurt/ymsdk
     kind: sdk
     domain: sdk
+    accent: cyan
     featured: true
     maintained_fork: false
     upstream: ""
     summary:
       en: Type-safe Go SDK for all Yandex Messenger Bot API methods with retries and rate-limit handling.
       ru: Типобезопасный Go SDK для всех методов Yandex Messenger Bot API со встроенными повторами и обработкой rate limit.
+      zh-cn: 类型安全的 Go SDK，覆盖全部 Yandex Messenger Bot API 方法，并支持重试和速率限制处理。
     install:
       - go get github.com/rekurt/ymsdk
     website: ""
@@ -98,12 +108,14 @@ products:
       - rekurt/gost-crypto
     kind: library
     domain: fintech
+    accent: coral
     featured: true
     maintained_fork: false
     upstream: ""
     summary:
       en: Go bindings for GOST signatures, Streebog hashing, Kuznechik encryption, MGM AEAD, and key agreement.
       ru: Go-библиотека для подписей ГОСТ, хеша Стрибог, шифра Кузнечик, MGM AEAD и согласования ключей.
+      zh-cn: 面向 GOST 签名、Streebog 哈希、Kuznechik 加密、MGM AEAD 和密钥协商的 Go 库。
     install:
       - go get github.com/rekurt/gost-crypto
     website: ""
@@ -115,12 +127,14 @@ products:
       - rekurt/chislo
     kind: library
     domain: fintech
+    accent: amber
     featured: false
     maintained_fork: false
     upstream: ""
     summary:
       en: Rust number-to-words library for grammatically correct money, percentages, dates, durations, fractions, and WASM.
       ru: Rust-библиотека чисел прописью с правильной грамматикой для денег, процентов, дат, длительностей, дробей и WASM.
+      zh-cn: Rust 数字转俄语文本库，正确处理金额、百分比、日期、时长、分数并支持 WASM。
     install:
       - cargo add chislo
     website: https://rekurt.github.io/chislo/
@@ -132,12 +146,14 @@ products:
       - rekurt/cortex-forge
     kind: platform
     domain: ai
+    accent: violet
     featured: false
     maintained_fork: false
     upstream: ""
     summary:
       en: Experimental Docker Compose lab for isolated AI assistants, quota proxies, routing, and per-user personas.
       ru: Экспериментальный Docker Compose-стенд для изолированных AI-ассистентов, quota proxy, маршрутизации и персональных профилей.
+      zh-cn: 基于 Docker Compose 的实验环境，用于隔离 AI 助手、配额代理、路由和用户专属角色。
     install:
       - git clone https://github.com/rekurt/cortex-forge.git
     website: ""
@@ -149,12 +165,14 @@ products:
       - rekurt/dbdiff
     kind: cli
     domain: developer-tools
+    accent: emerald
     featured: false
     maintained_fork: false
     upstream: ""
     summary:
       en: Rust CLI for comparing database schemas across environments and generating reviewable migration SQL.
       ru: Rust CLI для сравнения схем баз данных между окружениями и генерации проверяемого миграционного SQL.
+      zh-cn: Rust CLI，用于比较不同环境的数据库模式并生成可审查的迁移 SQL。
     install:
       - cargo install dbdiff
     website: ""
@@ -166,12 +184,14 @@ products:
       - rekurt/depth
     kind: library
     domain: fintech
+    accent: cyan
     featured: false
     maintained_fork: false
     upstream: ""
     summary:
       en: High-performance canvas order-book depth chart for framework-independent web trading interfaces.
       ru: Высокопроизводительный canvas-график глубины стакана для независимых от фреймворка торговых интерфейсов.
+      zh-cn: 面向框架无关 Web 交易界面的高性能 Canvas 订单簿深度图。
     install:
       - npm install @rekurt/depth
     website: ""
@@ -183,12 +203,14 @@ products:
       - rekurt/gitlab-downloader
     kind: cli
     domain: developer-tools
+    accent: violet
     featured: false
     maintained_fork: false
     upstream: ""
     summary:
       en: Conservative GitLab group cloning and instance transfer toolkit with a shared CLI and Electron core.
       ru: Инструментарий безопасного клонирования групп и переноса между GitLab-инстансами с общим ядром CLI и Electron.
+      zh-cn: 稳健的 GitLab 群组克隆与实例迁移工具，共用 CLI 和 Electron 核心。
     install:
       - git clone https://github.com/rekurt/gitlab-downloader.git
       - npm ci
@@ -201,12 +223,14 @@ products:
       - rekurt/go-propisyu
     kind: library
     domain: fintech
+    accent: amber
     featured: false
     maintained_fork: false
     upstream: ""
     summary:
       en: Go library for Russian number words, currencies, decimals, ordinals, and noun declension.
       ru: "Go-библиотека чисел прописью на русском: валюты, дроби, порядковые числительные и склонения существительных."
+      zh-cn: Go 语言俄语数字文本库，支持货币、小数、序数词和名词变格。
     install:
       - go get github.com/rekurt/go-propisyu
     website: ""
@@ -218,12 +242,14 @@ products:
       - rekurt/prt
     kind: cli
     domain: infrastructure
+    accent: emerald
     featured: false
     maintained_fork: false
     upstream: ""
     summary:
       en: Real-time TUI for ports, processes, containers, firewall events, alerts, and network diagnostics.
       ru: TUI реального времени для портов, процессов, контейнеров, firewall-событий, оповещений и сетевой диагностики.
+      zh-cn: 面向端口、进程、容器、防火墙事件、告警和网络诊断的实时 TUI。
     install:
       - cargo install prt
     website: ""
@@ -235,12 +261,14 @@ products:
       - rekurt/sprint-velocity
     kind: skill
     domain: infrastructure
+    accent: coral
     featured: false
     maintained_fork: false
     upstream: ""
     summary:
       en: OpenClaw skill that turns Yandex Tracker activity into a weekly sprint velocity digest.
       ru: OpenClaw skill, формирующий еженедельный отчёт о скорости спринта из данных Яндекс Трекера.
+      zh-cn: OpenClaw 技能，将 Yandex Tracker 活动整理为每周迭代速度摘要。
     install:
       - git clone https://github.com/rekurt/sprint-velocity.git
     website: ""

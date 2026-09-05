@@ -8,12 +8,14 @@ products:
       - rekurt/maccoffee-dist
     kind: desktop
     domain: developer-tools
+    accent: cyan
     featured: true
     maintained_fork: true
     upstream: Elliotwu-7/Mac-Coffee
     summary:
       en: Native macOS utility for controlled wake sessions.
       ru: Нативная macOS-утилита для управляемых сессий бодрствования.
+      zh-cn: 用于可控唤醒会话的原生 macOS 工具。
     install:
       - brew install --cask maccoffee
     website: https://rekurt.github.io/Mac-Coffee/
