@@ -14,6 +14,20 @@ test("primary navigation and locale round trip", async ({ page }) => {
   await expect(page).toHaveURL(/\/$/);
 });
 
+test("home page exposes author structured data", async ({ page }) => {
+  await page.goto("/");
+  const payload = await page.locator('script[type="application/ld+json"]').textContent();
+  expect(payload).not.toBeNull();
+  const schema = JSON.parse(payload ?? "{}");
+  expect(schema).toMatchObject({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "rekurt",
+    url: "https://rekurt.github.io/",
+  });
+  expect(schema.sameAs).toContain("https://github.com/rekurt");
+});
+
 test("project actions map only to declared public surfaces", async ({ page }) => {
   await page.goto("/projects/vpn-hub/");
   await expect(page.getByRole("heading", { level: 1, name: "vpn-hub" })).toBeVisible();

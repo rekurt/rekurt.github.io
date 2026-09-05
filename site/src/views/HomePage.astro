@@ -21,9 +21,17 @@ const releases = products
   .slice(0, 6);
 const titles = { en: "rekurt — engineered systems and open source", ru: "rekurt — инженерные системы и open source", "zh-cn": "rekurt — 工程系统与开源项目" } as const;
 const metricLabels = { en: "Catalog summary", ru: "Сводка каталога", "zh-cn": "目录概览" } as const;
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "rekurt",
+  url: "https://rekurt.github.io/",
+  sameAs: ["https://github.com/rekurt"],
+  knowsAbout: ["Backend engineering", "Fintech", "Cryptography", "Infrastructure", "Developer tools"],
+};
 ---
 
-<BaseLayout title={titles[locale]} description={t.homeIntro} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt}>
+<BaseLayout title={titles[locale]} description={t.homeIntro} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt} jsonLd={schema}>
   <section class="hero">
     <p class="eyebrow">{t.homeEyebrow}</p>
     <h1>{t.homeTitle}</h1>
