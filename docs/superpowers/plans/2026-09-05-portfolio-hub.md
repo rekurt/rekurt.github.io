@@ -897,13 +897,13 @@ git commit -m "chore(catalog): register portfolio hub"
 git push origin main
 ```
 
-- [ ] **Step 6: Дождаться и проверить Actions**
+- [x] **Step 6: Дождаться и проверить Actions**
 
 Run: `gh run list --repo rekurt/rekurt.github.io --limit 10`
 Expected: latest CI, sync и deploy runs имеют conclusion `success`. Для активного run:
 `gh run watch <run-id> --repo rekurt/rekurt.github.io --exit-status`.
 
-- [ ] **Step 7: Проверить production HTTP и содержание**
+- [x] **Step 7: Проверить production HTTP и содержание**
 
 ```bash
 for path in / /projects/ /registry/ /ru/ /projects/mac-coffee/; do
@@ -914,14 +914,14 @@ done
 Expected: пять ответов 200. HTML `/registry/` содержит `rekurt/rekurt.github.io`; detail
 `mac-coffee` содержит `Elliotwu-7/Mac-Coffee`; `/ru/` имеет `lang="ru"`.
 
-- [ ] **Step 8: Провести requirement-by-requirement audit**
+- [x] **Step 8: Провести requirement-by-requirement audit**
 
 `docs/production-verification.md` фиксирует commit SHA, Actions run URLs, Pages deployment
 URL, registry/product counts, шесть исходных project websites, package docs, EN/RU routes,
 mobile/desktop QA, security invariants и результат live curl. Каждый пункт спецификации
 получает `PASS` и конкретную команду/URL доказательства.
 
-- [ ] **Step 9: Зафиксировать финальный отчёт и push**
+- [x] **Step 9: Зафиксировать финальный отчёт и push**
 
 ```bash
 git add docs/production-verification.md
