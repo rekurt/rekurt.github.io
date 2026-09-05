@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "owner": "rekurt",
+  "syncedAt": "2026-09-05T06:00:00Z",
+  "products": [
+    {
+      "slug": "git-barber",
+      "primaryRepo": "rekurt/git-barber",
+      "repositories": ["rekurt/git-barber"],
+      "kind": "cli",
+      "domain": "developer-tools",
+      "accent": "violet",
+      "featured": true,
+      "maintainedFork": false,
+      "summary": {
+        "en": "Safely clean stale Git branches.",
+        "ru": "Безопасная очистка устаревших веток Git.",
+        "zhCN": "安全清理 Git 分支。"
+      },
+      "install": ["brew install rekurt/tap/git-barber"],
+      "links": [
+        {"kind": "website", "url": "https://rekurt.github.io/git-barber/"},
+        {"kind": "source", "url": "https://github.com/rekurt/git-barber"},
+        {"kind": "release", "url": "https://github.com/rekurt/git-barber/releases/tag/v0.3.0"}
+      ],
+      "version": {
+        "value": "v0.3.0",
+        "source": "release",
+        "url": "https://github.com/rekurt/git-barber/releases/tag/v0.3.0"
+      }
+    },
+    {
+      "slug": "ymsdk",
+      "primaryRepo": "rekurt/ymsdk",
+      "repositories": ["rekurt/ymsdk"],
+      "kind": "sdk",
+      "domain": "sdk",
+      "accent": "cyan",
+      "featured": true,
+      "maintainedFork": false,
+      "summary": {
+        "en": "Go SDK for Yandex Messenger bots.",
+        "ru": "Go SDK для ботов Яндекс Мессенджера.",
+        "zhCN": "用于 Yandex Messenger 机器人的 Go SDK。"
+      },
+      "install": ["go get github.com/rekurt/ymsdk"],
+      "links": [
+        {"kind": "website", "url": "https://rekurt.github.io/ymsdk/"},
+        {"kind": "source", "url": "https://github.com/rekurt/ymsdk"}
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "nameWithOwner": "rekurt/git-barber",
+      "name": "git-barber",
+      "description": "Safe Git branch cleanup",
+      "url": "https://github.com/rekurt/git-barber",
+      "visibility": "public",
+      "fork": false,
+      "language": "Rust",
+      "topics": ["git", "rust", "tui"],
+      "homepage": "https://rekurt.github.io/git-barber/",
+      "hasPages": true,
+      "defaultBranch": "master",
+      "headSha": "abc123",
+      "license": "MIT OR Apache-2.0",
+      "updatedAt": "2026-09-05T05:00:00Z",
+      "pushedAt": "2026-09-05T05:00:00Z",
+      "archived": false,
+      "stars": 7,
+      "role": "primary",
+      "links": [
+        {"kind": "website", "url": "https://rekurt.github.io/git-barber/"},
+        {"kind": "source", "url": "https://github.com/rekurt/git-barber"}
+      ],
+      "version": {
+        "value": "v0.3.0",
+        "source": "release",
+        "url": "https://github.com/rekurt/git-barber/releases/tag/v0.3.0"
+      }
+    },
+    {
+      "nameWithOwner": "rekurt/ymsdk",
+      "name": "ymsdk",
+      "url": "https://github.com/rekurt/ymsdk",
+      "visibility": "public",
+      "fork": false,
+      "language": "Go",
+      "hasPages": true,
+      "defaultBranch": "master",
+      "headSha": "def456",
+      "license": "MIT",
+      "updatedAt": "2026-09-04T05:00:00Z",
+      "pushedAt": "2026-09-04T05:00:00Z",
+      "archived": false,
+      "stars": 3,
+      "role": "primary",
+      "links": [
+        {"kind": "website", "url": "https://rekurt.github.io/ymsdk/"},
+        {"kind": "source", "url": "https://github.com/rekurt/ymsdk"}
+      ]
+    }
+  ]
+}
