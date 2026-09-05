@@ -65,6 +65,8 @@ func TestContainsInsecureAssetDistinguishesNavigationFromLoadedResources(t *test
 		{name: "image", html: `<img src="http://example.com/preview.png">`, want: true},
 		{name: "script", html: `<script src="http://example.com/app.js"></script>`, want: true},
 		{name: "stylesheet", html: `<link rel="stylesheet" href="http://example.com/app.css">`, want: true},
+		{name: "data URI namespace", html: `<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'></svg>">`, want: false},
+		{name: "mixed source set", html: `<source srcset="https://example.com/a.webp 1x, http://example.com/b.webp 2x">`, want: true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

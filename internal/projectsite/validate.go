@@ -152,7 +152,7 @@ func containsInsecureAsset(data []byte) bool {
 				value := strings.ToLower(strings.TrimSpace(attribute.Val))
 				loadedResource := attribute.Key == "src" || attribute.Key == "srcset" ||
 					(node.Data == "link" && attribute.Key == "href")
-				if loadedResource && strings.Contains(value, "http://") {
+				if loadedResource && hasInsecureURL(value) {
 					insecure = true
 					return
 				}
@@ -173,4 +173,14 @@ func containsInsecureAsset(data []byte) bool {
 	}
 	walk(document)
 	return insecure
+}
+
+func hasInsecureURL(value string) bool {
+	for _, candidate := range strings.Split(value, ",") {
+		fields := strings.Fields(strings.TrimSpace(candidate))
+		if len(fields) > 0 && strings.HasPrefix(fields[0], "http://") {
+			return true
+		}
+	}
+	return false
 }
