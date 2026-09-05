@@ -929,7 +929,7 @@ git commit -m "docs: record production verification"
 git push origin main
 ```
 
-- [ ] **Step 10: Проверить финальный чистый state**
+- [x] **Step 10: Проверить финальный чистый state**
 
 Run: `git status --short --branch && git rev-parse HEAD && gh run list --repo rekurt/rekurt.github.io --limit 5`
 Expected: `main...origin/main`, нет tracked changes, финальный deploy успешен.
