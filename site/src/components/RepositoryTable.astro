@@ -1,8 +1,8 @@
 ---
 import type { Copy } from "../i18n/copy";
-import type { Repository } from "../lib/catalog";
+import type { Locale, Repository } from "../lib/catalog";
 
-interface Props { repositories: Repository[]; t: Copy; locale: "en" | "ru" }
+interface Props { repositories: Repository[]; t: Copy; locale: Locale }
 const { repositories, t, locale } = Astro.props;
 const roleLabels: Record<string, string> = {
   primary: t.rolePrimary,

@@ -2,10 +2,14 @@ import { expect, test } from "@playwright/test";
 
 test("primary navigation and locale round trip", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator('link[rel="alternate"]')).toHaveCount(4);
+  await expect(page.locator('link[rel="alternate"][hreflang="zh-CN"]')).toHaveAttribute("href", "https://rekurt.github.io/zh-cn/");
   await page.keyboard.press("Tab");
   await expect(page.getByRole("link", { name: "Skip to content" })).toBeFocused();
   await page.getByRole("link", { name: "Русский" }).click();
   await expect(page).toHaveURL(/\/ru\/$/);
+  await page.getByRole("link", { name: "简体中文" }).click();
+  await expect(page).toHaveURL(/\/zh-cn\/$/);
   await page.getByRole("link", { name: "English" }).click();
   await expect(page).toHaveURL(/\/$/);
 });

@@ -2,14 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ReleaseList from "../components/ReleaseList.astro";
-import { copy } from "../i18n/copy";
+import { copy, localePrefix } from "../i18n/copy";
 import { getCatalog, getProducts, getRepository, type Locale } from "../lib/catalog";
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const t = copy[locale];
-const prefix = locale === "ru" ? "/ru" : "";
-const canonicalPath = locale === "ru" ? "/ru/" : "/";
+const prefix = localePrefix(locale);
+const canonicalPath = `${prefix}/`;
 const catalog = getCatalog();
 const products = getProducts(locale);
 const featured = products.filter((product) => product.featured);
@@ -19,10 +19,11 @@ const releases = products
   .map((product) => ({ product, repository: getRepository(product.primaryRepo) }))
   .sort((a, b) => b.repository.pushedAt.localeCompare(a.repository.pushedAt))
   .slice(0, 6);
-const title = locale === "ru" ? "rekurt — инженерные системы и open source" : "rekurt — engineered systems and open source";
+const titles = { en: "rekurt — engineered systems and open source", ru: "rekurt — инженерные системы и open source", "zh-cn": "rekurt — 工程系统与开源项目" } as const;
+const metricLabels = { en: "Catalog summary", ru: "Сводка каталога", "zh-cn": "目录概览" } as const;
 ---
 
-<BaseLayout title={title} description={t.homeIntro} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt}>
+<BaseLayout title={titles[locale]} description={t.homeIntro} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt}>
   <section class="hero">
     <p class="eyebrow">{t.homeEyebrow}</p>
     <h1>{t.homeTitle}</h1>
@@ -33,7 +34,7 @@ const title = locale === "ru" ? "rekurt — инженерные системы 
     </div>
   </section>
 
-  <dl class="metrics" aria-label={locale === "ru" ? "Сводка каталога" : "Catalog summary"}>
+  <dl class="metrics" aria-label={metricLabels[locale]}>
     <div><dt>{t.metricProducts}</dt><dd>{products.length}</dd></div>
     <div><dt>{t.metricRepositories}</dt><dd>{catalog.repositories.length}</dd></div>
     <div><dt>{t.metricOriginals}</dt><dd>{catalog.repositories.filter((repository) => !repository.fork).length}</dd></div>

@@ -15,10 +15,13 @@ describe("catalog selectors", () => {
   it("localizes without changing project identity", () => {
     const en = getProduct("vpn-hub", "en");
     const ru = getProduct("vpn-hub", "ru");
+    const zh = getProduct("vpn-hub", "zh-cn");
     expect(en.slug).toBe(ru.slug);
+    expect(en.slug).toBe(zh.slug);
     expect(en.summary).not.toBe(ru.summary);
     expect(en.summary).toBe(en.summaries.en);
     expect(ru.summary).toBe(ru.summaries.ru);
+    expect(zh.summary).toBe(zh.summaries.zhCN);
   });
 
   it("returns detached product collections", () => {

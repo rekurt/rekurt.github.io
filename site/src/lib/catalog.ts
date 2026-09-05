@@ -1,6 +1,6 @@
 import snapshotData from "../data/generated/catalog.json";
 
-export type Locale = "en" | "ru";
+export type Locale = "en" | "ru" | "zh-cn";
 export type LinkKind = "website" | "documentation" | "source" | "release";
 
 export interface CatalogLink {
@@ -30,7 +30,8 @@ export interface Product {
   featured: boolean;
   maintainedFork: boolean;
   upstream?: string;
-  summary: { en: string; ru: string };
+  accent: "amber" | "coral" | "cyan" | "emerald" | "violet";
+  summary: { en: string; ru: string; zhCN: string };
   install: string[];
   links: CatalogLink[];
   version?: Version;
@@ -97,7 +98,7 @@ function localize(product: Product, locale: Locale): LocalizedProduct {
   return {
     ...clone(product),
     name: product.primaryRepo.split("/").at(-1) ?? product.slug,
-    summary: product.summary[locale],
+    summary: locale === "zh-cn" ? product.summary.zhCN : product.summary[locale],
     summaries: clone(product.summary),
     languages: [...new Set(languages)],
   };

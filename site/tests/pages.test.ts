@@ -7,19 +7,24 @@ describe("static route contracts", () => {
   it("builds all localized product paths", () => {
     const en = productPaths("en");
     const ru = productPaths("ru");
+    const zh = productPaths("zh-cn");
     expect(en).toHaveLength(14);
     expect(ru).toHaveLength(14);
+    expect(zh).toHaveLength(14);
     expect(en.map((path) => path.params.slug)).toEqual(ru.map((path) => path.params.slug));
+    expect(en.map((path) => path.params.slug)).toEqual(zh.map((path) => path.params.slug));
     expect(en.every((path) => path.props.locale === "en")).toBe(true);
     expect(ru.every((path) => path.props.locale === "ru")).toBe(true);
+    expect(zh.every((path) => path.props.locale === "zh-cn")).toBe(true);
   });
 
-  it("creates a unique bilingual route set", () => {
+  it("creates a unique trilingual route set", () => {
     const paths = allSitePaths();
     expect(new Set(paths).size).toBe(paths.length);
     expect(paths).toContain("/projects/vpn-hub/");
     expect(paths).toContain("/ru/projects/vpn-hub/");
-    expect(paths).toHaveLength(38);
+    expect(paths).toContain("/zh-cn/projects/vpn-hub/");
+    expect(paths).toHaveLength(56);
   });
 
   it("escapes sitemap XML values", () => {

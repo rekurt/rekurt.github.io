@@ -2,14 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LinkGroup from "../components/LinkGroup.astro";
 import VersionBadge from "../components/VersionBadge.astro";
-import { copy } from "../i18n/copy";
+import { copy, localePrefix } from "../i18n/copy";
 import { getCatalog, type LinkKind, type Locale, type LocalizedProduct } from "../lib/catalog";
 
 interface Props { locale: Locale; product: LocalizedProduct }
 const { locale, product } = Astro.props;
 const t = copy[locale];
 const catalog = getCatalog();
-const prefix = locale === "ru" ? "/ru" : "";
+const prefix = localePrefix(locale);
 const canonicalPath = `${prefix}/projects/${product.slug}/`;
 const repositories = product.repositories.map((name) => catalog.repositories.find((repository) => repository.nameWithOwner === name)).filter((repository) => repository !== undefined);
 const labels: Record<LinkKind, string> = { website: t.linkWebsite, documentation: t.linkDocumentation, source: t.linkSource, release: t.linkRelease };
