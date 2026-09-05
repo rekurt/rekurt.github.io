@@ -137,6 +137,40 @@ func bytesContainAll(data []byte, values []string) bool {
 }
 
 func containsInsecureAsset(data []byte) bool {
-	text := strings.ToLower(string(data))
-	return strings.Contains(text, `href="http://`) || strings.Contains(text, `src="http://`)
+	document, err := nethtml.Parse(strings.NewReader(string(data)))
+	if err != nil {
+		return strings.Contains(strings.ToLower(string(data)), `src="http://`)
+	}
+	insecure := false
+	var walk func(*nethtml.Node)
+	walk = func(node *nethtml.Node) {
+		if insecure {
+			return
+		}
+		if node.Type == nethtml.ElementNode {
+			for _, attribute := range node.Attr {
+				value := strings.ToLower(strings.TrimSpace(attribute.Val))
+				loadedResource := attribute.Key == "src" || attribute.Key == "srcset" ||
+					(node.Data == "link" && attribute.Key == "href")
+				if loadedResource && strings.Contains(value, "http://") {
+					insecure = true
+					return
+				}
+				if attribute.Key == "style" && strings.Contains(value, "url(http://") {
+					insecure = true
+					return
+				}
+			}
+		}
+		if node.Type == nethtml.TextNode && node.Parent != nil && node.Parent.Data == "style" &&
+			strings.Contains(strings.ToLower(node.Data), "url(http://") {
+			insecure = true
+			return
+		}
+		for child := node.FirstChild; child != nil; child = child.NextSibling {
+			walk(child)
+		}
+	}
+	walk(document)
+	return insecure
 }

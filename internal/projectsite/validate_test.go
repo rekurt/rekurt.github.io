@@ -54,3 +54,23 @@ func TestValidateRejectsBrokenCanonicalAndLinkGraph(t *testing.T) {
 		}
 	}
 }
+
+func TestContainsInsecureAssetDistinguishesNavigationFromLoadedResources(t *testing.T) {
+	tests := []struct {
+		name string
+		html string
+		want bool
+	}{
+		{name: "external navigation", html: `<a href="http://www.tc26.ru/">TC26</a>`, want: false},
+		{name: "image", html: `<img src="http://example.com/preview.png">`, want: true},
+		{name: "script", html: `<script src="http://example.com/app.js"></script>`, want: true},
+		{name: "stylesheet", html: `<link rel="stylesheet" href="http://example.com/app.css">`, want: true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := containsInsecureAsset([]byte(tt.html)); got != tt.want {
+				t.Fatalf("containsInsecureAsset() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
