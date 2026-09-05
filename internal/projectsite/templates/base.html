@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="{{.Page.Lang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{.Page.Description}}">
+    <meta name="theme-color" content="#080b10">
+    <meta name="generator" content="rekurt project family kit">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{.Page.Canonical}}">
+    <meta property="og:title" content="{{.Page.Title}}">
+    <meta property="og:description" content="{{.Page.Description}}">
+    <meta property="og:locale" content="{{.Page.Lang}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{.Page.Title}}">
+    <meta name="twitter:description" content="{{.Page.Description}}">
+    <link rel="canonical" href="{{.Page.Canonical}}">
+    {{range .Alternates}}<link rel="alternate" hreflang="{{.Lang}}" href="{{.URL}}">
+    {{end}}<link rel="stylesheet" href="{{.AssetPrefix}}family.css">
+    <title>{{.Page.Title}}</title>
+    <script type="application/ld+json">{{.Structured}}</script>
+  </head>
+  <body class="layout-{{.Layout}} accent-{{.Accent}}">
+    <a class="skip-link" href="#content">{{.Copy.SkipToContent}}</a>
+    <header class="family-bar" data-rekurt-family>
+      <nav class="family-nav" aria-label="{{.Copy.PrimaryNav}}">
+        <a class="family-brand" href="https://rekurt.github.io/">
+          <span class="family-mark" aria-hidden="true">R</span>
+          <span>{{.Copy.Family}}</span>
+        </a>
+        <div class="family-links">
+          <a href="{{.DirectoryHref}}">{{.Copy.AllProjects}} <span class="count">{{.SiblingCount}}</span></a>
+          <a href="https://github.com/{{.Owner}}">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow">{{.Domain}} / {{.Kind}}</p>
+          <h1>{{.Name}}</h1>
+          <p class="summary">{{.Page.Summary}}</p>
+          <div class="actions">
+            {{range .Actions}}<a class="button {{if eq .Kind "source"}}primary{{end}}" href="{{.URL}}" rel="noreferrer">{{.Label}} <span aria-hidden="true">↗</span></a>{{end}}
+          </div>
+        </div>
+        <div class="system-visual" aria-hidden="true">
+          <div class="visual-top"><span></span><span></span><span></span><b>{{.Name}}.system</b></div>
+          <div class="visual-body">
+            <p><i>01</i><span>source</span><strong>verified</strong></p>
+            <p><i>02</i><span>version</span><strong>{{.Version}}</strong></p>
+            <p><i>03</i><span>language</span><strong>{{.Language}}</strong></p>
+            <div class="signal"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <dl class="status-grid shell">
+        <div><dt>{{.Copy.Version}}</dt><dd>{{.Version}}</dd></div>
+        <div><dt>{{.Copy.Language}}</dt><dd>{{.Language}}</dd></div>
+        <div><dt>{{.Copy.License}}</dt><dd>{{.License}}</dd></div>
+        <div><dt>{{.Copy.Updated}}</dt><dd><time datetime="{{.Updated}}">{{.Updated}}</time></dd></div>
+      </dl>
+
+      {{if .Install}}<section class="content-section shell install-section" aria-labelledby="install-title">
+        <div class="section-heading">
+          <p class="section-index">01 / {{.Copy.Install}}</p>
+          <h2 id="install-title">{{.Copy.Install}}</h2>
+        </div>
+        <div class="commands">
+          {{range .Install}}<div class="command"><code>{{.}}</code><button type="button" data-copy="{{.}}"><span>{{$.Copy.Copy}}</span></button></div>{{end}}
+        </div>
+      </section>{{end}}
+
+      {{if .Readme}}<section class="content-section shell readme-section" aria-labelledby="overview-title">
+        <div class="section-heading split-heading">
+          <div><p class="section-index">02 / README</p><h2 id="overview-title">{{.Copy.Overview}}</h2><p>{{.Copy.RepositoryDocs}}</p></div>
+          <a class="text-link" href="{{.Page.ReadmeSourceURL}}" rel="noreferrer">README ↗</a>
+        </div>
+        <article class="readme">{{.Readme}}</article>
+      </section>{{end}}
+
+      <section class="family-section">
+        <div class="shell family-callout">
+          <div>
+            <p class="section-index">{{if .Readme}}03{{else}}02{{end}} / {{.Copy.AllProjects}}</p>
+            <h2>{{.Copy.FamilyTitle}}</h2>
+            <p>{{.Copy.FamilyIntro}}</p>
+          </div>
+          <a class="button primary" href="{{.DirectoryHref}}">{{.Copy.AllProjects}} <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p><a href="https://rekurt.github.io/">{{.Copy.AuthorHub}}</a> · <a href="https://github.com/{{.Owner}}/{{.Name}}">{{.Copy.Source}}</a></p>
+        <p>{{.Copy.GeneratedFrom}} · {{.GeneratedAt}}</p>
+        <nav class="locale-nav" aria-label="{{.Copy.LanguageNav}}">
+          {{range .Alternates}}{{if ne .Lang "x-default"}}<a href="{{.URL}}"{{if eq .Lang $.Page.Lang}} aria-current="page"{{end}}>{{.Name}}</a>{{end}}{{end}}
+        </nav>
+      </div>
+    </footer>
+    <script src="{{.AssetPrefix}}family.js" defer></script>
+  </body>
+</html>

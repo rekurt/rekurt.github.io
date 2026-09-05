@@ -1,6 +1,7 @@
 package projectsite
 
 import (
+	"bytes"
 	"fmt"
 	"net/url"
 	"os"
@@ -10,6 +11,8 @@ import (
 	"github.com/rekurt/rekurt.github.io/internal/catalog"
 	readmemarkdown "github.com/rekurt/rekurt.github.io/internal/markdown"
 	catalogsync "github.com/rekurt/rekurt.github.io/internal/sync"
+	nethtml "golang.org/x/net/html"
+	"golang.org/x/net/html/atom"
 )
 
 type localeDefinition struct {
@@ -45,6 +48,9 @@ func Resolve(options Options) (Model, error) {
 	}
 	if output == repositoryRoot {
 		return Model{}, fmt.Errorf("repository and output must differ")
+	}
+	if filepath.Dir(output) == output {
+		return Model{}, fmt.Errorf("output must not be a filesystem root")
 	}
 
 	snapshot, err := catalogsync.ReadSnapshot(options.SnapshotPath)
@@ -142,7 +148,37 @@ func readLocalizedREADME(root string, candidates []string, repository catalog.Re
 		if err != nil {
 			return catalog.Readme{}, "", fmt.Errorf("render %s: %w", filename, err)
 		}
+		readme.HTML, err = demoteReadmeTitle(readme.HTML)
+		if err != nil {
+			return catalog.Readme{}, "", fmt.Errorf("normalize %s headings: %w", filename, err)
+		}
 		return readme, filename, nil
 	}
 	return catalog.Readme{}, "", nil
+}
+
+func demoteReadmeTitle(source string) (string, error) {
+	context := &nethtml.Node{Type: nethtml.ElementNode, Data: "div", DataAtom: atom.Div}
+	nodes, err := nethtml.ParseFragment(strings.NewReader(source), context)
+	if err != nil {
+		return "", err
+	}
+	var walk func(*nethtml.Node)
+	walk = func(node *nethtml.Node) {
+		if node.Type == nethtml.ElementNode && node.Data == "h1" {
+			node.Data = "h2"
+			node.DataAtom = atom.H2
+		}
+		for child := node.FirstChild; child != nil; child = child.NextSibling {
+			walk(child)
+		}
+	}
+	var output bytes.Buffer
+	for _, node := range nodes {
+		walk(node)
+		if err := nethtml.Render(&output, node); err != nil {
+			return "", err
+		}
+	}
+	return output.String(), nil
 }

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{.Page.Lang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{.Copy.FamilyIntro}}">
+    <meta name="theme-color" content="#080b10">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{.Page.Canonical}}projects/">
+    <meta property="og:title" content="{{.Copy.AllProjects}} — rekurt">
+    <meta property="og:description" content="{{.Copy.FamilyIntro}}">
+    <link rel="canonical" href="{{.Page.Canonical}}projects/">
+    {{range .Alternates}}<link rel="alternate" hreflang="{{.Lang}}" href="{{.URL}}">
+    {{end}}<link rel="stylesheet" href="{{.AssetPrefix}}family.css">
+    <title>{{.Copy.AllProjects}} — rekurt</title>
+  </head>
+  <body class="directory-page accent-{{.Accent}}">
+    <a class="skip-link" href="#content">{{.Copy.SkipToContent}}</a>
+    <header class="family-bar" data-rekurt-family>
+      <nav class="family-nav" aria-label="{{.Copy.PrimaryNav}}">
+        <a class="family-brand" href="https://rekurt.github.io/"><span class="family-mark" aria-hidden="true">R</span><span>{{.Copy.Family}}</span></a>
+        <div class="family-links"><a href="{{.ProjectHref}}">{{.Copy.BackToProject}}</a><a href="https://github.com/rekurt">GitHub</a></div>
+      </nav>
+    </header>
+    <main id="content" class="shell directory-main">
+      <header class="directory-hero">
+        <p class="eyebrow">rekurt / open source</p>
+        <h1>{{.Copy.AllProjects}}</h1>
+        <p>{{.Copy.FamilyIntro}}</p>
+      </header>
+      <nav class="project-directory" aria-label="{{.Copy.SiblingNav}}">
+        {{range .Siblings}}<a class="project-tile accent-{{.Accent}}" href="{{.URL}}">
+          <span class="tile-index">{{.Domain}} / {{.Kind}}</span>
+          <strong>{{.Name}}</strong>
+          <span>{{.Summary}}</span>
+          <b>{{$.Copy.OpenProject}} <i aria-hidden="true">↗</i></b>
+        </a>{{end}}
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="shell footer-inner"><p><a href="https://rekurt.github.io/">{{.Copy.AuthorHub}}</a> · <a href="{{.ProjectHref}}">{{.Name}}</a></p><p>{{.Copy.GeneratedFrom}} · {{.GeneratedAt}}</p><nav class="locale-nav" aria-label="{{.Copy.LanguageNav}}">{{range .Alternates}}{{if ne .Lang "x-default"}}<a href="{{.URL}}"{{if eq .Lang $.Page.Lang}} aria-current="page"{{end}}>{{.Name}}</a>{{end}}{{end}}</nav></div></footer>
+  </body>
+</html>

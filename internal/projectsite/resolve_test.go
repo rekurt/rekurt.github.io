@@ -77,6 +77,7 @@ func TestResolveRejectsInvalidBoundaries(t *testing.T) {
 		{name: "insecure URL", mutate: func(o *Options) { o.BaseURL = "http://rekurt.github.io/git-barber/" }, want: "base URL must use https"},
 		{name: "URL query", mutate: func(o *Options) { o.BaseURL += "?preview=1" }, want: "base URL must not contain query or fragment"},
 		{name: "same repository and output", mutate: func(o *Options) { o.Output = o.Repository }, want: "repository and output must differ"},
+		{name: "filesystem root output", mutate: func(o *Options) { o.Output = filepath.VolumeName(o.Repository) + string(filepath.Separator) }, want: "output must not be a filesystem root"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
