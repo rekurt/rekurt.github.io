@@ -61,7 +61,7 @@ products:
       zh-cn: 安全的终端界面，用于清理普通、squash 和 rebase 合并后的陈旧分支。
     install:
       - brew install rekurt/tap/git-barber
-    website: ""
+    website: https://rekurt.github.io/git-barber/
     documentation: https://github.com/rekurt/git-barber#readme
 
   - slug: vpn-hub
@@ -99,7 +99,7 @@ products:
       zh-cn: 类型安全的 Go SDK，覆盖全部 Yandex Messenger Bot API 方法，并支持重试和速率限制处理。
     install:
       - go get github.com/rekurt/ymsdk
-    website: ""
+    website: https://rekurt.github.io/ymsdk/
     documentation: https://pkg.go.dev/github.com/rekurt/ymsdk
 
   - slug: gost-crypto
@@ -118,7 +118,7 @@ products:
       zh-cn: 面向 GOST 签名、Streebog 哈希、Kuznechik 加密、MGM AEAD 和密钥协商的 Go 库。
     install:
       - go get github.com/rekurt/gost-crypto
-    website: ""
+    website: https://rekurt.github.io/gost-crypto/
     documentation: https://pkg.go.dev/github.com/rekurt/gost-crypto
 
   - slug: chislo
@@ -156,7 +156,7 @@ products:
       zh-cn: 基于 Docker Compose 的实验环境，用于隔离 AI 助手、配额代理、路由和用户专属角色。
     install:
       - git clone https://github.com/rekurt/cortex-forge.git
-    website: ""
+    website: https://rekurt.github.io/cortex-forge/
     documentation: https://github.com/rekurt/cortex-forge#readme
 
   - slug: dbdiff
@@ -175,7 +175,7 @@ products:
       zh-cn: Rust CLI，用于比较不同环境的数据库模式并生成可审查的迁移 SQL。
     install:
       - cargo install dbdiff
-    website: ""
+    website: https://rekurt.github.io/dbdiff/
     documentation: https://github.com/rekurt/dbdiff#readme
 
   - slug: depth
@@ -194,7 +194,7 @@ products:
       zh-cn: 面向框架无关 Web 交易界面的高性能 Canvas 订单簿深度图。
     install:
       - npm install @rekurt/depth
-    website: ""
+    website: https://rekurt.github.io/depth/
     documentation: https://github.com/rekurt/depth#readme
 
   - slug: gitlab-downloader
@@ -214,7 +214,7 @@ products:
     install:
       - git clone https://github.com/rekurt/gitlab-downloader.git
       - npm ci
-    website: ""
+    website: https://rekurt.github.io/gitlab-downloader/
     documentation: https://github.com/rekurt/gitlab-downloader#readme
 
   - slug: go-propisyu
@@ -233,7 +233,7 @@ products:
       zh-cn: Go 语言俄语数字文本库，支持货币、小数、序数词和名词变格。
     install:
       - go get github.com/rekurt/go-propisyu
-    website: ""
+    website: https://rekurt.github.io/go-propisyu/
     documentation: https://pkg.go.dev/github.com/rekurt/go-propisyu
 
   - slug: prt
@@ -252,7 +252,7 @@ products:
       zh-cn: 面向端口、进程、容器、防火墙事件、告警和网络诊断的实时 TUI。
     install:
       - cargo install prt
-    website: ""
+    website: https://rekurt.github.io/prt/
     documentation: https://crates.io/crates/prt
 
   - slug: sprint-velocity
@@ -271,5 +271,5 @@ products:
       zh-cn: OpenClaw 技能，将 Yandex Tracker 活动整理为每周迭代速度摘要。
     install:
       - git clone https://github.com/rekurt/sprint-velocity.git
-    website: ""
+    website: https://rekurt.github.io/sprint-velocity/
     documentation: https://github.com/rekurt/sprint-velocity#readme

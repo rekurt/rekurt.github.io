@@ -17,8 +17,9 @@ test("primary navigation and locale round trip", async ({ page }) => {
 test("project actions map only to declared public surfaces", async ({ page }) => {
   await page.goto("/projects/vpn-hub/");
   await expect(page.getByRole("heading", { level: 1, name: "vpn-hub" })).toBeVisible();
-  await expect(page.getByRole("link", { name: /^Website/ })).toHaveAttribute("href", "https://rekurt.github.io/vpn-hub/");
-  await expect(page.getByRole("link", { name: /^Documentation/ }).first()).toHaveAttribute("href", "https://rekurt.github.io/vpn-hub/docs/");
+  const actions = page.locator(".project-actions");
+  await expect(actions.getByRole("link", { name: /^Website/ })).toHaveAttribute("href", "https://rekurt.github.io/vpn-hub/");
+  await expect(actions.getByRole("link", { name: /^Documentation/ })).toHaveAttribute("href", "https://rekurt.github.io/vpn-hub/docs/");
 });
 
 test("catalog filters without hiding content by default", async ({ page }) => {

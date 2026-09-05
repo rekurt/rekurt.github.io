@@ -42,7 +42,7 @@ func Validate(options Options) error {
 		if !bytesContainAll(root, []string{"data-rekurt-family", "https://rekurt.github.io/"}) {
 			failures = append(failures, errors.New("root family navigation is incomplete"))
 		}
-		if containsInsecureAsset(root) {
+		if HasInsecureAsset(root) {
 			failures = append(failures, errors.New("root contains insecure asset or link"))
 		}
 	}
@@ -69,7 +69,7 @@ func Validate(options Options) error {
 				failures = append(failures, fmt.Errorf("%s project directory missing sibling %s", page.Locale, sibling.Slug))
 			}
 		}
-		if containsInsecureAsset(data) {
+		if HasInsecureAsset(data) {
 			failures = append(failures, fmt.Errorf("%s project directory contains insecure asset or link", page.Locale))
 		}
 	}
@@ -136,7 +136,7 @@ func bytesContainAll(data []byte, values []string) bool {
 	return true
 }
 
-func containsInsecureAsset(data []byte) bool {
+func HasInsecureAsset(data []byte) bool {
 	document, err := nethtml.Parse(strings.NewReader(string(data)))
 	if err != nil {
 		return strings.Contains(strings.ToLower(string(data)), `src="http://`)

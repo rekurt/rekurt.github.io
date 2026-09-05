@@ -92,6 +92,8 @@ jobs:
 
 该流程读取最新仓库文档、刷新公开版本元数据、构建三种语言、验证产物并通过 GitHub Pages 部署。现有应用在自己的构建之后，以同样的 slug、catalog snapshot、仓库目录、产物目录和 HTTPS base URL 运行 `project-site decorate` 与 `project-site validate`。
 
+运行 `make site-fleet-check` 可在不跟随重定向的情况下验证整个生产网站系列。检查器只访问目录中的 Pages URL，并要求部署的 build manifest、canonical、JSON-LD、语言路由、sitemap、安全加载资源、作者主页链接以及全部关联项目链接均正确。
+
 ## 生成文件与恢复
 
 不要手动编辑 `site/src/data/generated/catalog.json` 或 `docs/repository-audit.md`。同步工作流在每小时第 17 分钟运行，只有公开数据发生实质变化时才提交。

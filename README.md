@@ -97,6 +97,14 @@ go run ./cmd/project-site decorate --slug project-slug --snapshot site/src/data/
 go run ./cmd/project-site validate --slug project-slug --snapshot site/src/data/generated/catalog.json --repo ../project --out ../_site --base-url https://rekurt.github.io/project/
 ```
 
+Verify the complete production family without following redirects:
+
+```bash
+make site-fleet-check
+```
+
+The checker reads only catalog-owned Pages URLs and requires the deployed build manifest, canonical metadata, JSON-LD, locale routes, sitemap, safe loaded resources, the author hub, and every sibling project link.
+
 ## Generated files
 
 Do not edit these by hand:

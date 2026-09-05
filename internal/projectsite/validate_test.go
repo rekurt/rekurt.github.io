@@ -70,8 +70,8 @@ func TestContainsInsecureAssetDistinguishesNavigationFromLoadedResources(t *test
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := containsInsecureAsset([]byte(tt.html)); got != tt.want {
-				t.Fatalf("containsInsecureAsset() = %v, want %v", got, tt.want)
+			if got := HasInsecureAsset([]byte(tt.html)); got != tt.want {
+				t.Fatalf("HasInsecureAsset() = %v, want %v", got, tt.want)
 			}
 		})
 	}
