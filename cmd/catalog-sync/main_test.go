@@ -95,12 +95,14 @@ products:
     repositories: [rekurt/tool]
     kind: cli
     domain: developer-tools
+    accent: cyan
     featured: true
     maintained_fork: false
     upstream: ""
     summary:
       en: Useful tool.
       ru: Полезный инструмент.
+      zh-cn: 实用工具。
     install: [brew install tool]
     website: https://rekurt.github.io/tool/
     documentation: https://github.com/rekurt/tool#readme
