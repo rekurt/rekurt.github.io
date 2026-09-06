@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-09-06T21:22:14Z",
+  "syncedAt": "2026-09-06T23:55:52Z",
   "products": [
     {
       "slug": "openkline",
@@ -2169,12 +2169,17 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "7ff4f7f404a084a5fcb5a2325cbb9ae605010e94",
-      "updatedAt": "2026-09-06T14:12:21Z",
-      "pushedAt": "2026-09-06T14:12:18Z",
+      "headSha": "585c950ba4a15cc81e0ae1f2151d44021f14047b",
+      "updatedAt": "2026-09-06T22:07:37Z",
+      "pushedAt": "2026-09-06T22:07:42Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
+      "version": {
+        "value": "v0.2.0",
+        "source": "release",
+        "url": "https://github.com/rekurt/rekurt.github.io/releases/tag/v0.2.0"
+      },
       "links": [
         {
           "kind": "website",
@@ -2183,6 +2188,10 @@
         {
           "kind": "source",
           "url": "https://github.com/rekurt/rekurt.github.io"
+        },
+        {
+          "kind": "release",
+          "url": "https://github.com/rekurt/rekurt.github.io/releases/tag/v0.2.0"
         }
       ]
     },
