@@ -1,0 +1,109 @@
+{
+  "slug": "sprint-velocity",
+  "name": "sprint-velocity",
+  "theme": "weekly",
+  "visual": "report",
+  "image": "",
+  "code": "Sprint Velocity — example\n\nClosed this week       8\nOpen, assigned to me   5\nOverdue                1\n\nFriday · 18:00 · Europe/Moscow",
+  "primary": "#overview",
+  "locales": {
+    "en": {
+      "eyebrow": "A Friday reporting ritual",
+      "headline": "End the week with a clear task snapshot.",
+      "intro": "A small OpenClaw recipe turns Yandex Tracker task counts into a weekly message: closed work, open assignments and overdue tasks.",
+      "features": [
+        {
+          "title": "Three numbers to start with",
+          "body": "See closed tasks, current assignments and overdue work together."
+        },
+        {
+          "title": "A repeatable schedule",
+          "body": "The documented recipe runs every Friday at 18:00 Moscow time and sends the result through OpenClaw."
+        },
+        {
+          "title": "Small enough to inspect",
+          "body": "A Python standard-library script keeps the reporting logic compact and adaptable."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Configure Tracker access",
+          "body": "Follow the repository requirements for credentials and organization settings."
+        },
+        {
+          "title": "Schedule your summary",
+          "body": "Adapt the OpenClaw recipe to your delivery channel and inspect a first report before scheduling."
+        }
+      ],
+      "closing": "Give Friday a useful closing note.",
+      "cta": "Use the recipe",
+      "note": "Task counts are a conversation starter, not a measure of individual productivity or story-point velocity."
+    },
+    "ru": {
+      "demo": "Sprint Velocity — пример\n\nЗакрыто за неделю        8\nОткрыто, назначено мне   5\nПросрочено               1\n\nПятница · 18:00 · Москва",
+      "eyebrow": "Пятничный ритуал отчётности",
+      "headline": "Завершайте неделю понятной сводкой.",
+      "intro": "Небольшой рецепт для OpenClaw превращает данные Яндекс Трекера в еженедельное сообщение: закрытые задачи, открытые назначения и просрочки.",
+      "features": [
+        {
+          "title": "Три числа для начала разговора",
+          "body": "Смотрите закрытые задачи, текущие назначения и просроченную работу вместе."
+        },
+        {
+          "title": "Повторяемое расписание",
+          "body": "Документированный рецепт запускается по пятницам в 18:00 по Москве и отправляет результат через OpenClaw."
+        },
+        {
+          "title": "Достаточно просто для проверки",
+          "body": "Скрипт на стандартной библиотеке Python делает логику отчёта компактной и понятной."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Настройте доступ к Трекеру",
+          "body": "Следуйте требованиям репозитория к учётным данным и настройкам организации."
+        },
+        {
+          "title": "Настройте отправку сводки",
+          "body": "Адаптируйте рецепт OpenClaw к своему каналу и проверьте первый отчёт до включения расписания."
+        }
+      ],
+      "closing": "Завершайте пятницу полезной заметкой.",
+      "cta": "Открыть рецепт",
+      "note": "Количество задач — повод для обсуждения, а не оценка продуктивности человека или velocity в story points."
+    },
+    "zh-cn": {
+      "demo": "Sprint Velocity — 示例\n\n本周已关闭任务      8\n分配给我的待办任务  5\n逾期任务            1\n\n周五 · 18:00 · 莫斯科时间",
+      "eyebrow": "周五的汇报习惯",
+      "headline": "用清晰的任务快照结束一周。",
+      "intro": "一个轻量 OpenClaw 配方，把 Yandex Tracker 的已关闭任务、待办分配和逾期任务整理成每周消息。",
+      "features": [
+        {
+          "title": "用三个数字开始讨论",
+          "body": "同时查看已关闭任务、当前分配和逾期工作。"
+        },
+        {
+          "title": "固定的汇报时间",
+          "body": "文档中的配方在莫斯科时间每周五 18:00 运行，并通过 OpenClaw 发送结果。"
+        },
+        {
+          "title": "简单到可以逐行检查",
+          "body": "基于 Python 标准库的脚本让汇报逻辑保持精简、易于调整。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "配置 Tracker 访问",
+          "body": "按仓库要求配置凭据与组织设置。"
+        },
+        {
+          "title": "安排汇总发送",
+          "body": "按发送渠道调整 OpenClaw 配方，先检查首份报告再启用定时任务。"
+        }
+      ],
+      "closing": "用一条有用的消息结束周五。",
+      "cta": "使用配方",
+      "note": "任务数量用于开启讨论，并非个人生产力或故事点速度的衡量标准。"
+    }
+  }
+}

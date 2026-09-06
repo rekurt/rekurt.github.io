@@ -48,6 +48,16 @@ func Validate(options Options) error {
 	}
 
 	if manifest.Mode == "build" {
+		for _, page := range model.Pages {
+			data, err := os.ReadFile(filepath.Join(model.Output, routeFile(page.Path)))
+			if err != nil {
+				failures = append(failures, err)
+				continue
+			}
+			if err := validateMarketingHTML(model.Product.Slug, page.Locale, data); err != nil {
+				failures = append(failures, err)
+			}
+		}
 		for _, page := range model.Pages[1:] {
 			if err := validateCanonical(filepath.Join(model.Output, routeFile(page.Path)), page.Canonical); err != nil {
 				failures = append(failures, fmt.Errorf("%s canonical: %w", page.Locale, err))

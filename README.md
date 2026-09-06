@@ -69,6 +69,10 @@ Every new public repository appears in `/registry/` automatically after the hour
 
 ## Publish a project site
 
+Individual landing stories live in `internal/projectsite/profiles/<slug>.json`: product identity, demonstration, theme, adoption action, and complete English, Russian and Simplified Chinese copy. Follow an existing profile when adding a marketing site; implement its visual treatment in `assets/marketing.css`. The shared kit preserves navigation and live repository metadata. Existing independent sites can retain their design through `decorate`.
+
+Run `make marketing-check` after deployment to verify the published localized stories, primary actions, themes, images and family links. Profile edits are reviewed copy changes; GitHub sync updates versions and documentation without overwriting them. Child workflows pick up central kit changes on their next push, release, manual run or six-hour schedule.
+
 For a project without an existing website, add this thin caller to `.github/workflows/pages.yml` in its repository:
 
 ```yaml

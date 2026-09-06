@@ -69,6 +69,10 @@ GITHUB_TOKEN="$(gh auth token)" go run ./cmd/catalog-sync sync \
 
 ## 发布项目网站
 
+每个独立落地页由 `internal/projectsite/profiles/<slug>.json` 定义：产品名称、演示、主题、主要操作，以及完整的英文、俄文和简体中文文案。新增营销页面时参考现有配置，并在 `assets/marketing.css` 中实现其视觉设计。共享生成器负责导航和最新仓库信息；已有独立网站通过 `decorate` 保留原有设计。
+
+部署后运行 `make marketing-check`，验证已发布的本地化文案、主要操作、主题、图片和项目目录链接。文案需要人工审阅；GitHub 同步只更新版本和文档，不覆盖产品故事。子仓库在下次推送、发布、手动运行或每六小时的定时任务中获取共享生成器的更新。
+
 没有现有网站的项目只需在自身 `.github/workflows/pages.yml` 中调用共享 workflow：
 
 ```yaml

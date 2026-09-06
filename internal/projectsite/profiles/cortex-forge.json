@@ -1,0 +1,107 @@
+{
+  "slug": "cortex-forge",
+  "name": "CortexForge",
+  "theme": "lab",
+  "visual": "lab",
+  "image": "",
+  "code": "Docker Compose lab\n\nadmin ── quota-proxy ── model API\n             │\n      ┌──────┴──────┐\n   persona A     persona B\n   workspace     workspace\n      └── message-broker ──┘",
+  "primary": "#overview",
+  "locales": {
+    "en": {
+      "eyebrow": "An experimental AI assistant lab",
+      "headline": "Explore a small office of AI personas.",
+      "intro": "Experiment with separate assistant workspaces, token quotas and bot-to-bot messages in a Docker Compose playground.",
+      "features": [
+        {
+          "title": "Give each persona a workspace",
+          "body": "Try different context, memory and persona files for separate assistant instances."
+        },
+        {
+          "title": "Explore quota mechanics",
+          "body": "Observe a proxy that accounts for token budgets and applies per-instance limits."
+        },
+        {
+          "title": "Try collaboration patterns",
+          "body": "Use the message broker to explore inboxes and communication between assistant instances."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Read the lab boundaries",
+          "body": "Inspect Docker access, mounts and the repository setup guide before starting the sandbox."
+        },
+        {
+          "title": "Experiment with test data",
+          "body": "Use disposable environments and synthetic content to explore the mechanics."
+        }
+      ],
+      "closing": "A place to test an idea.",
+      "cta": "Explore the lab",
+      "note": "Experimental and not production-safe. Do not use employee, customer, confidential or regulated data."
+    },
+    "ru": {
+      "eyebrow": "Экспериментальная лаборатория AI-ассистентов",
+      "headline": "Исследуйте маленький офис AI-персонажей.",
+      "intro": "Экспериментируйте с отдельными рабочими пространствами ассистентов, квотами токенов и сообщениями между ботами в Docker Compose.",
+      "features": [
+        {
+          "title": "Дайте каждому своё пространство",
+          "body": "Пробуйте разные контексты, память и файлы персонажей в отдельных инстансах ассистента."
+        },
+        {
+          "title": "Изучите механику квот",
+          "body": "Изучайте прокси, который учитывает бюджеты токенов и применяет лимиты по инстансам."
+        },
+        {
+          "title": "Пробуйте взаимодействие",
+          "body": "Используйте брокер сообщений для экспериментов с входящими и связью между ассистентами."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Изучите ограничения лаборатории",
+          "body": "Перед запуском изучите Docker-доступ, mounts и руководство настройки репозитория."
+        },
+        {
+          "title": "Экспериментируйте на тестовых данных",
+          "body": "Используйте одноразовые окружения и синтетические данные для изучения механики."
+        }
+      ],
+      "closing": "Место, где можно проверить идею.",
+      "cta": "Изучить лабораторию",
+      "note": "Экспериментальный проект, не готовый к production. Не используйте данные сотрудников, клиентов, конфиденциальные или регулируемые данные."
+    },
+    "zh-cn": {
+      "eyebrow": "实验性的 AI 助手实验室",
+      "headline": "探索由 AI 角色组成的小办公室。",
+      "intro": "在 Docker Compose 实验环境中，探索独立助手工作区、令牌配额和机器人间消息。",
+      "features": [
+        {
+          "title": "为角色分配工作区",
+          "body": "为不同助手实例尝试独立的上下文、记忆与角色文件。"
+        },
+        {
+          "title": "探索配额机制",
+          "body": "观察代理如何记录令牌预算并施加实例级限制。"
+        },
+        {
+          "title": "尝试协作模式",
+          "body": "利用消息代理探索收件箱及助手实例间通信。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "了解实验边界",
+          "body": "启动前检查 Docker 访问权限、挂载和仓库配置指南。"
+        },
+        {
+          "title": "使用测试数据实验",
+          "body": "使用可丢弃环境与合成数据来探索机制。"
+        }
+      ],
+      "closing": "一个验证想法的地方。",
+      "cta": "探索实验室",
+      "note": "实验项目，不适合生产环境。不要使用员工、客户、机密或受监管数据。"
+    }
+  }
+}

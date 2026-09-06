@@ -1,0 +1,107 @@
+{
+  "slug": "depth",
+  "name": "depth",
+  "theme": "liquidity",
+  "visual": "image",
+  "image": "docs/assets/pro-dark-terminal.png",
+  "code": "const chart = new DepthChart({\n  container,\n  theme: 'dark',\n  shape: 'step',\n  data: orderBook,\n});\n\nchart.setData(nextSnapshot);\nconst { spread, imbalance } = chart.getMetrics();",
+  "primary": "#install",
+  "locales": {
+    "en": {
+      "eyebrow": "Market depth for your trading product",
+      "headline": "Make liquidity readable.",
+      "intro": "Give traders a clear view of cumulative bids and asks. Embed a focused canvas depth chart in your own interface, with a small TypeScript API.",
+      "features": [
+        {
+          "title": "Correct book math",
+          "body": "Aggregate duplicate prices, remove zero-volume levels and compute cumulative depth in the correct direction."
+        },
+        {
+          "title": "A chart that fits",
+          "body": "Use dark or light themes, stepped or linear shapes, centered or fitted price domains."
+        },
+        {
+          "title": "Own your UI",
+          "body": "Mount with plain DOM code or your framework. Feed snapshots, read metrics and clean up with destroy()."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Mount the chart",
+          "body": "Create a DepthChart in your container and pass bid/ask price-volume levels."
+        },
+        {
+          "title": "Feed your market data",
+          "body": "Push snapshots through setData and use spread or imbalance metrics in the surrounding interface."
+        }
+      ],
+      "closing": "Add depth to your next trading interface.",
+      "cta": "Integrate depth",
+      "note": ""
+    },
+    "ru": {
+      "eyebrow": "Глубина рынка для вашего терминала",
+      "headline": "Покажите ликвидность понятно.",
+      "intro": "Дайте трейдерам ясную картину накопленных заявок на покупку и продажу. Встройте canvas-график глубины в свой интерфейс через компактный TypeScript API.",
+      "features": [
+        {
+          "title": "Корректная математика стакана",
+          "body": "Объединяйте одинаковые цены, удаляйте нулевые объёмы и считайте накопленную глубину в нужном направлении."
+        },
+        {
+          "title": "График под ваш интерфейс",
+          "body": "Выбирайте тёмную или светлую тему, ступенчатую или линейную форму и нужный диапазон цен."
+        },
+        {
+          "title": "Ваш интерфейс остаётся вашим",
+          "body": "Подключайте через DOM или свой фреймворк. Передавайте снимки, читайте метрики и вызывайте destroy() при размонтировании."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Разместите график",
+          "body": "Создайте DepthChart в контейнере и передайте уровни цены и объёма для bid/ask."
+        },
+        {
+          "title": "Подключите рыночные данные",
+          "body": "Обновляйте снимки через setData, а spread и imbalance используйте в соседних элементах интерфейса."
+        }
+      ],
+      "closing": "Добавьте глубину следующему торговому интерфейсу.",
+      "cta": "Подключить depth",
+      "note": ""
+    },
+    "zh-cn": {
+      "eyebrow": "为交易产品呈现市场深度",
+      "headline": "让流动性一目了然。",
+      "intro": "清晰呈现买卖盘的累计深度。通过精简的 TypeScript API，把专注的 Canvas 深度图嵌入自己的界面。",
+      "features": [
+        {
+          "title": "正确的盘口计算",
+          "body": "合并重复价格、移除零成交量档位，并按正确方向计算累计深度。"
+        },
+        {
+          "title": "融入现有界面",
+          "body": "选择深浅主题、阶梯或线性形状，以及居中或完整价格区间。"
+        },
+        {
+          "title": "界面由你掌控",
+          "body": "通过 DOM 或自己的框架挂载，传入快照、读取指标，并在卸载时调用 destroy()。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "挂载图表",
+          "body": "在容器中创建 DepthChart，传入买卖盘的价格与数量档位。"
+        },
+        {
+          "title": "接入市场数据",
+          "body": "通过 setData 更新快照，并在周边界面使用价差或不平衡度指标。"
+        }
+      ],
+      "closing": "为下一个交易界面加入深度。",
+      "cta": "接入 depth",
+      "note": ""
+    }
+  }
+}

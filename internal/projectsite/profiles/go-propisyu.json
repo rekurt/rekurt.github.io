@@ -1,0 +1,107 @@
+{
+  "slug": "go-propisyu",
+  "name": "go-propisyu",
+  "theme": "words",
+  "visual": "receipt",
+  "image": "",
+  "code": "propisyu.Money(1234, 56, propisyu.CurrencyRUB)\n\nодна тысяча двести тридцать четыре рубля\nпятьдесят шесть копеек\n\npropisyu.Ordinal(1, propisyu.GenderFeminine)\n→ первая",
+  "primary": "#install",
+  "locales": {
+    "en": {
+      "eyebrow": "Russian words. Go precision.",
+      "headline": "Amounts your documents can say.",
+      "intro": "Turn numbers into Russian words for invoices, forms and generated documents. Handle currencies, grammatical gender and noun forms through a Go API.",
+      "features": [
+        {
+          "title": "Money, with the right endings",
+          "body": "Use ruble, dollar and euro presets, or define currency forms for your own units."
+        },
+        {
+          "title": "More than integers",
+          "body": "Format decimals, ordinal numbers and all three grammatical genders in generated text."
+        },
+        {
+          "title": "Use the right noun form",
+          "body": "Decline handles quantity-dependent endings, including the special 11–14 range and negative values."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Choose the formatter",
+          "body": "Use Money for amounts, Ordinal for positions, or Decline for counted objects."
+        },
+        {
+          "title": "Put words in your document",
+          "body": "Pass the result into your existing PDF, invoice or template pipeline."
+        }
+      ],
+      "closing": "Let your documents speak Russian.",
+      "cta": "Add to your Go project",
+      "note": ""
+    },
+    "ru": {
+      "eyebrow": "Русские слова. Точность Go.",
+      "headline": "Суммы, которые документы произносят правильно.",
+      "intro": "Превращайте числа в русские слова для счетов, форм и генерируемых документов. Валюты, род и склонения доступны через Go API.",
+      "features": [
+        {
+          "title": "Деньги с правильными окончаниями",
+          "body": "Используйте рубли, доллары и евро или задайте формы для собственных единиц."
+        },
+        {
+          "title": "Больше, чем целые числа",
+          "body": "Форматируйте дроби, порядковые числительные и все три рода в генерируемом тексте."
+        },
+        {
+          "title": "Выбирайте нужную форму слова",
+          "body": "Decline выбирает окончание по количеству, включая особые случаи 11–14 и отрицательные значения."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Выберите форматирование",
+          "body": "Используйте Money для сумм, Ordinal для порядковых чисел и Decline для склонений."
+        },
+        {
+          "title": "Добавьте слова в документ",
+          "body": "Передайте результат в существующий конвейер PDF, счетов или шаблонов."
+        }
+      ],
+      "closing": "Пусть документы говорят по-русски.",
+      "cta": "Добавить в Go-проект",
+      "note": ""
+    },
+    "zh-cn": {
+      "eyebrow": "俄语表达，Go 来实现。",
+      "headline": "让文档正确写出金额。",
+      "intro": "将数字转换为俄语文字，用于发票、表单和生成的文档。通过 Go API 处理货币、语法性别与名词词形。",
+      "features": [
+        {
+          "title": "金额与正确词尾",
+          "body": "使用卢布、美元、欧元预设，或为自定义单位定义词形。"
+        },
+        {
+          "title": "不止整数",
+          "body": "在生成文本中处理小数、序数和三种语法性别。"
+        },
+        {
+          "title": "选择正确名词形式",
+          "body": "Decline 根据数量选择词尾，包括 11–14 的特殊情况和负数。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "选择格式化方法",
+          "body": "金额使用 Money，序数使用 Ordinal，计数对象使用 Decline。"
+        },
+        {
+          "title": "将文字写入文档",
+          "body": "将结果传入现有的 PDF、发票或模板流程。"
+        }
+      ],
+      "closing": "让文档用俄语表达。",
+      "cta": "加入 Go 项目",
+      "note": ""
+    }
+  }
+}

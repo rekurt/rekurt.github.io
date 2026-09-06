@@ -1,0 +1,107 @@
+{
+  "slug": "git-barber",
+  "name": "git-barber",
+  "theme": "barber",
+  "visual": "branches",
+  "image": "assets/demo.gif",
+  "code": "git barber --list\n\n✓ feat/invoice-export     squash\n✓ fix/callback-retry      merged\n✓ chore/update-sdk        rebase\n○ experiment/new-ledger   gone",
+  "primary": "#install",
+  "locales": {
+    "en": {
+      "eyebrow": "A cleaner Git workspace",
+      "headline": "Your work is merged. Trim the branches.",
+      "intro": "Find branches left behind by merge, squash and rebase. Review the evidence, choose what goes, and get back to the work that matters.",
+      "features": [
+        {
+          "title": "Catch squash merges too",
+          "body": "Patch-based detection finds work already in your base branch, even when commit ancestry cannot."
+        },
+        {
+          "title": "See before you delete",
+          "body": "The TUI previews commits and diffstats. A missing upstream alone does not select a branch for deletion."
+        },
+        {
+          "title": "Fit your workflow",
+          "body": "Use the keyboard-driven picker, a read-only list or JSON output. Remote deletion is optional and lease-protected."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Inspect",
+          "body": "Run git barber --list inside your repository, then open the TUI to review candidates."
+        },
+        {
+          "title": "Choose and confirm",
+          "body": "Inspect the preview, keep unfinished work, and confirm only the branches you want removed."
+        }
+      ],
+      "closing": "Make room for your next branch.",
+      "cta": "Install git-barber",
+      "note": ""
+    },
+    "ru": {
+      "eyebrow": "Порядок в Git-репозитории",
+      "headline": "Код уже в основной ветке. Пора убрать лишнее.",
+      "intro": "Находите ветки после merge, squash и rebase. Проверьте изменения, выберите кандидатов на удаление и вернитесь к актуальной работе.",
+      "features": [
+        {
+          "title": "Находите и squash-мерджи",
+          "body": "Сравнение патчей находит уже влитый код, даже если история коммитов этого не показывает."
+        },
+        {
+          "title": "Сначала изучите, потом удаляйте",
+          "body": "TUI показывает коммиты и статистику изменений. Исчезнувший upstream сам по себе не делает ветку кандидатом по умолчанию."
+        },
+        {
+          "title": "Для терминала и скриптов",
+          "body": "Выбирайте ветки с клавиатуры, выводите список без изменений или JSON. Удаление на сервере включается отдельно и проверяет lease."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Проверьте",
+          "body": "Запустите git barber --list в репозитории, затем откройте TUI для проверки кандидатов."
+        },
+        {
+          "title": "Выберите и подтвердите",
+          "body": "Посмотрите превью, оставьте незавершённую работу и подтвердите удаление выбранных веток."
+        }
+      ],
+      "closing": "Освободите место для следующей ветки.",
+      "cta": "Установить git-barber",
+      "note": ""
+    },
+    "zh-cn": {
+      "eyebrow": "让 Git 工作区井然有序",
+      "headline": "代码已合并，分支该清理了。",
+      "intro": "找出 merge、squash 和 rebase 后留下的分支。查看依据、选择删除对象，然后回到正在推进的工作。",
+      "features": [
+        {
+          "title": "识别 squash 合并",
+          "body": "通过比较补丁识别已合并代码，即使提交历史无法直接证明。"
+        },
+        {
+          "title": "先检查，再删除",
+          "body": "TUI 展示提交和差异统计。仅上游分支消失不会默认选中该分支。"
+        },
+        {
+          "title": "兼顾终端与脚本",
+          "body": "使用键盘选择器、只读列表或 JSON 输出。远程删除需单独启用，并受 lease 检查保护。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "检查",
+          "body": "在仓库中运行 git barber --list，再打开 TUI 检查候选分支。"
+        },
+        {
+          "title": "选择并确认",
+          "body": "查看预览，保留未完成工作，只确认要删除的分支。"
+        }
+      ],
+      "closing": "为下一条分支腾出空间。",
+      "cta": "安装 git-barber",
+      "note": ""
+    }
+  }
+}

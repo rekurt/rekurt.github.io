@@ -1,0 +1,107 @@
+{
+  "slug": "ymsdk",
+  "name": "ymsdk",
+  "theme": "messenger",
+  "visual": "code",
+  "image": "",
+  "code": "cs := client.New(ym.Config{\n    Token: os.Getenv(\"YM_TOKEN\"),\n})\n\nmsg, err := cs.Messages.SendToChat(\n    ctx, \"chat-id\", \"Deployment finished\", nil,\n)\nif err != nil {\n    return err\n}\nfmt.Println(msg.ID)",
+  "primary": "#install",
+  "locales": {
+    "en": {
+      "eyebrow": "Yandex Messenger × Go",
+      "headline": "Build the bot. Keep the plumbing small.",
+      "intro": "Connect notifications, polls and team workflows to Yandex Messenger with typed Go services, retries and rate-limit handling.",
+      "features": [
+        {
+          "title": "One service per job",
+          "body": "Messages, chats, users, polls and updates have dedicated services behind one client."
+        },
+        {
+          "title": "Handle API pressure",
+          "body": "Configure backoff and Retry-After handling. Supported send methods use payload IDs to reduce duplicate retries."
+        },
+        {
+          "title": "Choose your delivery model",
+          "body": "Use polling or a webhook handler with delivery deduplication. Keep the rest of your service in Go."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Create a client",
+          "body": "Read the bot token from your environment and configure the retry policy for your workflow."
+        },
+        {
+          "title": "Connect a real workflow",
+          "body": "Start with a deployment notification, then add updates, polls or chat management through the same client."
+        }
+      ],
+      "closing": "Your next internal bot starts in Go.",
+      "cta": "Install the SDK",
+      "note": ""
+    },
+    "ru": {
+      "eyebrow": "Яндекс Мессенджер × Go",
+      "headline": "Создавайте бота. API-рутину берём на себя.",
+      "intro": "Подключайте уведомления, опросы и рабочие процессы к Яндекс Мессенджеру через типизированные Go-сервисы с повторами и обработкой лимитов.",
+      "features": [
+        {
+          "title": "Сервис под каждую задачу",
+          "body": "Сообщения, чаты, пользователи, опросы и обновления вынесены в отдельные сервисы одного клиента."
+        },
+        {
+          "title": "Учитывайте нагрузку на API",
+          "body": "Настройте backoff и Retry-After. Поддерживаемые методы отправки используют payload ID для защиты от повторной доставки."
+        },
+        {
+          "title": "Выберите способ доставки",
+          "body": "Используйте polling или webhook-обработчик с дедупликацией доставки. Остальной сервис остаётся на Go."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Создайте клиент",
+          "body": "Получите токен бота из окружения и настройте политику повторов под сценарий."
+        },
+        {
+          "title": "Подключите рабочий сценарий",
+          "body": "Начните с уведомления о деплое, затем добавьте обновления, опросы или управление чатами через тот же клиент."
+        }
+      ],
+      "closing": "Следующий внутренний бот начинается с Go.",
+      "cta": "Установить SDK",
+      "note": ""
+    },
+    "zh-cn": {
+      "eyebrow": "Yandex Messenger × Go",
+      "headline": "专注机器人，简化 API 接入。",
+      "intro": "通过类型化 Go 服务接入通知、投票和团队工作流，并处理重试与速率限制。",
+      "features": [
+        {
+          "title": "每类任务都有服务",
+          "body": "消息、聊天、用户、投票和更新由同一客户端下的专用服务处理。"
+        },
+        {
+          "title": "应对 API 限流",
+          "body": "配置退避与 Retry-After 处理；支持的发送方法使用 payload ID 减少重试重复。"
+        },
+        {
+          "title": "选择接收方式",
+          "body": "使用轮询或带投递去重的 webhook 处理器，业务服务继续使用 Go。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "创建客户端",
+          "body": "从环境变量读取机器人令牌，并按工作流配置重试策略。"
+        },
+        {
+          "title": "连接实际工作流",
+          "body": "从部署通知开始，再通过同一客户端接入更新、投票或聊天管理。"
+        }
+      ],
+      "closing": "用 Go 开始下一个内部机器人。",
+      "cta": "安装 SDK",
+      "note": ""
+    }
+  }
+}

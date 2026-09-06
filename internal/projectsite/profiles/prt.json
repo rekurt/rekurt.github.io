@@ -1,0 +1,107 @@
+{
+  "slug": "prt",
+  "name": "prt",
+  "theme": "ports",
+  "visual": "ports",
+  "image": "docs/prt-demo.png",
+  "code": "prt watch 3000 5432 8080\n\n:3000 UP node (2410) since 4m\n:5432 UP postgres (1901) since 4m\n:8080 DOWN since 12s",
+  "primary": "#install",
+  "locales": {
+    "en": {
+      "eyebrow": "Network clarity, inside your terminal",
+      "headline": "Find the process behind the port.",
+      "intro": "Investigate a port conflict, follow connection changes and inspect SSH tunnels from one keyboard-driven workspace on macOS and Linux.",
+      "features": [
+        {
+          "title": "From socket to process",
+          "body": "Inspect command lines, parent processes, open files and the connections that explain what a process is doing."
+        },
+        {
+          "title": "Follow what changes",
+          "body": "A live table highlights new and closed connections. Filter by port, protocol, process, state or user."
+        },
+        {
+          "title": "Bring findings to your tools",
+          "body": "Export a finite JSON or CSV snapshot, stream NDJSON, or watch a small set of development ports."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Start with the port",
+          "body": "Run prt and search for the port or process you are investigating."
+        },
+        {
+          "title": "Follow the context",
+          "body": "Open process details and topology, then inspect or manage the associated SSH forwarding."
+        }
+      ],
+      "closing": "The next port conflict has a name.",
+      "cta": "Install prt",
+      "note": ""
+    },
+    "ru": {
+      "eyebrow": "Сеть как на ладони — в терминале",
+      "headline": "Найдите процесс за занятым портом.",
+      "intro": "Разбирайтесь с конфликтами портов, следите за соединениями и управляйте SSH-туннелями в одном рабочем окне на macOS и Linux.",
+      "features": [
+        {
+          "title": "От сокета к процессу",
+          "body": "Изучайте командную строку, родительские процессы, открытые файлы и соединения — контекст рядом с портом."
+        },
+        {
+          "title": "Замечайте изменения",
+          "body": "Таблица выделяет новые и закрытые соединения. Фильтруйте по порту, протоколу, процессу, состоянию или пользователю."
+        },
+        {
+          "title": "Передавайте результаты дальше",
+          "body": "Выгружайте снимок в JSON/CSV, поток NDJSON или наблюдайте за выбранными портами разработки."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Начните с порта",
+          "body": "Запустите prt и найдите нужный порт или процесс."
+        },
+        {
+          "title": "Изучите контекст",
+          "body": "Откройте детали и топологию процесса, затем проверьте связанные SSH-туннели."
+        }
+      ],
+      "closing": "У следующего конфликта портов есть имя.",
+      "cta": "Установить prt",
+      "note": ""
+    },
+    "zh-cn": {
+      "eyebrow": "在终端里看清网络",
+      "headline": "找到端口背后的进程。",
+      "intro": "在 macOS 和 Linux 上，通过一个键盘驱动的工作区排查端口冲突、跟踪连接变化并管理 SSH 隧道。",
+      "features": [
+        {
+          "title": "从套接字到进程",
+          "body": "查看命令行、父进程、打开的文件及相关连接，理解进程正在做什么。"
+        },
+        {
+          "title": "跟踪变化",
+          "body": "实时表格突出显示新增和关闭的连接，可按端口、协议、进程、状态或用户筛选。"
+        },
+        {
+          "title": "把结果交给工具链",
+          "body": "导出 JSON 或 CSV 快照、持续输出 NDJSON，或监控选定的开发端口。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "从端口开始",
+          "body": "运行 prt，搜索要排查的端口或进程。"
+        },
+        {
+          "title": "追踪上下文",
+          "body": "打开进程详情与拓扑，再检查或管理相关的 SSH 转发。"
+        }
+      ],
+      "closing": "让下一次端口冲突有迹可循。",
+      "cta": "安装 prt",
+      "note": ""
+    }
+  }
+}

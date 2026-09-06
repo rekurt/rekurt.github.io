@@ -1,4 +1,4 @@
-.PHONY: test check build site-kit-test site-fleet-check
+.PHONY: test check build site-kit-test site-fleet-check marketing-check
 
 GO_PACKAGES := $(shell go list ./... | grep -v '/site/' | grep -v '/work/')
 
@@ -19,3 +19,6 @@ site-kit-test:
 
 site-fleet-check:
 	go run ./cmd/site-fleet-check --snapshot site/src/data/generated/catalog.json
+
+marketing-check:
+	node scripts/check-marketing.mjs

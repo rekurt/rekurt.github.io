@@ -41,6 +41,7 @@ type siblingView struct {
 }
 
 type pageView struct {
+	Marketing     *marketingView
 	Page          LocalePage
 	Copy          siteCopy
 	Name          string
@@ -149,7 +150,7 @@ func renderSite(model Model, output string) error {
 			return err
 		}
 	}
-	for _, name := range []string{"family.css", "family.js"} {
+	for _, name := range []string{"family.css", "family.js", "marketing.css"} {
 		data, err := fs.ReadFile(siteFiles, "assets/"+name)
 		if err != nil {
 			return err
@@ -171,6 +172,14 @@ func renderSite(model Model, output string) error {
 }
 
 func makePageView(model Model, page LocalePage) (pageView, error) {
+	marketing, err := marketingFor(model, page)
+	if err != nil {
+		return pageView{}, err
+	}
+	if marketing != nil {
+		page.Title = marketing.Name + " — " + marketing.Text.Headline
+		page.Description = marketing.Text.Intro
+	}
 	data, err := structuredData(model, page)
 	if err != nil {
 		return pageView{}, err
@@ -188,7 +197,8 @@ func makePageView(model Model, page LocalePage) (pageView, error) {
 		language = "—"
 	}
 	return pageView{
-		Page: page, Copy: copyFor(page.Locale), Name: model.Repository.Name, Owner: model.Owner,
+		Marketing: marketing,
+		Page:      page, Copy: copyFor(page.Locale), Name: model.Repository.Name, Owner: model.Owner,
 		Kind: model.Product.Kind, Domain: model.Product.Domain, Accent: model.Product.Accent,
 		Layout: layoutFor(model.Product.Kind), Version: version, License: license, Language: language,
 		Updated: model.Repository.PushedAt.UTC().Format("2006-01-02"), Install: model.Product.Install,
