@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-09-06T14:12:00Z",
+  "syncedAt": "2026-09-06T21:22:14Z",
   "products": [
     {
       "slug": "openkline",
@@ -1862,10 +1862,10 @@
       "defaultBranch": "main",
       "headSha": "993fbde2cee364e50a9fd50ef0734874fdcb8398",
       "license": "MIT",
-      "updatedAt": "2026-09-06T12:39:06Z",
+      "updatedAt": "2026-09-06T21:14:21Z",
       "pushedAt": "2026-09-06T12:39:00Z",
       "archived": false,
-      "stars": 0,
+      "stars": 1,
       "role": "maintained-fork",
       "version": {
         "value": "v2.0.4",
@@ -2169,9 +2169,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "f80e61c08e3a21b1659c601ece3068d47afc1453",
-      "updatedAt": "2026-09-06T12:39:09Z",
-      "pushedAt": "2026-09-06T12:38:40Z",
+      "headSha": "7ff4f7f404a084a5fcb5a2325cbb9ae605010e94",
+      "updatedAt": "2026-09-06T14:12:21Z",
+      "pushedAt": "2026-09-06T14:12:18Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
@@ -2299,10 +2299,10 @@
       "hasPages": true,
       "defaultBranch": "master",
       "headSha": "0b9bf0b70c077625e4c67c620cea472adc1510a7",
-      "updatedAt": "2026-09-06T12:33:36Z",
+      "updatedAt": "2026-09-06T21:14:22Z",
       "pushedAt": "2026-09-06T12:33:32Z",
       "archived": false,
-      "stars": 0,
+      "stars": 1,
       "role": "primary",
       "version": {
         "value": "v0.1.2",
