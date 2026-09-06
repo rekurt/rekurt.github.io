@@ -86,6 +86,37 @@ func TestBuildWritesCompleteMultilingualSite(t *testing.T) {
 	}
 }
 
+func TestFamilyHomeLinksRetainAccessibleNameWhenTextIsCollapsed(t *testing.T) {
+	output := filepath.Join(t.TempDir(), "site")
+	if _, err := Build(fixtureOptions(t, output)); err != nil {
+		t.Fatal(err)
+	}
+	for _, path := range []string{"index.html", "projects/index.html", "ru/index.html", "ru/projects/index.html", "zh-cn/index.html", "zh-cn/projects/index.html"} {
+		document, err := html.Parse(strings.NewReader(readFile(t, filepath.Join(output, path))))
+		if err != nil {
+			t.Fatal(err)
+		}
+		found := false
+		var visit func(*html.Node)
+		visit = func(node *html.Node) {
+			attrs := make(map[string]string)
+			for _, attr := range node.Attr {
+				attrs[attr.Key] = attr.Val
+			}
+			if node.Data == "a" && attrs["class"] == "family-brand" {
+				found = strings.Contains(attrs["aria-label"], "rekurt")
+			}
+			for child := node.FirstChild; child != nil; child = child.NextSibling {
+				visit(child)
+			}
+		}
+		visit(document)
+		if !found {
+			t.Errorf("%s: collapsed home link lacks an author name", path)
+		}
+	}
+}
+
 func TestBuildIsDeterministicForFixedInputs(t *testing.T) {
 	first := filepath.Join(t.TempDir(), "first")
 	second := filepath.Join(t.TempDir(), "second")
