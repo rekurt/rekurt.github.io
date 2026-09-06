@@ -45,7 +45,7 @@
           <h1>{{.Marketing.Text.Headline}}</h1>
           <p class="summary">{{.Marketing.Text.Intro}}</p>
           <div class="actions"><a class="button primary" href="{{.Marketing.Primary}}">{{.Marketing.Text.CTA}} <span aria-hidden="true">→</span></a><a class="button" href="https://github.com/{{.Owner}}/{{.Name}}">{{.Copy.Source}} ↗</a></div>
-          <p class="product-fit">{{.Language}} <span>·</span> {{.License}}</p>
+          <p class="product-fit">{{.Language}} <span>·</span> {{.License}} <span>·</span> {{.Copy.Updated}} <time datetime="{{.Updated}}">{{.Updated}}</time></p>
           {{if .Marketing.Text.Note}}<p class="product-note">{{.Marketing.Text.Note}}</p>{{end}}
         </div>
         <figure class="product-demo demo-{{.Marketing.Visual}}">
@@ -65,9 +65,9 @@
       </section>
       <section class="product-benefits shell" aria-labelledby="benefits-heading">
         <div class="section-heading"><p class="section-index">{{.Marketing.Name}}</p><h2 id="benefits-heading">{{.Marketing.Benefits}}</h2></div>
-        <div class="benefit-grid">{{range $index, $feature := .Marketing.Text.Features}}<article><span class="benefit-number" aria-hidden="true">0{{$index}}</span><h3>{{$feature.Title}}</h3><p>{{$feature.Body}}</p></article>{{end}}</div>
+        <div class="benefit-grid">{{range .Marketing.Text.Features}}<article><span class="benefit-number" aria-hidden="true"></span><h3>{{.Title}}</h3><p>{{.Body}}</p></article>{{end}}</div>
       </section>
-      {{if and .Marketing.ImageURL (ne .Marketing.Visual "image")}}<figure class="product-screenshot shell"><img src="{{.Marketing.ImageURL}}" alt="{{.Marketing.Name}} — {{.Marketing.Example}}" loading="lazy" width="1200" height="720"><figcaption>{{.Marketing.Example}} · {{.Marketing.Name}}</figcaption></figure>{{end}}
+      {{if and .Marketing.ImageURL (ne .Marketing.Visual "image")}}<details class="product-screenshot shell"><summary>{{.Marketing.Example}} · {{.Marketing.Name}}</summary><img src="{{.Marketing.ImageURL}}" alt="{{.Marketing.Name}} — {{.Marketing.Example}}" loading="lazy" width="1200" height="720"></details>{{end}}
       <section class="product-workflow shell" aria-labelledby="workflow-heading">
         <div><p class="section-index">{{.Marketing.Text.Eyebrow}}</p><h2 id="workflow-heading">{{.Marketing.Workflow}}</h2></div>
         <ol>{{range .Marketing.Text.Steps}}<li><h3>{{.Title}}</h3><p>{{.Body}}</p></li>{{end}}</ol>
@@ -94,12 +94,12 @@
       </section>
       {{end}}
 
-      <dl class="status-grid shell">
+      {{if not .Marketing}}<dl class="status-grid shell">
         <div><dt>{{.Copy.Version}}</dt><dd>{{.Version}}</dd></div>
         <div><dt>{{.Copy.Language}}</dt><dd>{{.Language}}</dd></div>
         <div><dt>{{.Copy.License}}</dt><dd>{{.License}}</dd></div>
         <div><dt>{{.Copy.Updated}}</dt><dd><time datetime="{{.Updated}}">{{.Updated}}</time></dd></div>
-      </dl>
+      </dl>{{end}}
 
       {{if .Install}}<section id="install" class="content-section shell install-section" aria-labelledby="install-title">
         <div class="section-heading">

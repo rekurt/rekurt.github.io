@@ -60,7 +60,7 @@ func TestBuildWritesCompleteMultilingualSite(t *testing.T) {
 	}
 
 	chinese := readFile(t, filepath.Join(output, "zh-cn/index.html"))
-	for _, required := range []string{`<html lang="zh-CN">`, `安全清理 Git 分支。`, `项目系列`, `href="projects/"`} {
+	for _, required := range []string{`<html lang="zh-CN">`, `安全清理 Git 分支。`, `全部项目`, `href="projects/"`} {
 		if !strings.Contains(chinese, required) {
 			t.Errorf("Chinese page lacks %q", required)
 		}

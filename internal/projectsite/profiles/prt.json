@@ -8,20 +8,20 @@
   "primary": "#install",
   "locales": {
     "en": {
-      "eyebrow": "Network clarity, inside your terminal",
+      "eyebrow": "Network inspection for macOS and Linux",
       "headline": "Find the process behind the port.",
-      "intro": "Investigate a port conflict, follow connection changes and inspect SSH tunnels from one keyboard-driven workspace on macOS and Linux.",
+      "intro": "Inspect network connections, process details and SSH tunnels in the terminal. Filter the live table to investigate port conflicts or export results for scripts.",
       "features": [
         {
-          "title": "From socket to process",
-          "body": "Inspect command lines, parent processes, open files and the connections that explain what a process is doing."
+          "title": "Process details",
+          "body": "View command lines, parent processes, open files and related network connections."
         },
         {
-          "title": "Follow what changes",
+          "title": "Live connection tracking",
           "body": "A live table highlights new and closed connections. Filter by port, protocol, process, state or user."
         },
         {
-          "title": "Bring findings to your tools",
+          "title": "Snapshots and streaming output",
           "body": "Export a finite JSON or CSV snapshot, stream NDJSON, or watch a small set of development ports."
         }
       ],
@@ -31,29 +31,29 @@
           "body": "Run prt and search for the port or process you are investigating."
         },
         {
-          "title": "Follow the context",
+          "title": "Inspect process details",
           "body": "Open process details and topology, then inspect or manage the associated SSH forwarding."
         }
       ],
-      "closing": "The next port conflict has a name.",
+      "closing": "Inspect your local connections",
       "cta": "Install prt",
       "note": ""
     },
     "ru": {
-      "eyebrow": "Сеть как на ладони — в терминале",
+      "eyebrow": "Диагностика сети на macOS и Linux",
       "headline": "Найдите процесс за занятым портом.",
-      "intro": "Разбирайтесь с конфликтами портов, следите за соединениями и управляйте SSH-туннелями в одном рабочем окне на macOS и Linux.",
+      "intro": "Просматривайте сетевые соединения, процессы и SSH-туннели в терминале. Фильтруйте обновляемую таблицу для поиска конфликтов портов или выгружайте результаты для скриптов.",
       "features": [
         {
-          "title": "От сокета к процессу",
-          "body": "Изучайте командную строку, родительские процессы, открытые файлы и соединения — контекст рядом с портом."
+          "title": "Сведения о процессе",
+          "body": "Просматривайте командную строку, родительские процессы, открытые файлы и связанные сетевые соединения."
         },
         {
-          "title": "Замечайте изменения",
+          "title": "Наблюдение за соединениями",
           "body": "Таблица выделяет новые и закрытые соединения. Фильтруйте по порту, протоколу, процессу, состоянию или пользователю."
         },
         {
-          "title": "Передавайте результаты дальше",
+          "title": "Снимки и потоковый вывод",
           "body": "Выгружайте снимок в JSON/CSV, поток NDJSON или наблюдайте за выбранными портами разработки."
         }
       ],
@@ -63,29 +63,29 @@
           "body": "Запустите prt и найдите нужный порт или процесс."
         },
         {
-          "title": "Изучите контекст",
+          "title": "Откройте сведения о процессе",
           "body": "Откройте детали и топологию процесса, затем проверьте связанные SSH-туннели."
         }
       ],
-      "closing": "У следующего конфликта портов есть имя.",
+      "closing": "Проверьте локальные соединения",
       "cta": "Установить prt",
       "note": ""
     },
     "zh-cn": {
-      "eyebrow": "在终端里看清网络",
+      "eyebrow": "macOS 与 Linux 网络诊断",
       "headline": "找到端口背后的进程。",
-      "intro": "在 macOS 和 Linux 上，通过一个键盘驱动的工作区排查端口冲突、跟踪连接变化并管理 SSH 隧道。",
+      "intro": "在终端中查看网络连接、进程详情和 SSH 隧道。筛选实时表格以排查端口冲突，或导出结果供脚本处理。",
       "features": [
         {
-          "title": "从套接字到进程",
-          "body": "查看命令行、父进程、打开的文件及相关连接，理解进程正在做什么。"
+          "title": "进程详情",
+          "body": "查看命令行、父进程、打开的文件及相关网络连接。"
         },
         {
-          "title": "跟踪变化",
+          "title": "实时连接跟踪",
           "body": "实时表格突出显示新增和关闭的连接，可按端口、协议、进程、状态或用户筛选。"
         },
         {
-          "title": "把结果交给工具链",
+          "title": "快照与流式输出",
           "body": "导出 JSON 或 CSV 快照、持续输出 NDJSON，或监控选定的开发端口。"
         }
       ],
@@ -95,11 +95,11 @@
           "body": "运行 prt，搜索要排查的端口或进程。"
         },
         {
-          "title": "追踪上下文",
+          "title": "查看进程详情",
           "body": "打开进程详情与拓扑，再检查或管理相关的 SSH 转发。"
         }
       ],
-      "closing": "让下一次端口冲突有迹可循。",
+      "closing": "检查本机网络连接",
       "cta": "安装 prt",
       "note": ""
     }

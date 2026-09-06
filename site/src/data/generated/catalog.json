@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-09-06T02:18:01Z",
+  "syncedAt": "2026-09-06T12:27:30Z",
   "products": [
     {
       "slug": "openkline",
@@ -18,9 +18,9 @@
       "featured": true,
       "maintainedFork": false,
       "summary": {
-        "en": "Framework-agnostic OHLCV charting engine with indicators, drawing tools, and React and Vue adapters.",
-        "ru": "Независимый от фреймворка движок OHLCV-графиков с индикаторами, инструментами рисования и адаптерами React и Vue.",
-        "zhCN": "与框架无关的 OHLCV 图表引擎，支持指标、绘图工具以及 React 和 Vue 适配器。"
+        "en": "Candlestick charts with indicators and drawing tools for web applications, with React and Vue adapters.",
+        "ru": "Свечные графики с индикаторами и инструментами рисования для веб-приложений, с адаптерами React и Vue.",
+        "zhCN": "用于 Web 应用的 K 线图，提供指标、绘图工具及 React 和 Vue 适配器。"
       },
       "install": [
         "npm install @rekurt/openkline-core"
@@ -60,9 +60,9 @@
       "maintainedFork": true,
       "upstream": "Elliotwu-7/Mac-Coffee",
       "summary": {
-        "en": "Native macOS menu bar utility for timed wake sessions, battery protection, and optional local MCP control.",
-        "ru": "Нативная утилита строки меню macOS с таймерами бодрствования, защитой батареи и опциональным локальным MCP-управлением.",
-        "zhCN": "原生 macOS 菜单栏工具，提供定时唤醒会话、电池保护和可选的本地 MCP 控制。"
+        "en": "macOS menu bar app that prevents idle sleep, with a timer, low-battery cutoff and optional local MCP control.",
+        "ru": "Приложение строки меню macOS для отключения сна при бездействии, с таймером, остановкой при низком заряде и локальным MCP.",
+        "zhCN": "macOS 菜单栏应用，可防止闲置休眠，支持定时结束、低电量停止及可选的本地 MCP 控制。"
       },
       "install": [
         "brew install --cask maccoffee",
@@ -110,9 +110,9 @@
       "featured": true,
       "maintainedFork": false,
       "summary": {
-        "en": "Safe terminal UI for removing stale branches after classic, squash, and rebase merges.",
-        "ru": "Безопасный терминальный интерфейс для удаления устаревших веток после обычных, squash- и rebase-слияний.",
-        "zhCN": "安全的终端界面，用于清理普通、squash 和 rebase 合并后的陈旧分支。"
+        "en": "Find branches merged through merge, squash or rebase, review their commits and confirm deletion in the terminal.",
+        "ru": "Поиск веток после merge, squash и rebase с просмотром коммитов и подтверждением удаления в терминале.",
+        "zhCN": "识别通过 merge、squash 或 rebase 合并的分支，在终端中检查提交并确认删除。"
       },
       "install": [
         "brew install rekurt/tap/git-barber"
@@ -158,9 +158,9 @@
       "featured": true,
       "maintainedFork": false,
       "summary": {
-        "en": "Self-hosted multi-VPN hub with explicit policy routing, drift detection, safe rollback, and Telegram operations.",
-        "ru": "Самостоятельно размещаемый multi-VPN hub с явной policy routing, обнаружением drift, безопасным rollback и Telegram-управлением.",
-        "zhCN": "自托管多 VPN 中枢，提供显式策略路由、漂移检测、安全回滚和 Telegram 运维。"
+        "en": "Linux VPN hub with per-device routing, configuration drift detection, deployment rollback and Telegram controls.",
+        "ru": "VPN-хаб на Linux с выбором маршрута для каждого устройства, проверкой расхождений конфигурации, откатом изменений и управлением через Telegram.",
+        "zhCN": "Linux VPN 枢纽，支持按设备配置路由、检测配置差异、回滚部署和通过 Telegram 管理。"
       },
       "install": [
         "git clone https://github.com/rekurt/vpn-hub.git"
@@ -206,9 +206,9 @@
       "featured": true,
       "maintainedFork": false,
       "summary": {
-        "en": "Type-safe Go SDK for all Yandex Messenger Bot API methods with retries and rate-limit handling.",
-        "ru": "Типобезопасный Go SDK для всех методов Yandex Messenger Bot API со встроенными повторами и обработкой rate limit.",
-        "zhCN": "类型安全的 Go SDK，覆盖全部 Yandex Messenger Bot API 方法，并支持重试和速率限制处理。"
+        "en": "Go SDK for Yandex Messenger bots, with typed services for messages, polls and chats, retries and rate-limit handling.",
+        "ru": "Go SDK для ботов Яндекс Мессенджера с типизированными сервисами сообщений, опросов и чатов, повторами и обработкой лимитов API.",
+        "zhCN": "Yandex Messenger 机器人的 Go SDK，提供消息、投票和聊天的类型化服务，并处理重试与 API 限流。"
       },
       "install": [
         "go get github.com/rekurt/ymsdk"
@@ -254,9 +254,9 @@
       "featured": true,
       "maintainedFork": false,
       "summary": {
-        "en": "Go bindings for GOST signatures, Streebog hashing, Kuznechik encryption, MGM AEAD, and key agreement.",
-        "ru": "Go-библиотека для подписей ГОСТ, хеша Стрибог, шифра Кузнечик, MGM AEAD и согласования ключей.",
-        "zhCN": "面向 GOST 签名、Streebog 哈希、Kuznechik 加密、MGM AEAD 和密钥协商的 Go 库。"
+        "en": "GOST signatures, hashing, encryption and key agreement in Go, backed by OpenSSL gost-engine.",
+        "ru": "Подписи, хеширование, шифрование и согласование ключей по ГОСТ в Go через OpenSSL gost-engine.",
+        "zhCN": "基于 OpenSSL gost-engine，在 Go 中提供 GOST 签名、哈希、加密和密钥协商。"
       },
       "install": [
         "go get github.com/rekurt/gost-crypto"
@@ -302,9 +302,9 @@
       "featured": false,
       "maintainedFork": false,
       "summary": {
-        "en": "Rust number-to-words library for grammatically correct money, percentages, dates, durations, fractions, and WASM.",
-        "ru": "Rust-библиотека чисел прописью с правильной грамматикой для денег, процентов, дат, длительностей, дробей и WASM.",
-        "zhCN": "Rust 数字转俄语文本库，正确处理金额、百分比、日期、时长、分数并支持 WASM。"
+        "en": "Convert numbers, amounts, dates and durations to Russian words in Rust, with optional WASM bindings.",
+        "ru": "Числа, суммы, даты и длительности прописью на русском для Rust, с поддержкой WASM.",
+        "zhCN": "在 Rust 中将数字、金额、日期和时长转换为俄语文字，支持可选的 WASM 绑定。"
       },
       "install": [
         "cargo add chislo"
@@ -350,9 +350,9 @@
       "featured": false,
       "maintainedFork": false,
       "summary": {
-        "en": "Experimental Docker Compose lab for isolated AI assistants, quota proxies, routing, and per-user personas.",
-        "ru": "Экспериментальный Docker Compose-стенд для изолированных AI-ассистентов, quota proxy, маршрутизации и персональных профилей.",
-        "zhCN": "基于 Docker Compose 的实验环境，用于隔离 AI 助手、配额代理、路由和用户专属角色。"
+        "en": "Experimental Docker Compose setup for testing OpenClaw assistant workspaces, token quotas and inter-assistant messages.",
+        "ru": "Экспериментальный стенд Docker Compose для рабочих пространств ассистентов OpenClaw, квот токенов и обмена сообщениями.",
+        "zhCN": "Docker Compose 实验环境，用于测试 OpenClaw 助手工作区、令牌配额和助手间消息传递。"
       },
       "install": [
         "git clone https://github.com/rekurt/cortex-forge.git"
@@ -398,9 +398,9 @@
       "featured": false,
       "maintainedFork": false,
       "summary": {
-        "en": "Rust CLI for comparing database schemas across environments and generating reviewable migration SQL.",
-        "ru": "Rust CLI для сравнения схем баз данных между окружениями и генерации проверяемого миграционного SQL.",
-        "zhCN": "Rust CLI，用于比较不同环境的数据库模式并生成可审查的迁移 SQL。"
+        "en": "Compare database schemas or a database against a SQL file, generate migration SQL and detect drift in CI.",
+        "ru": "Сравнение схем баз данных и SQL-файлов, генерация SQL-миграций и обнаружение расхождений в CI.",
+        "zhCN": "比较数据库结构或数据库与 SQL 文件的差异，生成迁移 SQL，并在 CI 中检测结构变更。"
       },
       "install": [
         "cargo install dbdiff"
@@ -446,9 +446,9 @@
       "featured": false,
       "maintainedFork": false,
       "summary": {
-        "en": "High-performance canvas order-book depth chart for framework-independent web trading interfaces.",
-        "ru": "Высокопроизводительный canvas-график глубины стакана для независимых от фреймворка торговых интерфейсов.",
-        "zhCN": "面向框架无关 Web 交易界面的高性能 Canvas 订单簿深度图。"
+        "en": "Canvas order book depth chart with a TypeScript API, configurable themes, spread and imbalance metrics.",
+        "ru": "Canvas-график глубины стакана с TypeScript API, настройкой темы и метриками спреда и дисбаланса.",
+        "zhCN": "Canvas 订单簿深度图，提供 TypeScript API、可配置主题、价差和买卖盘不平衡度指标。"
       },
       "install": [
         "npm install @rekurt/depth"
@@ -494,9 +494,9 @@
       "featured": false,
       "maintainedFork": false,
       "summary": {
-        "en": "Conservative GitLab group cloning and instance transfer toolkit with a shared CLI and Electron core.",
-        "ru": "Инструментарий безопасного клонирования групп и переноса между GitLab-инстансами с общим ядром CLI и Electron.",
-        "zhCN": "稳健的 GitLab 群组克隆与实例迁移工具，共用 CLI 和 Electron 核心。"
+        "en": "CLI and desktop app for cloning GitLab groups and transferring projects between instances, with plans and execution reports.",
+        "ru": "CLI и настольное приложение для клонирования групп и переноса проектов между серверами GitLab, с планами и отчётами.",
+        "zhCN": "用于克隆 GitLab 群组和跨实例迁移项目的 CLI 与桌面应用，提供迁移计划和执行报告。"
       },
       "install": [
         "git clone https://github.com/rekurt/gitlab-downloader.git",
@@ -543,9 +543,9 @@
       "featured": false,
       "maintainedFork": false,
       "summary": {
-        "en": "Go library for Russian number words, currencies, decimals, ordinals, and noun declension.",
-        "ru": "Go-библиотека чисел прописью на русском: валюты, дроби, порядковые числительные и склонения существительных.",
-        "zhCN": "Go 语言俄语数字文本库，支持货币、小数、序数词和名词变格。"
+        "en": "Convert numbers and currency amounts to Russian words in Go, with decimals, ordinals and quantity-dependent noun forms.",
+        "ru": "Числа и суммы прописью на русском для Go: валюты, дроби, порядковые числительные и формы существительных по количеству.",
+        "zhCN": "在 Go 中将数字和金额转换为俄语文字，支持小数、序数及按数量选择名词词形。"
       },
       "install": [
         "go get github.com/rekurt/go-propisyu"
@@ -591,9 +591,9 @@
       "featured": false,
       "maintainedFork": false,
       "summary": {
-        "en": "Real-time TUI for ports, processes, containers, firewall events, alerts, and network diagnostics.",
-        "ru": "TUI реального времени для портов, процессов, контейнеров, firewall-событий, оповещений и сетевой диагностики.",
-        "zhCN": "面向端口、进程、容器、防火墙事件、告警和网络诊断的实时 TUI。"
+        "en": "Inspect ports, network connections, process details and SSH tunnels from the terminal on macOS and Linux.",
+        "ru": "Просмотр портов, сетевых соединений, процессов и SSH-туннелей в терминале на macOS и Linux.",
+        "zhCN": "在 macOS 和 Linux 终端中查看端口、网络连接、进程详情和 SSH 隧道。"
       },
       "install": [
         "cargo install prt"
@@ -639,9 +639,9 @@
       "featured": false,
       "maintainedFork": false,
       "summary": {
-        "en": "OpenClaw skill that turns Yandex Tracker activity into a weekly sprint velocity digest.",
-        "ru": "OpenClaw skill, формирующий еженедельный отчёт о скорости спринта из данных Яндекс Трекера.",
-        "zhCN": "OpenClaw 技能，将 Yandex Tracker 活动整理为每周迭代速度摘要。"
+        "en": "Python script and OpenClaw setup for weekly Yandex Tracker reports on closed, open and overdue task counts.",
+        "ru": "Python-скрипт и настройка OpenClaw для еженедельного отчёта по закрытым, открытым и просроченным задачам Яндекс Трекера.",
+        "zhCN": "Python 脚本与 OpenClaw 配置，每周汇总 Yandex Tracker 中已关闭、待办和逾期任务的数量。"
       },
       "install": [
         "git clone https://github.com/rekurt/sprint-velocity.git"
@@ -2169,9 +2169,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "91f1782a09f20edbb5bc70635bc0e946dd15abcd",
-      "updatedAt": "2026-09-06T02:17:12Z",
-      "pushedAt": "2026-09-06T02:17:30Z",
+      "headSha": "331645660e012ea29565d984c5713cbb9287d90b",
+      "updatedAt": "2026-09-06T02:20:54Z",
+      "pushedAt": "2026-09-06T02:21:09Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",

@@ -8,21 +8,21 @@
   "primary": "#overview",
   "locales": {
     "en": {
-      "eyebrow": "An experimental AI assistant lab",
-      "headline": "Explore a small office of AI personas.",
-      "intro": "Experiment with separate assistant workspaces, token quotas and bot-to-bot messages in a Docker Compose playground.",
+      "eyebrow": "OpenClaw experiments · Docker Compose",
+      "headline": "Test assistant workspaces, quotas and messaging.",
+      "intro": "Run separate OpenClaw assistants on a single host. Experiment with persona files, token budgets and messages between instances.",
       "features": [
         {
-          "title": "Give each persona a workspace",
-          "body": "Try different context, memory and persona files for separate assistant instances."
+          "title": "Separate assistant workspaces",
+          "body": "Configure context, memory and persona files for each assistant instance."
         },
         {
-          "title": "Explore quota mechanics",
-          "body": "Observe a proxy that accounts for token budgets and applies per-instance limits."
+          "title": "Token accounting",
+          "body": "Test how the quota proxy records token usage and applies limits per instance."
         },
         {
-          "title": "Try collaboration patterns",
-          "body": "Use the message broker to explore inboxes and communication between assistant instances."
+          "title": "Messages between assistants",
+          "body": "Send messages through the broker and inspect each instance's inbox."
         }
       ],
       "steps": [
@@ -35,58 +35,58 @@
           "body": "Use disposable environments and synthetic content to explore the mechanics."
         }
       ],
-      "closing": "A place to test an idea.",
-      "cta": "Explore the lab",
+      "closing": "Setup and experiment guide",
+      "cta": "Read the setup guide",
       "note": "Experimental and not production-safe. Do not use employee, customer, confidential or regulated data."
     },
     "ru": {
-      "eyebrow": "Экспериментальная лаборатория AI-ассистентов",
-      "headline": "Исследуйте маленький офис AI-персонажей.",
-      "intro": "Экспериментируйте с отдельными рабочими пространствами ассистентов, квотами токенов и сообщениями между ботами в Docker Compose.",
+      "eyebrow": "Эксперименты с OpenClaw · Docker Compose",
+      "headline": "Рабочие пространства, квоты и обмен сообщениями AI-ассистентов.",
+      "intro": "Запускайте отдельных ассистентов OpenClaw на одном хосте. Проверяйте настройки персонажей, бюджеты токенов и обмен сообщениями между экземплярами.",
       "features": [
         {
-          "title": "Дайте каждому своё пространство",
-          "body": "Пробуйте разные контексты, память и файлы персонажей в отдельных инстансах ассистента."
+          "title": "Отдельные рабочие пространства",
+          "body": "Настраивайте контекст, память и файлы персонажа для каждого экземпляра ассистента."
         },
         {
-          "title": "Изучите механику квот",
-          "body": "Изучайте прокси, который учитывает бюджеты токенов и применяет лимиты по инстансам."
+          "title": "Учёт токенов",
+          "body": "Проверяйте, как прокси учитывает расход токенов и применяет лимиты для каждого экземпляра."
         },
         {
-          "title": "Пробуйте взаимодействие",
-          "body": "Используйте брокер сообщений для экспериментов с входящими и связью между ассистентами."
+          "title": "Сообщения между ассистентами",
+          "body": "Отправляйте сообщения через брокер и проверяйте входящие каждого ассистента."
         }
       ],
       "steps": [
         {
           "title": "Изучите ограничения лаборатории",
-          "body": "Перед запуском изучите Docker-доступ, mounts и руководство настройки репозитория."
+          "body": "Перед запуском проверьте доступ к Docker, монтируемые каталоги и руководство по настройке."
         },
         {
           "title": "Экспериментируйте на тестовых данных",
           "body": "Используйте одноразовые окружения и синтетические данные для изучения механики."
         }
       ],
-      "closing": "Место, где можно проверить идею.",
-      "cta": "Изучить лабораторию",
-      "note": "Экспериментальный проект, не готовый к production. Не используйте данные сотрудников, клиентов, конфиденциальные или регулируемые данные."
+      "closing": "Настройка и проведение экспериментов",
+      "cta": "Открыть руководство",
+      "note": "Экспериментальный проект, не предназначенный для промышленной эксплуатации. Не используйте данные сотрудников, клиентов, конфиденциальные данные или данные с особыми требованиями к обработке."
     },
     "zh-cn": {
-      "eyebrow": "实验性的 AI 助手实验室",
-      "headline": "探索由 AI 角色组成的小办公室。",
-      "intro": "在 Docker Compose 实验环境中，探索独立助手工作区、令牌配额和机器人间消息。",
+      "eyebrow": "OpenClaw 实验 · Docker Compose",
+      "headline": "测试助手工作区、配额与消息传递。",
+      "intro": "在同一主机上运行多个 OpenClaw 助手实例，测试角色文件、令牌预算和实例间消息传递。",
       "features": [
         {
-          "title": "为角色分配工作区",
-          "body": "为不同助手实例尝试独立的上下文、记忆与角色文件。"
+          "title": "独立的助手工作区",
+          "body": "为每个助手实例配置上下文、记忆与角色文件。"
         },
         {
-          "title": "探索配额机制",
-          "body": "观察代理如何记录令牌预算并施加实例级限制。"
+          "title": "令牌用量统计",
+          "body": "测试配额代理如何记录令牌用量，并对各实例应用限制。"
         },
         {
-          "title": "尝试协作模式",
-          "body": "利用消息代理探索收件箱及助手实例间通信。"
+          "title": "助手间消息传递",
+          "body": "通过消息代理发送消息，并查看各实例的收件箱。"
         }
       ],
       "steps": [
@@ -99,8 +99,8 @@
           "body": "使用可丢弃环境与合成数据来探索机制。"
         }
       ],
-      "closing": "一个验证想法的地方。",
-      "cta": "探索实验室",
+      "closing": "配置与实验指南",
+      "cta": "阅读配置指南",
       "note": "实验项目，不适合生产环境。不要使用员工、客户、机密或受监管数据。"
     }
   }

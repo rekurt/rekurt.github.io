@@ -29,7 +29,7 @@ const localeLinks: Array<{ locale: Locale; lang: string; label: string }> = [
       {links.map((link) => (
         <a href={link.href} aria-current={normalizedPath.startsWith(link.href) ? "page" : undefined}>{link.label}</a>
       ))}
-      {showLanguage && localeLinks.map((link) => <a class="language-link" href={alternatePath(currentPath, link.locale)} hreflang={link.lang} aria-current={link.locale === locale ? "page" : undefined}>{link.label}</a>)}
+      {showLanguage && <div class="locale-switcher">{localeLinks.map((link) => <a class="language-link" href={alternatePath(currentPath, link.locale)} hreflang={link.lang} aria-current={link.locale === locale ? "page" : undefined}>{link.label}</a>)}</div>}
     </nav>
   </div>
 </header>

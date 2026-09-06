@@ -8,20 +8,20 @@
   "primary": "#install",
   "locales": {
     "en": {
-      "eyebrow": "Schema changes, made reviewable",
-      "headline": "See schema drift before the deploy.",
-      "intro": "Compare environments or a database against a SQL schema. Bring the differences into code review and generate migration SQL you can inspect.",
+      "eyebrow": "Database schema comparison CLI",
+      "headline": "Compare schemas and generate migration SQL.",
+      "intro": "Compare two databases or check a database against a SQL schema file. Review table, column and index changes, or check for drift in CI.",
       "features": [
         {
-          "title": "Compare real environments",
-          "body": "Use connection strings or a schema file to investigate why environments behave differently."
+          "title": "Database and file inputs",
+          "body": "Compare schemas using database connection strings or a SQL file checked into your repository."
         },
         {
-          "title": "Review the change",
+          "title": "Migration SQL for review",
           "body": "Read table, column and index differences, then review generated SQL and locking warnings before applying it."
         },
         {
-          "title": "Give CI an answer",
+          "title": "Exit codes and JSON",
           "body": "CI mode reports drift with an exit code. JSON output lets your own tooling decide what happens next."
         }
       ],
@@ -35,25 +35,25 @@
           "body": "Save the output, review destructive or locking operations, and run it through your normal deployment process."
         }
       ],
-      "closing": "Make schema drift part of the review.",
-      "cta": "Get dbdiff",
+      "closing": "Compare your database schemas",
+      "cta": "Install dbdiff",
       "note": ""
     },
     "ru": {
-      "eyebrow": "Изменения схемы под контролем",
-      "headline": "Заметьте расхождение схем до деплоя.",
-      "intro": "Сравнивайте окружения или базу с SQL-схемой. Обсуждайте различия на ревью и получайте SQL миграции для проверки.",
+      "eyebrow": "CLI для сравнения схем БД",
+      "headline": "Сравнение схем и генерация SQL-миграций.",
+      "intro": "Сравнивайте две базы данных или базу с файлом SQL-схемы. Проверяйте изменения таблиц, колонок и индексов вручную или выявляйте расхождения в CI.",
       "features": [
         {
-          "title": "Сравните реальные окружения",
-          "body": "Используйте строки подключения или файл схемы, чтобы понять, почему окружения ведут себя по-разному."
+          "title": "Базы данных и файлы схем",
+          "body": "Укажите строки подключения к базам или SQL-файл из репозитория для сравнения схем."
         },
         {
-          "title": "Проверьте каждое изменение",
+          "title": "SQL-миграция для ревью",
           "body": "Изучайте различия таблиц, колонок и индексов, проверяйте SQL и предупреждения о блокировках до применения."
         },
         {
-          "title": "Дайте CI однозначный ответ",
+          "title": "Коды выхода и JSON",
           "body": "Режим CI сообщает о различиях кодом выхода. JSON позволяет встроить результат в вашу автоматизацию."
         }
       ],
@@ -67,25 +67,25 @@
           "body": "Сохраните результат, проверьте удаление данных и блокировки, затем примените обычный процесс деплоя."
         }
       ],
-      "closing": "Перенесите разговор о схеме на ревью.",
+      "closing": "Сравните схемы ваших баз данных",
       "cta": "Установить dbdiff",
       "note": ""
     },
     "zh-cn": {
-      "eyebrow": "让数据库结构变更可审查",
-      "headline": "在部署前发现结构漂移。",
-      "intro": "比较不同环境，或将数据库与 SQL 结构文件比较。把差异带入代码审查，并生成可检查的迁移 SQL。",
+      "eyebrow": "数据库结构比较 CLI",
+      "headline": "比较数据库结构，生成迁移 SQL。",
+      "intro": "比较两个数据库，或将数据库与 SQL 结构文件比较。审查表、列和索引的变更，也可在 CI 中检测结构差异。",
       "features": [
         {
-          "title": "比较真实环境",
-          "body": "使用连接字符串或结构文件，排查不同环境行为不一致的原因。"
+          "title": "数据库与结构文件",
+          "body": "使用数据库连接字符串或仓库中的 SQL 文件作为比较来源。"
         },
         {
-          "title": "审查每项变更",
+          "title": "可供审查的迁移 SQL",
           "body": "查看表、列和索引的差异，在执行前审查生成的 SQL 与锁操作警告。"
         },
         {
-          "title": "让 CI 得到明确结果",
+          "title": "退出码与 JSON",
           "body": "CI 模式通过退出码报告漂移，JSON 输出方便接入自己的自动化流程。"
         }
       ],
@@ -99,8 +99,8 @@
           "body": "保存结果，检查破坏性或锁定操作，再按既有部署流程执行。"
         }
       ],
-      "closing": "把结构漂移纳入审查。",
-      "cta": "获取 dbdiff",
+      "closing": "比较你的数据库结构",
+      "cta": "安装 dbdiff",
       "note": ""
     }
   }

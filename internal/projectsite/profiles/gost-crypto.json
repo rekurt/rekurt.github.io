@@ -8,20 +8,20 @@
   "primary": "#overview",
   "locales": {
     "en": {
-      "eyebrow": "GOST primitives for Go systems",
-      "headline": "Bring GOST into your Go stack.",
+      "eyebrow": "Go bindings for OpenSSL gost-engine",
+      "headline": "GOST signatures, hashing and encryption in Go.",
       "intro": "Integrate signatures, Streebog hashing, Kuznechik encryption and MGM AEAD through Go bindings backed by OpenSSL gost-engine.",
       "features": [
         {
-          "title": "A coherent toolkit",
-          "body": "Use signatures, hashing, authenticated encryption, key agreement and derivation from one repository."
+          "title": "Cryptographic operations",
+          "body": "Generate and verify signatures, hash data, encrypt messages, agree shared keys and derive keys."
         },
         {
-          "title": "Familiar Go interfaces",
+          "title": "Standard Go interfaces",
           "body": "Hash and cipher packages implement hash.Hash, cipher.Block and cipher.AEAD where applicable."
         },
         {
-          "title": "Explicit deployment requirements",
+          "title": "Native dependencies",
           "body": "Plan for CGO, OpenSSL and gost-engine. The deployment guide covers the native dependencies your service needs."
         }
       ],
@@ -35,31 +35,31 @@
           "body": "Use the examples and test your key formats, algorithms and runtime environment against your requirements."
         }
       ],
-      "closing": "Start with the primitive your system needs.",
+      "closing": "Installation and API examples",
       "cta": "Read integration docs",
       "note": "Open-source bindings; no claim of certification or independent security audit."
     },
     "ru": {
-      "eyebrow": "ГОСТ-примитивы для Go-систем",
-      "headline": "Добавьте ГОСТ в ваш Go-стек.",
+      "eyebrow": "Go-обёртка над OpenSSL gost-engine",
+      "headline": "Подписи, хеширование и шифрование по ГОСТ в Go.",
       "intro": "Подключайте подписи, хеширование Стрибог, шифрование Кузнечик и MGM AEAD через Go-обёртку над OpenSSL gost-engine.",
       "features": [
         {
-          "title": "Согласованный набор примитивов",
-          "body": "Подписи, хеширование, аутентифицированное шифрование, согласование и выработка ключей в одном репозитории."
+          "title": "Криптографические операции",
+          "body": "Создавайте и проверяйте подписи, вычисляйте хеши, шифруйте сообщения, согласовывайте общие ключи и выводите производные."
         },
         {
-          "title": "Знакомые интерфейсы Go",
+          "title": "Стандартные интерфейсы Go",
           "body": "Пакеты хеширования и шифрования реализуют hash.Hash, cipher.Block и cipher.AEAD там, где это применимо."
         },
         {
-          "title": "Явные требования к окружению",
+          "title": "Нативные зависимости",
           "body": "Учитывайте CGO, OpenSSL и gost-engine. Руководство по развёртыванию описывает нативные зависимости сервиса."
         }
       ],
       "steps": [
         {
-          "title": "Подготовьте нативный backend",
+          "title": "Установите зависимости",
           "body": "Установите описанную в документации связку OpenSSL/gost-engine и включите CGO."
         },
         {
@@ -67,25 +67,25 @@
           "body": "Используйте примеры и проверьте форматы ключей, алгоритмы и окружение под требования вашей системы."
         }
       ],
-      "closing": "Начните с нужного вашей системе примитива.",
+      "closing": "Установка и примеры API",
       "cta": "Открыть документацию",
       "note": "Open-source библиотека: сертификация и независимый аудит безопасности не заявлены."
     },
     "zh-cn": {
-      "eyebrow": "面向 Go 系统的 GOST 原语",
-      "headline": "把 GOST 接入 Go 技术栈。",
+      "eyebrow": "OpenSSL gost-engine 的 Go 绑定",
+      "headline": "在 Go 中使用 GOST 签名、哈希与加密。",
       "intro": "通过基于 OpenSSL gost-engine 的 Go 绑定，集成签名、Streebog 哈希、Kuznechik 加密和 MGM AEAD。",
       "features": [
         {
-          "title": "一致的原语工具集",
-          "body": "从同一仓库使用签名、哈希、认证加密、密钥协商与派生。"
+          "title": "密码运算",
+          "body": "生成和验证签名、计算哈希、加密消息，以及协商共享密钥和派生密钥。"
         },
         {
-          "title": "熟悉的 Go 接口",
+          "title": "标准 Go 接口",
           "body": "哈希与密码包在适用时实现 hash.Hash、cipher.Block 和 cipher.AEAD。"
         },
         {
-          "title": "明确的部署要求",
+          "title": "原生依赖",
           "body": "需要 CGO、OpenSSL 和 gost-engine；部署指南说明服务所需的原生依赖。"
         }
       ],
@@ -99,7 +99,7 @@
           "body": "参考示例，并按系统要求验证密钥格式、算法和运行环境。"
         }
       ],
-      "closing": "从系统需要的原语开始。",
+      "closing": "安装说明与 API 示例",
       "cta": "阅读集成文档",
       "note": "这是开源绑定，不宣称已获认证或通过独立安全审计。"
     }

@@ -106,9 +106,9 @@ func marketingFor(model Model, page LocalePage) (*marketingView, error) {
 		view.ImageURL = "https://raw.githubusercontent.com/" + model.Repository.NameWithOwner + "/" + model.Repository.HeadSHA + "/" + profile.Image
 	}
 	labels := map[string][8]string{
-		"en":    {"Built for your workflow", "From first look to daily use", "Product example", "Read the complete documentation", "FRI", "Sign", "Hash", "Encrypt"},
-		"ru":    {"Для ваших рабочих задач", "От первого знакомства к работе", "Пример работы продукта", "Читать полную документацию", "ПТ", "Подпись", "Хеш", "Шифр"},
-		"zh-cn": {"为你的工作流而构建", "从初次了解走向日常使用", "产品示例", "阅读完整文档", "周五", "签名", "哈希", "加密"},
+		"en":    {"What you can do", "Get started", "Product example", "Read the documentation", "FRI", "Sign", "Hash", "Encrypt"},
+		"ru":    {"Возможности", "С чего начать", "Пример работы", "Читать документацию", "ПТ", "Подпись", "Хеш", "Шифр"},
+		"zh-cn": {"功能", "开始使用", "产品示例", "阅读文档", "周五", "签名", "哈希", "加密"},
 	}
 	label := labels[page.Locale]
 	view.Benefits, view.Workflow, view.Example, view.DocsLabel = label[0], label[1], label[2], label[3]

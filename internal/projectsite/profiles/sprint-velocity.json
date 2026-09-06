@@ -8,21 +8,21 @@
   "primary": "#overview",
   "locales": {
     "en": {
-      "eyebrow": "A Friday reporting ritual",
-      "headline": "End the week with a clear task snapshot.",
-      "intro": "A small OpenClaw recipe turns Yandex Tracker task counts into a weekly message: closed work, open assignments and overdue tasks.",
+      "eyebrow": "Yandex Tracker reporting · OpenClaw",
+      "headline": "Weekly task counts from Yandex Tracker.",
+      "intro": "A Python script and OpenClaw setup for scheduled task summaries. Report tasks closed during the week, open assignments and overdue work.",
       "features": [
         {
-          "title": "Three numbers to start with",
+          "title": "Task status summary",
           "body": "See closed tasks, current assignments and overdue work together."
         },
         {
-          "title": "A repeatable schedule",
+          "title": "Scheduled delivery",
           "body": "The documented recipe runs every Friday at 18:00 Moscow time and sends the result through OpenClaw."
         },
         {
-          "title": "Small enough to inspect",
-          "body": "A Python standard-library script keeps the reporting logic compact and adaptable."
+          "title": "Python standard library",
+          "body": "The reporting script uses Python's standard library. Adjust the queries and message format in the source."
         }
       ],
       "steps": [
@@ -35,27 +35,27 @@
           "body": "Adapt the OpenClaw recipe to your delivery channel and inspect a first report before scheduling."
         }
       ],
-      "closing": "Give Friday a useful closing note.",
-      "cta": "Use the recipe",
-      "note": "Task counts are a conversation starter, not a measure of individual productivity or story-point velocity."
+      "closing": "Configure your weekly task report",
+      "cta": "Read the setup instructions",
+      "note": "Reports task counts. Does not measure individual productivity or calculate story-point velocity."
     },
     "ru": {
       "demo": "Sprint Velocity — пример\n\nЗакрыто за неделю        8\nОткрыто, назначено мне   5\nПросрочено               1\n\nПятница · 18:00 · Москва",
-      "eyebrow": "Пятничный ритуал отчётности",
-      "headline": "Завершайте неделю понятной сводкой.",
-      "intro": "Небольшой рецепт для OpenClaw превращает данные Яндекс Трекера в еженедельное сообщение: закрытые задачи, открытые назначения и просрочки.",
+      "eyebrow": "Отчёты Яндекс Трекера · OpenClaw",
+      "headline": "Еженедельная сводка задач из Яндекс Трекера.",
+      "intro": "Python-скрипт и инструкция для отправки отчётов по расписанию через OpenClaw. В сводке — закрытые за неделю задачи, открытые назначения и просрочки.",
       "features": [
         {
-          "title": "Три числа для начала разговора",
+          "title": "Сводка по состоянию задач",
           "body": "Смотрите закрытые задачи, текущие назначения и просроченную работу вместе."
         },
         {
-          "title": "Повторяемое расписание",
-          "body": "Документированный рецепт запускается по пятницам в 18:00 по Москве и отправляет результат через OpenClaw."
+          "title": "Отправка по расписанию",
+          "body": "Пример настройки запускает отчёт по пятницам в 18:00 по Москве и отправляет результат через OpenClaw."
         },
         {
-          "title": "Достаточно просто для проверки",
-          "body": "Скрипт на стандартной библиотеке Python делает логику отчёта компактной и понятной."
+          "title": "Стандартная библиотека Python",
+          "body": "Скрипт использует стандартную библиотеку Python. Запросы и формат сообщения можно изменить в исходном коде."
         }
       ],
       "steps": [
@@ -65,30 +65,30 @@
         },
         {
           "title": "Настройте отправку сводки",
-          "body": "Адаптируйте рецепт OpenClaw к своему каналу и проверьте первый отчёт до включения расписания."
+          "body": "Укажите канал доставки в настройках OpenClaw и проверьте первый отчёт до включения расписания."
         }
       ],
-      "closing": "Завершайте пятницу полезной заметкой.",
-      "cta": "Открыть рецепт",
-      "note": "Количество задач — повод для обсуждения, а не оценка продуктивности человека или velocity в story points."
+      "closing": "Настройте еженедельный отчёт по задачам",
+      "cta": "Открыть инструкцию",
+      "note": "Отчёт показывает количество задач. Он не измеряет личную продуктивность и не рассчитывает velocity в story points."
     },
     "zh-cn": {
       "demo": "Sprint Velocity — 示例\n\n本周已关闭任务      8\n分配给我的待办任务  5\n逾期任务            1\n\n周五 · 18:00 · 莫斯科时间",
-      "eyebrow": "周五的汇报习惯",
-      "headline": "用清晰的任务快照结束一周。",
-      "intro": "一个轻量 OpenClaw 配方，把 Yandex Tracker 的已关闭任务、待办分配和逾期任务整理成每周消息。",
+      "eyebrow": "Yandex Tracker 报告 · OpenClaw",
+      "headline": "每周汇总 Yandex Tracker 任务数量。",
+      "intro": "使用 Python 脚本与 OpenClaw 配置定时发送任务报告。报告包含本周已关闭任务、当前待办和逾期任务。",
       "features": [
         {
-          "title": "用三个数字开始讨论",
+          "title": "任务状态汇总",
           "body": "同时查看已关闭任务、当前分配和逾期工作。"
         },
         {
-          "title": "固定的汇报时间",
-          "body": "文档中的配方在莫斯科时间每周五 18:00 运行，并通过 OpenClaw 发送结果。"
+          "title": "定时发送",
+          "body": "文档中的配置示例在莫斯科时间每周五 18:00 运行，并通过 OpenClaw 发送结果。"
         },
         {
-          "title": "简单到可以逐行检查",
-          "body": "基于 Python 标准库的脚本让汇报逻辑保持精简、易于调整。"
+          "title": "Python 标准库",
+          "body": "报告脚本使用 Python 标准库，可在源码中调整查询和消息格式。"
         }
       ],
       "steps": [
@@ -98,12 +98,12 @@
         },
         {
           "title": "安排汇总发送",
-          "body": "按发送渠道调整 OpenClaw 配方，先检查首份报告再启用定时任务。"
+          "body": "在 OpenClaw 中配置发送渠道，检查首份报告后再启用定时任务。"
         }
       ],
-      "closing": "用一条有用的消息结束周五。",
-      "cta": "使用配方",
-      "note": "任务数量用于开启讨论，并非个人生产力或故事点速度的衡量标准。"
+      "closing": "配置每周任务报告",
+      "cta": "阅读配置说明",
+      "note": "报告仅统计任务数量，不衡量个人生产力，也不计算基于故事点的迭代速度。"
     }
   }
 }

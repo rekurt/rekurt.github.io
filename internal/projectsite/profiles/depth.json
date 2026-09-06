@@ -8,20 +8,20 @@
   "primary": "#install",
   "locales": {
     "en": {
-      "eyebrow": "Market depth for your trading product",
-      "headline": "Make liquidity readable.",
-      "intro": "Give traders a clear view of cumulative bids and asks. Embed a focused canvas depth chart in your own interface, with a small TypeScript API.",
+      "eyebrow": "TypeScript chart library",
+      "headline": "Order book depth charts for trading interfaces.",
+      "intro": "Render cumulative bids and asks on canvas with a TypeScript API. Supply order book snapshots, adjust the chart and read spread and imbalance metrics.",
       "features": [
         {
-          "title": "Correct book math",
+          "title": "Order book normalization",
           "body": "Aggregate duplicate prices, remove zero-volume levels and compute cumulative depth in the correct direction."
         },
         {
-          "title": "A chart that fits",
+          "title": "Themes and price ranges",
           "body": "Use dark or light themes, stepped or linear shapes, centered or fitted price domains."
         },
         {
-          "title": "Own your UI",
+          "title": "Framework-independent API",
           "body": "Mount with plain DOM code or your framework. Feed snapshots, read metrics and clean up with destroy()."
         }
       ],
@@ -35,25 +35,25 @@
           "body": "Push snapshots through setData and use spread or imbalance metrics in the surrounding interface."
         }
       ],
-      "closing": "Add depth to your next trading interface.",
+      "closing": "Connect your order book data",
       "cta": "Integrate depth",
       "note": ""
     },
     "ru": {
-      "eyebrow": "Глубина рынка для вашего терминала",
-      "headline": "Покажите ликвидность понятно.",
-      "intro": "Дайте трейдерам ясную картину накопленных заявок на покупку и продажу. Встройте canvas-график глубины в свой интерфейс через компактный TypeScript API.",
+      "eyebrow": "Библиотека графиков на TypeScript",
+      "headline": "График глубины стакана для торгового интерфейса.",
+      "intro": "Отображайте накопленные объёмы заявок на canvas через TypeScript API. Передавайте снимки стакана, настраивайте график и получайте метрики спреда и дисбаланса.",
       "features": [
         {
-          "title": "Корректная математика стакана",
+          "title": "Нормализация стакана",
           "body": "Объединяйте одинаковые цены, удаляйте нулевые объёмы и считайте накопленную глубину в нужном направлении."
         },
         {
-          "title": "График под ваш интерфейс",
+          "title": "Темы и диапазоны цен",
           "body": "Выбирайте тёмную или светлую тему, ступенчатую или линейную форму и нужный диапазон цен."
         },
         {
-          "title": "Ваш интерфейс остаётся вашим",
+          "title": "API без привязки к фреймворку",
           "body": "Подключайте через DOM или свой фреймворк. Передавайте снимки, читайте метрики и вызывайте destroy() при размонтировании."
         }
       ],
@@ -67,25 +67,25 @@
           "body": "Обновляйте снимки через setData, а spread и imbalance используйте в соседних элементах интерфейса."
         }
       ],
-      "closing": "Добавьте глубину следующему торговому интерфейсу.",
+      "closing": "Подключите данные вашего стакана",
       "cta": "Подключить depth",
       "note": ""
     },
     "zh-cn": {
-      "eyebrow": "为交易产品呈现市场深度",
-      "headline": "让流动性一目了然。",
-      "intro": "清晰呈现买卖盘的累计深度。通过精简的 TypeScript API，把专注的 Canvas 深度图嵌入自己的界面。",
+      "eyebrow": "TypeScript 图表库",
+      "headline": "用于交易界面的订单簿深度图。",
+      "intro": "通过 TypeScript API 在 Canvas 上绘制买卖盘累计深度。传入订单簿快照、调整图表，并读取价差和买卖盘不平衡度指标。",
       "features": [
         {
-          "title": "正确的盘口计算",
-          "body": "合并重复价格、移除零成交量档位，并按正确方向计算累计深度。"
+          "title": "订单簿数据整理",
+          "body": "合并重复价格、移除数量为零的档位，并按买卖方向计算累计深度。"
         },
         {
-          "title": "融入现有界面",
+          "title": "主题与价格范围",
           "body": "选择深浅主题、阶梯或线性形状，以及居中或完整价格区间。"
         },
         {
-          "title": "界面由你掌控",
+          "title": "不依赖框架的 API",
           "body": "通过 DOM 或自己的框架挂载，传入快照、读取指标，并在卸载时调用 destroy()。"
         }
       ],
@@ -99,7 +99,7 @@
           "body": "通过 setData 更新快照，并在周边界面使用价差或不平衡度指标。"
         }
       ],
-      "closing": "为下一个交易界面加入深度。",
+      "closing": "接入你的订单簿数据",
       "cta": "接入 depth",
       "note": ""
     }
