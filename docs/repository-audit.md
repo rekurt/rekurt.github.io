@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-09-06T23:55:52Z
+Snapshot: 2026-09-07T10:20:39Z
 50 public repositories · 20 original · 30 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -25,7 +25,7 @@ Snapshot: 2026-09-06T23:55:52Z
 | [rekurt/Chat-API](https://github.com/rekurt/Chat-API) | fork | fork of `domingopa/WhatsAPI-Official` | PHP | v2.5.5 | — | — | 2018-11-15 |
 | [rekurt/chatwoot](https://github.com/rekurt/chatwoot) | fork | fork of `chatwoot/chatwoot` | — | v4.16.2 | — | — | 2026-08-12 |
 | [rekurt/chislo](https://github.com/rekurt/chislo) | primary | original | Rust | v0.3.1 | [open](https://rekurt.github.io/chislo/) | — | 2026-09-06 |
-| [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v0.5.1 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-09-05 |
+| [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v0.5.1 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-09-07 |
 | [rekurt/dadata](https://github.com/rekurt/dadata) | fork | fork of `ekomobile/dadata` | — | — | — | — | 2025-07-23 |
 | [rekurt/dbdiff](https://github.com/rekurt/dbdiff) | primary | original | Rust | v0.2.1 | [open](https://rekurt.github.io/dbdiff/) | — | 2026-09-05 |
 | [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-09-05 |
