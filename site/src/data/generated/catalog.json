@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-09-11T21:44:22Z",
+  "syncedAt": "2026-09-12T19:23:26Z",
   "products": [
     {
       "slug": "openkline",
@@ -2129,10 +2129,10 @@
       "defaultBranch": "master",
       "headSha": "607a7d6bc53221bf58fa18bcc5e9616ef8561f9b",
       "license": "MIT",
-      "updatedAt": "2026-09-11T21:15:07Z",
+      "updatedAt": "2026-09-12T18:02:15Z",
       "pushedAt": "2026-09-05T05:11:11Z",
       "archived": false,
-      "stars": 9,
+      "stars": 10,
       "role": "primary",
       "version": {
         "value": "v0.5.0",
@@ -2169,9 +2169,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "dd30dbde13319940832cb996731e2d6ce539d16e",
-      "updatedAt": "2026-09-11T18:35:09Z",
-      "pushedAt": "2026-09-11T18:54:57Z",
+      "headSha": "a792733bb8f781471fe23d5b7403ef80fdd99c7b",
+      "updatedAt": "2026-09-11T21:44:46Z",
+      "pushedAt": "2026-09-11T21:44:42Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
