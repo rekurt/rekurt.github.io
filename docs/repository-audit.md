@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-09-13T06:11:42Z
+Snapshot: 2026-10-01T23:38:48Z
 50 public repositories · 20 original · 30 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -49,9 +49,9 @@ Snapshot: 2026-09-13T06:11:42Z
 | [rekurt/openkline-vue](https://github.com/rekurt/openkline-vue) | support | original | TypeScript | 0.1.0 | — | — | 2026-06-12 |
 | [rekurt/openkline.tech](https://github.com/rekurt/openkline.tech) | support | original | JavaScript | v0.1.3 | [open](https://rekurt.github.io/openkline.tech/) | — | 2026-09-06 |
 | [rekurt/prt](https://github.com/rekurt/prt) | primary | original | Rust | v0.5.0 | [open](https://rekurt.github.io/prt/) | — | 2026-09-05 |
-| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.2.0 | [open](https://rekurt.github.io/) | — | 2026-09-12 |
+| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.2.0 | [open](https://rekurt.github.io/) | — | 2026-09-25 |
+| [rekurt/relax-hub](https://github.com/rekurt/relax-hub) | unclassified | original | Go | — | — | — | 2026-09-22 |
 | [rekurt/sprint-velocity](https://github.com/rekurt/sprint-velocity) | primary | original | Python | — | [open](https://rekurt.github.io/sprint-velocity/) | — | 2026-09-05 |
 | [rekurt/srs](https://github.com/rekurt/srs) | fork | fork of `ossrs/srs` | — | v4.0.8 | — | — | 2020-02-26 |
 | [rekurt/tsql](https://github.com/rekurt/tsql) | fork | fork of `fcoury/tsql` | — | — | — | — | 2026-04-17 |
-| [rekurt/vpn-hub](https://github.com/rekurt/vpn-hub) | primary | original | Go | v0.1.2 | [open](https://rekurt.github.io/vpn-hub/) | — | 2026-09-06 |
 | [rekurt/ymsdk](https://github.com/rekurt/ymsdk) | primary | original | Go | v0.2.0 | [open](https://rekurt.github.io/ymsdk/) | — | 2026-09-05 |

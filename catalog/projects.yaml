@@ -64,25 +64,6 @@ products:
     website: https://rekurt.github.io/git-barber/
     documentation: https://github.com/rekurt/git-barber#readme
 
-  - slug: vpn-hub
-    primary_repo: rekurt/vpn-hub
-    repositories:
-      - rekurt/vpn-hub
-    kind: platform
-    domain: infrastructure
-    accent: emerald
-    featured: true
-    maintained_fork: false
-    upstream: ""
-    summary:
-      en: Linux VPN hub with per-device routing, configuration drift detection, deployment rollback and Telegram controls.
-      ru: VPN-хаб на Linux с выбором маршрута для каждого устройства, проверкой расхождений конфигурации, откатом изменений и управлением через Telegram.
-      zh-cn: Linux VPN 枢纽，支持按设备配置路由、检测配置差异、回滚部署和通过 Telegram 管理。
-    install:
-      - git clone https://github.com/rekurt/vpn-hub.git
-    website: https://rekurt.github.io/vpn-hub/
-    documentation: https://rekurt.github.io/vpn-hub/docs/
-
   - slug: ymsdk
     primary_repo: rekurt/ymsdk
     repositories:
