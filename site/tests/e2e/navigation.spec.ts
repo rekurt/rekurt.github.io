@@ -30,7 +30,7 @@ test("home page exposes author structured data", async ({ page }) => {
 
 test("project actions map only to declared public surfaces", async ({ page }) => {
   await page.goto("/projects/prt/");
-  await expect(page.getByRole("heading", { level: 1, name: "prt" })).toBeVisible();
+  await expect(page.locator(".project-hero").getByRole("heading", { level: 1, name: "prt", exact: true })).toBeVisible();
   const actions = page.locator(".project-actions");
   await expect(actions.getByRole("link", { name: /^Website/ })).toHaveAttribute("href", "https://rekurt.github.io/prt/");
   await expect(actions.getByRole("link", { name: /^Documentation/ })).toHaveAttribute("href", "https://crates.io/crates/prt");
