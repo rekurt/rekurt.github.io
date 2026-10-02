@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/rekurt/rekurt.github.io/compare/v0.2.0...v0.2.1) (2026-10-02)
+
+
+### Bug Fixes
+
+* **catalog:** restore public metadata refresh ([#14](https://github.com/rekurt/rekurt.github.io/issues/14)) ([a30be01](https://github.com/rekurt/rekurt.github.io/commit/a30be01e3f48bae75969b8e09f52c576021c8a3c))
+
 ## [0.2.0](https://github.com/rekurt/rekurt.github.io/compare/v0.1.0...v0.2.0) (2026-09-06)
 
 
