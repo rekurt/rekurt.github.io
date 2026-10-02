@@ -29,16 +29,16 @@ test("home page exposes author structured data", async ({ page }) => {
 });
 
 test("project actions map only to declared public surfaces", async ({ page }) => {
-  await page.goto("/projects/vpn-hub/");
-  await expect(page.getByRole("heading", { level: 1, name: "vpn-hub" })).toBeVisible();
+  await page.goto("/projects/prt/");
+  await expect(page.locator(".project-hero").getByRole("heading", { level: 1, name: "prt", exact: true })).toBeVisible();
   const actions = page.locator(".project-actions");
-  await expect(actions.getByRole("link", { name: /^Website/ })).toHaveAttribute("href", "https://rekurt.github.io/vpn-hub/");
-  await expect(actions.getByRole("link", { name: /^Documentation/ })).toHaveAttribute("href", "https://rekurt.github.io/vpn-hub/docs/");
+  await expect(actions.getByRole("link", { name: /^Website/ })).toHaveAttribute("href", "https://rekurt.github.io/prt/");
+  await expect(actions.getByRole("link", { name: /^Documentation/ })).toHaveAttribute("href", "https://crates.io/crates/prt");
 });
 
 test("catalog filters without hiding content by default", async ({ page }) => {
   await page.goto("/projects/");
-  await expect(page.locator("[data-project-card]:visible")).toHaveCount(14);
+  await expect(page.locator("[data-project-card]:visible")).toHaveCount(13);
   await page.getByRole("button", { name: "fintech", exact: true }).click();
   const visible = page.locator("[data-project-card]:visible");
   await expect(visible).not.toHaveCount(0);
