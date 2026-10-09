@@ -232,7 +232,8 @@ products:
       ru: Просмотр портов, сетевых соединений, процессов и SSH-туннелей в терминале на macOS и Linux.
       zh-cn: 在 macOS 和 Linux 终端中查看端口、网络连接、进程详情和 SSH 隧道。
     install:
-      - cargo install prt
+      - cargo install prt --version 0.6.0 --locked
+      - brew install rekurt/tap/prt
     website: https://rekurt.github.io/prt/
     documentation: https://crates.io/crates/prt
 
