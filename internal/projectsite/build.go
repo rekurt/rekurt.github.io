@@ -55,6 +55,8 @@ type pageView struct {
 	Language      string
 	Updated       string
 	Install       []string
+	NPMPackage    *catalog.NPMPackage
+	NPMURL        string
 	Actions       []actionView
 	Alternates    []alternateView
 	Readme        template.HTML
@@ -196,12 +198,17 @@ func makePageView(model Model, page LocalePage) (pageView, error) {
 	if language == "" {
 		language = "—"
 	}
+	npmURL := ""
+	if model.Product.NPMPackage != nil {
+		npmURL = "https://www.npmjs.com/package/" + model.Product.NPMPackage.Name + "/v/" + model.Product.NPMPackage.Version
+	}
 	return pageView{
 		Marketing: marketing,
 		Page:      page, Copy: copyFor(page.Locale), Name: model.Repository.Name, Owner: model.Owner,
 		Kind: model.Product.Kind, Domain: model.Product.Domain, Accent: model.Product.Accent,
 		Layout: layoutFor(model.Product.Kind), Version: version, License: license, Language: language,
 		Updated: model.Repository.PushedAt.UTC().Format("2006-01-02"), Install: model.Product.Install,
+		NPMPackage: model.Product.NPMPackage, NPMURL: npmURL,
 		Actions: actionsFor(model, page.Locale), Alternates: alternatesFor(model, false),
 		Readme: template.HTML(page.ReadmeHTML), AssetPrefix: assetPrefix(page.Path),
 		DirectoryHref: "projects/", ProjectHref: "./", Structured: template.JS(data),

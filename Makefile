@@ -16,6 +16,7 @@ build:
 
 site-kit-test:
 	go test ./internal/projectsite ./internal/sitefleet ./cmd/project-site ./cmd/site-fleet-check
+	node --test scripts/test-family-ui.mjs
 
 site-fleet-check:
 	go run ./cmd/site-fleet-check --snapshot site/src/data/generated/catalog.json

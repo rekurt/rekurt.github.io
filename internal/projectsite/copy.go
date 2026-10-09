@@ -18,6 +18,8 @@ type siteCopy struct {
 	NotDeclared    string
 	Copy           string
 	Copied         string
+	CopyFailed     string
+	ProjectNav     string
 	RepositoryDocs string
 	FamilyTitle    string
 	FamilyIntro    string
@@ -38,6 +40,7 @@ var copies = map[string]siteCopy{
 		Overview: "Documentation", Version: "Version", License: "License", Language: "Language",
 		Updated: "Last update", Current: "Current", Unversioned: "Unversioned", NotDeclared: "Not declared",
 		Copy: "Copy", Copied: "Copied", RepositoryDocs: "Setup, examples and API reference.",
+		CopyFailed: "Copy unavailable. Select the command and copy it manually.", ProjectNav: "On this page",
 		FamilyTitle: "More projects by rekurt", FamilyIntro: "Libraries, command-line tools and applications.",
 		AuthorHub: "Author portfolio", BackToProject: "Back to project", SkipToContent: "Skip to content",
 		GeneratedFrom: "Generated from public GitHub metadata", PrimaryNav: "Primary navigation",
@@ -49,6 +52,7 @@ var copies = map[string]siteCopy{
 		Overview: "Документация", Version: "Версия", License: "Лицензия", Language: "Язык",
 		Updated: "Последнее обновление", Current: "Текущий", Unversioned: "Без версии", NotDeclared: "Не указано",
 		Copy: "Копировать", Copied: "Скопировано", RepositoryDocs: "Настройка, примеры использования и справочник API.",
+		CopyFailed: "Не удалось скопировать. Выделите команду и скопируйте вручную.", ProjectNav: "На этой странице",
 		FamilyTitle: "Другие проекты rekurt", FamilyIntro: "Библиотеки, консольные инструменты и приложения.",
 		AuthorHub: "Портфолио автора", BackToProject: "Назад к проекту", SkipToContent: "Перейти к содержимому",
 		GeneratedFrom: "Собрано из публичных данных GitHub", PrimaryNav: "Основная навигация",
@@ -60,6 +64,7 @@ var copies = map[string]siteCopy{
 		Overview: "仓库文档", Version: "版本", License: "许可证", Language: "语言",
 		Updated: "最近更新", Current: "当前", Unversioned: "未版本化", NotDeclared: "未声明",
 		Copy: "复制", Copied: "已复制", RepositoryDocs: "配置说明、使用示例和 API 参考。",
+		CopyFailed: "无法复制。请选择命令并手动复制。", ProjectNav: "页面导航",
 		FamilyTitle: "rekurt 的其他项目", FamilyIntro: "程序库、命令行工具和应用程序。",
 		AuthorHub: "作者作品集", BackToProject: "返回项目", SkipToContent: "跳到内容",
 		GeneratedFrom: "根据公开 GitHub 元数据生成", PrimaryNav: "主导航",

@@ -36,11 +36,25 @@
       </nav>
     </header>
 
+    <div class="project-navigation">
+      <div class="shell project-nav-inner">
+        <a class="project-nav-name" href="#content">{{if .Marketing}}{{.Marketing.Name}}{{else}}{{.Name}}{{end}}</a>
+        <nav class="project-sections" aria-label="{{.Copy.ProjectNav}}">
+          {{if .Install}}<a href="#install">{{.Copy.Install}}</a>{{end}}
+          <a href="#overview">{{.Copy.Documentation}}</a>
+          {{if .Marketing}}{{if .Marketing.DemoURL}}<a href="{{.Marketing.DemoURL}}">{{.Marketing.DemoLabel}} ↗</a>{{end}}{{end}}
+        </nav>
+        <nav class="project-languages" aria-label="{{.Copy.LanguageNav}}">
+          {{range .Alternates}}{{if ne .Lang "x-default"}}<a href="{{.URL}}" lang="{{.Lang}}"{{if eq .Lang $.Page.Lang}} aria-current="page"{{end}}>{{.Name}}</a>{{end}}{{end}}
+        </nav>
+      </div>
+    </div>
+
     <main id="content">
       {{if .Marketing}}
       <section class="product-hero shell">
         <div class="product-pitch">
-          <p class="product-wordmark">{{.Marketing.Name}}<span aria-hidden="true"> / </span><small>{{.Version}}</small></p>
+          <p class="product-wordmark">{{.Marketing.Name}}<span aria-hidden="true"> / </span><small>{{if .NPMPackage}}GitHub · {{end}}{{.Version}}</small></p>
           <p class="eyebrow">{{.Marketing.Text.Eyebrow}}</p>
           <h1>{{.Marketing.Text.Headline}}</h1>
           <p class="summary">{{.Marketing.Text.Intro}}</p>
@@ -106,9 +120,11 @@
           <p class="section-index">01 / {{.Copy.Install}}</p>
           <h2 id="install-title">{{.Copy.Install}}</h2>
         </div>
+        {{if .NPMPackage}}<p class="package-version"><a href="{{.NPMURL}}">npm · {{.NPMPackage.Name}} · {{.NPMPackage.Version}} ↗</a></p>{{end}}
         <div class="commands">
-          {{range .Install}}<div class="command"><code>{{.}}</code><button type="button" data-copy="{{.}}"><span>{{$.Copy.Copy}}</span></button></div>{{end}}
+          {{range .Install}}<div class="command"><code>{{.}}</code><button type="button" data-copy="{{.}}" data-copy-label="{{$.Copy.Copy}}"><span>{{$.Copy.Copy}}</span></button></div>{{end}}
         </div>
+        <p class="copy-status" role="status" aria-live="polite" data-copied="{{.Copy.Copied}}" data-copy-failed="{{.Copy.CopyFailed}}"></p>
       </section>{{end}}
 
       <section id="overview" class="content-section shell readme-section" aria-labelledby="overview-title">
