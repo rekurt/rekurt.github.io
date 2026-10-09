@@ -51,8 +51,8 @@ func TestResolveBuildsLocalizedProjectModel(t *testing.T) {
 	if chinese.Path != "/zh-cn/" || chinese.Lang != "zh-CN" || chinese.Summary != "安全清理 Git 分支。" {
 		t.Fatalf("Chinese route = %#v", chinese)
 	}
-	if chinese.ReadmeHTML != "" {
-		t.Fatalf("missing Chinese README must not fall back to English HTML: %q", chinese.ReadmeHTML)
+	if !chinese.ReadmeFallback || !strings.Contains(chinese.ReadmeHTML, "English documentation") {
+		t.Fatalf("missing Chinese README must include explicitly identified original documentation: %q", chinese.ReadmeHTML)
 	}
 }
 
@@ -100,4 +100,16 @@ func localePage(t *testing.T, model Model, locale string) LocalePage {
 	}
 	t.Fatalf("locale %s not found", locale)
 	return LocalePage{}
+}
+
+func TestReadmeImagesHaveAccessibleNamesWithoutChangingExistingDescriptions(t *testing.T) {
+	html, err := demoteReadmeTitle(`<p><a href="https://pkg.go.dev/example"><img src="https://badges.example/status.svg"></a><img src="https://images.example/pro-dark-terminal.png"><img src="known.png" alt="Order book depth chart"></p>`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, name := range []string{`alt="https://pkg.go.dev/example"`, `alt="pro dark terminal"`, `alt="Order book depth chart"`} {
+		if !strings.Contains(html, name) {
+			t.Errorf("missing accessible description: %s", name)
+		}
+	}
 }

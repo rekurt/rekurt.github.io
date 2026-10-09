@@ -99,6 +99,15 @@ func Resolve(options Options) (Model, error) {
 		if err != nil {
 			return Model{}, err
 		}
+		// Keep the integration guide on every product page, while identifying
+		// untranslated source explicitly rather than presenting it as localized.
+		if filename == "" && locale.locale != "en" {
+			readme, filename, err = readLocalizedREADME(repositoryRoot, localeDefinitions[0].readmes, *repository)
+			if err != nil {
+				return Model{}, err
+			}
+			page.ReadmeFallback = filename != ""
+		}
 		if filename != "" {
 			page.ReadmeHTML = readme.HTML
 			ref := repository.HeadSHA
@@ -168,6 +177,45 @@ func demoteReadmeTitle(source string) (string, error) {
 		if node.Type == nethtml.ElementNode && node.Data == "h1" {
 			node.Data = "h2"
 			node.DataAtom = atom.H2
+		}
+		if node.Type == nethtml.ElementNode && node.Data == "img" {
+			alt, src := "", ""
+			altIndex := -1
+			for index, attr := range node.Attr {
+				if attr.Key == "alt" {
+					alt, altIndex = attr.Val, index
+				}
+				if attr.Key == "src" {
+					src = attr.Val
+				}
+			}
+			if strings.TrimSpace(alt) == "" {
+				// A linked badge needs the destination as its accessible name;
+				// an unlabelled illustration keeps a readable source filename.
+				if parsed, err := url.Parse(src); err == nil {
+					filename := filepath.Base(parsed.Path)
+					alt = strings.TrimSuffix(filename, filepath.Ext(filename))
+					alt = strings.NewReplacer("-", " ", "_", " ").Replace(alt)
+				}
+				for parent := node.Parent; parent != nil; parent = parent.Parent {
+					if parent.Data == "a" {
+						for _, attr := range parent.Attr {
+							if attr.Key == "href" {
+								alt = attr.Val
+							}
+						}
+						break
+					}
+				}
+				if alt == "" || alt == "." {
+					alt = "README image"
+				}
+				if altIndex >= 0 {
+					node.Attr[altIndex].Val = alt
+				} else {
+					node.Attr = append(node.Attr, nethtml.Attribute{Key: "alt", Val: alt})
+				}
+			}
 		}
 		for child := node.FirstChild; child != nil; child = child.NextSibling {
 			walk(child)

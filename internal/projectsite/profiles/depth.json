@@ -4,7 +4,7 @@
   "theme": "liquidity",
   "visual": "image",
   "image": "docs/assets/pro-dark-terminal.png",
-  "code": "const chart = new DepthChart({\n  container,\n  theme: 'dark',\n  shape: 'step',\n  data: orderBook,\n});\n\nchart.setData(nextSnapshot);\nconst { spread, imbalance } = chart.getMetrics();",
+  "code": "import { DepthChart } from '@rekurt/depth';\n\nconst container = document.createElement('div');\ncontainer.style.cssText = 'width: 100%; height: 400px';\ndocument.body.appendChild(container);\n\nconst chart = new DepthChart({\n  container, theme: 'dark', shape: 'step',\n  data: {\n    bids: [{ price: 99, volume: 2 }],\n    asks: [{ price: 101, volume: 3 }],\n  },\n});\n\nconsole.log(chart.getMetrics());\n// When removing the view: chart.destroy();",
   "primary": "#install",
   "demo_path": "demo/",
   "locales": {
@@ -38,7 +38,9 @@
       ],
       "closing": "Connect your order book data",
       "cta": "Integrate depth",
-      "note": ""
+      "note": "",
+      "benefits": "Inside the order book",
+      "workflow": "Snapshot → canvas"
     },
     "ru": {
       "eyebrow": "Библиотека графиков на TypeScript",
@@ -70,7 +72,9 @@
       ],
       "closing": "Подключите данные вашего стакана",
       "cta": "Подключить depth",
-      "note": ""
+      "note": "",
+      "benefits": "От снимка стакана к графику",
+      "workflow": "Снимок → canvas"
     },
     "zh-cn": {
       "eyebrow": "TypeScript 图表库",
@@ -102,7 +106,9 @@
       ],
       "closing": "接入你的订单簿数据",
       "cta": "接入 depth",
-      "note": ""
+      "note": "",
+      "benefits": "订单簿内部",
+      "workflow": "快照 → canvas"
     }
   }
 }

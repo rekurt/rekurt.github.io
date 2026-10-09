@@ -23,10 +23,12 @@ for (const filename of (await readdir(directory)).filter((name) => name.endsWith
       `<h1>${copy.headline}</h1>`, copy.intro, copy.cta, copy.closing,
       `href="${profile.primary}"`, `id="${profile.primary.slice(1)}"`,
       `rel="canonical" href="${url}"`, 'data-rekurt-family',
+      'id="example"', 'class="documentation-disclosure" open', copy.benefits, copy.workflow,
       ...copy.features.flatMap((item) => [item.title, item.body]),
       ...copy.steps.flatMap((item) => [item.title, item.body]),
     ];
     for (const value of required) assert.ok(html.includes(value), `${url}: missing ${value}`);
+    assert.ok(!html.includes('class="family-bar"') && !html.includes('class="family-section"'), `${url}: shared family branding dominates the product`);
     const directoryURL = `${url}projects/`;
     const links = [...html.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map((match) => new URL(match[1], url).href);
     assert.ok(links.includes(directoryURL), `${url}: missing directory link ${directoryURL}`);

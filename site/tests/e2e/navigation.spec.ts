@@ -61,9 +61,9 @@ test("registry contains the complete snapshot", async ({ page }) => {
 for (const prefix of ["", "/ru", "/zh-cn"]) {
   test(`npm packages keep separate GitHub provenance in ${prefix || "en"}`, async ({ page }) => {
     const packages = [
-      { slug: "depth", name: "@rekurt/depth", version: "0.1.0", github: "v0.1.0", source: "release" },
-      { slug: "openkline", name: "@rekurt/openkline-core", version: "0.2.0", github: "", source: "—" },
-      { slug: "gitlab-downloader", name: "gitlab-dump-cli", version: "0.2.0", github: "v0.0.2", source: "tag" },
+      { slug: "depth", name: "@rekurt/depth", version: "0.1.0" },
+      { slug: "openkline", name: "@rekurt/openkline-core", version: "0.2.0" },
+      { slug: "gitlab-downloader", name: "gitlab-dump-cli", version: "0.2.0" },
     ];
     await page.goto(`${prefix}/projects/`);
     for (const pkg of packages) {
@@ -75,10 +75,12 @@ for (const prefix of ["", "/ru", "/zh-cn"]) {
       await page.goto(`${prefix}/projects/${pkg.slug}/`);
       const status = page.locator(".project-status");
       await expect(status.locator(".npm-package")).toHaveAttribute("href", `https://www.npmjs.com/package/${pkg.name}/v/${pkg.version}`);
-      if (pkg.source !== "—") await expect(status.locator(".version-badge")).toHaveAttribute("title", pkg.source);
-      if (pkg.github) await expect(status.locator(".version-badge")).toHaveText(pkg.github);
+      const provenance = catalog.products.find(product => product.slug === pkg.slug)?.version;
+      if (!provenance) throw new Error(`Missing GitHub provenance for ${pkg.slug}`);
+      if (provenance.source !== "none") await expect(status.locator(".version-badge")).toHaveAttribute("title", provenance.source);
+      if (provenance.value) await expect(status.locator(".version-badge")).toHaveText(provenance.value);
       await expect(status).toContainText("GitHub");
-      await expect(status.locator("strong")).toHaveText(pkg.source);
+      await expect(status.locator("strong")).toHaveText(provenance.source === "none" ? "—" : provenance.source);
     }
   });
 }

@@ -37,7 +37,9 @@
       ],
       "closing": "Compare your database schemas",
       "cta": "Install dbdiff",
-      "note": ""
+      "note": "",
+      "benefits": "Read the schema changes",
+      "workflow": "From comparison to review"
     },
     "ru": {
       "eyebrow": "CLI для сравнения схем БД",
@@ -69,7 +71,9 @@
       ],
       "closing": "Сравните схемы ваших баз данных",
       "cta": "Установить dbdiff",
-      "note": ""
+      "note": "",
+      "benefits": "Разберите изменения схемы",
+      "workflow": "От сравнения к проверке"
     },
     "zh-cn": {
       "eyebrow": "数据库结构比较 CLI",
@@ -101,7 +105,9 @@
       ],
       "closing": "比较你的数据库结构",
       "cta": "安装 dbdiff",
-      "note": ""
+      "note": "",
+      "benefits": "审阅结构变更",
+      "workflow": "从对比到审阅"
     }
   }
 }

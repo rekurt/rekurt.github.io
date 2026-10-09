@@ -132,11 +132,15 @@ func TestMarketingLandingHasAdoptionPathAndLocalizedBenefits(t *testing.T) {
 		for _, required := range []string{
 			`data-product-profile="git-barber"`, `id="install"`, `id="overview"`,
 			profile.Locales[locale.locale].Headline, profile.Locales[locale.locale].Features[0].Title,
-			`marketing.css`, `git barber --list`,
+			`marketing.css`, `git barber --list`, `id="example"`,
+			`class="documentation-disclosure" open`, profile.Locales[locale.locale].Benefits, profile.Locales[locale.locale].Workflow,
 		} {
 			if !strings.Contains(page, required) {
 				t.Errorf("%s lacks %s", locale.locale, required)
 			}
+		}
+		if strings.Contains(page, `class="family-bar"`) || strings.Contains(page, `class="family-section"`) {
+			t.Errorf("%s product still leads with the shared author brand", locale.locale)
 		}
 		if strings.Contains(page, "git-barber.system") {
 			t.Errorf("%s still shows a generic system visual", locale.locale)

@@ -37,7 +37,9 @@
       ],
       "closing": "Installation and API examples",
       "cta": "Read integration docs",
-      "note": "Open-source bindings; no claim of certification or independent security audit."
+      "note": "Open-source bindings; no claim of certification or independent security audit.",
+      "benefits": "Choose the primitive",
+      "workflow": "Prepare the native backend"
     },
     "ru": {
       "eyebrow": "Go-обёртка над OpenSSL gost-engine",
@@ -69,7 +71,9 @@
       ],
       "closing": "Установка и примеры API",
       "cta": "Открыть документацию",
-      "note": "Open-source библиотека: сертификация и независимый аудит безопасности не заявлены."
+      "note": "Open-source библиотека: сертификация и независимый аудит безопасности не заявлены.",
+      "benefits": "Выберите примитив",
+      "workflow": "Подготовьте нативный backend"
     },
     "zh-cn": {
       "eyebrow": "OpenSSL gost-engine 的 Go 绑定",
@@ -101,7 +105,9 @@
       ],
       "closing": "安装说明与 API 示例",
       "cta": "阅读集成文档",
-      "note": "这是开源绑定，不宣称已获认证或通过独立安全审计。"
+      "note": "这是开源绑定，不宣称已获认证或通过独立安全审计。",
+      "benefits": "选择密码原语",
+      "workflow": "准备原生后端"
     }
   }
 }
