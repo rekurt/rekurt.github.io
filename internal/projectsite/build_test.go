@@ -65,8 +65,8 @@ func TestBuildWritesCompleteMultilingualSite(t *testing.T) {
 			t.Errorf("Chinese page lacks %q", required)
 		}
 	}
-	if strings.Contains(chinese, "English documentation") {
-		t.Fatal("Chinese page contains untranslated English README")
+	if !strings.Contains(chinese, "English documentation") || !strings.Contains(chinese, "readme-language-notice") {
+		t.Fatal("Chinese page must identify and include original documentation")
 	}
 
 	directory := readFile(t, filepath.Join(output, "projects/index.html"))

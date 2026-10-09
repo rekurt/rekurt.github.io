@@ -37,7 +37,9 @@
       ],
       "closing": "Connect your Go service to Yandex Messenger",
       "cta": "Install the SDK",
-      "note": ""
+      "note": "",
+      "benefits": "One client, several conversations",
+      "workflow": "Your first bot notification"
     },
     "ru": {
       "eyebrow": "Клиент Yandex Messenger Bot API",
@@ -69,7 +71,9 @@
       ],
       "closing": "Подключите Go-сервис к Яндекс Мессенджеру",
       "cta": "Установить SDK",
-      "note": ""
+      "note": "",
+      "benefits": "Один клиент, разные диалоги",
+      "workflow": "Первое уведомление от бота"
     },
     "zh-cn": {
       "eyebrow": "Yandex Messenger Bot API 客户端",
@@ -101,7 +105,9 @@
       ],
       "closing": "将 Go 服务接入 Yandex Messenger",
       "cta": "安装 SDK",
-      "note": ""
+      "note": "",
+      "benefits": "一个客户端，多种对话",
+      "workflow": "第一条机器人通知"
     }
   }
 }

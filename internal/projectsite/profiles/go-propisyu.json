@@ -37,7 +37,9 @@
       ],
       "closing": "Format amounts in your Go application",
       "cta": "Add to your Go project",
-      "note": ""
+      "note": "",
+      "benefits": "Words that agree with the amount",
+      "workflow": "From a value to a document"
     },
     "ru": {
       "eyebrow": "Библиотека форматирования чисел для Go",
@@ -69,7 +71,9 @@
       ],
       "closing": "Добавьте суммы прописью в Go-приложение",
       "cta": "Добавить в Go-проект",
-      "note": ""
+      "note": "",
+      "benefits": "Слова согласуются с суммой",
+      "workflow": "От значения к документу"
     },
     "zh-cn": {
       "eyebrow": "Go 俄语数字格式化库",
@@ -101,7 +105,9 @@
       ],
       "closing": "在 Go 应用中生成俄语金额文字",
       "cta": "加入 Go 项目",
-      "note": ""
+      "note": "",
+      "benefits": "让文字与金额一致",
+      "workflow": "从数值到文档"
     }
   }
 }

@@ -23,6 +23,7 @@ type LocalePage struct {
 	Title           string
 	Description     string
 	Summary         string
+	ReadmeFallback  bool
 	ReadmeHTML      string
 	ReadmeSourceURL string
 }

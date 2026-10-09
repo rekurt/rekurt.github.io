@@ -37,7 +37,9 @@
       ],
       "closing": "Setup and experiment guide",
       "cta": "Read the setup guide",
-      "note": "Experimental and not production-safe. Do not use employee, customer, confidential or regulated data."
+      "note": "Experimental and not production-safe. Do not use employee, customer, confidential or regulated data.",
+      "benefits": "The parts of the experiment",
+      "workflow": "Set up a disposable lab"
     },
     "ru": {
       "eyebrow": "Эксперименты с OpenClaw · Docker Compose",
@@ -69,7 +71,9 @@
       ],
       "closing": "Настройка и проведение экспериментов",
       "cta": "Открыть руководство",
-      "note": "Экспериментальный проект, не предназначенный для промышленной эксплуатации. Не используйте данные сотрудников, клиентов, конфиденциальные данные или данные с особыми требованиями к обработке."
+      "note": "Экспериментальный проект, не предназначенный для промышленной эксплуатации. Не используйте данные сотрудников, клиентов, конфиденциальные данные или данные с особыми требованиями к обработке.",
+      "benefits": "Из чего состоит эксперимент",
+      "workflow": "Подготовьте одноразовую лабораторию"
     },
     "zh-cn": {
       "eyebrow": "OpenClaw 实验 · Docker Compose",
@@ -101,7 +105,9 @@
       ],
       "closing": "配置与实验指南",
       "cta": "阅读配置指南",
-      "note": "实验项目，不适合生产环境。不要使用员工、客户、机密或受监管数据。"
+      "note": "实验项目，不适合生产环境。不要使用员工、客户、机密或受监管数据。",
+      "benefits": "实验的组成部分",
+      "workflow": "搭建可丢弃的实验环境"
     }
   }
 }

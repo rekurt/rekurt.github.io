@@ -99,6 +99,15 @@ func Resolve(options Options) (Model, error) {
 		if err != nil {
 			return Model{}, err
 		}
+		// Keep the integration guide on every product page, while identifying
+		// untranslated source explicitly rather than presenting it as localized.
+		if filename == "" && locale.locale != "en" {
+			readme, filename, err = readLocalizedREADME(repositoryRoot, localeDefinitions[0].readmes, *repository)
+			if err != nil {
+				return Model{}, err
+			}
+			page.ReadmeFallback = filename != ""
+		}
 		if filename != "" {
 			page.ReadmeHTML = readme.HTML
 			ref := repository.HeadSHA

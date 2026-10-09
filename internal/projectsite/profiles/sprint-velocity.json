@@ -37,7 +37,9 @@
       ],
       "closing": "Configure your weekly task report",
       "cta": "Read the setup instructions",
-      "note": "Reports task counts. Does not measure individual productivity or calculate story-point velocity."
+      "note": "Reports task counts. Does not measure individual productivity or calculate story-point velocity.",
+      "benefits": "What happened this week",
+      "workflow": "Make Friday reporting routine"
     },
     "ru": {
       "demo": "Sprint Velocity — пример\n\nЗакрыто за неделю        8\nОткрыто, назначено мне   5\nПросрочено               1\n\nПятница · 18:00 · Москва",
@@ -70,7 +72,9 @@
       ],
       "closing": "Настройте еженедельный отчёт по задачам",
       "cta": "Открыть инструкцию",
-      "note": "Отчёт показывает количество задач. Он не измеряет личную продуктивность и не рассчитывает velocity в story points."
+      "note": "Отчёт показывает количество задач. Он не измеряет личную продуктивность и не рассчитывает velocity в story points.",
+      "benefits": "Что произошло за неделю",
+      "workflow": "Сводка к завершению недели"
     },
     "zh-cn": {
       "demo": "Sprint Velocity — 示例\n\n本周已关闭任务      8\n分配给我的待办任务  5\n逾期任务            1\n\n周五 · 18:00 · 莫斯科时间",
@@ -103,7 +107,9 @@
       ],
       "closing": "配置每周任务报告",
       "cta": "阅读配置说明",
-      "note": "报告仅统计任务数量，不衡量个人生产力，也不计算基于故事点的迭代速度。"
+      "note": "报告仅统计任务数量，不衡量个人生产力，也不计算基于故事点的迭代速度。",
+      "benefits": "本周发生了什么",
+      "workflow": "让周五汇报成为惯例"
     }
   }
 }

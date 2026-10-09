@@ -37,7 +37,9 @@
       ],
       "closing": "Plan a GitLab transfer",
       "cta": "Read the transfer guide",
-      "note": "Git-only fallback does not migrate issues, merge requests, CI secrets or other GitLab platform resources."
+      "note": "Git-only fallback does not migrate issues, merge requests, CI secrets or other GitLab platform resources.",
+      "benefits": "A place for every repository",
+      "workflow": "Plan your export"
     },
     "ru": {
       "eyebrow": "Инструмент переноса репозиториев GitLab",
@@ -69,7 +71,9 @@
       ],
       "closing": "Подготовьте перенос проектов GitLab",
       "cta": "Открыть руководство",
-      "note": "Режим переноса только Git-данных не переносит задачи, merge requests, секреты CI и другие ресурсы платформы GitLab."
+      "note": "Режим переноса только Git-данных не переносит задачи, merge requests, секреты CI и другие ресурсы платформы GitLab.",
+      "benefits": "Место для каждого репозитория",
+      "workflow": "Подготовьте выгрузку"
     },
     "zh-cn": {
       "eyebrow": "GitLab 仓库迁移工具",
@@ -101,7 +105,9 @@
       ],
       "closing": "准备 GitLab 迁移计划",
       "cta": "阅读迁移指南",
-      "note": "仅 Git 回退不会迁移议题、合并请求、CI 密钥或其他 GitLab 平台资源。"
+      "note": "仅 Git 回退不会迁移议题、合并请求、CI 密钥或其他 GitLab 平台资源。",
+      "benefits": "每个仓库都有归处",
+      "workflow": "规划导出"
     }
   }
 }

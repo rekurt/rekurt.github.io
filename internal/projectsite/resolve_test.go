@@ -51,8 +51,8 @@ func TestResolveBuildsLocalizedProjectModel(t *testing.T) {
 	if chinese.Path != "/zh-cn/" || chinese.Lang != "zh-CN" || chinese.Summary != "安全清理 Git 分支。" {
 		t.Fatalf("Chinese route = %#v", chinese)
 	}
-	if chinese.ReadmeHTML != "" {
-		t.Fatalf("missing Chinese README must not fall back to English HTML: %q", chinese.ReadmeHTML)
+	if !chinese.ReadmeFallback || !strings.Contains(chinese.ReadmeHTML, "English documentation") {
+		t.Fatalf("missing Chinese README must include explicitly identified original documentation: %q", chinese.ReadmeHTML)
 	}
 }
 

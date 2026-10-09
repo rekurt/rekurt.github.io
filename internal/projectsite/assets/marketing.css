@@ -119,3 +119,147 @@
   .product-site .command code { min-width: 0; font-size: .8rem; padding: .8rem; }
   .product-site .command button { min-width: 44px; border-top: 0; border-left: 1px solid var(--line); }
 }
+
+/* Product identities: the subject determines the composition, not a family banner. */
+.product-site { --max: 1200px; }
+.project-emblem { display: inline-grid; place-items: center; width: 32px; height: 32px; margin-right: .65rem; border: 1px solid var(--accent); color: var(--accent); font: 700 1.2rem var(--mono); }
+.product-site .project-navigation { top: 0; background: var(--bg); border-bottom: 1px solid var(--line); }
+.product-site .project-nav-name { display: flex; align-items: center; }
+.product-site .product-hero { padding-block: 4rem; }
+.product-site .product-wordmark { display: none; }
+.product-site h1 { font-size: clamp(2.5rem, 4.8vw, 4.8rem); line-height: 1.06; max-width: 20ch; }
+.product-site .summary { font-size: 1.12rem; }
+.product-site .product-demo { border-radius: 0; box-shadow: 10px 10px 0 var(--line); }
+.product-site .benefit-grid article { border: 0; padding: 1rem 0; }
+.product-site .product-benefits, .product-site .product-workflow { padding-block: 3rem; }
+.product-example { display: grid; grid-template-columns: .6fr 1.4fr; gap: 2rem; padding-block: 2.5rem; border-top: 1px solid var(--line); }
+.example-intro p:last-child { font: .8rem var(--mono); color: var(--muted); }
+.example-code { min-width: 0; background: var(--surface); border: 1px solid var(--line); }
+.example-code pre { margin: 0; padding: 1.5rem; font: .88rem/1.85 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
+.readme-language-notice { padding: 1rem 1.25rem; border-left: 3px solid var(--accent); color: var(--muted); }
+.product-site .documentation-disclosure { border: 0; }
+.product-site .documentation-disclosure summary { border-bottom: 1px solid var(--line); padding-left: 0; }
+.product-site .documentation-disclosure .readme { padding-inline: 0; }
+.product-site .readme { max-width: 84ch; }
+.product-site .readme h2 { padding-top: 1.5rem; }
+.product-site .site-footer { border-top: 1px solid var(--line); }
+.product-site .footer-inner > p:nth-child(2) { font-size: .7rem; }
+
+/* Depth: a market workbench; the chart has the widest surface. */
+.theme-liquidity .product-hero { grid-template-columns: 1fr; gap: 3rem; }
+.theme-liquidity .product-pitch { max-width: 900px; }
+.theme-liquidity h1 { max-width: 20ch; font-weight: 500; }
+.theme-liquidity .summary { max-width: 70ch; }
+.theme-liquidity .product-demo { box-shadow: none; border-top: 3px solid var(--accent); }
+.theme-liquidity .product-demo img { max-height: 650px; object-fit: cover; object-position: top; }
+.theme-liquidity .benefit-grid { gap: 0; }
+.theme-liquidity .benefit-grid article { padding: 1.5rem; border: 1px solid var(--line); }
+
+/* Git Barber: spare, oversized type and a branch-cutting diagonal. */
+.theme-barber { --bg: #eee9dc; --surface: #e1ddcf; --line: #c4c6b4; --line-strong: #879676; --text: #192c22; --muted: #4b5e50; --accent: #254f37; color-scheme: light; }
+.theme-barber h1 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(3rem,6vw,6rem); }
+.theme-barber .product-demo { transform: rotate(-2deg); border-top: 8px solid var(--accent); background: #192c22; box-shadow: 12px 12px 0 #c5d4af; }
+.theme-barber .product-demo figcaption { color: #c5d4af; }
+.theme-barber .product-demo figcaption b { color: #e2f1cd; }
+.theme-barber .benefit-grid { grid-template-columns: 1fr; }
+.theme-barber .benefit-grid article { display: grid; grid-template-columns: 40px minmax(180px,.7fr) 1fr; gap: 1rem; border-top: 1px solid var(--line); }
+
+/* PRT: a terminal manual, with output preceding the explanation. */
+.theme-ports { --bg: #0a1113; --surface: #101e21; --text: #e3f6ef; --muted: #a9c2b9; --accent: #8ce6b4; }
+.theme-ports h1, .theme-ports h2 { font-family: var(--mono); letter-spacing: -.05em; }
+.theme-ports .product-hero { grid-template-columns: 1.15fr 1fr; }
+.theme-ports .product-demo { grid-column: 1; grid-row: 1; box-shadow: none; border: 1px solid var(--accent); }
+.theme-ports .product-pitch { grid-column: 2; grid-row: 1; }
+.theme-ports .benefit-number::before { content: '$ ' counter(benefit, decimal-leading-zero); }
+.theme-ports .button { border-radius: 0; font-family: var(--mono); }
+
+/* DbDiff: a schema review sheet and ruled documentation. */
+.theme-schema { --bg: #f3f1e8; --surface: #e9e7db; --accent: #285345; }
+.theme-schema .product-hero { border-bottom: 4px double var(--line-strong); }
+.theme-schema h1 { font-size: clamp(3rem,5vw,5rem); }
+.theme-schema .product-demo { box-shadow: 8px 8px 0 #d0d7c8; }
+.theme-schema .benefit-grid article { border-top: 4px double var(--line-strong); }
+.theme-schema .product-workflow { grid-template-columns: 1fr; }
+.theme-schema .product-workflow ol { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
+/* GitLab Dump: a migration desk with a full-width transfer manifest. */
+.theme-transfer .product-hero { grid-template-columns: 1fr; }
+.theme-transfer .product-pitch { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0 3rem; }
+.theme-transfer .product-pitch h1 { grid-column: 1; grid-row: 2 / span 3; font-family: Georgia, serif; font-weight: 400; }
+.theme-transfer .eyebrow { grid-column: 1 / -1; }
+.theme-transfer .product-pitch .summary, .theme-transfer .product-pitch .actions, .theme-transfer .product-pitch .product-fit { grid-column: 2; }
+.theme-transfer .product-demo { box-shadow: none; border-block: 1px solid var(--accent); border-inline: 0; }
+.theme-transfer .product-demo pre { font-size: 1rem; }
+.theme-transfer .benefit-grid article { border-top: 1px solid var(--accent); }
+
+/* Go-propisyu: a paper receipt, serif typography, a perforated edge. */
+.theme-words { --max: 1040px; --bg: #efe4cd; --surface: #fffaf0; }
+.theme-words h1 { font-style: italic; font-size: clamp(3rem,5vw,5.2rem); }
+.theme-words .product-demo { border: 0; border-bottom: 3px dashed #ad9677; box-shadow: 0 12px 25px #362c2115; transform: rotate(2deg); }
+.theme-words .receipt-value { font-size: 3.6rem; }
+.theme-words .product-benefits .benefit-grid { gap: 2.5rem; }
+.theme-words .product-workflow { border-block-style: dashed; }
+.theme-words .product-close h2 { font-family: Georgia, serif; font-style: italic; }
+
+/* GOST: an algorithm reference, mathematical type and compact columns. */
+.theme-crypto { --bg: #14171e; --surface: #1c222d; --line: #3d4555; --accent: #c9b5ff; }
+.theme-crypto h1 { font-family: Georgia, serif; font-weight: 400; }
+.theme-crypto .primitive-strip { padding-block: 2rem; }
+.theme-crypto .primitive-strip span { font-size: 1.65rem; }
+.theme-crypto .product-demo { box-shadow: none; border-radius: 0; }
+.theme-crypto .benefit-grid article { border-top: 1px solid var(--accent); }
+.theme-crypto .example-intro h2 { font-family: Georgia, serif; }
+
+/* YMSDK: a conversation and the code that produces it. */
+.theme-messenger { --bg: #fff7ed; --surface: #f7e6d0; --accent: #963a29; }
+.theme-messenger h1 { font-family: Georgia, serif; font-weight: 400; }
+.theme-messenger .product-demo { border-radius: 28px 28px 28px 0; box-shadow: 10px 10px 0 #e8c9a9; }
+.theme-messenger .benefit-grid article { padding: 1.5rem; background: var(--surface); border-radius: 24px 24px 24px 0; }
+.theme-messenger .product-workflow ol { list-style: none; padding: 0; }
+.theme-messenger .product-workflow li { border-left: 2px solid var(--accent); padding: 0 0 1rem 1.25rem; }
+
+/* Sprint Velocity: a weekly editorial, report on a clipped sheet. */
+.theme-weekly { --bg: #f7f3ea; --surface: #e9eadf; --text: #273c34; --accent: #275f4a; }
+.theme-weekly h1 { font-family: Georgia, serif; font-weight: 400; }
+.theme-weekly .product-demo { border: 1px solid #c5cdbd; border-top: 12px solid var(--accent); box-shadow: 8px 8px 0 #d6ddcc; transform: rotate(1deg); }
+.theme-weekly .report-day { font-size: 4rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.theme-weekly .benefit-grid { grid-template-columns: 1fr 1fr; }
+.theme-weekly .benefit-grid article:last-child { grid-column: 1 / -1; border-top: 1px solid var(--line); }
+
+/* CortexForge: an engineering notebook, diagram on graph paper. */
+.theme-lab { --bg: #151c27; --surface: #1d2b3c; --line: #405574; --text: #eef4ff; --muted: #b5c6dc; --accent: #f8ba72; }
+.theme-lab h1 { font-weight: 500; }
+.theme-lab .product-hero { grid-template-columns: 1fr; }
+.theme-lab .product-pitch { max-width: 880px; }
+.theme-lab .product-demo { background-image: linear-gradient(#40557440 1px, transparent 1px),linear-gradient(90deg,#40557440 1px,transparent 1px); background-size: 24px 24px; box-shadow: none; border-style: solid; }
+.theme-lab .product-demo pre { font-size: 1.1rem; line-height: 2; }
+.theme-lab .benefit-grid article { border-left: 1px dashed var(--accent); padding: 1rem 1.5rem; }
+
+@media (max-width: 800px) {
+ .product-site .product-hero { grid-template-columns: 1fr; padding-block: 2.5rem; }
+ .theme-ports .product-pitch, .theme-ports .product-demo { grid-column: auto; grid-row: auto; }
+ .theme-transfer .product-pitch { display: block; }
+ .theme-barber .benefit-grid article { grid-template-columns: 30px 1fr; }
+ .theme-barber .benefit-grid article p { grid-column: 2; }
+ .product-site .product-demo { transform: none; }
+ .product-example { grid-template-columns: 1fr; }
+ .theme-schema .product-workflow ol, .theme-weekly .benefit-grid { grid-template-columns: 1fr; }
+ .theme-weekly .benefit-grid article:last-child { grid-column: auto; }
+ .product-site h1 { font-size: clamp(2.3rem,8vw,3.8rem); }
+ .product-site .product-demo pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+ .theme-liquidity .benefit-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .product-site *, .product-site *::before { scroll-behavior: auto; } }
+.product-site .readme { overflow-wrap: anywhere; min-width: 0; }
+.product-site .readme pre, .product-site .readme table { max-width: 100%; }
+.product-site .button { max-width: 100%; overflow-wrap: anywhere; }
+.product-site .button span { flex-shrink: 0; }
+#example { scroll-margin-top: 10rem; }
+@media (max-width: 560px) {
+ .product-site .project-nav-inner { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 0 .3rem; }
+ .product-site .project-nav-name { width: auto; grid-column: 1; }
+ .product-site .project-languages { grid-column: 2; grid-row: 1; gap: .1rem; }
+ .product-site .project-languages a { padding-inline: .15rem; font-size: .7rem; }
+ .product-site .project-sections { grid-column: 1 / -1; gap: 0 .75rem; }
+ .product-site .project-sections a { font-size: .75rem; }
+}

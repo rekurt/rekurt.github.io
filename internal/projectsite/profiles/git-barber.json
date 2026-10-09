@@ -37,7 +37,9 @@
       ],
       "closing": "Review branches in your repository",
       "cta": "Install git-barber",
-      "note": ""
+      "note": "",
+      "benefits": "Keep the work. Trim the branches.",
+      "workflow": "A considered cleanup"
     },
     "ru": {
       "eyebrow": "CLI для очистки веток Git",
@@ -69,7 +71,9 @@
       ],
       "closing": "Проверьте ветки вашего репозитория",
       "cta": "Установить git-barber",
-      "note": ""
+      "note": "",
+      "benefits": "Работа остаётся. Ветки уходят.",
+      "workflow": "Осознанная очистка"
     },
     "zh-cn": {
       "eyebrow": "Git 分支清理 CLI",
@@ -101,7 +105,9 @@
       ],
       "closing": "检查仓库中的已合并分支",
       "cta": "安装 git-barber",
-      "note": ""
+      "note": "",
+      "benefits": "保留成果，清理分支。",
+      "workflow": "审慎清理"
     }
   }
 }
