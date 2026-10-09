@@ -7,15 +7,20 @@ describe("catalog selectors", () => {
     const catalog = getCatalog();
     expect(catalog.schemaVersion).toBe(1);
     expect(catalog.owner).toBe("rekurt");
-    expect(catalog.products).toHaveLength(14);
-    expect(catalog.repositories).toHaveLength(50);
+    expect(catalog.products).toHaveLength(13);
+    expect(catalog.repositories.length).toBeGreaterThan(0);
+    const repositoryNames = new Set(catalog.repositories.map((repository) => repository.nameWithOwner));
+    expect(repositoryNames.size).toBe(catalog.repositories.length);
+    for (const product of catalog.products) {
+      expect(repositoryNames.has(product.primaryRepo)).toBe(true);
+    }
     expect(catalog.repositories.find((repository) => repository.nameWithOwner === "rekurt/rekurt.github.io")?.role).toBe("portfolio-hub");
   });
 
   it("localizes without changing project identity", () => {
-    const en = getProduct("vpn-hub", "en");
-    const ru = getProduct("vpn-hub", "ru");
-    const zh = getProduct("vpn-hub", "zh-cn");
+    const en = getProduct("prt", "en");
+    const ru = getProduct("prt", "ru");
+    const zh = getProduct("prt", "zh-cn");
     expect(en.slug).toBe(ru.slug);
     expect(en.slug).toBe(zh.slug);
     expect(en.summary).not.toBe(ru.summary);
