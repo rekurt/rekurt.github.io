@@ -6,6 +6,7 @@
   "image": "docs/assets/pro-dark-terminal.png",
   "code": "const chart = new DepthChart({\n  container,\n  theme: 'dark',\n  shape: 'step',\n  data: orderBook,\n});\n\nchart.setData(nextSnapshot);\nconst { spread, imbalance } = chart.getMetrics();",
   "primary": "#install",
+  "demo_path": "demo/",
   "locales": {
     "en": {
       "eyebrow": "TypeScript chart library",
