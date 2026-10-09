@@ -1,7 +1,7 @@
 # Public repository audit
 
-Snapshot: 2026-10-09T19:35:55Z
-86 public repositories · 20 original · 66 fork
+Snapshot: 2026-10-09T20:57:27Z
+90 public repositories · 20 original · 70 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
 |---|---|---|---|---|---|---|---|
@@ -15,6 +15,8 @@ Snapshot: 2026-10-09T19:35:55Z
 | [rekurt/awesome-chatbots](https://github.com/rekurt/awesome-chatbots) | fork | fork of `JStumpp/awesome-chatbots` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-cli-apps](https://github.com/rekurt/awesome-cli-apps) | fork | fork of `agarrharr/awesome-cli-apps` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-cli-apps-in-a-csv](https://github.com/rekurt/awesome-cli-apps-in-a-csv) | fork | fork of `toolleeo/awesome-cli-apps-in-a-csv` | — | — | — | — | 2026-10-03 |
+| [rekurt/awesome-cli-tui-software-lgaggini](https://github.com/rekurt/awesome-cli-tui-software-lgaggini) | fork | fork of `lgaggini/awesome-cli-tui-software` | — | — | — | — | 2026-10-09 |
+| [rekurt/awesome-command-line-tools-ad-si](https://github.com/rekurt/awesome-command-line-tools-ad-si) | fork | fork of `ad-si/awesome-command-line-tools` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-cryptography](https://github.com/rekurt/awesome-cryptography) | fork | fork of `sobolevn/awesome-cryptography` | — | 1.0.0 | — | — | 2026-04-08 |
 | [rekurt/awesome-dataviz](https://github.com/rekurt/awesome-dataviz) | fork | fork of `hal9ai/awesome-dataviz` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-db-tools](https://github.com/rekurt/awesome-db-tools) | fork | fork of `mgramin/awesome-db-tools` | — | — | — | — | 2026-10-08 |
@@ -48,9 +50,10 @@ Snapshot: 2026-10-09T19:35:55Z
 | [rekurt/awesome-rust-tools](https://github.com/rekurt/awesome-rust-tools) | fork | fork of `unpluggedcoder/awesome-rust-tools` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-sql](https://github.com/rekurt/awesome-sql) | fork | fork of `danhuss/awesome-sql` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-sqlite](https://github.com/rekurt/awesome-sqlite) | fork | fork of `planetopendata/awesome-sqlite` | — | — | — | — | 2026-10-09 |
+| [rekurt/awesome-sqlite-airsequel](https://github.com/rekurt/awesome-sqlite-airsequel) | fork | fork of `Airsequel/awesome-sqlite` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-tuis](https://github.com/rekurt/awesome-tuis) | fork | fork of `rothgar/awesome-tuis` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-vcs-tools](https://github.com/rekurt/awesome-vcs-tools) | fork | fork of `postpdm/awesome-vcs-tools` | — | — | — | — | 2026-10-09 |
-| [rekurt/awesome-vue-3](https://github.com/rekurt/awesome-vue-3) | fork | fork of `gs00s/awesome-vue-3` | — | — | — | — | 2026-08-01 |
+| [rekurt/awesome-vue-3](https://github.com/rekurt/awesome-vue-3) | fork | fork of `gs00s/awesome-vue-3` | — | — | — | — | 2026-10-09 |
 | [rekurt/binance-official-api-docs](https://github.com/rekurt/binance-official-api-docs) | fork | fork of `binance-exchange/binance-official-api-docs` | — | — | — | — | 2019-11-18 |
 | [rekurt/ccxt](https://github.com/rekurt/ccxt) | fork | fork of `ccxt/ccxt` | JavaScript | 1.18.1305 | — | — | 2019-10-20 |
 | [rekurt/ccxt-ws-demo-app](https://github.com/rekurt/ccxt-ws-demo-app) | fork | fork of `florapdx/ccxt-ws-demo-app` | — | 1.0.0 | — | — | 2019-06-07 |
@@ -76,6 +79,7 @@ Snapshot: 2026-10-09T19:35:55Z
 | [rekurt/lazydocker](https://github.com/rekurt/lazydocker) | fork | fork of `jesseduffield/lazydocker` | Go | v0.5.5 | — | — | 2019-07-19 |
 | [rekurt/Mac-Coffee](https://github.com/rekurt/Mac-Coffee) | maintained-fork | fork of `Elliotwu-7/Mac-Coffee` | Swift | v2.0.4 | [open](https://rekurt.github.io/Mac-Coffee/) | — | 2026-09-06 |
 | [rekurt/maccoffee-dist](https://github.com/rekurt/maccoffee-dist) | support | original | — | v2.0.0 | [open](https://rekurt.github.io/maccoffee-dist/) | — | 2026-10-09 |
+| [rekurt/macos-apps-linsa-io](https://github.com/rekurt/macos-apps-linsa-io) | fork | fork of `linsa-io/macos-apps` | — | — | — | — | 2026-10-09 |
 | [rekurt/mongo-go-driver](https://github.com/rekurt/mongo-go-driver) | fork | fork of `mongodb/mongo-go-driver` | Go | v1.0.4 | — | — | 2019-08-09 |
 | [rekurt/open-source-mac-os-apps](https://github.com/rekurt/open-source-mac-os-apps) | fork | fork of `serhii-londar/open-source-mac-os-apps` | — | — | — | — | 2026-10-03 |
 | [rekurt/openkline](https://github.com/rekurt/openkline) | primary | original | TypeScript | v0.2.0 | [open](https://rekurt.github.io/openkline/) | — | 2026-10-09 |
