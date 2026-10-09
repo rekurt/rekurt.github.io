@@ -5,6 +5,7 @@ on:
     - cron: "17 * * * *"
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - catalog/**
       - cmd/**
@@ -12,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: catalog-sync
@@ -19,6 +21,7 @@ concurrency:
 
 jobs:
   sync:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -52,3 +55,7 @@ jobs:
           fi
           git commit -m "chore(catalog): sync project metadata"
           git push
+      - name: Publish verified catalog
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main

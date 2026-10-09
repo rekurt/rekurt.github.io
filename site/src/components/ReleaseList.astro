@@ -1,10 +1,11 @@
 ---
+import { localePrefix } from "../i18n/copy";
 import type { Locale, LocalizedProduct, Repository } from "../lib/catalog";
 
 interface Entry { product: LocalizedProduct; repository: Repository }
 interface Props { entries: Entry[]; locale: Locale }
 const { entries, locale } = Astro.props;
-const prefix = locale === "ru" ? "/ru" : "";
+const prefix = localePrefix(locale);
 const formatter = new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeZone: "UTC" });
 ---
 

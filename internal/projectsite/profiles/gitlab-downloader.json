@@ -1,0 +1,107 @@
+{
+  "slug": "gitlab-downloader",
+  "name": "GitLab Dump",
+  "theme": "transfer",
+  "visual": "transfer",
+  "image": "",
+  "code": "gitlab-dump transfer plan …\n\nsource / platform\n       ↓ preflight\n       ↓ reviewed plan\n       ↓ selected transfer mode\ndestination / archive\n\nplan → run → status → report",
+  "primary": "#overview",
+  "locales": {
+    "en": {
+      "eyebrow": "GitLab repository transfer tool",
+      "headline": "Clone GitLab groups and plan instance transfers.",
+      "intro": "Use the CLI or desktop app to clone repositories and transfer projects between GitLab instances. Review compatibility, transfer modes and warnings before execution.",
+      "features": [
+        {
+          "title": "Per-project transfer plans",
+          "body": "Preflight assigns Direct Transfer, conservative Git sync, Git-only fallback or a blocked state to each entity."
+        },
+        {
+          "title": "Fast-forward Git synchronization",
+          "body": "Git sync creates missing refs and fast-forwards only after checking ancestry. Divergence stays visible."
+        },
+        {
+          "title": "Separate credential input",
+          "body": "Tokens come from environment variables or a masked prompt, not command flags or credential-bearing remote URLs."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Review the plan",
+          "body": "Inspect warnings, selected modes and destination namespaces before running the transfer."
+        },
+        {
+          "title": "Track the operation",
+          "body": "Run the reviewed plan and retain the report. Existing operations can resume polling by run ID."
+        }
+      ],
+      "closing": "Plan a GitLab transfer",
+      "cta": "Read the transfer guide",
+      "note": "Git-only fallback does not migrate issues, merge requests, CI secrets or other GitLab platform resources."
+    },
+    "ru": {
+      "eyebrow": "Инструмент переноса репозиториев GitLab",
+      "headline": "Клонирование групп и перенос проектов между серверами GitLab.",
+      "intro": "Клонируйте репозитории и переносите проекты через CLI или настольное приложение. Проверяйте совместимость, режимы переноса и предупреждения до запуска.",
+      "features": [
+        {
+          "title": "План для каждого проекта",
+          "body": "Предварительная проверка назначает Direct Transfer, синхронизацию Git, перенос только Git-данных или блокирует операцию."
+        },
+        {
+          "title": "Синхронизация через fast-forward",
+          "body": "Git sync создаёт отсутствующие ссылки и обновляет существующие через fast-forward после проверки истории. Расхождения отражаются в результате."
+        },
+        {
+          "title": "Отдельный ввод токенов",
+          "body": "Токены берутся из окружения или скрытого ввода, а не из флагов команд и remote URL с секретами."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Проверьте план",
+          "body": "До переноса проверьте предупреждения, выбранные режимы и целевые пространства имён."
+        },
+        {
+          "title": "Следите за операцией",
+          "body": "Запустите проверенный план и сохраните отчёт. Наблюдение за существующей операцией можно возобновить по её run ID."
+        }
+      ],
+      "closing": "Подготовьте перенос проектов GitLab",
+      "cta": "Открыть руководство",
+      "note": "Режим переноса только Git-данных не переносит задачи, merge requests, секреты CI и другие ресурсы платформы GitLab."
+    },
+    "zh-cn": {
+      "eyebrow": "GitLab 仓库迁移工具",
+      "headline": "克隆 GitLab 群组，规划跨实例迁移。",
+      "intro": "通过 CLI 或桌面应用克隆仓库，并在 GitLab 实例间迁移项目。执行前可检查兼容性、迁移模式和警告。",
+      "features": [
+        {
+          "title": "逐项目迁移计划",
+          "body": "预检查为每个对象选择 Direct Transfer、保守 Git 同步、仅 Git 回退或阻止状态。"
+        },
+        {
+          "title": "快进式 Git 同步",
+          "body": "Git 同步创建缺失的引用，并在检查祖先关系后执行快进更新。分叉会在结果中报告。"
+        },
+        {
+          "title": "单独输入凭据",
+          "body": "令牌来自环境变量或掩码输入，而非命令参数或包含凭据的远程地址。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "审查计划",
+          "body": "执行前检查警告、选定模式和目标命名空间。"
+        },
+        {
+          "title": "跟踪操作",
+          "body": "运行已审查的计划并保留报告；已有操作可按 run ID 恢复状态轮询。"
+        }
+      ],
+      "closing": "准备 GitLab 迁移计划",
+      "cta": "阅读迁移指南",
+      "note": "仅 Git 回退不会迁移议题、合并请求、CI 密钥或其他 GitLab 平台资源。"
+    }
+  }
+}

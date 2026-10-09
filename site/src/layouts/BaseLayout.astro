@@ -20,6 +20,8 @@ const t = copy[locale];
 const canonical = new URL(canonicalPath, Astro.site);
 const english = new URL(alternatePath(canonicalPath, "en"), Astro.site);
 const russian = new URL(alternatePath(canonicalPath, "ru"), Astro.site);
+const chinese = new URL(alternatePath(canonicalPath, "zh-cn"), Astro.site);
+const ogLocales = { en: "en_US", ru: "ru_RU", "zh-cn": "zh_CN" } as const;
 ---
 
 <!doctype html>
@@ -33,11 +35,12 @@ const russian = new URL(alternatePath(canonicalPath, "ru"), Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content={locale === "ru" ? "ru_RU" : "en_US"} />
+    <meta property="og:locale" content={ogLocales[locale]} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
     {alternateLocales && <link rel="alternate" hreflang="en" href={english} />}
     {alternateLocales && <link rel="alternate" hreflang="ru" href={russian} />}
+    {alternateLocales && <link rel="alternate" hreflang="zh-CN" href={chinese} />}
     {alternateLocales && <link rel="alternate" hreflang="x-default" href={english} />}
     <title>{title}</title>
     {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}

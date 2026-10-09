@@ -853,12 +853,12 @@ git commit -m "ci: automate catalog sync and Pages deployment"
 - Consumes: весь локально проверенный проект.
 - Produces: public `rekurt/rekurt.github.io`, green Actions, live Pages URL и доказательства.
 
-- [ ] **Step 1: Проверить локальный release candidate**
+- [x] **Step 1: Проверить локальный release candidate**
 
 Run: `git status --short --branch && git log --oneline --decorate -12 && make check && make test && make build`
 Expected: только игнорируемые artifacts; все проверки PASS; conventional history на `main`.
 
-- [ ] **Step 2: Создать public remote и выполнить первый push**
+- [x] **Step 2: Создать public remote и выполнить первый push**
 
 ```bash
 gh repo create rekurt/rekurt.github.io --public --source=. --remote=origin --push \
@@ -868,7 +868,7 @@ gh repo create rekurt/rekurt.github.io --public --source=. --remote=origin --pus
 Expected: `origin` указывает на `https://github.com/rekurt/rekurt.github.io.git`; `main`
 отслеживает `origin/main`.
 
-- [ ] **Step 3: Включить GitHub Pages workflow mode**
+- [x] **Step 3: Включить GitHub Pages workflow mode**
 
 ```bash
 gh api --method POST repos/rekurt/rekurt.github.io/pages -f build_type=workflow
@@ -877,7 +877,7 @@ gh api --method POST repos/rekurt/rekurt.github.io/pages -f build_type=workflow
 Если endpoint возвращает `409 Already exists`, проверить
 `gh api repos/rekurt/rekurt.github.io/pages --jq .build_type`; ожидается `workflow`.
 
-- [ ] **Step 4: Повторить sync после появления самого hub**
+- [x] **Step 4: Повторить sync после появления самого hub**
 
 ```bash
 GITHUB_TOKEN="$(gh auth token)" go run ./cmd/catalog-sync sync \
@@ -889,7 +889,7 @@ jq '.repositories | length' site/src/data/generated/catalog.json
 
 Expected: 50 или больше, `rekurt/rekurt.github.io` имеет роль `portfolio-hub`, private count 0.
 
-- [ ] **Step 5: Зафиксировать self-discovery и push**
+- [x] **Step 5: Зафиксировать self-discovery и push**
 
 ```bash
 git add site/src/data/generated/catalog.json docs/repository-audit.md
@@ -897,13 +897,13 @@ git commit -m "chore(catalog): register portfolio hub"
 git push origin main
 ```
 
-- [ ] **Step 6: Дождаться и проверить Actions**
+- [x] **Step 6: Дождаться и проверить Actions**
 
 Run: `gh run list --repo rekurt/rekurt.github.io --limit 10`
 Expected: latest CI, sync и deploy runs имеют conclusion `success`. Для активного run:
 `gh run watch <run-id> --repo rekurt/rekurt.github.io --exit-status`.
 
-- [ ] **Step 7: Проверить production HTTP и содержание**
+- [x] **Step 7: Проверить production HTTP и содержание**
 
 ```bash
 for path in / /projects/ /registry/ /ru/ /projects/mac-coffee/; do
@@ -914,14 +914,14 @@ done
 Expected: пять ответов 200. HTML `/registry/` содержит `rekurt/rekurt.github.io`; detail
 `mac-coffee` содержит `Elliotwu-7/Mac-Coffee`; `/ru/` имеет `lang="ru"`.
 
-- [ ] **Step 8: Провести requirement-by-requirement audit**
+- [x] **Step 8: Провести requirement-by-requirement audit**
 
 `docs/production-verification.md` фиксирует commit SHA, Actions run URLs, Pages deployment
 URL, registry/product counts, шесть исходных project websites, package docs, EN/RU routes,
 mobile/desktop QA, security invariants и результат live curl. Каждый пункт спецификации
 получает `PASS` и конкретную команду/URL доказательства.
 
-- [ ] **Step 9: Зафиксировать финальный отчёт и push**
+- [x] **Step 9: Зафиксировать финальный отчёт и push**
 
 ```bash
 git add docs/production-verification.md
@@ -929,7 +929,7 @@ git commit -m "docs: record production verification"
 git push origin main
 ```
 
-- [ ] **Step 10: Проверить финальный чистый state**
+- [x] **Step 10: Проверить финальный чистый state**
 
 Run: `git status --short --branch && git rev-parse HEAD && gh run list --repo rekurt/rekurt.github.io --limit 5`
 Expected: `main...origin/main`, нет tracked changes, финальный deploy успешен.

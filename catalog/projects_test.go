@@ -15,8 +15,8 @@ func TestProductionManifestContract(t *testing.T) {
 	if err := catalog.ValidateManifest(manifest); err != nil {
 		t.Fatal(err)
 	}
-	if manifest.Owner != "rekurt" || len(manifest.Products) != 14 {
-		t.Fatalf("owner/products = %q/%d, want rekurt/14", manifest.Owner, len(manifest.Products))
+	if manifest.Owner != "rekurt" || len(manifest.Products) != 13 {
+		t.Fatalf("owner/products = %q/%d, want rekurt/13", manifest.Owner, len(manifest.Products))
 	}
 
 	wantPrimary := map[string]string{
@@ -24,15 +24,21 @@ func TestProductionManifestContract(t *testing.T) {
 		"depth": "rekurt/depth", "git-barber": "rekurt/git-barber", "gitlab-downloader": "rekurt/gitlab-downloader",
 		"go-propisyu": "rekurt/go-propisyu", "gost-crypto": "rekurt/gost-crypto", "mac-coffee": "rekurt/Mac-Coffee",
 		"openkline": "rekurt/openkline", "prt": "rekurt/prt", "sprint-velocity": "rekurt/sprint-velocity",
-		"vpn-hub": "rekurt/vpn-hub", "ymsdk": "rekurt/ymsdk",
+		"ymsdk": "rekurt/ymsdk",
 	}
-	featured := make([]string, 0, 6)
+	featured := make([]string, 0, 5)
 	for _, product := range manifest.Products {
 		if wantPrimary[product.Slug] != product.PrimaryRepo {
 			t.Fatalf("primary repo for %s = %q, want %q", product.Slug, product.PrimaryRepo, wantPrimary[product.Slug])
 		}
 		if product.Featured {
 			featured = append(featured, product.Slug)
+		}
+		if product.Summary.ZHCN == "" {
+			t.Fatalf("Chinese summary for %s is empty", product.Slug)
+		}
+		if product.Accent == "" {
+			t.Fatalf("accent for %s is empty", product.Slug)
 		}
 		for _, repo := range product.Repositories {
 			if repo == "rekurt/tsql" {
@@ -45,7 +51,7 @@ func TestProductionManifestContract(t *testing.T) {
 		t.Fatalf("missing products = %#v", wantPrimary)
 	}
 	slices.Sort(featured)
-	wantFeatured := []string{"git-barber", "gost-crypto", "mac-coffee", "openkline", "vpn-hub", "ymsdk"}
+	wantFeatured := []string{"git-barber", "gost-crypto", "mac-coffee", "openkline", "ymsdk"}
 	if !slices.Equal(featured, wantFeatured) {
 		t.Fatalf("featured = %#v, want %#v", featured, wantFeatured)
 	}

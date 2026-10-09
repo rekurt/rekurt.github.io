@@ -56,6 +56,7 @@ func Build(manifest catalog.Manifest, repositories []catalog.Repository, syncedA
 			Repositories:   append([]string(nil), config.Repositories...),
 			Kind:           config.Kind,
 			Domain:         config.Domain,
+			Accent:         config.Accent,
 			Featured:       config.Featured,
 			MaintainedFork: config.MaintainedFork,
 			Upstream:       config.Upstream,

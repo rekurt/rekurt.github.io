@@ -1,13 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { copy } from "../i18n/copy";
+import { copy, localePrefix } from "../i18n/copy";
 import { getCatalog, type Locale } from "../lib/catalog";
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const t = copy[locale];
 const catalog = getCatalog();
-const canonicalPath = locale === "ru" ? "/ru/about/" : "/about/";
+const canonicalPath = `${localePrefix(locale)}/about/`;
 const schema = { "@context": "https://schema.org", "@type": "Person", name: "rekurt", url: "https://rekurt.github.io/", sameAs: ["https://github.com/rekurt"] };
 ---
 

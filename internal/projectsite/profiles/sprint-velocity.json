@@ -1,0 +1,109 @@
+{
+  "slug": "sprint-velocity",
+  "name": "sprint-velocity",
+  "theme": "weekly",
+  "visual": "report",
+  "image": "",
+  "code": "Sprint Velocity — example\n\nClosed this week       8\nOpen, assigned to me   5\nOverdue                1\n\nFriday · 18:00 · Europe/Moscow",
+  "primary": "#overview",
+  "locales": {
+    "en": {
+      "eyebrow": "Yandex Tracker reporting · OpenClaw",
+      "headline": "Weekly task counts from Yandex Tracker.",
+      "intro": "A Python script and OpenClaw setup for scheduled task summaries. Report tasks closed during the week, open assignments and overdue work.",
+      "features": [
+        {
+          "title": "Task status summary",
+          "body": "See closed tasks, current assignments and overdue work together."
+        },
+        {
+          "title": "Scheduled delivery",
+          "body": "The documented recipe runs every Friday at 18:00 Moscow time and sends the result through OpenClaw."
+        },
+        {
+          "title": "Python standard library",
+          "body": "The reporting script uses Python's standard library. Adjust the queries and message format in the source."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Configure Tracker access",
+          "body": "Follow the repository requirements for credentials and organization settings."
+        },
+        {
+          "title": "Schedule your summary",
+          "body": "Adapt the OpenClaw recipe to your delivery channel and inspect a first report before scheduling."
+        }
+      ],
+      "closing": "Configure your weekly task report",
+      "cta": "Read the setup instructions",
+      "note": "Reports task counts. Does not measure individual productivity or calculate story-point velocity."
+    },
+    "ru": {
+      "demo": "Sprint Velocity — пример\n\nЗакрыто за неделю        8\nОткрыто, назначено мне   5\nПросрочено               1\n\nПятница · 18:00 · Москва",
+      "eyebrow": "Отчёты Яндекс Трекера · OpenClaw",
+      "headline": "Еженедельная сводка задач из Яндекс Трекера.",
+      "intro": "Python-скрипт и инструкция для отправки отчётов по расписанию через OpenClaw. В сводке — закрытые за неделю задачи, открытые назначения и просрочки.",
+      "features": [
+        {
+          "title": "Сводка по состоянию задач",
+          "body": "Смотрите закрытые задачи, текущие назначения и просроченную работу вместе."
+        },
+        {
+          "title": "Отправка по расписанию",
+          "body": "Пример настройки запускает отчёт по пятницам в 18:00 по Москве и отправляет результат через OpenClaw."
+        },
+        {
+          "title": "Стандартная библиотека Python",
+          "body": "Скрипт использует стандартную библиотеку Python. Запросы и формат сообщения можно изменить в исходном коде."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Настройте доступ к Трекеру",
+          "body": "Следуйте требованиям репозитория к учётным данным и настройкам организации."
+        },
+        {
+          "title": "Настройте отправку сводки",
+          "body": "Укажите канал доставки в настройках OpenClaw и проверьте первый отчёт до включения расписания."
+        }
+      ],
+      "closing": "Настройте еженедельный отчёт по задачам",
+      "cta": "Открыть инструкцию",
+      "note": "Отчёт показывает количество задач. Он не измеряет личную продуктивность и не рассчитывает velocity в story points."
+    },
+    "zh-cn": {
+      "demo": "Sprint Velocity — 示例\n\n本周已关闭任务      8\n分配给我的待办任务  5\n逾期任务            1\n\n周五 · 18:00 · 莫斯科时间",
+      "eyebrow": "Yandex Tracker 报告 · OpenClaw",
+      "headline": "每周汇总 Yandex Tracker 任务数量。",
+      "intro": "使用 Python 脚本与 OpenClaw 配置定时发送任务报告。报告包含本周已关闭任务、当前待办和逾期任务。",
+      "features": [
+        {
+          "title": "任务状态汇总",
+          "body": "同时查看已关闭任务、当前分配和逾期工作。"
+        },
+        {
+          "title": "定时发送",
+          "body": "文档中的配置示例在莫斯科时间每周五 18:00 运行，并通过 OpenClaw 发送结果。"
+        },
+        {
+          "title": "Python 标准库",
+          "body": "报告脚本使用 Python 标准库，可在源码中调整查询和消息格式。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "配置 Tracker 访问",
+          "body": "按仓库要求配置凭据与组织设置。"
+        },
+        {
+          "title": "安排汇总发送",
+          "body": "在 OpenClaw 中配置发送渠道，检查首份报告后再启用定时任务。"
+        }
+      ],
+      "closing": "配置每周任务报告",
+      "cta": "阅读配置说明",
+      "note": "报告仅统计任务数量，不衡量个人生产力，也不计算基于故事点的迭代速度。"
+    }
+  }
+}

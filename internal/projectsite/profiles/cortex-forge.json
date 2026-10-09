@@ -1,0 +1,107 @@
+{
+  "slug": "cortex-forge",
+  "name": "CortexForge",
+  "theme": "lab",
+  "visual": "lab",
+  "image": "",
+  "code": "Docker Compose lab\n\nadmin ── quota-proxy ── model API\n             │\n      ┌──────┴──────┐\n   persona A     persona B\n   workspace     workspace\n      └── message-broker ──┘",
+  "primary": "#overview",
+  "locales": {
+    "en": {
+      "eyebrow": "OpenClaw experiments · Docker Compose",
+      "headline": "Test assistant workspaces, quotas and messaging.",
+      "intro": "Run separate OpenClaw assistants on a single host. Experiment with persona files, token budgets and messages between instances.",
+      "features": [
+        {
+          "title": "Separate assistant workspaces",
+          "body": "Configure context, memory and persona files for each assistant instance."
+        },
+        {
+          "title": "Token accounting",
+          "body": "Test how the quota proxy records token usage and applies limits per instance."
+        },
+        {
+          "title": "Messages between assistants",
+          "body": "Send messages through the broker and inspect each instance's inbox."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Read the lab boundaries",
+          "body": "Inspect Docker access, mounts and the repository setup guide before starting the sandbox."
+        },
+        {
+          "title": "Experiment with test data",
+          "body": "Use disposable environments and synthetic content to explore the mechanics."
+        }
+      ],
+      "closing": "Setup and experiment guide",
+      "cta": "Read the setup guide",
+      "note": "Experimental and not production-safe. Do not use employee, customer, confidential or regulated data."
+    },
+    "ru": {
+      "eyebrow": "Эксперименты с OpenClaw · Docker Compose",
+      "headline": "Рабочие пространства, квоты и обмен сообщениями AI-ассистентов.",
+      "intro": "Запускайте отдельных ассистентов OpenClaw на одном хосте. Проверяйте настройки персонажей, бюджеты токенов и обмен сообщениями между экземплярами.",
+      "features": [
+        {
+          "title": "Отдельные рабочие пространства",
+          "body": "Настраивайте контекст, память и файлы персонажа для каждого экземпляра ассистента."
+        },
+        {
+          "title": "Учёт токенов",
+          "body": "Проверяйте, как прокси учитывает расход токенов и применяет лимиты для каждого экземпляра."
+        },
+        {
+          "title": "Сообщения между ассистентами",
+          "body": "Отправляйте сообщения через брокер и проверяйте входящие каждого ассистента."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Изучите ограничения лаборатории",
+          "body": "Перед запуском проверьте доступ к Docker, монтируемые каталоги и руководство по настройке."
+        },
+        {
+          "title": "Экспериментируйте на тестовых данных",
+          "body": "Используйте одноразовые окружения и синтетические данные для изучения механики."
+        }
+      ],
+      "closing": "Настройка и проведение экспериментов",
+      "cta": "Открыть руководство",
+      "note": "Экспериментальный проект, не предназначенный для промышленной эксплуатации. Не используйте данные сотрудников, клиентов, конфиденциальные данные или данные с особыми требованиями к обработке."
+    },
+    "zh-cn": {
+      "eyebrow": "OpenClaw 实验 · Docker Compose",
+      "headline": "测试助手工作区、配额与消息传递。",
+      "intro": "在同一主机上运行多个 OpenClaw 助手实例，测试角色文件、令牌预算和实例间消息传递。",
+      "features": [
+        {
+          "title": "独立的助手工作区",
+          "body": "为每个助手实例配置上下文、记忆与角色文件。"
+        },
+        {
+          "title": "令牌用量统计",
+          "body": "测试配额代理如何记录令牌用量，并对各实例应用限制。"
+        },
+        {
+          "title": "助手间消息传递",
+          "body": "通过消息代理发送消息，并查看各实例的收件箱。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "了解实验边界",
+          "body": "启动前检查 Docker 访问权限、挂载和仓库配置指南。"
+        },
+        {
+          "title": "使用测试数据实验",
+          "body": "使用可丢弃环境与合成数据来探索机制。"
+        }
+      ],
+      "closing": "配置与实验指南",
+      "cta": "阅读配置指南",
+      "note": "实验项目，不适合生产环境。不要使用员工、客户、机密或受监管数据。"
+    }
+  }
+}

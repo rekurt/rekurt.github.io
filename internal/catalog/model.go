@@ -3,8 +3,9 @@ package catalog
 import "time"
 
 type LocalizedText struct {
-	EN string `yaml:"en" json:"en"`
-	RU string `yaml:"ru" json:"ru"`
+	EN   string `yaml:"en" json:"en"`
+	RU   string `yaml:"ru" json:"ru"`
+	ZHCN string `yaml:"zh-cn" json:"zhCN"`
 }
 
 type ProductConfig struct {
@@ -13,6 +14,7 @@ type ProductConfig struct {
 	Repositories   []string      `yaml:"repositories"`
 	Kind           string        `yaml:"kind"`
 	Domain         string        `yaml:"domain"`
+	Accent         string        `yaml:"accent"`
 	Featured       bool          `yaml:"featured"`
 	MaintainedFork bool          `yaml:"maintained_fork"`
 	Upstream       string        `yaml:"upstream"`
@@ -76,6 +78,7 @@ type Product struct {
 	Repositories   []string      `json:"repositories"`
 	Kind           string        `json:"kind"`
 	Domain         string        `json:"domain"`
+	Accent         string        `json:"accent"`
 	Featured       bool          `json:"featured"`
 	MaintainedFork bool          `json:"maintainedFork"`
 	Upstream       string        `json:"upstream,omitempty"`

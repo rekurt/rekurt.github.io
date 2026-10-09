@@ -1,0 +1,107 @@
+{
+  "slug": "git-barber",
+  "name": "git-barber",
+  "theme": "barber",
+  "visual": "branches",
+  "image": "assets/demo.gif",
+  "code": "git barber --list\n\n✓ feat/invoice-export     squash\n✓ fix/callback-retry      merged\n✓ chore/update-sdk        rebase\n○ experiment/new-ledger   gone",
+  "primary": "#install",
+  "locales": {
+    "en": {
+      "eyebrow": "Git branch cleanup CLI",
+      "headline": "Find merged branches, including squash and rebase.",
+      "intro": "Identify local branches whose changes are already in your base branch. Review commits and diffs in the terminal, then confirm which branches to delete.",
+      "features": [
+        {
+          "title": "Patch-based merge detection",
+          "body": "Patch-based detection finds work already in your base branch, even when commit ancestry cannot."
+        },
+        {
+          "title": "Commit and diff previews",
+          "body": "The TUI previews commits and diffstats. A missing upstream alone does not select a branch for deletion."
+        },
+        {
+          "title": "Interactive and scriptable modes",
+          "body": "Use the keyboard-driven picker, a read-only list or JSON output. Remote deletion is optional and lease-protected."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Inspect",
+          "body": "Run git barber --list inside your repository, then open the TUI to review candidates."
+        },
+        {
+          "title": "Choose and confirm",
+          "body": "Inspect the preview, keep unfinished work, and confirm only the branches you want removed."
+        }
+      ],
+      "closing": "Review branches in your repository",
+      "cta": "Install git-barber",
+      "note": ""
+    },
+    "ru": {
+      "eyebrow": "CLI для очистки веток Git",
+      "headline": "Поиск влитых веток после merge, squash и rebase.",
+      "intro": "Находите локальные ветки, изменения которых уже есть в базовой ветке. Проверяйте коммиты и diff в терминале, затем подтверждайте удаление выбранных веток.",
+      "features": [
+        {
+          "title": "Поиск по содержимому патчей",
+          "body": "Сравнение патчей находит уже влитый код, даже если история коммитов этого не показывает."
+        },
+        {
+          "title": "Просмотр коммитов и изменений",
+          "body": "TUI показывает коммиты и статистику изменений. Исчезнувший upstream сам по себе не делает ветку кандидатом по умолчанию."
+        },
+        {
+          "title": "Для терминала и скриптов",
+          "body": "Выбирайте ветки с клавиатуры или получайте список в JSON. Удаление на сервере включается отдельно и проверяет, не изменилась ли удалённая ветка."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Получите список веток",
+          "body": "Запустите git barber --list в репозитории, затем откройте TUI для проверки кандидатов."
+        },
+        {
+          "title": "Выберите и подтвердите",
+          "body": "Посмотрите превью, оставьте незавершённую работу и подтвердите удаление выбранных веток."
+        }
+      ],
+      "closing": "Проверьте ветки вашего репозитория",
+      "cta": "Установить git-barber",
+      "note": ""
+    },
+    "zh-cn": {
+      "eyebrow": "Git 分支清理 CLI",
+      "headline": "识别已合并分支，包括 squash 和 rebase。",
+      "intro": "找出改动已进入基准分支的本地分支。在终端中检查提交与差异，再确认要删除的分支。",
+      "features": [
+        {
+          "title": "基于补丁的合并检测",
+          "body": "通过比较补丁识别已合并代码，即使提交历史无法直接证明。"
+        },
+        {
+          "title": "提交与差异预览",
+          "body": "TUI 展示提交和差异统计。仅上游分支消失不会默认选中该分支。"
+        },
+        {
+          "title": "兼顾终端与脚本",
+          "body": "使用键盘选择器、只读列表或 JSON 输出。远程删除需单独启用，并在删除前检查远程分支是否已变化。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "列出候选分支",
+          "body": "在仓库中运行 git barber --list，再打开 TUI 检查候选分支。"
+        },
+        {
+          "title": "选择并确认",
+          "body": "查看预览，保留未完成工作，只确认要删除的分支。"
+        }
+      ],
+      "closing": "检查仓库中的已合并分支",
+      "cta": "安装 git-barber",
+      "note": ""
+    }
+  }
+}
