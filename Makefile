@@ -22,3 +22,7 @@ site-fleet-check:
 
 marketing-check:
 	node scripts/check-marketing.mjs
+
+.PHONY: check-npm
+check-npm:
+	go run ./cmd/check-npm

@@ -25,6 +25,18 @@ jobs:
       - name: Test with race detector
         run: go test -race $(go list ./... | grep -v '/site/')
 
+  npm-registry:
+    name: npm registry metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          cache: true
+      - run: go run ./cmd/check-npm
+
   site:
     name: Site
     runs-on: ubuntu-latest
