@@ -42,6 +42,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: go run ./cmd/catalog-sync sync --manifest catalog/projects.yaml --snapshot site/src/data/generated/catalog.json --audit docs/repository-audit.md
+      - name: Verify public npm metadata
+        run: go run ./cmd/check-npm
       - name: Verify generated result
         run: make check && make test && make build && cd site && npm run check:links
       - name: Commit material changes

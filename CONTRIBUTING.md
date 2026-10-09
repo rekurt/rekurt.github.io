@@ -35,4 +35,6 @@ npm run check:links
 npm run test:e2e
 ```
 
+Run `make check-npm` to verify curated and generated npm metadata against the public registry. The check uses unauthenticated read-only requests, verifies exact published identity, valid SHA-512 integrity metadata, official registry tarball URL and install instructions, and prints official package-version links. Missing releases or conflicting metadata fail; a different registry `latest` emits a warning for review without changing pinned versions. CI runs this check, and the existing hourly catalog-sync also runs it before publishing generated updates. No packages, releases, credentials or permissions are created.
+
 A contribution is ready only when Go formatting and vet, Go and Vitest tests, Astro type checking, the production build, internal links, and browser QA all pass.

@@ -44,7 +44,7 @@
           <p class="eyebrow">{{.Marketing.Text.Eyebrow}}</p>
           <h1>{{.Marketing.Text.Headline}}</h1>
           <p class="summary">{{.Marketing.Text.Intro}}</p>
-          <div class="actions"><a class="button primary" href="{{.Marketing.Primary}}">{{.Marketing.Text.CTA}} <span aria-hidden="true">→</span></a><a class="button" href="https://github.com/{{.Owner}}/{{.Name}}">{{.Copy.Source}} ↗</a></div>
+          <div class="actions"><a class="button primary" href="{{.Marketing.Primary}}">{{.Marketing.Text.CTA}} <span aria-hidden="true">→</span></a>{{if .Marketing.DemoURL}}<a class="button" href="{{.Marketing.DemoURL}}">{{.Marketing.DemoLabel}} →</a>{{end}}<a class="button" href="https://github.com/{{.Owner}}/{{.Name}}">{{.Copy.Source}} ↗</a></div>
           <p class="product-fit">{{.Language}} <span>·</span> {{.License}} <span>·</span> {{.Copy.Updated}} <time datetime="{{.Updated}}">{{.Updated}}</time></p>
           {{if .Marketing.Text.Note}}<p class="product-note">{{.Marketing.Text.Note}}</p>{{end}}
         </div>
