@@ -43,7 +43,7 @@
 .product-screenshot img { display: block; width: 100%; height: auto; border-top: 1px solid var(--line); }
 .product-site .command, .product-site .readme pre { background: var(--surface); }
 .product-site .readme { color: var(--text); }
-.product-site .content-section { padding-block: 1.75rem; scroll-margin-top: 1rem; }
+.product-site .content-section { padding-block: 1.75rem; }
 .product-site .content-section .section-index { display: none; }
 .product-site .split-heading { gap: 1rem; }
 .product-site .split-heading p { font-size: .875rem; margin-top: .5rem; }
