@@ -1,11 +1,12 @@
 # Public repository audit
 
-Snapshot: 2026-10-09T11:43:04Z
-70 public repositories · 20 original · 50 fork
+Snapshot: 2026-10-09T16:14:23Z
+75 public repositories · 20 original · 55 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
 |---|---|---|---|---|---|---|---|
 | [rekurt/akshendra.github.io](https://github.com/rekurt/akshendra.github.io) | fork | fork of `akshendra/akshendra.github.io` | — | — | — | — | 2020-01-09 |
+| [rekurt/awesome-backup](https://github.com/rekurt/awesome-backup) | fork | fork of `oz123/awesome-backup` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-bots](https://github.com/rekurt/awesome-bots) | fork | fork of `abdelhai/awesome-bots` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-charting](https://github.com/rekurt/awesome-charting) | fork | fork of `zingchart/awesome-charting` | — | 1.0.0 | — | — | 2026-10-09 |
 | [rekurt/awesome-chatbots](https://github.com/rekurt/awesome-chatbots) | fork | fork of `JStumpp/awesome-chatbots` | — | — | — | — | 2026-04-08 |
@@ -24,7 +25,7 @@ Snapshot: 2026-10-09T11:43:04Z
 | [rekurt/awesome-go-security](https://github.com/rekurt/awesome-go-security) | fork | fork of `Binject/awesome-go-security` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-golang-security](https://github.com/rekurt/awesome-golang-security) | fork | fork of `guardrailsio/awesome-golang-security` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-i18n](https://github.com/rekurt/awesome-i18n) | fork | fork of `oh-jon-paul/awesome-i18n` | — | — | — | — | 2026-10-08 |
-| [rekurt/awesome-mac](https://github.com/rekurt/awesome-mac) | fork | fork of `jaywcjlove/awesome-mac` | — | 2.1.0 | — | — | 2026-10-03 |
+| [rekurt/awesome-mac](https://github.com/rekurt/awesome-mac) | fork | fork of `jaywcjlove/awesome-mac` | — | 2.1.0 | — | — | 2026-10-09 |
 | [rekurt/awesome-macOS](https://github.com/rekurt/awesome-macOS) | fork | fork of `iCHAIT/awesome-macOS` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-networking-facyber](https://github.com/rekurt/awesome-networking-facyber) | fork | fork of `facyber/awesome-networking` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-networking-nyquist](https://github.com/rekurt/awesome-networking-nyquist) | fork | fork of `nyquist/awesome-networking` | — | — | — | — | 2026-10-08 |
@@ -35,8 +36,11 @@ Snapshot: 2026-10-09T11:43:04Z
 | [rekurt/awesome-russian-it](https://github.com/rekurt/awesome-russian-it) | fork | fork of `unchase/awesome-russian-it` | — | — | — | — | 2025-01-16 |
 | [rekurt/awesome-russian-speech](https://github.com/rekurt/awesome-russian-speech) | fork | fork of `alphacep/awesome-russian-speech` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-rust](https://github.com/rekurt/awesome-rust) | fork | fork of `rust-unofficial/awesome-rust` | — | 0.1.0 | — | — | 2026-04-08 |
+| [rekurt/awesome-rust-tools](https://github.com/rekurt/awesome-rust-tools) | fork | fork of `unpluggedcoder/awesome-rust-tools` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-sql](https://github.com/rekurt/awesome-sql) | fork | fork of `danhuss/awesome-sql` | — | — | — | — | 2026-10-08 |
+| [rekurt/awesome-sqlite](https://github.com/rekurt/awesome-sqlite) | fork | fork of `planetopendata/awesome-sqlite` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-tuis](https://github.com/rekurt/awesome-tuis) | fork | fork of `rothgar/awesome-tuis` | — | — | — | — | 2026-10-09 |
+| [rekurt/awesome-vcs-tools](https://github.com/rekurt/awesome-vcs-tools) | fork | fork of `postpdm/awesome-vcs-tools` | — | — | — | — | 2026-10-09 |
 | [rekurt/binance-official-api-docs](https://github.com/rekurt/binance-official-api-docs) | fork | fork of `binance-exchange/binance-official-api-docs` | — | — | — | — | 2019-11-18 |
 | [rekurt/ccxt](https://github.com/rekurt/ccxt) | fork | fork of `ccxt/ccxt` | JavaScript | 1.18.1305 | — | — | 2019-10-20 |
 | [rekurt/ccxt-ws-demo-app](https://github.com/rekurt/ccxt-ws-demo-app) | fork | fork of `florapdx/ccxt-ws-demo-app` | — | 1.0.0 | — | — | 2019-06-07 |
@@ -72,6 +76,7 @@ Snapshot: 2026-10-09T11:43:04Z
 | [rekurt/relax-hub](https://github.com/rekurt/relax-hub) | unclassified | original | Go | — | — | — | 2026-09-22 |
 | [rekurt/sprint-velocity](https://github.com/rekurt/sprint-velocity) | primary | original | Python | — | [open](https://rekurt.github.io/sprint-velocity/) | — | 2026-09-05 |
 | [rekurt/srs](https://github.com/rekurt/srs) | fork | fork of `ossrs/srs` | — | v4.0.8 | — | — | 2020-02-26 |
+| [rekurt/The-NLP-Pandect](https://github.com/rekurt/The-NLP-Pandect) | fork | fork of `ivan-bilan/The-NLP-Pandect` | — | — | — | — | 2026-10-09 |
 | [rekurt/this-week-in-rust](https://github.com/rekurt/this-week-in-rust) | fork | fork of `rust-lang/this-week-in-rust` | — | — | — | — | 2026-10-09 |
 | [rekurt/tsql](https://github.com/rekurt/tsql) | fork | fork of `fcoury/tsql` | — | — | — | — | 2026-04-17 |
 | [rekurt/ymsdk](https://github.com/rekurt/ymsdk) | primary | original | Go | v0.2.0 | [open](https://rekurt.github.io/ymsdk/) | — | 2026-09-05 |
