@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-09T09:40:09Z
+Snapshot: 2026-10-09T09:50:13Z
 69 public repositories · 20 original · 49 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -52,7 +52,7 @@ Snapshot: 2026-10-09T09:40:09Z
 | [rekurt/git-barber](https://github.com/rekurt/git-barber) | primary | original | Rust | v0.3.0 | [open](https://rekurt.github.io/git-barber/) | — | 2026-10-09 |
 | [rekurt/gitlab-downloader](https://github.com/rekurt/gitlab-downloader) | primary | original | JavaScript | v0.0.2 | [open](https://rekurt.github.io/gitlab-downloader/) | — | 2026-10-09 |
 | [rekurt/go-awesome](https://github.com/rekurt/go-awesome) | fork | fork of `shockerli/go-awesome` | — | — | — | — | 2026-04-08 |
-| [rekurt/go-propisyu](https://github.com/rekurt/go-propisyu) | primary | original | Go | v0.4.1 | [open](https://rekurt.github.io/go-propisyu/) | — | 2026-09-05 |
+| [rekurt/go-propisyu](https://github.com/rekurt/go-propisyu) | primary | original | Go | v0.4.1 | [open](https://rekurt.github.io/go-propisyu/) | — | 2026-10-09 |
 | [rekurt/gocent](https://github.com/rekurt/gocent) | fork | fork of `centrifugal/gocent` | — | v3.2.0 | — | — | 2022-01-26 |
 | [rekurt/gost-crypto](https://github.com/rekurt/gost-crypto) | primary | original | Go | v0.3.0 | [open](https://rekurt.github.io/gost-crypto/) | — | 2026-09-05 |
 | [rekurt/homebrew-cask](https://github.com/rekurt/homebrew-cask) | fork | fork of `Homebrew/homebrew-cask` | — | — | — | — | 2026-09-01 |
