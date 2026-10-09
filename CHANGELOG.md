@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/rekurt/rekurt.github.io/compare/v0.2.1...v0.2.2) (2026-10-09)
+
+
+### Bug Fixes
+
+* **catalog:** separate npm versions from GitHub metadata ([#17](https://github.com/rekurt/rekurt.github.io/issues/17)) ([de12edc](https://github.com/rekurt/rekurt.github.io/commit/de12edc41675ee5f079abd11ba8d986497b43ff6))
+
 ## [0.2.1](https://github.com/rekurt/rekurt.github.io/compare/v0.2.0...v0.2.1) (2026-10-09)
 
 
