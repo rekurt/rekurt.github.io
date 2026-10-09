@@ -21,6 +21,11 @@ export interface Readme {
   sha: string;
 }
 
+export interface NPMPackage {
+  name: string;
+  version: string;
+}
+
 export interface Product {
   slug: string;
   primaryRepo: string;
@@ -32,6 +37,7 @@ export interface Product {
   upstream?: string;
   accent: "amber" | "coral" | "cyan" | "emerald" | "violet";
   summary: { en: string; ru: string; zhCN: string };
+  npmPackage?: NPMPackage;
   install: string[];
   links: CatalogLink[];
   version?: Version;

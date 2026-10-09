@@ -1,0 +1,7 @@
+---
+import type { NPMPackage } from "../lib/catalog";
+interface Props { package: NPMPackage }
+const { package: pkg } = Astro.props;
+const url = `https://www.npmjs.com/package/${pkg.name}/v/${pkg.version}`;
+---
+<a class="npm-package" href={url} target="_blank" rel="noreferrer noopener">npm · {pkg.name} · {pkg.version} <span aria-hidden="true">↗</span></a>

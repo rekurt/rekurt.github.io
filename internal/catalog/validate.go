@@ -10,9 +10,11 @@ import (
 )
 
 var (
-	slugPattern  = regexp.MustCompile(`^[a-z0-9]+(?:-[a-z0-9]+)*$`)
-	repoPattern  = regexp.MustCompile(`^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$`)
-	validAccents = map[string]struct{}{
+	npmNamePattern    = regexp.MustCompile(`^(?:@[a-z0-9][a-z0-9._-]*/)?[a-z0-9][a-z0-9._-]*$`)
+	npmVersionPattern = regexp.MustCompile(`^[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$`)
+	slugPattern       = regexp.MustCompile(`^[a-z0-9]+(?:-[a-z0-9]+)*$`)
+	repoPattern       = regexp.MustCompile(`^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$`)
+	validAccents      = map[string]struct{}{
 		"amber": {}, "coral": {}, "cyan": {}, "emerald": {}, "violet": {},
 	}
 )
@@ -104,6 +106,14 @@ func ValidateManifest(manifest Manifest) error {
 			parsed, err := url.Parse(value)
 			if err != nil || parsed.Scheme != "https" || parsed.Host == "" {
 				add(field + " must use https")
+			}
+		}
+		if product.NPMPackage != nil {
+			if !npmNamePattern.MatchString(product.NPMPackage.Name) {
+				add("npm_package.name must be a valid npm package name")
+			}
+			if !npmVersionPattern.MatchString(product.NPMPackage.Version) {
+				add("npm_package.version must be an exact published version")
 			}
 		}
 		validateHTTPS("website", product.Website)

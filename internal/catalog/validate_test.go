@@ -22,6 +22,18 @@ func TestValidateManifestRejectsInvalidProducts(t *testing.T) {
 		want   string
 	}{
 		{
+			name: "unsafe npm package link",
+			mutate: func(m *Manifest) {
+				m.Products[0].NPMPackage = &NPMPackage{Name: "../other?redirect=evil", Version: "0.2.0"}
+			},
+			want: "npm_package.name",
+		},
+		{
+			name:   "npm range instead of published version",
+			mutate: func(m *Manifest) { m.Products[0].NPMPackage = &NPMPackage{Name: "@rekurt/depth", Version: "^0.1.0"} },
+			want:   "npm_package.version",
+		},
+		{
 			name:   "duplicate slug",
 			mutate: func(m *Manifest) { m.Products = append(m.Products, m.Products[0]) },
 			want:   "duplicate slug",

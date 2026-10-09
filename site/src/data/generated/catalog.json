@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-10-09T11:01:27Z",
+  "syncedAt": "2026-10-09T11:05:54Z",
   "products": [
     {
       "slug": "openkline",
@@ -21,6 +21,10 @@
         "en": "Candlestick charts with indicators and drawing tools for web applications, with React and Vue adapters.",
         "ru": "Свечные графики с индикаторами и инструментами рисования для веб-приложений, с адаптерами React и Vue.",
         "zhCN": "用于 Web 应用的 K 线图，提供指标、绘图工具及 React 和 Vue 适配器。"
+      },
+      "npmPackage": {
+        "name": "@rekurt/openkline-core",
+        "version": "0.2.0"
       },
       "install": [
         "npm install @rekurt/openkline-core"
@@ -402,6 +406,10 @@
         "ru": "Canvas-график глубины стакана с TypeScript API, настройкой темы и метриками спреда и дисбаланса.",
         "zhCN": "Canvas 订单簿深度图，提供 TypeScript API、可配置主题、价差和买卖盘不平衡度指标。"
       },
+      "npmPackage": {
+        "name": "@rekurt/depth",
+        "version": "0.1.0"
+      },
       "install": [
         "npm install @rekurt/depth"
       ],
@@ -449,6 +457,10 @@
         "en": "CLI and desktop app for cloning GitLab groups and transferring projects between instances, with plans and execution reports.",
         "ru": "CLI и настольное приложение для клонирования групп и переноса проектов между серверами GitLab, с планами и отчётами.",
         "zhCN": "用于克隆 GitLab 群组和跨实例迁移项目的 CLI 与桌面应用，提供迁移计划和执行报告。"
+      },
+      "npmPackage": {
+        "name": "gitlab-dump-cli",
+        "version": "0.2.0"
       },
       "install": [
         "npm install -g gitlab-dump-cli@0.2.0 && gitlab-dump --help"
@@ -2626,9 +2638,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "34056ccda6cdaf6f68cd14b223d9893e8bdd5984",
-      "updatedAt": "2026-10-09T10:36:52Z",
-      "pushedAt": "2026-10-09T10:36:58Z",
+      "headSha": "242a199c662555a912efb3d65f89a4425d3b0b05",
+      "updatedAt": "2026-10-09T11:01:49Z",
+      "pushedAt": "2026-10-09T11:01:44Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
@@ -2738,6 +2750,30 @@
         {
           "kind": "release",
           "url": "https://github.com/rekurt/srs/releases/tag/v4.0.8"
+        }
+      ]
+    },
+    {
+      "nameWithOwner": "rekurt/this-week-in-rust",
+      "name": "this-week-in-rust",
+      "description": "Data for this-week-in-rust.org",
+      "url": "https://github.com/rekurt/this-week-in-rust",
+      "visibility": "public",
+      "fork": true,
+      "parent": "rust-lang/this-week-in-rust",
+      "homepage": "https://this-week-in-rust.org/",
+      "hasPages": false,
+      "defaultBranch": "main",
+      "headSha": "79f2ff7dc1c3c01d5014ded46351eabfd8780fc6",
+      "updatedAt": "2026-10-09T11:04:52Z",
+      "pushedAt": "2026-10-09T11:05:47Z",
+      "archived": false,
+      "stars": 0,
+      "role": "fork",
+      "links": [
+        {
+          "kind": "source",
+          "url": "https://github.com/rekurt/this-week-in-rust"
         }
       ]
     },

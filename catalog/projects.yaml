@@ -17,6 +17,9 @@ products:
       en: Candlestick charts with indicators and drawing tools for web applications, with React and Vue adapters.
       ru: Свечные графики с индикаторами и инструментами рисования для веб-приложений, с адаптерами React и Vue.
       zh-cn: 用于 Web 应用的 K 线图，提供指标、绘图工具及 React 和 Vue 适配器。
+    npm_package:
+      name: "@rekurt/openkline-core"
+      version: "0.2.0"
     install:
       - npm install @rekurt/openkline-core
     website: https://openkline.tech/
@@ -173,6 +176,9 @@ products:
       en: Canvas order book depth chart with a TypeScript API, configurable themes, spread and imbalance metrics.
       ru: Canvas-график глубины стакана с TypeScript API, настройкой темы и метриками спреда и дисбаланса.
       zh-cn: Canvas 订单簿深度图，提供 TypeScript API、可配置主题、价差和买卖盘不平衡度指标。
+    npm_package:
+      name: "@rekurt/depth"
+      version: "0.1.0"
     install:
       - npm install @rekurt/depth
     website: https://rekurt.github.io/depth/
@@ -192,6 +198,9 @@ products:
       en: CLI and desktop app for cloning GitLab groups and transferring projects between instances, with plans and execution reports.
       ru: CLI и настольное приложение для клонирования групп и переноса проектов между серверами GitLab, с планами и отчётами.
       zh-cn: 用于克隆 GitLab 群组和跨实例迁移项目的 CLI 与桌面应用，提供迁移计划和执行报告。
+    npm_package:
+      name: "gitlab-dump-cli"
+      version: "0.2.0"
     install:
       - npm install -g gitlab-dump-cli@0.2.0 && gitlab-dump --help
     website: https://rekurt.github.io/gitlab-downloader/

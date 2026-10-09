@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LinkGroup from "../components/LinkGroup.astro";
+import NpmPackage from "../components/NpmPackage.astro";
 import VersionBadge from "../components/VersionBadge.astro";
 import { copy, localePrefix } from "../i18n/copy";
 import { getCatalog, type LinkKind, type Locale, type LocalizedProduct } from "../lib/catalog";
@@ -27,8 +28,9 @@ const schema = { "@context": "https://schema.org", "@type": "SoftwareSourceCode"
       {product.maintainedFork && product.upstream && <p class="attribution">{t.upstreamAttribution}: <a href={`https://github.com/${product.upstream}`} target="_blank" rel="noreferrer">{product.upstream}</a></p>}
     </div>
     <aside class="project-status">
-      <div><span>{t.version}</span><VersionBadge version={product.version} fallback={t.unversioned} /></div>
-      <div><span>{t.versionSource}</span><strong>{product.version?.source ?? "—"}</strong></div>
+      {product.npmPackage && <div><NpmPackage package={product.npmPackage} /></div>}
+      <div><span>{product.npmPackage && "GitHub · "}{t.version}</span><VersionBadge version={product.version} fallback={t.unversioned} /></div>
+      <div><span>{product.npmPackage && "GitHub · "}{t.versionSource}</span><strong>{product.version?.source ?? "—"}</strong></div>
       <div><span>{t.lastCatalogSync}</span><time datetime={catalog.syncedAt}>{date.format(new Date(catalog.syncedAt))}</time></div>
     </aside>
   </header>
