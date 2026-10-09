@@ -1,3 +1,4 @@
+import catalog from "../../src/data/generated/catalog.json" with { type: "json" };
 import { expect, test } from "@playwright/test";
 
 test("primary navigation and locale round trip", async ({ page }) => {
@@ -53,6 +54,6 @@ test("maintained fork keeps upstream attribution", async ({ page }) => {
 
 test("registry contains the complete snapshot", async ({ page }) => {
   await page.goto("/registry/");
-  await expect(page.locator("tbody tr")).toHaveCount(50);
+  await expect(page.locator("tbody tr")).toHaveCount(catalog.repositories.length);
   await expect(page.getByRole("link", { name: "tsql", exact: true })).toBeVisible();
 });

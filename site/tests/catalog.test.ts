@@ -8,7 +8,12 @@ describe("catalog selectors", () => {
     expect(catalog.schemaVersion).toBe(1);
     expect(catalog.owner).toBe("rekurt");
     expect(catalog.products).toHaveLength(13);
-    expect(catalog.repositories).toHaveLength(50);
+    expect(catalog.repositories.length).toBeGreaterThan(0);
+    const repositoryNames = new Set(catalog.repositories.map((repository) => repository.nameWithOwner));
+    expect(repositoryNames.size).toBe(catalog.repositories.length);
+    for (const product of catalog.products) {
+      expect(repositoryNames.has(product.primaryRepo)).toBe(true);
+    }
     expect(catalog.repositories.find((repository) => repository.nameWithOwner === "rekurt/rekurt.github.io")?.role).toBe("portfolio-hub");
   });
 

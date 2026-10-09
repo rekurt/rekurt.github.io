@@ -193,8 +193,7 @@ products:
       ru: CLI и настольное приложение для клонирования групп и переноса проектов между серверами GitLab, с планами и отчётами.
       zh-cn: 用于克隆 GitLab 群组和跨实例迁移项目的 CLI 与桌面应用，提供迁移计划和执行报告。
     install:
-      - git clone https://github.com/rekurt/gitlab-downloader.git
-      - npm ci
+      - npm install -g gitlab-dump-cli@0.2.0 && gitlab-dump --help
     website: https://rekurt.github.io/gitlab-downloader/
     documentation: https://github.com/rekurt/gitlab-downloader#readme
 
