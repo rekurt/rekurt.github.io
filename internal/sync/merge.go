@@ -61,6 +61,7 @@ func Build(manifest catalog.Manifest, repositories []catalog.Repository, syncedA
 			MaintainedFork: config.MaintainedFork,
 			Upstream:       config.Upstream,
 			Summary:        config.Summary,
+			NPMPackage:     config.NPMPackage,
 			Install:        append([]string(nil), config.Install...),
 			Links:          productLinks(manifest.Owner, config, primary),
 			Version:        primary.Version,

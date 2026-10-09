@@ -14,7 +14,8 @@ func TestBuildGroupsProductsAndClassifiesRegistry(t *testing.T) {
 		Owner: "rekurt",
 		Products: []catalog.ProductConfig{
 			{
-				Slug: "tool", PrimaryRepo: "rekurt/tool",
+				NPMPackage: &catalog.NPMPackage{Name: "@rekurt/tool", Version: "0.2.0"},
+				Slug:       "tool", PrimaryRepo: "rekurt/tool",
 				Repositories: []string{"rekurt/tool", "rekurt/tap"}, Kind: "cli", Domain: "developer-tools", Accent: "cyan",
 				Summary: catalog.LocalizedText{EN: "Tool summary", RU: "Описание инструмента", ZHCN: "工具简介"},
 			},
@@ -35,6 +36,7 @@ func TestBuildGroupsProductsAndClassifiesRegistry(t *testing.T) {
 	}
 	repositories[0].Homepage = "https://upstream.example"
 	repositories[2].Version = &catalog.Version{Value: "v2.0.0", Source: "release", URL: "https://github.com/rekurt/forked/releases/tag/v2.0.0"}
+	repositories[3].Version = &catalog.Version{Value: "v0.0.2", Source: "tag", URL: "https://github.com/rekurt/tool/releases/tag/v0.0.2"}
 	repositories[3].HasPages = true
 	repositories[3].Readme = &catalog.Readme{Source: "# Tool\n\n<script>bad()</script>Useful.", SHA: "abc", SourceURL: "https://github.com/rekurt/tool/blob/abc/README.md"}
 
@@ -68,6 +70,9 @@ func TestBuildGroupsProductsAndClassifiesRegistry(t *testing.T) {
 		}
 	}
 	tool := snapshot.Products[1]
+	if tool.NPMPackage == nil || tool.NPMPackage.Version != "0.2.0" || tool.Version.Value != "v0.0.2" || tool.Version.Source != "tag" {
+		t.Fatalf("npm and GitHub version provenance mixed: %#v", tool)
+	}
 	if tool.Accent != "cyan" || tool.Summary.ZHCN != "工具简介" {
 		t.Fatalf("localized presentation metadata = %#v", tool)
 	}

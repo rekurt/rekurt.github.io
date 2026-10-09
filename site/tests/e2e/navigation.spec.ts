@@ -57,3 +57,28 @@ test("registry contains the complete snapshot", async ({ page }) => {
   await expect(page.locator("tbody tr")).toHaveCount(catalog.repositories.length);
   await expect(page.getByRole("link", { name: "tsql", exact: true })).toBeVisible();
 });
+
+for (const prefix of ["", "/ru", "/zh-cn"]) {
+  test(`npm packages keep separate GitHub provenance in ${prefix || "en"}`, async ({ page }) => {
+    const packages = [
+      { slug: "depth", name: "@rekurt/depth", version: "0.1.0", github: "v0.1.0", source: "release" },
+      { slug: "openkline", name: "@rekurt/openkline-core", version: "0.2.0", github: "", source: "—" },
+      { slug: "gitlab-downloader", name: "gitlab-dump-cli", version: "0.2.0", github: "v0.0.2", source: "tag" },
+    ];
+    await page.goto(`${prefix}/projects/`);
+    for (const pkg of packages) {
+      const card = page.locator(`[data-project-card]`).filter({ has: page.getByRole("link", { name: pkg.slug, exact: true }) });
+      await expect(card.locator(".npm-package")).toHaveAttribute("href", `https://www.npmjs.com/package/${pkg.name}/v/${pkg.version}`);
+      await expect(card.locator(".npm-package")).toHaveText(`npm · ${pkg.name} · ${pkg.version} ↗`);
+    }
+    for (const pkg of packages) {
+      await page.goto(`${prefix}/projects/${pkg.slug}/`);
+      const status = page.locator(".project-status");
+      await expect(status.locator(".npm-package")).toHaveAttribute("href", `https://www.npmjs.com/package/${pkg.name}/v/${pkg.version}`);
+      if (pkg.source !== "—") await expect(status.locator(".version-badge")).toHaveAttribute("title", pkg.source);
+      if (pkg.github) await expect(status.locator(".version-badge")).toHaveText(pkg.github);
+      await expect(status).toContainText("GitHub");
+      await expect(status.locator("strong")).toHaveText(pkg.source);
+    }
+  });
+}

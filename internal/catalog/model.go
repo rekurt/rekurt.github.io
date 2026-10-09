@@ -8,6 +8,11 @@ type LocalizedText struct {
 	ZHCN string `yaml:"zh-cn" json:"zhCN"`
 }
 
+type NPMPackage struct {
+	Name    string `yaml:"name" json:"name"`
+	Version string `yaml:"version" json:"version"`
+}
+
 type ProductConfig struct {
 	Slug           string        `yaml:"slug"`
 	PrimaryRepo    string        `yaml:"primary_repo"`
@@ -19,6 +24,7 @@ type ProductConfig struct {
 	MaintainedFork bool          `yaml:"maintained_fork"`
 	Upstream       string        `yaml:"upstream"`
 	Summary        LocalizedText `yaml:"summary"`
+	NPMPackage     *NPMPackage   `yaml:"npm_package"`
 	Install        []string      `yaml:"install"`
 	Website        string        `yaml:"website"`
 	Documentation  string        `yaml:"documentation"`
@@ -83,6 +89,7 @@ type Product struct {
 	MaintainedFork bool          `json:"maintainedFork"`
 	Upstream       string        `json:"upstream,omitempty"`
 	Summary        LocalizedText `json:"summary"`
+	NPMPackage     *NPMPackage   `json:"npmPackage,omitempty"`
 	Install        []string      `json:"install,omitempty"`
 	Links          []Link        `json:"links,omitempty"`
 	Version        *Version      `json:"version,omitempty"`

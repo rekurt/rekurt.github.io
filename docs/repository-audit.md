@@ -1,7 +1,7 @@
 # Public repository audit
 
-Snapshot: 2026-10-09T11:01:27Z
-69 public repositories · 20 original · 49 fork
+Snapshot: 2026-10-09T11:05:54Z
+70 public repositories · 20 original · 50 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
 |---|---|---|---|---|---|---|---|
@@ -72,5 +72,6 @@ Snapshot: 2026-10-09T11:01:27Z
 | [rekurt/relax-hub](https://github.com/rekurt/relax-hub) | unclassified | original | Go | — | — | — | 2026-09-22 |
 | [rekurt/sprint-velocity](https://github.com/rekurt/sprint-velocity) | primary | original | Python | — | [open](https://rekurt.github.io/sprint-velocity/) | — | 2026-09-05 |
 | [rekurt/srs](https://github.com/rekurt/srs) | fork | fork of `ossrs/srs` | — | v4.0.8 | — | — | 2020-02-26 |
+| [rekurt/this-week-in-rust](https://github.com/rekurt/this-week-in-rust) | fork | fork of `rust-lang/this-week-in-rust` | — | — | — | — | 2026-10-09 |
 | [rekurt/tsql](https://github.com/rekurt/tsql) | fork | fork of `fcoury/tsql` | — | — | — | — | 2026-04-17 |
 | [rekurt/ymsdk](https://github.com/rekurt/ymsdk) | primary | original | Go | v0.2.0 | [open](https://rekurt.github.io/ymsdk/) | — | 2026-09-05 |

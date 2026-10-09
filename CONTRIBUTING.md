@@ -3,6 +3,7 @@
 ## Change sources
 
 - Edit `catalog/projects.yaml` for curated product metadata.
+- For published npm packages, `npm_package` records a registry-confirmed package name and exact version separately from the GitHub release/tag version. Update it after a verified npm release; catalog-sync preserves both sources.
 - Edit `cmd/` or `internal/` for synchronization behavior.
 - Edit `site/src/` for the generated static experience.
 - Never edit `site/src/data/generated/catalog.json` or `docs/repository-audit.md` manually. Regenerate both with `catalog-sync`.
