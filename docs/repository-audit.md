@@ -1,7 +1,7 @@
 # Public repository audit
 
-Snapshot: 2026-10-09T20:57:27Z
-90 public repositories · 20 original · 70 fork
+Snapshot: 2026-10-09T22:02:29Z
+91 public repositories · 20 original · 71 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
 |---|---|---|---|---|---|---|---|
@@ -51,6 +51,7 @@ Snapshot: 2026-10-09T20:57:27Z
 | [rekurt/awesome-sql](https://github.com/rekurt/awesome-sql) | fork | fork of `danhuss/awesome-sql` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-sqlite](https://github.com/rekurt/awesome-sqlite) | fork | fork of `planetopendata/awesome-sqlite` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-sqlite-airsequel](https://github.com/rekurt/awesome-sqlite-airsequel) | fork | fork of `Airsequel/awesome-sqlite` | — | — | — | — | 2026-10-09 |
+| [rekurt/awesome-translations-mbiesiad](https://github.com/rekurt/awesome-translations-mbiesiad) | fork | fork of `mbiesiad/awesome-translations` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-tuis](https://github.com/rekurt/awesome-tuis) | fork | fork of `rothgar/awesome-tuis` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-vcs-tools](https://github.com/rekurt/awesome-vcs-tools) | fork | fork of `postpdm/awesome-vcs-tools` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-vue-3](https://github.com/rekurt/awesome-vue-3) | fork | fork of `gs00s/awesome-vue-3` | — | — | — | — | 2026-10-09 |

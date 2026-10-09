@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-10-09T20:57:27Z",
+  "syncedAt": "2026-10-09T22:02:29Z",
   "products": [
     {
       "slug": "openkline",
@@ -919,7 +919,7 @@
       "defaultBranch": "master",
       "headSha": "194c4638210cfd86c1cc9f44e3478babb6aa4b11",
       "updatedAt": "2026-10-09T20:07:52Z",
-      "pushedAt": "2026-10-09T20:10:06Z",
+      "pushedAt": "2026-10-09T20:58:29Z",
       "archived": false,
       "stars": 0,
       "role": "fork",
@@ -1761,7 +1761,7 @@
       "defaultBranch": "main",
       "headSha": "51e50bf478de0e4905c41d0d03f0689e9842b5ee",
       "updatedAt": "2026-10-09T20:08:09Z",
-      "pushedAt": "2026-10-09T20:12:02Z",
+      "pushedAt": "2026-10-09T20:59:55Z",
       "archived": false,
       "stars": 0,
       "role": "fork",
@@ -1769,6 +1769,31 @@
         {
           "kind": "source",
           "url": "https://github.com/rekurt/awesome-sqlite-airsequel"
+        }
+      ]
+    },
+    {
+      "nameWithOwner": "rekurt/awesome-translations-mbiesiad",
+      "name": "awesome-translations-mbiesiad",
+      "description": "😎 Awesome lists about Internationalization & localization stuff. l10n, g11n, m17n, i18n. Translations! 🌎🌍",
+      "url": "https://github.com/rekurt/awesome-translations-mbiesiad",
+      "visibility": "public",
+      "fork": true,
+      "parent": "mbiesiad/awesome-translations",
+      "homepage": "https://mbiesiad.github.io/awesome-translations/",
+      "hasPages": false,
+      "defaultBranch": "main",
+      "headSha": "d8b64f20b4ffcea851e82f261a51f7164ad1a545",
+      "license": "CC0-1.0",
+      "updatedAt": "2026-10-09T21:06:19Z",
+      "pushedAt": "2026-10-09T21:08:50Z",
+      "archived": false,
+      "stars": 0,
+      "role": "fork",
+      "links": [
+        {
+          "kind": "source",
+          "url": "https://github.com/rekurt/awesome-translations-mbiesiad"
         }
       ]
     },
@@ -2897,7 +2922,7 @@
       "headSha": "4e31f93ae80377acfb051ff38749eefa91678cc7",
       "license": "MIT",
       "updatedAt": "2026-10-09T18:56:47Z",
-      "pushedAt": "2026-10-09T19:34:47Z",
+      "pushedAt": "2026-10-09T21:06:16Z",
       "archived": false,
       "stars": 1,
       "role": "primary",
@@ -3101,9 +3126,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "cbe2587f56826efe66c82b891d9c3f9688a4bf3c",
-      "updatedAt": "2026-10-09T19:36:19Z",
-      "pushedAt": "2026-10-09T20:16:37Z",
+      "headSha": "a23677cbac33016fd69e67522b38f504cc35bb10",
+      "updatedAt": "2026-10-09T22:01:35Z",
+      "pushedAt": "2026-10-09T22:01:44Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
