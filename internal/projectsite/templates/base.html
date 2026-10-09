@@ -161,7 +161,7 @@
     <footer class="site-footer" data-rekurt-family>
       <div class="shell footer-inner">
         <p><a class="family-brand" aria-label="{{.Copy.Family}}" href="https://rekurt.github.io/">{{.Copy.AuthorHub}}</a> · <a href="{{.DirectoryHref}}">{{.Copy.AllProjects}}</a> · <a href="https://github.com/{{.Owner}}/{{.Name}}">{{.Copy.Source}}</a></p>
-        <p>{{.Copy.GeneratedFrom}} · {{.GeneratedAt}}</p>
+        {{if .Marketing}}<p>{{.Marketing.Name}} · {{.License}}</p>{{else}}<p>{{.Copy.GeneratedFrom}} · {{.GeneratedAt}}</p>{{end}}
         <nav class="locale-nav" aria-label="{{.Copy.LanguageNav}}">
           {{range .Alternates}}{{if ne .Lang "x-default"}}<a href="{{.URL}}"{{if eq .Lang $.Page.Lang}} aria-current="page"{{end}}>{{.Name}}</a>{{end}}{{end}}
         </nav>

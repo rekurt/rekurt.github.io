@@ -263,3 +263,8 @@
  .product-site .project-sections { grid-column: 1 / -1; gap: 0 .75rem; }
  .product-site .project-sections a { font-size: .75rem; }
 }
+@media (max-width: 560px) {
+ .theme-crypto .primitive-strip { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .5rem; padding-inline: .75rem; }
+ .theme-crypto .primitive-strip span { font-size: 1.15rem; padding-left: .4rem; }
+ .theme-crypto .primitive-strip b { overflow-wrap: anywhere; }
+}
