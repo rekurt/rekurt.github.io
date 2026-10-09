@@ -40,6 +40,21 @@ jobs:
           go-version-file: family/go.mod
           cache-dependency-path: family/go.sum
       - uses: actions/configure-pages@v6
+      - name: Set up Node for Depth demo
+        if: inputs.slug == 'depth' && github.repository == 'rekurt/depth'
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Build and verify Depth demo
+        if: inputs.slug == 'depth' && github.repository == 'rekurt/depth'
+        working-directory: project
+        run: |
+          npm ci --ignore-scripts
+          npm test
+          npm run typecheck
+          npm run lint
+          npm run build
+          npm run build --prefix examples/core -- --base=/depth/demo/
       - name: Refresh public catalog
         working-directory: family
         env:
@@ -54,6 +69,12 @@ jobs:
           --repo ../project
           --out ../_site
           --base-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+      - name: Include Depth demo in Pages artifact
+        if: inputs.slug == 'depth' && github.repository == 'rekurt/depth'
+        run: |
+          mkdir -p _site/demo
+          cp -R project/examples/core/dist/. _site/demo/
+          test -f _site/demo/index.html
       - name: Validate project site
         working-directory: family
         run: >-

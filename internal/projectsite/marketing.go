@@ -31,20 +31,23 @@ type marketingCopy struct {
 }
 
 type marketingProfile struct {
-	Slug    string                   `json:"slug"`
-	Name    string                   `json:"name"`
-	Theme   string                   `json:"theme"`
-	Visual  string                   `json:"visual"`
-	Image   string                   `json:"image"`
-	Code    string                   `json:"code"`
-	Primary string                   `json:"primary"`
-	Locales map[string]marketingCopy `json:"locales"`
+	Slug     string                   `json:"slug"`
+	Name     string                   `json:"name"`
+	Theme    string                   `json:"theme"`
+	Visual   string                   `json:"visual"`
+	Image    string                   `json:"image"`
+	Code     string                   `json:"code"`
+	Primary  string                   `json:"primary"`
+	DemoPath string                   `json:"demo_path,omitempty"`
+	Locales  map[string]marketingCopy `json:"locales"`
 }
 
 type marketingView struct {
 	marketingProfile
 	Text         marketingCopy
 	ImageURL     string
+	DemoURL      string
+	DemoLabel    string
 	Benefits     string
 	Workflow     string
 	Example      string
@@ -79,6 +82,10 @@ func loadMarketing(slug string) (*marketingProfile, error) {
 	if profile.Primary != "#install" && profile.Primary != "#overview" {
 		return nil, fmt.Errorf("unsupported marketing CTA: %s", slug)
 	}
+	if profile.DemoPath != "" && (!strings.HasSuffix(profile.DemoPath, "/") ||
+		!fs.ValidPath(strings.TrimSuffix(profile.DemoPath, "/")) || strings.ContainsAny(profile.DemoPath, "\\:?#")) {
+		return nil, fmt.Errorf("unsafe demo path: %s", slug)
+	}
 	for _, locale := range []string{"en", "ru", "zh-cn"} {
 		copy, ok := profile.Locales[locale]
 		if !ok || copy.Headline == "" || copy.Intro == "" || copy.CTA == "" || copy.Closing == "" || len(copy.Features) < 3 || len(copy.Steps) < 2 {
@@ -99,6 +106,10 @@ func marketingFor(model Model, page LocalePage) (*marketingView, error) {
 		return nil, err
 	}
 	view := &marketingView{marketingProfile: *profile, Text: profile.Locales[page.Locale]}
+	if profile.DemoPath != "" {
+		view.DemoURL = routeURL(model.BaseURL, profile.DemoPath)
+		view.DemoLabel = map[string]string{"en": "Try the demo", "ru": "Открыть демо", "zh-cn": "体验演示"}[page.Locale]
+	}
 	if view.Text.Demo != "" {
 		view.Code = view.Text.Demo
 	}
@@ -139,6 +150,9 @@ func validateMarketingHTML(slug, locale string, data []byte) error {
 	}
 	if profile.Image != "" {
 		required = append(required, "/"+profile.Image+`"`)
+	}
+	if profile.DemoPath != "" {
+		required = append(required, "/"+profile.DemoPath+`"`)
 	}
 	for _, item := range append(copy.Features, copy.Steps...) {
 		required = append(required, item.Title, item.Body)
