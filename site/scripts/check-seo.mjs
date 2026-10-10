@@ -55,8 +55,8 @@ for (const file of await files(root)) {
 const sitemap = await readFile(join(root,'sitemap.xml'),'utf8');
 const robots = await readFile(join(root,'robots.txt'),'utf8');
 const sitemapLines = robots.split("\n").filter(line => line.startsWith("Sitemap: "));
-assert.equal(sitemapLines.length, 14, 'host root robots advertises the portfolio and 13 project sitemaps');
-assert.equal(new Set(sitemapLines).size, 14, 'project sitemap references are unique');
+assert.equal(sitemapLines.length, 15, 'host root robots advertises the portfolio and 14 project sitemaps');
+assert.equal(new Set(sitemapLines).size, 15, 'project sitemap references are unique');
 assert.ok(robots.includes('https://rekurt.github.io/Mac-Coffee/family-sitemap.xml'), 'decorated project sitemap');
 assert.ok(robots.includes('https://rekurt.github.io/depth/sitemap.xml'), 'generated project sitemap');
 for (const [canonical,{alternates,fail}] of documents) {

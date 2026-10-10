@@ -10,6 +10,6 @@ export const GET: APIRoute = ({ site }) => {
     .map(link => new URL(link.url))
     .filter(url => url.origin === "https://rekurt.github.io" && /^\/[^/]+\/$/.test(url.pathname))
     .map(url => String(new URL(decorated.has(product.slug) ? "family-sitemap.xml" : "sitemap.xml", url))));
-  const sitemaps = [...new Set([String(new URL("/sitemap.xml", site)), ...projectSitemaps])];
+  const sitemaps = [...new Set([String(new URL("/sitemap.xml", site)), ...projectSitemaps, "https://rekurt.github.io/matching-engine/sitemap.xml"])];
   return new Response(`User-agent: *\nAllow: /\n${sitemaps.map(url => `Sitemap: ${url}`).join("\n")}\n`, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 };
