@@ -162,3 +162,28 @@ func elementHTMLByID(t *testing.T, source, id string) string {
 func decorateGeneratedAt() time.Time {
 	return time.Date(2026, 9, 5, 6, 30, 0, 0, time.UTC)
 }
+
+func TestDecorateRefreshesExistingSearchAndSocialMetadata(t *testing.T) {
+	output := copyExistingFixture(t)
+	path := filepath.Join(output, "index.html")
+	original := readFile(t, path)
+	stale := `<meta name="description" content="stale-description"><meta property="og:title" content="stale-title"><meta property="og:url" content="https://old.example/"><meta name="twitter:title" content="stale-twitter">`
+	if err := os.WriteFile(path, []byte(strings.Replace(original, "</head>", stale+"</head>", 1)), 0644); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := Decorate(fixtureOptions(t, output)); err != nil {
+		t.Fatal(err)
+	}
+	got := readFile(t, path)
+	for _, bad := range []string{"stale-description", "stale-title", "stale-twitter", "https://old.example/"} {
+		if strings.Contains(got, bad) {
+			t.Errorf("stale metadata remains: %s", bad)
+		}
+	}
+	if !strings.Contains(got, `assets/original-social.png`) {
+		t.Fatal("project-owned social image was lost")
+	}
+	if strings.Count(got, `property="og:title"`) != 1 {
+		t.Fatal("duplicate social title")
+	}
+}

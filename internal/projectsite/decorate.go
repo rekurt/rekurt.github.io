@@ -210,6 +210,13 @@ func familyBar(owner string) *nethtml.Node {
 func ensureMeta(head *nethtml.Node, key, keyValue, content string) {
 	for child := head.FirstChild; child != nil; child = child.NextSibling {
 		if child.Type == nethtml.ElementNode && child.Data == "meta" && attributeValue(child, key) == keyValue {
+			for index := range child.Attr {
+				if child.Attr[index].Key == "content" {
+					child.Attr[index].Val = content
+					return
+				}
+			}
+			child.Attr = append(child.Attr, attr("content", content))
 			return
 		}
 	}
