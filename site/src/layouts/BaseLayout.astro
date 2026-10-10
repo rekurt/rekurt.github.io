@@ -42,6 +42,7 @@ const ogLocales = { en: "en_US", ru: "ru_RU", "zh-cn": "zh_CN" } as const;
     {alternateLocales && <link rel="alternate" hreflang="ru" href={russian} />}
     {alternateLocales && <link rel="alternate" hreflang="zh-CN" href={chinese} />}
     {alternateLocales && <link rel="alternate" hreflang="x-default" href={english} />}
+    <link rel="stylesheet" href="/syntax/syntax.css?v=11.12.0-1" />
     <title>{title}</title>
     {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
@@ -52,5 +53,7 @@ const ogLocales = { en: "en_US", ru: "ru_RU", "zh-cn": "zh_CN" } as const;
       <slot />
     </main>
     <Footer locale={locale} syncedAt={syncedAt} />
+    <script is:inline src="/syntax/highlight-11.12.0.min.js" defer></script>
+    <script is:inline src="/syntax/syntax.js?v=11.12.0-1" defer></script>
   </body>
 </html>

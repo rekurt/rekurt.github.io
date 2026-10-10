@@ -47,7 +47,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
           cache-dependency-path: site/package-lock.json
-      - run: node --test scripts/test-family-ui.mjs
+      - run: node --test scripts/test-family-ui.mjs scripts/test-syntax.mjs
       - run: npm ci
         working-directory: site
       - run: npm test

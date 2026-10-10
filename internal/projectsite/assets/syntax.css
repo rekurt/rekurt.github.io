@@ -1,0 +1,47 @@
+/* Token colours only: preserve each project's type, spacing and code surfaces. */
+:root {
+  --syntax-keyword: #d8b4fe;
+  --syntax-string: #a7f3d0;
+  --syntax-number: #fcd34d;
+  --syntax-function: #93c5fd;
+  --syntax-comment: #a7b4c4;
+  --syntax-type: #67e8f9;
+  --syntax-delete: #fda4af;
+}
+:is(.theme-barber, .theme-schema, .theme-transfer, .theme-words, .theme-messenger, .theme-weekly) {
+  --syntax-keyword: #6b21a8;
+  --syntax-string: #166534;
+  --syntax-number: #92400e;
+  --syntax-function: #1e40af;
+  --syntax-comment: #4b5563;
+  --syntax-type: #155e75;
+  --syntax-delete: #9f1239;
+}
+/* These illustrations use a dark surface even on a light product page. */
+:is(.theme-barber, .theme-schema) .product-demo {
+  --syntax-keyword: #d8b4fe;
+  --syntax-string: #a7f3d0;
+  --syntax-number: #fcd34d;
+  --syntax-function: #93c5fd;
+  --syntax-comment: #a7b4c4;
+  --syntax-type: #67e8f9;
+  --syntax-delete: #fda4af;
+}
+.hljs .hljs-keyword, .hljs .hljs-selector-tag, .hljs .hljs-literal { color: var(--syntax-keyword); }
+.hljs .hljs-string, .hljs .hljs-regexp, .hljs .hljs-addition { color: var(--syntax-string); }
+.hljs .hljs-number, .hljs .hljs-symbol, .hljs .hljs-bullet { color: var(--syntax-number); }
+.hljs .hljs-title, .hljs .hljs-attr, .hljs .hljs-property { color: var(--syntax-function); }
+.hljs .hljs-variable, .hljs .hljs-built_in, .hljs .hljs-type, .hljs .hljs-tag, .hljs .hljs-name { color: var(--syntax-type); }
+.hljs .hljs-comment, .hljs .hljs-quote, .hljs .hljs-meta { color: var(--syntax-comment); }
+.hljs .hljs-deletion { color: var(--syntax-delete); }
+.hljs .hljs-emphasis { font-style: italic; }
+.hljs .hljs-strong { font-weight: 700; }
+
+.hljs[data-syntax-surface="light"] {
+  --syntax-keyword: #6b21a8; --syntax-string: #166534; --syntax-number: #92400e;
+  --syntax-function: #1e40af; --syntax-comment: #4b5563; --syntax-type: #155e75; --syntax-delete: #9f1239;
+}
+.hljs[data-syntax-surface="dark"] {
+  --syntax-keyword: #d8b4fe; --syntax-string: #a7f3d0; --syntax-number: #fcd34d;
+  --syntax-function: #93c5fd; --syntax-comment: #a7b4c4; --syntax-type: #67e8f9; --syntax-delete: #fda4af;
+}

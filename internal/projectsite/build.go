@@ -152,7 +152,7 @@ func renderSite(model Model, output string) error {
 			return err
 		}
 	}
-	for _, name := range []string{"family.css", "family.js", "marketing.css"} {
+	for _, name := range []string{"family.css", "family.js", "marketing.css", "highlight-11.12.0.min.js", "highlight.LICENSE.txt", "syntax.css", "syntax.js"} {
 		data, err := fs.ReadFile(siteFiles, "assets/"+name)
 		if err != nil {
 			return err

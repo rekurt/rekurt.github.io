@@ -65,8 +65,13 @@ func TestDecorateIsIdempotent(t *testing.T) {
 		endSecond := min(len(second), index+240)
 		t.Fatalf("second decoration changed index.html at byte %d:\nFIRST  %q\nSECOND %q", index, first[start:endFirst], second[start:endSecond])
 	}
-	if strings.Count(second, `data-rekurt-family=""`) != 2 {
-		t.Fatalf("family markers = %d, want stylesheet and bar", strings.Count(second, `data-rekurt-family=""`))
+	if strings.Count(second, `data-rekurt-family=""`) != 5 {
+		t.Fatalf("family markers = %d, want two stylesheets, two scripts and bar", strings.Count(second, `data-rekurt-family=""`))
+	}
+	for _, asset := range []string{"assets/bridge.css", "assets/syntax.css?v=11.12.0-1", "assets/highlight-11.12.0.min.js", "assets/syntax.js?v=11.12.0-1"} {
+		if strings.Count(second, asset) != 1 {
+			t.Errorf("asset %s must occur exactly once", asset)
+		}
 	}
 	if strings.Count(second, `rel="canonical"`) != 1 {
 		t.Fatalf("canonical links = %d", strings.Count(second, `rel="canonical"`))
