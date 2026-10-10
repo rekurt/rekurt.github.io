@@ -23,7 +23,7 @@
 .product-demo { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
 .product-demo figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; padding: .7rem 1rem; border-bottom: 1px solid var(--line); font-size: .75rem; font-family: var(--mono); color: var(--muted); }
 .product-demo figcaption b { color: var(--accent); font-weight: 500; }
-.product-demo pre { margin: 0; padding: 1.25rem; overflow-x: auto; font: .8125rem/1.8 var(--mono); color: var(--text); }
+.product-demo pre { min-width: 0; max-width: 100%; margin: 0; padding: 1.25rem; overflow-x: auto; font: .8125rem/1.8 var(--mono); color: var(--text); }
 .product-demo img { display: block; width: 100%; height: auto; }
 .product-benefits { border-top: 1px solid var(--line); padding-block: 2rem; }
 .product-site .section-heading { margin-bottom: 1.25rem; }
@@ -132,7 +132,7 @@
 .product-site .product-demo { border-radius: 0; box-shadow: 10px 10px 0 var(--line); }
 .product-site .benefit-grid article { border: 0; padding: 1rem 0; }
 .product-site .product-benefits, .product-site .product-workflow { padding-block: 3rem; }
-.product-example { display: grid; grid-template-columns: .6fr 1.4fr; gap: 2rem; padding-block: 2.5rem; border-top: 1px solid var(--line); }
+.product-example { display: grid; grid-template-columns: minmax(0,.6fr) minmax(0,1.4fr); gap: 2rem; padding-block: 2.5rem; border-top: 1px solid var(--line); }
 .example-intro p:last-child { font: .8rem var(--mono); color: var(--muted); }
 .example-code { min-width: 0; background: var(--surface); border: 1px solid var(--line); }
 .example-code pre { margin: 0; padding: 1.5rem; font: .88rem/1.85 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -151,7 +151,7 @@
 .theme-liquidity h1 { max-width: 20ch; font-weight: 500; }
 .theme-liquidity .summary { max-width: 70ch; }
 .theme-liquidity .product-demo { box-shadow: none; border-top: 3px solid var(--accent); }
-.theme-liquidity .product-demo img { max-height: 650px; object-fit: cover; object-position: top; }
+.theme-liquidity .product-demo img { max-height: 650px; object-fit: contain; object-position: top; }
 .theme-liquidity .benefit-grid { gap: 0; }
 .theme-liquidity .benefit-grid article { padding: 1.5rem; border: 1px solid var(--line); }
 
@@ -167,7 +167,7 @@
 /* PRT: a terminal manual, with output preceding the explanation. */
 .theme-ports { --bg: #0a1113; --surface: #101e21; --text: #e3f6ef; --muted: #a9c2b9; --accent: #8ce6b4; }
 .theme-ports h1, .theme-ports h2 { font-family: var(--mono); letter-spacing: -.05em; }
-.theme-ports .product-hero { grid-template-columns: 1.15fr 1fr; }
+.theme-ports .product-hero { grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); }
 .theme-ports .product-demo { grid-column: 1; grid-row: 1; box-shadow: none; border: 1px solid var(--accent); }
 .theme-ports .product-pitch { grid-column: 2; grid-row: 1; }
 .theme-ports .benefit-number::before { content: '$ ' counter(benefit, decimal-leading-zero); }
@@ -184,7 +184,7 @@
 
 /* GitLab Dump: a migration desk with a full-width transfer manifest. */
 .theme-transfer .product-hero { grid-template-columns: 1fr; }
-.theme-transfer .product-pitch { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0 3rem; }
+.theme-transfer .product-pitch { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); gap: 0 3rem; }
 .theme-transfer .product-pitch h1 { grid-column: 1; grid-row: 2 / span 3; font-family: Georgia, serif; font-weight: 400; }
 .theme-transfer .eyebrow { grid-column: 1 / -1; }
 .theme-transfer .product-pitch .summary, .theme-transfer .product-pitch .actions, .theme-transfer .product-pitch .product-fit { grid-column: 2; }
@@ -246,7 +246,7 @@
  .theme-schema .product-workflow ol, .theme-weekly .benefit-grid { grid-template-columns: 1fr; }
  .theme-weekly .benefit-grid article:last-child { grid-column: auto; }
  .product-site h1 { font-size: clamp(2.3rem,8vw,3.8rem); }
- .product-site .product-demo pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+ .product-site .product-demo pre { white-space: pre; overflow-wrap: normal; }
  .theme-liquidity .benefit-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .product-site *, .product-site *::before { scroll-behavior: auto; } }
@@ -267,4 +267,48 @@
  .theme-crypto .primitive-strip { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .5rem; padding-inline: .75rem; }
  .theme-crypto .primitive-strip span { font-size: 1.15rem; padding-left: .4rem; }
  .theme-crypto .primitive-strip b { overflow-wrap: anywhere; }
+}
+
+/* Keep content within its column; scroll code and tables without widening the page. */
+.product-hero > *, .benefit-grid > *, .product-workflow > *, .product-close > * { min-width: 0; }
+.product-site h1, .product-site h2, .product-site h3 { overflow-wrap: break-word; }
+.product-site .project-emblem { flex: 0 0 32px; }
+.product-site .project-nav-name { max-width: none; }
+.product-site .product-fit, .product-demo figcaption { overflow-wrap: anywhere; }
+.product-site .readme pre { white-space: pre; overflow-wrap: normal; }
+.product-demo pre code { font: inherit; }
+.product-site .product-demo figcaption { align-items: baseline; }
+.product-site .product-demo img { object-fit: contain; }
+.product-site .locale-nav { flex-wrap: wrap; }
+.product-site .content-section, .product-site .product-close { padding-block: clamp(2rem,4vw,3.5rem); }
+
+@media (min-width: 801px) and (max-width: 1000px) {
+ .product-site .product-hero { grid-template-columns: minmax(0,1fr); gap: 2rem; }
+ .theme-ports .product-pitch, .theme-ports .product-demo { grid-column: auto; grid-row: auto; }
+ .theme-transfer .product-pitch { display: block; }
+ .theme-barber .benefit-grid article { grid-template-columns: 30px minmax(0,1fr); }
+ .theme-barber .benefit-grid article p { grid-column: 2; }
+ .product-site .product-demo { transform: none; }
+}
+@media (max-width: 800px) {
+ .product-site .product-hero { gap: 2rem; padding-block: 2rem; }
+ .product-site .product-benefits, .product-site .product-workflow { padding-block: 2rem; }
+ .product-site .product-demo { box-shadow: none; }
+ .product-site h1 { font-size: clamp(2rem,6vw,3.4rem); line-height: 1.12; }
+ .product-site .summary { font-size: 1rem; }
+}
+@media (max-width: 560px) {
+ .product-site .project-nav-inner { grid-template-columns: minmax(0,1fr); }
+ .product-site .project-nav-name { grid-column: 1; padding-top: .5rem; }
+ .product-site .project-languages { grid-column: 1; grid-row: auto; margin-left: 0; gap: .5rem; }
+ .product-site .project-sections { gap: 0 1rem; }
+ .product-site .project-languages a { min-height: 36px; padding-inline: .25rem; }
+ .product-site h1 { font-size: clamp(2rem,8vw,2.7rem); }
+ .product-site .actions .button { flex: 1 1 9rem; text-align: center; }
+ .product-site .command { flex-direction: column; }
+ .product-site .command code { width: 100%; padding: 1rem; }
+ .product-site .command button { min-height: 44px; border-left: 0; border-top: 1px solid var(--line); }
+ .product-site .report-day { font-size: 2.75rem; flex-wrap: wrap; gap: .5rem; line-height: 1.15; }
+ .product-site .receipt-value { font-size: 2.75rem; overflow-wrap: anywhere; }
+ .product-site .footer-inner > p { overflow-wrap: anywhere; }
 }
