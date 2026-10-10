@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.3.0](https://github.com/rekurt/rekurt.github.io/compare/v0.2.2...v0.3.0) (2026-10-10)
+
+
+### Features
+
+* add matching-engine website and portfolio entry ([113341c](https://github.com/rekurt/rekurt.github.io/commit/113341cda801398021e6a155681a9e7fe3ccf715))
+* **site:** introduce author and distinguish personal open source ([#29](https://github.com/rekurt/rekurt.github.io/issues/29)) ([38c5f32](https://github.com/rekurt/rekurt.github.io/commit/38c5f32d0e950866b01e9133fe80941caee31405))
+* **sites:** add accessible syntax highlighting across project sites ([f9cb4f7](https://github.com/rekurt/rekurt.github.io/commit/f9cb4f7edd7168e66a5faf94b98e2dea4e3af5f7))
+* **sites:** improve project navigation and install usability ([#24](https://github.com/rekurt/rekurt.github.io/issues/24)) ([a7c75e3](https://github.com/rekurt/rekurt.github.io/commit/a7c75e33d216868a608bc6aabc78813183e33fac))
+* **sites:** individual project identities and self-contained guides ([#26](https://github.com/rekurt/rekurt.github.io/issues/26)) ([a23677c](https://github.com/rekurt/rekurt.github.io/commit/a23677cbac33016fd69e67522b38f504cc35bb10))
+
+
+### Bug Fixes
+
+* **sites:** responsive project layouts and readable documentation ([31bf068](https://github.com/rekurt/rekurt.github.io/commit/31bf0680ba3b776e9f902f7682bbc4fe7f7a488a))
+
 ## [0.2.2](https://github.com/rekurt/rekurt.github.io/compare/v0.2.1...v0.2.2) (2026-10-09)
 
 
