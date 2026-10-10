@@ -133,3 +133,8 @@ export function getRepository(nameWithOwner: string): Repository {
   }
   return clone(repository);
 }
+
+// Filter at render time so hourly catalog refreshes cannot restore forks.
+export function getRegistryRepositories(): Repository[] {
+  return clone(snapshot.repositories.filter(repository => !repository.fork && repository.role !== "fork" && repository.role !== "maintained-fork"));
+}

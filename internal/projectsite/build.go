@@ -41,6 +41,8 @@ type siblingView struct {
 }
 
 type pageView struct {
+	SocialImage   string
+	OGLocale      string
 	Marketing     *marketingView
 	Page          LocalePage
 	Copy          siteCopy
@@ -161,6 +163,9 @@ func renderSite(model Model, output string) error {
 			return err
 		}
 	}
+	if err := writeSocialImage(model, output); err != nil {
+		return err
+	}
 	if err := writeSiteFile(output, ".nojekyll", nil); err != nil {
 		return err
 	}
@@ -182,6 +187,7 @@ func makePageView(model Model, page LocalePage) (pageView, error) {
 		page.Title = marketing.Name + " — " + marketing.Text.Headline
 		page.Description = marketing.Text.Intro
 	}
+	page.Title = seoTitle(model.Product.Slug, page.Locale, page.Title)
 	data, err := structuredData(model, page)
 	if err != nil {
 		return pageView{}, err
@@ -203,14 +209,14 @@ func makePageView(model Model, page LocalePage) (pageView, error) {
 		npmURL = "https://www.npmjs.com/package/" + model.Product.NPMPackage.Name + "/v/" + model.Product.NPMPackage.Version
 	}
 	return pageView{
-		Marketing: marketing,
-		Page:      page, Copy: copyFor(page.Locale), Name: model.Repository.Name, Owner: model.Owner,
+		Marketing: marketing, OGLocale: openGraphLocale(page.Locale), SocialImage: model.BaseURL + "assets/social.png",
+		Page: page, Copy: copyFor(page.Locale), Name: model.Repository.Name, Owner: model.Owner,
 		Kind: model.Product.Kind, Domain: model.Product.Domain, Accent: model.Product.Accent,
 		Layout: layoutFor(model.Product.Kind), Version: version, License: license, Language: language,
 		Updated: model.Repository.PushedAt.UTC().Format("2006-01-02"), Install: model.Product.Install,
 		NPMPackage: model.Product.NPMPackage, NPMURL: npmURL,
 		Actions: actionsFor(model, page.Locale), Alternates: alternatesFor(model, false),
-		Readme: template.HTML(page.ReadmeHTML), AssetPrefix: assetPrefix(page.Path),
+		Readme: template.HTML(nestedReadmeHTML(page.ReadmeHTML)), AssetPrefix: assetPrefix(page.Path),
 		DirectoryHref: "projects/", ProjectHref: "./", Structured: template.JS(data),
 		GeneratedAt: model.GeneratedAt.UTC().Format("2006-01-02 15:04 UTC"), SiblingCount: len(model.Products) - 1,
 	}, nil
@@ -349,18 +355,35 @@ func replaceOutput(output, temporary string) error {
 	return nil
 }
 
-func renderSitemap(model Model) string {
+func renderDecoratedSitemap(model Model) string {
+	homes := model
+	homes.Pages = nil
+	for _, page := range model.Pages {
+		if info, err := os.Stat(filepath.Join(model.Output, routeFile(page.Path))); err == nil && info.Mode().IsRegular() {
+			homes.Pages = append(homes.Pages, page)
+		}
+	}
+	return renderSitemapPages(model, homes)
+}
+
+func renderSitemap(model Model) string { return renderSitemapPages(model, model) }
+
+func renderSitemapPages(model, homes Model) string {
 	var output strings.Builder
 	output.WriteString(`<?xml version="1.0" encoding="UTF-8"?>` + "\n")
 	output.WriteString(`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">` + "\n")
 	for _, directory := range []bool{false, true} {
-		for _, page := range model.Pages {
+		pageModel := homes
+		if directory {
+			pageModel = model
+		}
+		for _, page := range pageModel.Pages {
 			location := page.Canonical
 			if directory {
 				location += "projects/"
 			}
 			output.WriteString("  <url><loc>" + escapeXML(location) + "</loc>")
-			for _, alternate := range alternatesFor(model, directory) {
+			for _, alternate := range alternatesFor(pageModel, directory) {
 				output.WriteString(`<xhtml:link rel="alternate" hreflang="` + escapeXML(alternate.Lang) + `" href="` + escapeXML(alternate.URL) + `"/>`)
 			}
 			output.WriteString("</url>\n")

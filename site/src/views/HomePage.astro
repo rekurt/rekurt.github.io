@@ -5,7 +5,7 @@ import { author, selectedProjectSlugs, projectDisplayNames } from "../lib/author
 import ProjectCard from "../components/ProjectCard.astro";
 import ReleaseList from "../components/ReleaseList.astro";
 import { copy, localePrefix } from "../i18n/copy";
-import { getCatalog, getProducts, getRepository, type Locale } from "../lib/catalog";
+import { getCatalog, getProducts, getRepository, getRegistryRepositories, type Locale } from "../lib/catalog";
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -15,7 +15,7 @@ const canonicalPath = `${prefix}/`;
 const catalog = getCatalog();
 const products = getProducts(locale);
 const featured = selectedProjectSlugs.map(slug => products.find(product => product.slug === slug)!).map(product => ({ ...product, name: projectDisplayNames[product.slug] ?? product.name }));
-const websites = catalog.repositories.filter((repository) => repository.links.some((link) => link.kind === "website")).length;
+const websites = getRegistryRepositories().filter((repository) => repository.links.some((link) => link.kind === "website")).length;
 const releases = products
   .filter((product) => product.version)
   .map((product) => ({ product, repository: getRepository(product.primaryRepo) }))
@@ -26,6 +26,7 @@ const metricLabels = { en: "Catalog summary", ru: "Сводка каталога
 const schema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://rekurt.github.io/#author",
   name: "rekurt",
   url: "https://rekurt.github.io/",
   sameAs: [author.profileUrl],
@@ -47,8 +48,8 @@ const schema = {
 
   <dl class="metrics" aria-label={metricLabels[locale]}>
     <div><dt>{t.metricProducts}</dt><dd>{products.length}</dd></div>
-    <div><dt>{t.metricRepositories}</dt><dd>{catalog.repositories.length}</dd></div>
-    <div><dt>{t.metricOriginals}</dt><dd>{catalog.repositories.filter((repository) => !repository.fork).length}</dd></div>
+    <div><dt>{t.metricRepositories}</dt><dd>{getRegistryRepositories().length}</dd></div>
+    <div><dt>{t.metricOriginals}</dt><dd>{getRegistryRepositories().filter((repository) => !repository.fork).length}</dd></div>
     <div><dt>{t.metricWebsites}</dt><dd>{websites}</dd></div>
   </dl>
 

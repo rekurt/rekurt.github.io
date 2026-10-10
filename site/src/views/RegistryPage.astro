@@ -2,13 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RepositoryTable from "../components/RepositoryTable.astro";
 import { copy, localePrefix } from "../i18n/copy";
-import { getCatalog, type Locale } from "../lib/catalog";
+import { getCatalog, getRegistryRepositories, type Locale } from "../lib/catalog";
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const t = copy[locale];
 const catalog = getCatalog();
-const repositories = catalog.repositories.toSorted((a, b) => a.nameWithOwner.localeCompare(b.nameWithOwner));
+const repositories = getRegistryRepositories().toSorted((a, b) => a.nameWithOwner.localeCompare(b.nameWithOwner));
 const canonicalPath = `${localePrefix(locale)}/registry/`;
 ---
 

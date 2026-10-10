@@ -34,6 +34,9 @@ func Decorate(options Options) (BuildManifest, error) {
 	if err != nil {
 		return BuildManifest{}, err
 	}
+	if err := writeSocialImage(model, model.Output); err != nil {
+		return BuildManifest{}, err
+	}
 	if err := decorateIndex(model, indexPath); err != nil {
 		return BuildManifest{}, err
 	}
@@ -49,7 +52,7 @@ func Decorate(options Options) (BuildManifest, error) {
 			return BuildManifest{}, err
 		}
 	}
-	if err := writeSiteFile(model.Output, "family-sitemap.xml", []byte(renderSitemap(model))); err != nil {
+	if err := writeSiteFile(model.Output, "family-sitemap.xml", []byte(renderDecoratedSitemap(model))); err != nil {
 		return BuildManifest{}, err
 	}
 	if err := updateRobots(model); err != nil {
@@ -88,6 +91,16 @@ func decorateIndex(model Model, indexPath string) error {
 	})
 
 	page := model.Pages[0]
+	page.Title = seoTitle(model.Product.Slug, page.Locale, page.Title)
+	title := findElement(head, "title")
+	if title == nil {
+		title = element("title")
+		appendChild(head, title)
+	}
+	for title.FirstChild != nil {
+		title.RemoveChild(title.FirstChild)
+	}
+	appendChild(title, textNode(page.Title))
 	appendChild(head, element("link", attr("rel", "canonical"), attr("href", page.Canonical)))
 	appendChild(head, element("link", attr("rel", "stylesheet"), attr("href", "assets/bridge.css"), attr("data-rekurt-family", "")))
 	appendChild(head, element("link", attr("rel", "stylesheet"), attr("href", "assets/syntax.css?v=11.12.0-1"), attr("data-rekurt-family", "")))
@@ -96,6 +109,24 @@ func decorateIndex(model Model, indexPath string) error {
 	}
 	ensureMeta(head, "name", "description", page.Description)
 	ensureMeta(head, "name", "generator", "rekurt project family kit")
+	// Keep a project-owned preview if one is already provided.
+	image := ""
+	for node := head.FirstChild; node != nil; node = node.NextSibling {
+		if node.Type == nethtml.ElementNode && node.Data == "meta" && attributeValue(node, "property") == "og:image" {
+			image = attributeValue(node, "content")
+		}
+	}
+	if image == "" {
+		image = model.BaseURL + "assets/social.png"
+		ensureMeta(head, "property", "og:image", image)
+	}
+	ensureMeta(head, "name", "twitter:image", image)
+	ensureMeta(head, "property", "og:type", "website")
+	ensureMeta(head, "property", "og:title", page.Title)
+	ensureMeta(head, "property", "og:locale", openGraphLocale(page.Locale))
+	ensureMeta(head, "name", "twitter:card", "summary_large_image")
+	ensureMeta(head, "name", "twitter:title", page.Title)
+	ensureMeta(head, "name", "twitter:description", page.Description)
 	ensureMeta(head, "property", "og:url", page.Canonical)
 	ensureMeta(head, "property", "og:description", page.Description)
 	data, err := structuredData(model, page)

@@ -4,14 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{.Page.Description}}">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:site_name" content="{{.Name}}">
     <meta name="theme-color" content="#080b10">
     <meta name="generator" content="rekurt project family kit">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{.Page.Canonical}}">
     <meta property="og:title" content="{{.Page.Title}}">
     <meta property="og:description" content="{{.Page.Description}}">
-    <meta property="og:locale" content="{{.Page.Lang}}">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:locale" content="{{.OGLocale}}">
+    <meta property="og:image" content="{{.SocialImage}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{.Page.Title}}">
+    <meta name="twitter:image" content="{{.SocialImage}}">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{.Page.Title}}">
     <meta name="twitter:description" content="{{.Page.Description}}">
     <link rel="canonical" href="{{.Page.Canonical}}">

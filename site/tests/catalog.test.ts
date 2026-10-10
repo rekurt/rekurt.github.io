@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { getCatalog, getProduct, getProducts } from "../src/lib/catalog";
+import { getCatalog, getProduct, getProducts, getRegistryRepositories } from "../src/lib/catalog";
 
 describe("catalog selectors", () => {
   it("loads the generated schema", () => {
@@ -15,6 +15,16 @@ describe("catalog selectors", () => {
       expect(repositoryNames.has(product.primaryRepo)).toBe(true);
     }
     expect(catalog.repositories.find((repository) => repository.nameWithOwner === "rekurt/rekurt.github.io")?.role).toBe("portfolio-hub");
+  });
+
+  it("excludes all forks from the public registry after a snapshot refresh", () => {
+    const visible = getRegistryRepositories();
+    const all = getCatalog().repositories;
+    expect(all.some(repository => repository.fork)).toBe(true);
+    expect(visible.length).toBeLessThan(all.length);
+    expect(visible.every(repository => !repository.fork && !["fork", "maintained-fork"].includes(repository.role))).toBe(true);
+    expect(visible.some(repository => repository.name === "awesome-backup")).toBe(false);
+    expect(visible.some(repository => repository.name === "openkline")).toBe(true);
   });
 
   it("localizes without changing project identity", () => {

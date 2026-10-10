@@ -2,7 +2,7 @@
 
 [Русский](README.ru.md) · [简体中文](README.zh-CN.md)
 
-The source of [rekurt.github.io](https://rekurt.github.io): a multilingual portfolio, curated product catalog, complete public-repository registry, and shared static-site kit for the `rekurt` GitHub account.
+The source of [rekurt.github.io](https://rekurt.github.io): a multilingual portfolio, curated product catalog, public-repository registry without forks and mirrors, and shared static-site kit for the `rekurt` GitHub account.
 
 The site separates original work, support repositories, maintained forks, and simple mirrors. It never treats an upstream fork homepage as the author's website. Version, release, repository, and README data are synchronized from GitHub; presentation and product grouping live in one reviewed YAML manifest.
 
@@ -61,11 +61,11 @@ GITHUB_TOKEN="$(gh auth token)" go run ./cmd/catalog-sync sync \
 ## Add a product
 
 1. Add one complete entry to `catalog/projects.yaml` with a stable slug, primary and support repositories, kind, domain, validated accent, English, Russian and Simplified Chinese summaries, and real installation commands.
-2. Add `maintained_fork: true` and `upstream` when the product is based on a fork. Ordinary mirrors stay in the registry without a product entry.
+2. Add `maintained_fork: true` and `upstream` when the product is based on a fork. Forks and mirrors remain in the internal snapshot for attribution but are excluded from the public registry.
 3. Run the live synchronization and the full local checks.
 4. Commit the manifest and generated files together with a Conventional Commit message.
 
-Every new public repository appears in `/registry/` automatically after the hourly workflow. Promotion into the curated product catalog always requires review of the YAML entry.
+Every new original public repository appears in `/registry/` automatically after the hourly workflow. Promotion into the curated product catalog always requires review of the YAML entry.
 
 ## Publish a project site
 

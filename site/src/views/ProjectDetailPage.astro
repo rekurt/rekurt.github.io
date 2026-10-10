@@ -1,4 +1,6 @@
 ---
+import { nestedReadmeHTML } from "../lib/readme";
+import seoTitles from "../../../internal/projectsite/seo-titles.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import LinkGroup from "../components/LinkGroup.astro";
 import NpmPackage from "../components/NpmPackage.astro";
@@ -15,10 +17,11 @@ const canonicalPath = `${prefix}/projects/${product.slug}/`;
 const repositories = product.repositories.map((name) => catalog.repositories.find((repository) => repository.nameWithOwner === name)).filter((repository) => repository !== undefined);
 const labels: Record<LinkKind, string> = { website: t.linkWebsite, documentation: t.linkDocumentation, source: t.linkSource, release: t.linkRelease };
 const date = new Intl.DateTimeFormat(locale, { dateStyle: "long", timeZone: "UTC" });
-const schema = { "@context": "https://schema.org", "@type": "SoftwareSourceCode", name: product.name, description: product.summary, codeRepository: `https://github.com/${product.primaryRepo}`, programmingLanguage: product.languages };
+const title = (seoTitles as Record<string, Record<string,string>>)[product.slug]?.[locale] ?? `${product.name} — ${product.summary}`;
+const schema = { "@context": "https://schema.org", "@type": "SoftwareSourceCode", "@id": `https://github.com/${product.primaryRepo}#software`, url: product.links.find(link => link.kind === "website")?.url, inLanguage: locale, author: { "@type": "Person", "@id": "https://rekurt.github.io/#author", name: "rekurt" }, name: product.name, description: product.summary, codeRepository: `https://github.com/${product.primaryRepo}`, programmingLanguage: product.languages };
 ---
 
-<BaseLayout title={`${product.name} — rekurt`} description={product.summary} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt} jsonLd={schema}>
+<BaseLayout title={title} description={product.summary} locale={locale} canonicalPath={canonicalPath} syncedAt={catalog.syncedAt} jsonLd={schema} socialSlug={product.slug}>
   <a class="back-link" href={`${prefix}/projects/`}>← {t.navProjects}</a>
   <header class="project-hero">
     <div>
@@ -43,5 +46,5 @@ const schema = { "@context": "https://schema.org", "@type": "SoftwareSourceCode"
     <ul class="repository-set">{repositories.map((repository) => <li><a href={repository.url} target="_blank" rel="noreferrer"><span>{repository.nameWithOwner}</span><small>{repository.role} · {repository.language ?? "—"}</small></a></li>)}</ul>
   </section>
 
-  {product.readme?.html && <section class="detail-section readme-section" aria-labelledby="readme-title"><div class="readme-heading"><div><p class="eyebrow">{t.projectOverview}</p><h2 id="readme-title">{t.sourceReadme}</h2><p>{t.readmeNotice}</p></div><a class="secondary-button" href={product.readme.sourceUrl} target="_blank" rel="noreferrer">{product.readme.sha.slice(0, 7)} ↗</a></div><article class="readme" set:html={product.readme.html} /></section>}
+  {product.readme?.html && <section class="detail-section readme-section" aria-labelledby="readme-title"><div class="readme-heading"><div><p class="eyebrow">{t.projectOverview}</p><h2 id="readme-title">{t.sourceReadme}</h2><p>{t.readmeNotice}</p></div><a class="secondary-button" href={product.readme.sourceUrl} target="_blank" rel="noreferrer">{product.readme.sha.slice(0, 7)} ↗</a></div><article class="readme" set:html={nestedReadmeHTML(product.readme.html)} /></section>}
 </BaseLayout>

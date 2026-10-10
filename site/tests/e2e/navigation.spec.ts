@@ -52,10 +52,10 @@ test("maintained fork keeps upstream attribution", async ({ page }) => {
   await expect(page.getByRole("link", { name: "Elliotwu-7/Mac-Coffee" }).first()).toHaveAttribute("href", "https://github.com/Elliotwu-7/Mac-Coffee");
 });
 
-test("registry contains the complete snapshot", async ({ page }) => {
+test("registry excludes every fork from the refreshed snapshot", async ({ page }) => {
   await page.goto("/registry/");
-  await expect(page.locator("tbody tr")).toHaveCount(catalog.repositories.length);
-  await expect(page.getByRole("link", { name: "tsql", exact: true })).toBeVisible();
+  await expect(page.locator("tbody tr")).toHaveCount(catalog.repositories.filter(r => !r.fork && !["fork", "maintained-fork"].includes(r.role)).length);
+  await expect(page.getByRole("link", { name: "tsql", exact: true })).toHaveCount(0);
 });
 
 for (const prefix of ["", "/ru", "/zh-cn"]) {

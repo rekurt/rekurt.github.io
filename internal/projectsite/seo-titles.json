@@ -1,0 +1,67 @@
+{
+  "openkline": {
+    "en": "OpenKline — TypeScript candlestick charts for React and Vue",
+    "ru": "OpenKline — свечные графики для TypeScript, React и Vue",
+    "zh-cn": "OpenKline — TypeScript、React 和 Vue K 线图"
+  },
+  "mac-coffee": {
+    "en": "Mac Coffee — prevent sleep on macOS with a timer",
+    "ru": "Mac Coffee — отключение сна macOS с таймером",
+    "zh-cn": "Mac Coffee — macOS 防休眠与定时控制"
+  },
+  "git-barber": {
+    "en": "git-barber — safe Git branch cleanup CLI",
+    "ru": "git-barber — безопасная очистка веток Git в терминале",
+    "zh-cn": "git-barber — 安全清理 Git 分支的命令行工具"
+  },
+  "ymsdk": {
+    "en": "ymsdk — Yandex Messenger bot SDK for Go",
+    "ru": "ymsdk — Go SDK для ботов Яндекс Мессенджера",
+    "zh-cn": "ymsdk — Yandex Messenger 机器人的 Go SDK"
+  },
+  "gost-crypto": {
+    "en": "gost-crypto — GOST cryptography for Go and OpenSSL",
+    "ru": "gost-crypto — ГОСТ-криптография для Go и OpenSSL",
+    "zh-cn": "gost-crypto — Go 和 OpenSSL GOST 密码库"
+  },
+  "chislo": {
+    "en": "chislo — Russian number and currency words for Rust",
+    "ru": "chislo — числа и суммы прописью для Rust и WASM",
+    "zh-cn": "chislo — Rust 和 WASM 俄语数字与金额转换"
+  },
+  "cortex-forge": {
+    "en": "Cortex Forge — OpenClaw assistant Docker Compose lab",
+    "ru": "Cortex Forge — Docker Compose стенд ассистентов OpenClaw",
+    "zh-cn": "Cortex Forge — OpenClaw 助手 Docker Compose 实验环境"
+  },
+  "dbdiff": {
+    "en": "dbdiff — database schema comparison and SQL migrations",
+    "ru": "dbdiff — сравнение схем БД и генерация SQL-миграций",
+    "zh-cn": "dbdiff — 数据库结构比较与 SQL 迁移生成"
+  },
+  "depth": {
+    "en": "Depth — TypeScript order book depth chart on Canvas",
+    "ru": "Depth — график глубины стакана на Canvas и TypeScript",
+    "zh-cn": "Depth — Canvas 和 TypeScript 订单簿深度图"
+  },
+  "gitlab-downloader": {
+    "en": "GitLab Dump — clone groups and migrate GitLab projects",
+    "ru": "GitLab Dump — клонирование групп и перенос проектов GitLab",
+    "zh-cn": "GitLab Dump — 克隆群组与迁移 GitLab 项目"
+  },
+  "go-propisyu": {
+    "en": "go-propisyu — Russian number and currency words for Go",
+    "ru": "go-propisyu — числа и суммы прописью на русском для Go",
+    "zh-cn": "go-propisyu — Go 俄语数字与金额转换库"
+  },
+  "prt": {
+    "en": "prt — inspect ports, processes and SSH tunnels",
+    "ru": "prt — порты, процессы и SSH-туннели в терминале",
+    "zh-cn": "prt — 检查端口、进程和 SSH 隧道"
+  },
+  "sprint-velocity": {
+    "en": "Sprint Velocity — weekly Yandex Tracker task reports",
+    "ru": "Sprint Velocity — еженедельные отчёты Яндекс Трекера",
+    "zh-cn": "Sprint Velocity — Yandex Tracker 每周任务报告"
+  }
+}

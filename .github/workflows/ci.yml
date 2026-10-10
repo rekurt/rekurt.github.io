@@ -58,6 +58,8 @@ jobs:
         working-directory: site
       - run: npm run check:links
         working-directory: site
+      - run: npm run check:seo
+        working-directory: site
 
   browser:
     name: Browser QA
