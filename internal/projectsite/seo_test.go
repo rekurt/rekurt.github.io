@@ -44,7 +44,7 @@ func TestSEOTitlesCoverEveryProductAndLocale(t *testing.T) {
 	if err := json.Unmarshal(seoTitleData, &titles); err != nil {
 		t.Fatal(err)
 	}
-	if len(titles) != 13 {
+	if len(titles) != 14 {
 		t.Fatalf("SEO titles: %d products", len(titles))
 	}
 	for slug := range titles {

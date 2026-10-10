@@ -34,8 +34,8 @@ for (const locale of ["en", "ru", "zh-cn"] as const) {
       expect(sizes.document).toBeLessThanOrEqual(sizes.viewport);
       if (path === "/projects/") {
         const names = await page.locator(".project-card h3 a").allTextContents();
-        expect(names.slice(0,6)).toEqual(["OpenKline","Depth","dbdiff","GitLab Dump","ymsdk","prt"]);
-        await expect(page.locator("[data-project-card]")).toHaveCount(13);
+        expect(names.slice(0,7)).toEqual(["OpenKline","Depth","matching-engine","dbdiff","GitLab Dump","ymsdk","prt"]);
+        await expect(page.locator("[data-project-card]")).toHaveCount(14);
         if (locale === "en" && (width === 390 || width === 1280)) await page.screenshot({ path: info.outputPath(`catalog-author-${width}.png`), fullPage: true });
       }
     }

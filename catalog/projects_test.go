@@ -15,8 +15,8 @@ func TestProductionManifestContract(t *testing.T) {
 	if err := catalog.ValidateManifest(manifest); err != nil {
 		t.Fatal(err)
 	}
-	if manifest.Owner != "rekurt" || len(manifest.Products) != 13 {
-		t.Fatalf("owner/products = %q/%d, want rekurt/13", manifest.Owner, len(manifest.Products))
+	if manifest.Owner != "rekurt" || len(manifest.Products) != 14 {
+		t.Fatalf("owner/products = %q/%d, want rekurt/14", manifest.Owner, len(manifest.Products))
 	}
 
 	wantPrimary := map[string]string{
@@ -24,7 +24,7 @@ func TestProductionManifestContract(t *testing.T) {
 		"depth": "rekurt/depth", "git-barber": "rekurt/git-barber", "gitlab-downloader": "rekurt/gitlab-downloader",
 		"go-propisyu": "rekurt/go-propisyu", "gost-crypto": "rekurt/gost-crypto", "mac-coffee": "rekurt/Mac-Coffee",
 		"openkline": "rekurt/openkline", "prt": "rekurt/prt", "sprint-velocity": "rekurt/sprint-velocity",
-		"ymsdk": "rekurt/ymsdk",
+		"ymsdk": "rekurt/ymsdk", "matching-engine": "rekurt/matching-engine",
 	}
 	featured := make([]string, 0, 5)
 	for _, product := range manifest.Products {
@@ -51,7 +51,7 @@ func TestProductionManifestContract(t *testing.T) {
 		t.Fatalf("missing products = %#v", wantPrimary)
 	}
 	slices.Sort(featured)
-	wantFeatured := []string{"git-barber", "gost-crypto", "mac-coffee", "openkline", "ymsdk"}
+	wantFeatured := []string{"git-barber", "gost-crypto", "mac-coffee", "matching-engine", "openkline", "ymsdk"}
 	if !slices.Equal(featured, wantFeatured) {
 		t.Fatalf("featured = %#v, want %#v", featured, wantFeatured)
 	}

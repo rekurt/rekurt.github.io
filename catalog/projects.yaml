@@ -1,5 +1,27 @@
 owner: rekurt
 products:
+  - slug: matching-engine
+    primary_repo: rekurt/matching-engine
+    repositories:
+      - rekurt/matching-engine
+    kind: service
+    domain: fintech
+    accent: amber
+    featured: true
+    maintained_fork: false
+    upstream: ""
+    summary:
+      en: Rust spot matching service with price-time priority, fixed-point orders, WAL recovery and a binary TCP protocol.
+      ru: "Сервис сопоставления спотовых ордеров на Rust: приоритет цены и времени, фиксированная точность, WAL и бинарный TCP-протокол."
+      zh-cn: Rust 现货撮合服务，支持价格时间优先、定点订单、WAL 恢复与二进制 TCP 协议。
+    install:
+      - |-
+        git clone https://github.com/rekurt/matching-engine.git && cd matching-engine &&
+        cargo build --release --locked -p me-server --features tls &&
+        ./target/release/me-server --config config.toml
+    website: https://rekurt.github.io/matching-engine/
+    documentation: https://rekurt.github.io/matching-engine/docs/
+
   - slug: openkline
     primary_repo: rekurt/openkline
     repositories:

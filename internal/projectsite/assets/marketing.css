@@ -312,3 +312,19 @@
  .product-site .receipt-value { font-size: 2.75rem; overflow-wrap: anywhere; }
  .product-site .footer-inner > p { overflow-wrap: anywhere; }
 }
+
+.theme-matching { --bg: #0e171e; --surface: #15222b; --text: #edf3ef; --muted: #b4c4c9; --accent: #efbf73; --line: #30424c; --line-strong: #4d646e; }
+.theme-matching .product-hero { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+.theme-matching h1 { font-size: clamp(2.4rem, 4.6vw, 4.3rem); max-width: 13ch; }
+.theme-matching .product-demo { border: 1px solid var(--line-strong); box-shadow: 8px 8px 0 #1d3038; background: #101c24; color: #d6e5ea; }
+.theme-matching .product-demo figcaption { background: #1c2d36; color: var(--accent); }
+.theme-matching .product-demo pre { padding: 1.2rem 1.5rem; font-size: .82rem; }
+.theme-matching .benefit-grid { border-top: 1px solid var(--line); }
+.theme-matching .benefit-number { color: var(--accent); }
+.matching-depth { padding: 1.2rem 1.5rem .5rem; display: grid; gap: .3rem; font-family: var(--mono); font-size: .8rem; }
+.matching-depth > span { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #f5a5a3; }
+.matching-depth i { flex: 1; height: .65rem; background: linear-gradient(to left, #f5a5a344 var(--depth), transparent var(--depth)); }
+.matching-depth > .bid { color: #a4e2c0; }
+.matching-depth .bid i { background: linear-gradient(to left, #a4e2c044 var(--depth), transparent var(--depth)); }
+.matching-depth > .matching-spread { justify-content: center; padding: .5rem; color: var(--muted); border-block: 1px solid var(--line); }
+@media (max-width: 800px) { .theme-matching .product-hero { grid-template-columns: minmax(0, 1fr); } }

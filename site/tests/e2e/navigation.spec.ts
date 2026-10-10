@@ -39,7 +39,7 @@ test("project actions map only to declared public surfaces", async ({ page }) =>
 
 test("catalog filters without hiding content by default", async ({ page }) => {
   await page.goto("/projects/");
-  await expect(page.locator("[data-project-card]:visible")).toHaveCount(13);
+  await expect(page.locator("[data-project-card]:visible")).toHaveCount(14);
   await page.getByRole("button", { name: "fintech", exact: true }).click();
   const visible = page.locator("[data-project-card]:visible");
   await expect(visible).not.toHaveCount(0);

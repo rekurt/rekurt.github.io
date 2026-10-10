@@ -1,0 +1,132 @@
+{
+  "slug": "matching-engine",
+  "name": "matching-engine",
+  "theme": "matching",
+  "visual": "matching",
+  "image": "",
+  "primary": "#install",
+  "guide_path": "docs/",
+  "code": "ASK  #41   100.01 × 2\nASK  #42   100.02 × 3\n\nBUY  #43   100.02 × 3\n  →  2 @ 100.01  maker #41\n  →  1 @ 100.02  maker #42\n\nREST #42   100.02 × 2",
+  "locales": {
+    "en": {
+      "eyebrow": "Rust · spot matching service",
+      "headline": "Price first. Time next.",
+      "intro": "Match spot orders with price-time priority and eight-decimal fixed-point arithmetic. Connect over TCP or Unix sockets, persist decisions in a write-ahead log and recover orders and sessions after a restart.",
+      "features": [
+        {
+          "title": "Orders with precise rules",
+          "body": "Limit, market, stop, trailing-stop and iceberg orders. Choose GTC, IOC, FOK or GTD, with maker-only flags and optional self-trade prevention."
+        },
+        {
+          "title": "Recovery you can trace",
+          "body": "With WAL enabled, durable decisions, snapshots and retained session history support recovery and idempotent mutation retries."
+        },
+        {
+          "title": "A service you can integrate",
+          "body": "Binary protocol v2, a Go client and examples in Go, Python, TypeScript and Rust. TLS/mTLS, Prometheus metrics and health/readiness endpoints."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Build and run locally",
+          "body": "Use Rust 1.96 or newer. Build the TLS-enabled server, then start it with config.toml. The sample binds trading to 127.0.0.1:9090 and HTTP to port 9091."
+        },
+        {
+          "title": "Connect your client",
+          "body": "Check /ready, then run the Go example with a fresh data directory. Read the handbook for message framing, session replay and mutation request IDs."
+        },
+        {
+          "title": "Prepare your deployment",
+          "body": "Choose persistent storage and a fixed shard count. Configure TLS and risk limits; keep account balances, settlement and failover in your surrounding platform."
+        }
+      ],
+      "closing": "Build on an explicit matching contract.",
+      "cta": "Build and run",
+      "note": "Single-node service. Balances, settlement and failover are handled by your platform.",
+      "benefits": "From order entry to recovery",
+      "workflow": "Start local. Integrate deliberately.",
+      "demo": "",
+      "example": "Illustrative order flow"
+    },
+    "ru": {
+      "eyebrow": "Rust · сопоставление спотовых ордеров",
+      "headline": "Сначала цена. Затем время.",
+      "intro": "Сопоставляйте спотовые ордера с приоритетом цены и времени и точностью до восьми знаков. Подключайтесь по TCP или Unix-сокету, сохраняйте решения в WAL и восстанавливайте ордера и сессии после перезапуска.",
+      "features": [
+        {
+          "title": "Точные правила исполнения",
+          "body": "Лимитные, рыночные, стоп-, трейлинг-стоп- и айсберг-ордера. GTC, IOC, FOK и GTD, maker-only и опциональное предотвращение самоторговли."
+        },
+        {
+          "title": "Восстановление по журналу",
+          "body": "При включённом WAL решения, снимки и история сессий позволяют восстанавливать состояние и безопасно повторять мутации с тем же request ID."
+        },
+        {
+          "title": "Интеграция с вашей системой",
+          "body": "Бинарный протокол v2, Go-клиент и примеры на Go, Python, TypeScript и Rust. TLS/mTLS, метрики Prometheus и проверки health/readiness."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Соберите и запустите локально",
+          "body": "Нужен Rust 1.96 или новее. Соберите сервер с TLS и запустите с config.toml. В примере торговый порт — 127.0.0.1:9090, HTTP — 9091."
+        },
+        {
+          "title": "Подключите клиент",
+          "body": "Проверьте /ready и запустите Go-пример с чистым каталогом данных. Формат сообщений, replay сессий и request ID описаны в руководстве."
+        },
+        {
+          "title": "Подготовьте развёртывание",
+          "body": "Выберите постоянное хранилище и фиксированное число шардов. Настройте TLS и риск-лимиты; балансы, расчёты и отказоустойчивость реализуйте в своей платформе."
+        }
+      ],
+      "closing": "Интегрируйте матчер с явными правилами.",
+      "cta": "Собрать и запустить",
+      "note": "Сервис работает на одном узле. Балансы, расчёты и переключение при сбоях остаются в вашей платформе.",
+      "benefits": "От приёма ордера до восстановления",
+      "workflow": "Запуск → подключение → развёртывание",
+      "demo": "",
+      "example": "Пример исполнения ордера"
+    },
+    "zh-cn": {
+      "eyebrow": "Rust · 现货撮合服务",
+      "headline": "价格优先。时间其次。",
+      "intro": "以价格时间优先规则和八位小数定点运算撮合现货订单。通过 TCP 或 Unix 套接字连接，将决策写入 WAL，并在重启后恢复订单和会话。",
+      "features": [
+        {
+          "title": "明确的订单规则",
+          "body": "支持限价、市价、止损、追踪止损和冰山订单；提供 GTC、IOC、FOK、GTD、仅做市标记及可选的自成交预防。"
+        },
+        {
+          "title": "可追溯的恢复",
+          "body": "启用 WAL 后，持久化决策、快照与保留的会话历史支持状态恢复和幂等变更重试。"
+        },
+        {
+          "title": "接入现有系统",
+          "body": "二进制协议 v2、Go 客户端及 Go、Python、TypeScript、Rust 示例。提供 TLS/mTLS、Prometheus 指标与健康、就绪端点。"
+        }
+      ],
+      "steps": [
+        {
+          "title": "本地构建与运行",
+          "body": "需要 Rust 1.96 或更高版本。构建启用 TLS 的服务，再用 config.toml 启动。示例交易端口为 127.0.0.1:9090，HTTP 端口为 9091。"
+        },
+        {
+          "title": "连接客户端",
+          "body": "检查 /ready，使用新的数据目录运行 Go 示例。消息格式、会话重放与变更请求 ID 见英文手册。"
+        },
+        {
+          "title": "准备部署",
+          "body": "选择持久存储与固定分片数，配置 TLS 和风险限额。账户余额、结算及故障切换由外围平台实现。"
+        }
+      ],
+      "closing": "基于明确的撮合规则进行集成。",
+      "cta": "构建并运行",
+      "note": "单节点服务。账户余额、结算及故障切换由你的平台负责。",
+      "benefits": "从订单接收到恢复",
+      "workflow": "本地启动 → 客户端接入 → 部署",
+      "demo": "",
+      "example": "订单撮合示例"
+    }
+  }
+}

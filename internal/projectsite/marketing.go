@@ -19,6 +19,7 @@ type marketingItem struct {
 }
 
 type marketingCopy struct {
+	Example  string          `json:"example,omitempty"`
 	Benefits string          `json:"benefits,omitempty"`
 	Workflow string          `json:"workflow,omitempty"`
 	Eyebrow  string          `json:"eyebrow"`
@@ -33,15 +34,16 @@ type marketingCopy struct {
 }
 
 type marketingProfile struct {
-	Slug     string                   `json:"slug"`
-	Name     string                   `json:"name"`
-	Theme    string                   `json:"theme"`
-	Visual   string                   `json:"visual"`
-	Image    string                   `json:"image"`
-	Code     string                   `json:"code"`
-	Primary  string                   `json:"primary"`
-	DemoPath string                   `json:"demo_path,omitempty"`
-	Locales  map[string]marketingCopy `json:"locales"`
+	Slug      string                   `json:"slug"`
+	Name      string                   `json:"name"`
+	Theme     string                   `json:"theme"`
+	Visual    string                   `json:"visual"`
+	Image     string                   `json:"image"`
+	Code      string                   `json:"code"`
+	Primary   string                   `json:"primary"`
+	GuidePath string                   `json:"guide_path,omitempty"`
+	DemoPath  string                   `json:"demo_path,omitempty"`
+	Locales   map[string]marketingCopy `json:"locales"`
 }
 
 type marketingView struct {
@@ -51,6 +53,7 @@ type marketingView struct {
 	CodeLanguage  string
 	Text          marketingCopy
 	ImageURL      string
+	GuideURL      string
 	DemoURL       string
 	DemoLabel     string
 	Benefits      string
@@ -87,6 +90,10 @@ func loadMarketing(slug string) (*marketingProfile, error) {
 	if profile.Primary != "#install" && profile.Primary != "#overview" {
 		return nil, fmt.Errorf("unsupported marketing CTA: %s", slug)
 	}
+	if profile.GuidePath != "" && (!strings.HasSuffix(profile.GuidePath, "/") ||
+		!fs.ValidPath(strings.TrimSuffix(profile.GuidePath, "/")) || strings.ContainsAny(profile.GuidePath, "\\:?#")) {
+		return nil, fmt.Errorf("unsafe guide path: %s", slug)
+	}
 	if profile.DemoPath != "" && (!strings.HasSuffix(profile.DemoPath, "/") ||
 		!fs.ValidPath(strings.TrimSuffix(profile.DemoPath, "/")) || strings.ContainsAny(profile.DemoPath, "\\:?#")) {
 		return nil, fmt.Errorf("unsafe demo path: %s", slug)
@@ -111,9 +118,12 @@ func marketingFor(model Model, page LocalePage) (*marketingView, error) {
 		return nil, err
 	}
 	view := &marketingView{marketingProfile: *profile, Text: profile.Locales[page.Locale]}
-	view.CodeLanguage = map[string]string{"depth": "typescript", "go-propisyu": "go", "gost-crypto": "go", "ymsdk": "go", "dbdiff": "diff", "git-barber": "cli", "prt": "cli", "gitlab-downloader": "plaintext", "sprint-velocity": "plaintext", "cortex-forge": "plaintext"}[profile.Slug]
-	view.Mark = map[string]string{"depth": "▥", "git-barber": "╱", "prt": "_", "dbdiff": "±", "gitlab-downloader": "↓", "go-propisyu": "₽", "gost-crypto": "◇", "ymsdk": "ym", "sprint-velocity": "W", "cortex-forge": "cf"}[profile.Slug]
+	view.CodeLanguage = map[string]string{"matching-engine": "plaintext", "depth": "typescript", "go-propisyu": "go", "gost-crypto": "go", "ymsdk": "go", "dbdiff": "diff", "git-barber": "cli", "prt": "cli", "gitlab-downloader": "plaintext", "sprint-velocity": "plaintext", "cortex-forge": "plaintext"}[profile.Slug]
+	view.Mark = map[string]string{"matching-engine": "⇌", "depth": "▥", "git-barber": "╱", "prt": "_", "dbdiff": "±", "gitlab-downloader": "↓", "go-propisyu": "₽", "gost-crypto": "◇", "ymsdk": "ym", "sprint-velocity": "W", "cortex-forge": "cf"}[profile.Slug]
 	view.FallbackLabel = map[string]string{"en": "Original repository documentation.", "ru": "Ниже — исходная документация репозитория без перевода. Пример и краткая инструкция выше доступны на русском.", "zh-cn": "以下为仓库的原始文档，未作翻译；上方的示例与入门说明已本地化。"}[page.Locale]
+	if profile.GuidePath != "" {
+		view.GuideURL = routeURL(model.BaseURL, profile.GuidePath)
+	}
 	if profile.DemoPath != "" {
 		view.DemoURL = routeURL(model.BaseURL, profile.DemoPath)
 		view.DemoLabel = map[string]string{"en": "Try the demo", "ru": "Открыть демо", "zh-cn": "体验演示"}[page.Locale]
@@ -131,6 +141,9 @@ func marketingFor(model Model, page LocalePage) (*marketingView, error) {
 	}
 	label := labels[page.Locale]
 	view.Benefits, view.Workflow, view.Example, view.DocsLabel = label[0], label[1], label[2], label[3]
+	if view.Text.Example != "" {
+		view.Example = view.Text.Example
+	}
 	if view.Text.Benefits != "" {
 		view.Benefits = view.Text.Benefits
 	}
@@ -164,6 +177,9 @@ func validateMarketingHTML(slug, locale string, data []byte) error {
 	}
 	if profile.Image != "" {
 		required = append(required, "/"+profile.Image+`"`)
+	}
+	if profile.GuidePath != "" {
+		required = append(required, "/"+profile.GuidePath+`"`)
 	}
 	if profile.DemoPath != "" {
 		required = append(required, "/"+profile.DemoPath+`"`)

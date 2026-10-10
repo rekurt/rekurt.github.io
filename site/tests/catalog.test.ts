@@ -7,7 +7,7 @@ describe("catalog selectors", () => {
     const catalog = getCatalog();
     expect(catalog.schemaVersion).toBe(1);
     expect(catalog.owner).toBe("rekurt");
-    expect(catalog.products).toHaveLength(13);
+    expect(catalog.products).toHaveLength(14);
     expect(catalog.repositories.length).toBeGreaterThan(0);
     const repositoryNames = new Set(catalog.repositories.map((repository) => repository.nameWithOwner));
     expect(repositoryNames.size).toBe(catalog.repositories.length);

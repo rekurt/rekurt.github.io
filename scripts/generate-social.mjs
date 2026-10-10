@@ -14,4 +14,4 @@ for (const [slug,localized] of Object.entries({...titles, rekurt:{en:'rekurt —
   const path=new URL(`../${dir}/`,import.meta.url); await mkdir(path,{recursive:true}); await writeFile(new URL(slug+'.png',path),png);
  }
 }
-console.log('Generated 14 social cards (1200 × 630).');
+console.log('Generated 15 social cards (1200 × 630).');

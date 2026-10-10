@@ -52,7 +52,7 @@
         <a class="project-nav-name" href="#content">{{if .Marketing}}<span class="project-emblem" aria-hidden="true">{{.Marketing.Mark}}</span>{{end}}{{if .Marketing}}{{.Marketing.Name}}{{else}}{{.Name}}{{end}}</a>
         <nav class="project-sections" aria-label="{{.Copy.ProjectNav}}">
           {{if .Install}}<a href="#install">{{.Copy.Install}}</a>{{end}}
-          {{if .Marketing}}<a href="#example">{{.Marketing.Example}}</a>{{end}}<a href="#overview">{{.Copy.Documentation}}</a>
+          {{if .Marketing}}<a href="#example">{{.Marketing.Example}}</a>{{end}}<a href="{{if .Marketing}}{{if .Marketing.GuideURL}}{{.Marketing.GuideURL}}{{else}}#overview{{end}}{{else}}#overview{{end}}">{{.Copy.Documentation}}</a>
           {{if .Marketing}}{{if .Marketing.DemoURL}}<a href="{{.Marketing.DemoURL}}">{{.Marketing.DemoLabel}} ↗</a>{{end}}{{end}}
         </nav>
         <nav class="project-languages" aria-label="{{.Copy.LanguageNav}}">
@@ -69,7 +69,7 @@
           <p class="eyebrow">{{.Marketing.Text.Eyebrow}}</p>
           <h1>{{.Marketing.Text.Headline}}</h1>
           <p class="summary">{{.Marketing.Text.Intro}}</p>
-          <div class="actions"><a class="button primary" href="{{.Marketing.Primary}}">{{.Marketing.Text.CTA}} <span aria-hidden="true">→</span></a>{{if .Marketing.DemoURL}}<a class="button" href="{{.Marketing.DemoURL}}">{{.Marketing.DemoLabel}} →</a>{{end}}<a class="button" href="https://github.com/{{.Owner}}/{{.Name}}">{{.Copy.Source}} ↗</a></div>
+          <div class="actions"><a class="button primary" href="{{.Marketing.Primary}}">{{.Marketing.Text.CTA}} <span aria-hidden="true">→</span></a>{{if .Marketing.GuideURL}}<a class="button" href="{{.Marketing.GuideURL}}">{{.Marketing.DocsLabel}} →</a>{{end}}{{if .Marketing.DemoURL}}<a class="button" href="{{.Marketing.DemoURL}}">{{.Marketing.DemoLabel}} →</a>{{end}}<a class="button" href="https://github.com/{{.Owner}}/{{.Name}}">{{.Copy.Source}} ↗</a></div>
           <p class="product-fit">{{.Language}} <span>·</span> {{.License}} <span>·</span> {{.Copy.Updated}} <time datetime="{{.Updated}}">{{.Updated}}</time></p>
           {{if .Marketing.Text.Note}}<p class="product-note">{{.Marketing.Text.Note}}</p>{{end}}
         </div>
@@ -77,6 +77,9 @@
           <figcaption><span>{{.Marketing.Example}}</span><b>{{.Marketing.Name}}</b></figcaption>
           {{if eq .Marketing.Visual "image"}}
           <img src="{{.Marketing.ImageURL}}" alt="{{.Marketing.Name}} — {{.Marketing.Example}}" width="1440" height="900" fetchpriority="high">
+          {{else if eq .Marketing.Visual "matching"}}
+          <div class="matching-depth" aria-hidden="true"><span>100.02 <i style="--depth:100%"></i> 3</span><span>100.01 <i style="--depth:66%"></i> 2</span><span class="matching-spread">BTC / USDT</span><span class="bid">99.99 <i style="--depth:80%"></i> 4</span><span class="bid">99.98 <i style="--depth:40%"></i> 2</span></div>
+          <pre><code data-syntax-language="{{.Marketing.CodeLanguage}}">{{.Marketing.Code}}</code></pre>
           {{else if eq .Marketing.Visual "receipt"}}
           <div class="receipt-value">1 234<span>,56 ₽</span></div><div class="receipt-rule"></div><pre><code data-syntax-language="{{.Marketing.CodeLanguage}}">{{.Marketing.Code}}</code></pre>
           {{else if eq .Marketing.Visual "report"}}

@@ -63,5 +63,10 @@
     "en": "Sprint Velocity — weekly Yandex Tracker task reports",
     "ru": "Sprint Velocity — еженедельные отчёты Яндекс Трекера",
     "zh-cn": "Sprint Velocity — Yandex Tracker 每周任务报告"
+  },
+  "matching-engine": {
+    "en": "matching-engine — Rust spot order matching and WAL recovery",
+    "ru": "matching-engine — спотовые ордера и восстановление WAL на Rust",
+    "zh-cn": "matching-engine — Rust 现货订单撮合与 WAL 恢复"
   }
 }

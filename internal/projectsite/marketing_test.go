@@ -150,3 +150,27 @@ func TestMarketingLandingHasAdoptionPathAndLocalizedBenefits(t *testing.T) {
 		}
 	}
 }
+
+func TestMatchingHandbookLinksUseProjectRootInEveryLocale(t *testing.T) {
+	output := filepath.Join(t.TempDir(), "site")
+	options := fixtureOptions(t, output)
+	snapshot := strings.ReplaceAll(readFile(t, options.SnapshotPath), "git-barber", "matching-engine")
+	options.SnapshotPath = filepath.Join(t.TempDir(), "snapshot.json")
+	if err := os.WriteFile(options.SnapshotPath, []byte(snapshot), 0600); err != nil {
+		t.Fatal(err)
+	}
+	options.Slug = "matching-engine"
+	options.BaseURL = "https://rekurt.github.io/matching-engine/"
+	if _, err := Build(options); err != nil {
+		t.Fatal(err)
+	}
+	if err := Validate(options); err != nil {
+		t.Fatal(err)
+	}
+	for _, path := range []string{"index.html", "ru/index.html", "zh-cn/index.html"} {
+		page := readFile(t, filepath.Join(output, path))
+		if !strings.Contains(page, `href="https://rekurt.github.io/matching-engine/docs/"`) {
+			t.Errorf("%s lacks a handbook link at the project root", path)
+		}
+	}
+}
