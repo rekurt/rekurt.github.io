@@ -259,3 +259,21 @@ p { margin-block: 0 var(--space-4); }
 }
 
 .npm-package { position: relative; z-index: 1; font-family: var(--mono); font-size: 0.8rem; overflow-wrap: anywhere; }
+
+/* Intrinsic sizes must not push long repository names or source code off screen. */
+.project-status, .project-status > div, .metrics > div, .release-section > *, .project-card { min-width: 0; }
+.project-status > div { flex-wrap: wrap; padding-block: .5rem; }
+.project-status strong, .project-status time, .repository-set a, .release-name, .card-meta { overflow-wrap: anywhere; }
+.card-meta { flex-wrap: wrap; }
+.primary-button, .secondary-button, .action-link { max-width: 100%; overflow-wrap: anywhere; }
+.readme { min-width: 0; max-width: min(100%,58rem); overflow-wrap: anywhere; }
+.readme pre, .install-list pre { min-width: 0; max-width: 100%; white-space: pre; overflow-wrap: normal; }
+.readme-heading > * { min-width: 0; }
+@media (max-width: 639px) {
+ .site-header { position: relative; }
+ .header-inner { gap: .5rem; }
+ .repository-table td { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); overflow-wrap: anywhere; }
+ .repository-table time, .repository-table td:nth-child(5), .role { white-space: normal; }
+ .project-status > div > :last-child { max-width: 100%; }
+ .project-card { padding: 1rem; }
+}
