@@ -29,8 +29,11 @@
   // Reports and architecture diagrams are plain text, never guessed as code.
   const blocks = document.querySelectorAll('pre > code, .command > code, [data-syntax-language]');
   for (const block of blocks) {
-    if (block.closest('.astro-code, .shiki') || block.dataset.syntaxHighlighted ||
-        block.classList.contains('hljs') || block.classList.contains('nohighlight')) continue;
+    if (block.closest('.astro-code, .shiki') || block.classList.contains('nohighlight')) continue;
+    if (block.dataset.syntaxHighlighted || block.classList.contains('hljs')) {
+      surface(block);
+      continue;
+    }
     const label = [...block.classList].find(value => /^(?:language|lang)-/.test(value));
     const language = block.dataset.syntaxLanguage || label?.replace(/^(?:language|lang)-/, '');
     if (!language || language === 'plaintext' || language === 'text' || !highlighter.getLanguage(language)) continue;

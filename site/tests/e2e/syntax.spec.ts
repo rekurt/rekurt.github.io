@@ -9,7 +9,7 @@ test("portfolio installation and README code are highlighted", async ({ page }) 
   const install = page.locator(".install-list code").first();
   await expect(install).toHaveAttribute("data-syntax-highlighted", "cli");
   await expect(install.locator(".hljs-title")).toContainText("npm");
-  const source = page.locator(".readme code.language-typescript").first();
+  const source = page.locator(".readme code.language-ts, .readme code.language-typescript").first();
   await expect(source).toHaveClass(/hljs/);
   await expect(source.locator(".hljs-keyword").first()).toBeVisible();
 });
