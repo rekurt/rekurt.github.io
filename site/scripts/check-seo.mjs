@@ -53,6 +53,12 @@ for (const file of await files(root)) {
  documents.set(canonical,{alternates,fail});
 }
 const sitemap = await readFile(join(root,'sitemap.xml'),'utf8');
+const robots = await readFile(join(root,'robots.txt'),'utf8');
+const sitemapLines = robots.split("\n").filter(line => line.startsWith("Sitemap: "));
+assert.equal(sitemapLines.length, 14, 'host root robots advertises the portfolio and 13 project sitemaps');
+assert.equal(new Set(sitemapLines).size, 14, 'project sitemap references are unique');
+assert.ok(robots.includes('https://rekurt.github.io/Mac-Coffee/family-sitemap.xml'), 'decorated project sitemap');
+assert.ok(robots.includes('https://rekurt.github.io/depth/sitemap.xml'), 'generated project sitemap');
 for (const [canonical,{alternates,fail}] of documents) {
  assert.ok(sitemap.includes(`<loc>${canonical}</loc>`),fail('indexable page in sitemap'));
  for (const link of alternates) {
