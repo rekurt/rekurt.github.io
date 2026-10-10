@@ -1,0 +1,21 @@
+---
+import { copy } from "../i18n/copy";
+import type { Locale } from "../lib/catalog";
+import { author } from "../lib/author";
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+---
+
+<section class="author-intro" aria-label={t.authorIntroduction}>
+  <a class="author-avatar-link" href={author.profileUrl} aria-label={t.githubProfile} rel="noreferrer">
+    <img class="author-avatar" src={author.avatarUrl} alt={t.authorAvatarAlt} width="96" height="96" decoding="async" fetchpriority="high" referrerpolicy="no-referrer" />
+  </a>
+  <div class="author-copy">
+    <p class="author-identity"><a href={author.profileUrl} rel="noreferrer">{t.authorIdentity}</a></p>
+    <p>{t.authorProfessional}</p>
+    <p>{t.authorEngineering}</p>
+    <p class="author-hobby">{t.authorHobby}</p>
+  </div>
+</section>

@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AuthorIntro from "../components/AuthorIntro.astro";
+import { author, selectedProjectSlugs, projectDisplayNames } from "../lib/author";
 import ProjectCard from "../components/ProjectCard.astro";
 import ReleaseList from "../components/ReleaseList.astro";
 import { copy, localePrefix } from "../i18n/copy";
@@ -12,7 +14,7 @@ const prefix = localePrefix(locale);
 const canonicalPath = `${prefix}/`;
 const catalog = getCatalog();
 const products = getProducts(locale);
-const featured = products.filter((product) => product.featured);
+const featured = selectedProjectSlugs.map(slug => products.find(product => product.slug === slug)!).map(product => ({ ...product, name: projectDisplayNames[product.slug] ?? product.name }));
 const websites = catalog.repositories.filter((repository) => repository.links.some((link) => link.kind === "website")).length;
 const releases = products
   .filter((product) => product.version)
@@ -26,7 +28,8 @@ const schema = {
   "@type": "Person",
   name: "rekurt",
   url: "https://rekurt.github.io/",
-  sameAs: ["https://github.com/rekurt"],
+  sameAs: [author.profileUrl],
+  image: author.avatarUrl,
   knowsAbout: ["Backend engineering", "Fintech", "Cryptography", "Infrastructure", "Developer tools"],
 };
 ---
@@ -35,7 +38,7 @@ const schema = {
   <section class="hero">
     <p class="eyebrow">{t.homeEyebrow}</p>
     <h1>{t.homeTitle}</h1>
-    <p class="hero-intro">{t.homeIntro}</p>
+    <AuthorIntro locale={locale} />
     <div class="hero-actions">
       <a class="primary-button" href={`${prefix}/projects/`}>{t.browseProjects} <span aria-hidden="true">→</span></a>
       <a class="secondary-button" href={`${prefix}/registry/`}>{t.inspectRegistry}</a>

@@ -277,3 +277,16 @@ p { margin-block: 0 var(--space-4); }
  .project-status > div > :last-child { max-width: 100%; }
  .project-card { padding: 1rem; }
 }
+
+.author-intro { display: grid; grid-template-columns: 96px minmax(0,1fr); align-items: start; gap: 1.5rem; max-width: 62rem; margin-top: 2rem; }
+.author-avatar-link { display: block; width: 96px; height: 96px; border-radius: 12px; }
+.author-avatar { display: block; width: 96px; height: 96px; aspect-ratio: 1; object-fit: contain; border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); }
+.author-copy { min-width: 0; }
+.author-copy > p { max-width: 75ch; color: var(--muted); }
+.author-copy .author-identity { margin-bottom: 1rem; color: var(--text); font: 600 1rem var(--mono); }
+.author-identity a { text-decoration: none; }
+.author-copy .author-hobby { margin: 1.25rem 0 0; padding: .75rem 1rem; border-left: 2px solid var(--emerald); background: var(--surface); color: var(--text); }
+@media (max-width: 639px) {
+ .author-intro { grid-template-columns: minmax(0,1fr); gap: 1rem; margin-top: 1.5rem; }
+ .author-copy .author-hobby { padding-inline: .75rem; }
+}

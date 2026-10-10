@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AuthorIntro from "../components/AuthorIntro.astro";
+import { selectedProjectSlugs, projectDisplayNames } from "../lib/author";
 import FilterBar from "../components/FilterBar.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import { copy, localePrefix } from "../i18n/copy";
@@ -8,7 +10,10 @@ import { getCatalog, getProducts, type Locale } from "../lib/catalog";
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const t = copy[locale];
-const products = getProducts(locale);
+const rank = new Map<string,number>(selectedProjectSlugs.map((slug, index) => [slug,index]));
+const products = getProducts(locale)
+  .map(product => ({ ...product, name: projectDisplayNames[product.slug] ?? product.name }))
+  .sort((a,b) => (rank.get(a.slug) ?? selectedProjectSlugs.length) - (rank.get(b.slug) ?? selectedProjectSlugs.length));
 const catalog = getCatalog();
 const canonicalPath = `${localePrefix(locale)}/projects/`;
 const unique = (values: string[]) => [...new Set(values)].sort();
@@ -25,6 +30,7 @@ const groups = [
     <h1>{t.projectsTitle}</h1>
     <p>{t.projectsIntro}</p>
   </header>
+  <AuthorIntro locale={locale} />
   <section class="section catalog-section" aria-label={t.navProjects}>
     <FilterBar groups={groups} allLabel={t.filterAll} resetLabel={t.filterReset} resultsLabel={t.results} total={products.length} />
     <div class="card-grid" id="catalog">
