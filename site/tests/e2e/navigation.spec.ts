@@ -67,7 +67,7 @@ for (const prefix of ["", "/ru", "/zh-cn"]) {
     ];
     await page.goto(`${prefix}/projects/`);
     for (const pkg of packages) {
-      const card = page.locator(`[data-project-card]`).filter({ has: page.getByRole("link", { name: pkg.slug, exact: true }) });
+      const card = page.locator(`[data-project-card]`).filter({ has: page.locator(`h3 a[href="${prefix}/projects/${pkg.slug}/"]`) });
       await expect(card.locator(".npm-package")).toHaveAttribute("href", `https://www.npmjs.com/package/${pkg.name}/v/${pkg.version}`);
       await expect(card.locator(".npm-package")).toHaveText(`npm · ${pkg.name} · ${pkg.version} ↗`);
     }
