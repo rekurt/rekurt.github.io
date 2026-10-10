@@ -40,7 +40,7 @@ func Decorate(options Options) (BuildManifest, error) {
 	if err := renderFamilyDirectories(model, model.Output); err != nil {
 		return BuildManifest{}, err
 	}
-	for _, name := range []string{"family.css", "bridge.css"} {
+	for _, name := range []string{"family.css", "bridge.css", "highlight-11.12.0.min.js", "highlight.LICENSE.txt", "syntax.css", "syntax.js"} {
 		data, err := fs.ReadFile(siteFiles, "assets/"+name)
 		if err != nil {
 			return BuildManifest{}, err
@@ -90,6 +90,10 @@ func decorateIndex(model Model, indexPath string) error {
 	page := model.Pages[0]
 	appendChild(head, element("link", attr("rel", "canonical"), attr("href", page.Canonical)))
 	appendChild(head, element("link", attr("rel", "stylesheet"), attr("href", "assets/bridge.css"), attr("data-rekurt-family", "")))
+	appendChild(head, element("link", attr("rel", "stylesheet"), attr("href", "assets/syntax.css?v=11.12.0-1"), attr("data-rekurt-family", "")))
+	for _, name := range []string{"highlight-11.12.0.min.js", "syntax.js?v=11.12.0-1"} {
+		appendChild(body, element("script", attr("src", "assets/"+name), attr("defer", ""), attr("data-rekurt-family", "")))
+	}
 	ensureMeta(head, "name", "description", page.Description)
 	ensureMeta(head, "name", "generator", "rekurt project family kit")
 	ensureMeta(head, "property", "og:url", page.Canonical)

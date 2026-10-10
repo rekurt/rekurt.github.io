@@ -48,6 +48,7 @@ type marketingView struct {
 	marketingProfile
 	Mark          string
 	FallbackLabel string
+	CodeLanguage  string
 	Text          marketingCopy
 	ImageURL      string
 	DemoURL       string
@@ -110,6 +111,7 @@ func marketingFor(model Model, page LocalePage) (*marketingView, error) {
 		return nil, err
 	}
 	view := &marketingView{marketingProfile: *profile, Text: profile.Locales[page.Locale]}
+	view.CodeLanguage = map[string]string{"depth": "typescript", "go-propisyu": "go", "gost-crypto": "go", "ymsdk": "go", "dbdiff": "diff", "git-barber": "cli", "prt": "cli", "gitlab-downloader": "plaintext", "sprint-velocity": "plaintext", "cortex-forge": "plaintext"}[profile.Slug]
 	view.Mark = map[string]string{"depth": "▥", "git-barber": "╱", "prt": "_", "dbdiff": "±", "gitlab-downloader": "↓", "go-propisyu": "₽", "gost-crypto": "◇", "ymsdk": "ym", "sprint-velocity": "W", "cortex-forge": "cf"}[profile.Slug]
 	view.FallbackLabel = map[string]string{"en": "Original repository documentation.", "ru": "Ниже — исходная документация репозитория без перевода. Пример и краткая инструкция выше доступны на русском.", "zh-cn": "以下为仓库的原始文档，未作翻译；上方的示例与入门说明已本地化。"}[page.Locale]
 	if profile.DemoPath != "" {

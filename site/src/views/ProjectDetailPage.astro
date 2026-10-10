@@ -36,7 +36,7 @@ const schema = { "@context": "https://schema.org", "@type": "SoftwareSourceCode"
   </header>
   <div class="project-actions"><LinkGroup links={product.links} labels={labels} /></div>
 
-  {product.install.length > 0 && <section class="detail-section"><p class="eyebrow">{t.install}</p><h2>{t.install}</h2><div class="install-list">{product.install.map((command) => <pre><code>{command}</code></pre>)}</div></section>}
+  {product.install.length > 0 && <section class="detail-section"><p class="eyebrow">{t.install}</p><h2>{t.install}</h2><div class="install-list">{product.install.map((command) => <pre><code data-syntax-language="cli">{command}</code></pre>)}</div></section>}
 
   <section class="detail-section">
     <p class="eyebrow">{t.repositories}</p><h2>{t.repositorySet}</h2>

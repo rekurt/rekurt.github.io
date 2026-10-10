@@ -18,6 +18,7 @@
     {{range .Alternates}}<link rel="alternate" hreflang="{{.Lang}}" href="{{.URL}}">
     {{end}}<link rel="stylesheet" href="{{.AssetPrefix}}family.css">
     {{if .Marketing}}<link rel="stylesheet" href="{{.AssetPrefix}}marketing.css">{{end}}
+    <link rel="stylesheet" href="{{.AssetPrefix}}syntax.css?v=11.12.0-1">
     <title>{{.Page.Title}}</title>
     <script type="application/ld+json">{{.Structured}}</script>
   </head>
@@ -70,19 +71,19 @@
           {{if eq .Marketing.Visual "image"}}
           <img src="{{.Marketing.ImageURL}}" alt="{{.Marketing.Name}} — {{.Marketing.Example}}" width="1440" height="900" fetchpriority="high">
           {{else if eq .Marketing.Visual "receipt"}}
-          <div class="receipt-value">1 234<span>,56 ₽</span></div><div class="receipt-rule"></div><pre><code>{{.Marketing.Code}}</code></pre>
+          <div class="receipt-value">1 234<span>,56 ₽</span></div><div class="receipt-rule"></div><pre><code data-syntax-language="{{.Marketing.CodeLanguage}}">{{.Marketing.Code}}</code></pre>
           {{else if eq .Marketing.Visual "report"}}
-          <div class="report-day">{{.Marketing.ReportDay}}<span>18:00</span></div><pre><code>{{.Marketing.Code}}</code></pre>
+          <div class="report-day">{{.Marketing.ReportDay}}<span>18:00</span></div><pre><code data-syntax-language="{{.Marketing.CodeLanguage}}">{{.Marketing.Code}}</code></pre>
           {{else if eq .Marketing.Visual "crypto"}}
-          <div class="primitive-strip"><span>34.10<br><b>{{.Marketing.SignLabel}}</b></span><span>34.11<br><b>{{.Marketing.HashLabel}}</b></span><span>34.12<br><b>{{.Marketing.EncryptLabel}}</b></span></div><pre><code>{{.Marketing.Code}}</code></pre>
+          <div class="primitive-strip"><span>34.10<br><b>{{.Marketing.SignLabel}}</b></span><span>34.11<br><b>{{.Marketing.HashLabel}}</b></span><span>34.12<br><b>{{.Marketing.EncryptLabel}}</b></span></div><pre><code data-syntax-language="{{.Marketing.CodeLanguage}}">{{.Marketing.Code}}</code></pre>
           {{else}}
-          <pre><code>{{.Marketing.Code}}</code></pre>
+          <pre><code data-syntax-language="{{.Marketing.CodeLanguage}}">{{.Marketing.Code}}</code></pre>
           {{end}}
         </figure>
       </section>
       {{if eq .Marketing.Visual "image"}}<section id="example" class="product-example shell" aria-labelledby="example-title">
         <div class="example-intro"><p class="section-index">TypeScript</p><h2 id="example-title">{{.Marketing.Example}}</h2></div>
-        <div class="example-code"><pre><code>{{.Marketing.Code}}</code></pre></div>
+        <div class="example-code"><pre><code data-syntax-language="{{.Marketing.CodeLanguage}}">{{.Marketing.Code}}</code></pre></div>
       </section>
       {{end}}<section class="product-benefits shell" aria-labelledby="benefits-heading">
         <div class="section-heading"><p class="section-index">{{.Marketing.Name}}</p><h2 id="benefits-heading">{{.Marketing.Benefits}}</h2></div>
@@ -129,7 +130,7 @@
         </div>
         {{if .NPMPackage}}<p class="package-version"><a href="{{.NPMURL}}">npm · {{.NPMPackage.Name}} · {{.NPMPackage.Version}} ↗</a></p>{{end}}
         <div class="commands">
-          {{range .Install}}<div class="command"><code>{{.}}</code><button type="button" data-copy="{{.}}" data-copy-label="{{$.Copy.Copy}}"><span>{{$.Copy.Copy}}</span></button></div>{{end}}
+          {{range .Install}}<div class="command"><code data-syntax-language="cli">{{.}}</code><button type="button" data-copy="{{.}}" data-copy-label="{{$.Copy.Copy}}"><span>{{$.Copy.Copy}}</span></button></div>{{end}}
         </div>
         <p class="copy-status" role="status" aria-live="polite" data-copied="{{.Copy.Copied}}" data-copy-failed="{{.Copy.CopyFailed}}"></p>
       </section>{{end}}
@@ -167,6 +168,8 @@
         </nav>
       </div>
     </footer>
+    <script src="{{.AssetPrefix}}highlight-11.12.0.min.js" defer></script>
+    <script src="{{.AssetPrefix}}syntax.js?v=11.12.0-1" defer></script>
     <script src="{{.AssetPrefix}}family.js" defer></script>
   </body>
 </html>
