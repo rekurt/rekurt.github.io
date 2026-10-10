@@ -39,3 +39,18 @@ for (const slug of slugs) for (const locale of ["", "ru/", "zh-cn/"]) {
     }
   });
 }
+
+for (const locale of ["", "ru/", "zh-cn/"]) {
+  test(`portfolio layout: ${locale || "en"}`, async ({ page }, info) => {
+    test.skip(info.project.name !== "chromium-desktop", "This test covers its own viewport widths.");
+    await page.route("https://**", route => route.abort());
+    for (const width of [320,390,768,1280]) {
+      await page.setViewportSize({ width, height: 900 });
+      for (const path of ["", "projects/", "registry/", ...slugs.map(slug => "projects/" + slug + "/")]) {
+        await page.goto("/" + locale + path);
+        const sizes = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, document: document.documentElement.scrollWidth }));
+        expect(sizes.document, `${locale}${path} at ${width}px`).toBeLessThanOrEqual(sizes.viewport);
+      }
+    }
+  });
+}
