@@ -65,8 +65,8 @@ const ogLocales = { en: "en_US", ru: "ru_RU", "zh-cn": "zh_CN" } as const;
     {alternateLocales && <link rel="alternate" hreflang="x-default" href={english} />}
     <link rel="stylesheet" href="/syntax/syntax.css?v=11.12.0-1" />
     <title>{title}</title>
-    <script is:inline type="application/ld+json" set:html={serialize(pageSchema)} />
-    {jsonLd && <script is:inline type="application/ld+json" set:html={serialize(jsonLd)} />}
+    <script is:inline type="application/ld+json" data-page-schema set:html={serialize(pageSchema)} />
+    {jsonLd && <script is:inline type="application/ld+json" data-content-schema set:html={serialize(jsonLd)} />}
   </head>
   <body>
     <a class="skip-link" href="#content">{t.skipToContent}</a>

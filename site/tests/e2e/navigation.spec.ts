@@ -17,7 +17,7 @@ test("primary navigation and locale round trip", async ({ page }) => {
 
 test("home page exposes author structured data", async ({ page }) => {
   await page.goto("/");
-  const payload = await page.locator('script[type="application/ld+json"]').textContent();
+  const payload = await page.locator('script[data-content-schema]').textContent();
   expect(payload).not.toBeNull();
   const schema = JSON.parse(payload ?? "{}");
   expect(schema).toMatchObject({
