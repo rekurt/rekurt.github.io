@@ -26,7 +26,8 @@ const examples = {
   "dockerfile": "FROM node:24\nRUN npm ci",
   "diff": "- old\n+ new",
   "xml": "<button type=\"button\">Hello</button>",
-  "cli": "npm install @rekurt/depth --save-dev\\ngit barber --list\\ngo get github.com/rekurt/ymsdk@v1.0.0"
+  "vue": '<template><button>{{ count }}</button></template>\n<script setup lang="ts">const count = 1;</script>',
+  "cli": "npm install @rekurt/depth --save-dev\ngit barber --list\ngo get github.com/rekurt/ymsdk@v1.0.0"
 };
 for (const [language, source] of Object.entries(examples)) test(language + ' has tokens and keeps every source character', () => {
   const result = engine().highlight(source, { language, ignoreIllegals: true });

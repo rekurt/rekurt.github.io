@@ -2,6 +2,8 @@
   'use strict';
   const highlighter = globalThis.hljs;
   if (!highlighter) return;
+  // Vue single-file components use XML's embedded JavaScript and CSS grammars.
+  highlighter.registerAliases('vue', { languageName: 'xml' });
   highlighter.registerLanguage('cli', h => ({
     name: 'CLI commands',
     contains: [
