@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-10T10:06:53Z
+Snapshot: 2026-10-10T11:43:14Z
 92 public repositories · 21 original · 71 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -65,7 +65,7 @@ Snapshot: 2026-10-10T10:06:53Z
 | [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v0.6.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-10-09 |
 | [rekurt/dadata](https://github.com/rekurt/dadata) | fork | fork of `ekomobile/dadata` | — | — | — | — | 2025-07-23 |
 | [rekurt/dbdiff](https://github.com/rekurt/dbdiff) | primary | original | Rust | v0.2.1 | [open](https://rekurt.github.io/dbdiff/) | — | 2026-10-09 |
-| [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-10-09 |
+| [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-10-10 |
 | [rekurt/ethereum-etl-postgres](https://github.com/rekurt/ethereum-etl-postgres) | fork | fork of `blockchain-etl/ethereum-etl-postgres` | Shell | — | — | — | 2023-08-25 |
 | [rekurt/gekko](https://github.com/rekurt/gekko) | fork | fork of `askmike/gekko` | — | v0.6.8 | — | — | 2020-02-16 |
 | [rekurt/git-barber](https://github.com/rekurt/git-barber) | primary | original | Rust | v0.3.0 | [open](https://rekurt.github.io/git-barber/) | — | 2026-10-09 |
