@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-10T13:44:24Z
+Snapshot: 2026-10-11T20:19:07Z
 93 public repositories · 22 original · 71 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -41,7 +41,7 @@ Snapshot: 2026-10-10T13:44:24Z
 | [rekurt/awesome-nlp](https://github.com/rekurt/awesome-nlp) | fork | fork of `keon/awesome-nlp` | — | — | — | — | 2026-10-03 |
 | [rekurt/awesome-openclaw](https://github.com/rekurt/awesome-openclaw) | fork | fork of `rohitg00/awesome-openclaw` | — | — | — | — | 2026-10-03 |
 | [rekurt/awesome-postgresql](https://github.com/rekurt/awesome-postgresql) | fork | fork of `devton/awesome-postgresql` | — | — | — | — | 2026-10-09 |
-| [rekurt/awesome-quant](https://github.com/rekurt/awesome-quant) | fork | fork of `wilsonfreitas/awesome-quant` | — | — | — | — | 2026-10-03 |
+| [rekurt/awesome-quant](https://github.com/rekurt/awesome-quant) | fork | fork of `wilsonfreitas/awesome-quant` | — | — | — | — | 2026-10-11 |
 | [rekurt/awesome-ratatui](https://github.com/rekurt/awesome-ratatui) | fork | fork of `ratatui/awesome-ratatui` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-react](https://github.com/rekurt/awesome-react) | fork | fork of `enaqx/awesome-react` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-russian-it](https://github.com/rekurt/awesome-russian-it) | fork | fork of `unchase/awesome-russian-it` | — | — | — | — | 2025-01-16 |
