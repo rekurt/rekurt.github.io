@@ -1,7 +1,7 @@
 # Public repository audit
 
-Snapshot: 2026-10-11T20:19:07Z
-93 public repositories · 22 original · 71 fork
+Snapshot: 2026-10-12T07:22:53Z
+95 public repositories · 22 original · 73 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
 |---|---|---|---|---|---|---|---|
@@ -9,6 +9,7 @@ Snapshot: 2026-10-11T20:19:07Z
 | [rekurt/awesome-backup](https://github.com/rekurt/awesome-backup) | fork | fork of `oz123/awesome-backup` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-bots](https://github.com/rekurt/awesome-bots) | fork | fork of `abdelhai/awesome-bots` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-bots-1](https://github.com/rekurt/awesome-bots-1) | fork | fork of `DopplerHQ/awesome-bots` | — | — | — | — | 2026-10-09 |
+| [rekurt/awesome-canvas](https://github.com/rekurt/awesome-canvas) | fork | fork of `raphamorim/awesome-canvas` | — | — | — | — | 2026-10-12 |
 | [rekurt/awesome-charting](https://github.com/rekurt/awesome-charting) | fork | fork of `zingchart/awesome-charting` | — | 1.0.0 | — | — | 2026-10-09 |
 | [rekurt/awesome-charts](https://github.com/rekurt/awesome-charts) | fork | fork of `oguzzkilic/awesome-charts` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-chatbot](https://github.com/rekurt/awesome-chatbot) | fork | fork of `shaohua/awesome-chatbot` | — | — | — | — | 2026-10-09 |
@@ -66,6 +67,7 @@ Snapshot: 2026-10-11T20:19:07Z
 | [rekurt/dadata](https://github.com/rekurt/dadata) | fork | fork of `ekomobile/dadata` | — | — | — | — | 2025-07-23 |
 | [rekurt/dbdiff](https://github.com/rekurt/dbdiff) | primary | original | Rust | v0.2.1 | [open](https://rekurt.github.io/dbdiff/) | — | 2026-10-10 |
 | [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-10-10 |
+| [rekurt/dev-resources](https://github.com/rekurt/dev-resources) | fork | fork of `marcelscruz/dev-resources` | — | 1.0.0 | — | — | 2026-10-12 |
 | [rekurt/ethereum-etl-postgres](https://github.com/rekurt/ethereum-etl-postgres) | fork | fork of `blockchain-etl/ethereum-etl-postgres` | Shell | — | — | — | 2023-08-25 |
 | [rekurt/gekko](https://github.com/rekurt/gekko) | fork | fork of `askmike/gekko` | — | v0.6.8 | — | — | 2020-02-16 |
 | [rekurt/git-barber](https://github.com/rekurt/git-barber) | primary | original | Rust | v0.3.0 | [open](https://rekurt.github.io/git-barber/) | — | 2026-10-10 |
@@ -90,7 +92,7 @@ Snapshot: 2026-10-11T20:19:07Z
 | [rekurt/openkline.tech](https://github.com/rekurt/openkline.tech) | support | original | JavaScript | v0.1.3 | [open](https://rekurt.github.io/openkline.tech/) | — | 2026-10-10 |
 | [rekurt/prt](https://github.com/rekurt/prt) | primary | original | Rust | v0.6.0 | [open](https://rekurt.github.io/prt/) | — | 2026-10-10 |
 | [rekurt/rekurt](https://github.com/rekurt/rekurt) | unclassified | original | — | — | — | — | 2026-10-10 |
-| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.2.2 | [open](https://rekurt.github.io/) | — | 2026-10-10 |
+| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.2.2 | [open](https://rekurt.github.io/) | — | 2026-10-11 |
 | [rekurt/relax-hub](https://github.com/rekurt/relax-hub) | unclassified | original | Go | — | — | — | 2026-09-22 |
 | [rekurt/sprint-velocity](https://github.com/rekurt/sprint-velocity) | primary | original | Python | — | [open](https://rekurt.github.io/sprint-velocity/) | — | 2026-09-05 |
 | [rekurt/srs](https://github.com/rekurt/srs) | fork | fork of `ossrs/srs` | — | v4.0.8 | — | — | 2020-02-26 |

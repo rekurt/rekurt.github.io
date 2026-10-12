@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-10-11T20:19:07Z",
+  "syncedAt": "2026-10-12T07:22:53Z",
   "products": [
     {
       "slug": "matching-engine",
@@ -779,6 +779,30 @@
         {
           "kind": "source",
           "url": "https://github.com/rekurt/awesome-bots-1"
+        }
+      ]
+    },
+    {
+      "nameWithOwner": "rekurt/awesome-canvas",
+      "name": "awesome-canvas",
+      "description": "A curated list of awesome HTML5 Canvas with examples, related articles and posts.",
+      "url": "https://github.com/rekurt/awesome-canvas",
+      "visibility": "public",
+      "fork": true,
+      "parent": "raphamorim/awesome-canvas",
+      "hasPages": false,
+      "defaultBranch": "main",
+      "headSha": "28390e0f2f200bfef5d810d0b34df6fe175a261e",
+      "license": "MIT",
+      "updatedAt": "2026-10-12T07:05:18Z",
+      "pushedAt": "2026-10-12T07:06:11Z",
+      "archived": false,
+      "stars": 0,
+      "role": "fork",
+      "links": [
+        {
+          "kind": "source",
+          "url": "https://github.com/rekurt/awesome-canvas"
         }
       ]
     },
@@ -2324,6 +2348,40 @@
       ]
     },
     {
+      "nameWithOwner": "rekurt/dev-resources",
+      "name": "dev-resources",
+      "description": "A collaborative list of resources for developers",
+      "url": "https://github.com/rekurt/dev-resources",
+      "visibility": "public",
+      "fork": true,
+      "parent": "marcelscruz/dev-resources",
+      "homepage": "https://devresourc.es",
+      "hasPages": false,
+      "defaultBranch": "main",
+      "headSha": "0a63b9a7244b36e84fbf8724fdc4e5b778c7c3fc",
+      "license": "MIT",
+      "updatedAt": "2026-10-12T07:07:07Z",
+      "pushedAt": "2026-10-12T07:08:36Z",
+      "archived": false,
+      "stars": 0,
+      "role": "fork",
+      "version": {
+        "value": "1.0.0",
+        "source": "manifest",
+        "url": "https://github.com/rekurt/dev-resources/blob/main/package.json"
+      },
+      "links": [
+        {
+          "kind": "source",
+          "url": "https://github.com/rekurt/dev-resources"
+        },
+        {
+          "kind": "release",
+          "url": "https://github.com/rekurt/dev-resources/blob/main/package.json"
+        }
+      ]
+    },
+    {
       "nameWithOwner": "rekurt/ethereum-etl-postgres",
       "name": "ethereum-etl-postgres",
       "description": "ETL for moving Ethereum data to PostgreSQL database",
@@ -3239,9 +3297,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "c6f010d91ba2f2309c8d012ce42abe87d851eb53",
-      "updatedAt": "2026-10-10T13:44:45Z",
-      "pushedAt": "2026-10-10T13:44:42Z",
+      "headSha": "c8044510f03029b814e6c4f012589e7c1f63edcc",
+      "updatedAt": "2026-10-11T20:19:27Z",
+      "pushedAt": "2026-10-11T20:19:23Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
