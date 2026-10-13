@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-12T17:56:49Z
+Snapshot: 2026-10-13T00:42:04Z
 95 public repositories · 22 original · 73 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -16,7 +16,7 @@ Snapshot: 2026-10-12T17:56:49Z
 | [rekurt/awesome-chatbots](https://github.com/rekurt/awesome-chatbots) | fork | fork of `JStumpp/awesome-chatbots` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-cli-apps](https://github.com/rekurt/awesome-cli-apps) | fork | fork of `agarrharr/awesome-cli-apps` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-cli-apps-in-a-csv](https://github.com/rekurt/awesome-cli-apps-in-a-csv) | fork | fork of `toolleeo/awesome-cli-apps-in-a-csv` | — | — | — | — | 2026-10-03 |
-| [rekurt/awesome-cli-tui-software-lgaggini](https://github.com/rekurt/awesome-cli-tui-software-lgaggini) | fork | fork of `lgaggini/awesome-cli-tui-software` | — | — | — | — | 2026-10-09 |
+| [rekurt/awesome-cli-tui-software-lgaggini](https://github.com/rekurt/awesome-cli-tui-software-lgaggini) | fork | fork of `lgaggini/awesome-cli-tui-software` | — | — | — | — | 2026-10-12 |
 | [rekurt/awesome-command-line-tools-ad-si](https://github.com/rekurt/awesome-command-line-tools-ad-si) | fork | fork of `ad-si/awesome-command-line-tools` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-cryptography](https://github.com/rekurt/awesome-cryptography) | fork | fork of `sobolevn/awesome-cryptography` | — | 1.0.0 | — | — | 2026-04-08 |
 | [rekurt/awesome-dataviz](https://github.com/rekurt/awesome-dataviz) | fork | fork of `hal9ai/awesome-dataviz` | — | — | — | — | 2026-10-09 |
@@ -39,7 +39,7 @@ Snapshot: 2026-10-12T17:56:49Z
 | [rekurt/awesome-mysql](https://github.com/rekurt/awesome-mysql) | fork | fork of `shlomi-noach/awesome-mysql` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-networking-facyber](https://github.com/rekurt/awesome-networking-facyber) | fork | fork of `facyber/awesome-networking` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-networking-nyquist](https://github.com/rekurt/awesome-networking-nyquist) | fork | fork of `nyquist/awesome-networking` | — | — | — | — | 2026-10-08 |
-| [rekurt/awesome-nlp](https://github.com/rekurt/awesome-nlp) | fork | fork of `keon/awesome-nlp` | — | — | — | — | 2026-10-03 |
+| [rekurt/awesome-nlp](https://github.com/rekurt/awesome-nlp) | fork | fork of `keon/awesome-nlp` | — | — | — | — | 2026-10-12 |
 | [rekurt/awesome-openclaw](https://github.com/rekurt/awesome-openclaw) | fork | fork of `rohitg00/awesome-openclaw` | — | — | — | — | 2026-10-03 |
 | [rekurt/awesome-postgresql](https://github.com/rekurt/awesome-postgresql) | fork | fork of `devton/awesome-postgresql` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-quant](https://github.com/rekurt/awesome-quant) | fork | fork of `wilsonfreitas/awesome-quant` | — | — | — | — | 2026-10-11 |
@@ -53,7 +53,7 @@ Snapshot: 2026-10-12T17:56:49Z
 | [rekurt/awesome-sqlite](https://github.com/rekurt/awesome-sqlite) | fork | fork of `planetopendata/awesome-sqlite` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-sqlite-airsequel](https://github.com/rekurt/awesome-sqlite-airsequel) | fork | fork of `Airsequel/awesome-sqlite` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-translations-mbiesiad](https://github.com/rekurt/awesome-translations-mbiesiad) | fork | fork of `mbiesiad/awesome-translations` | — | — | — | — | 2026-10-09 |
-| [rekurt/awesome-tuis](https://github.com/rekurt/awesome-tuis) | fork | fork of `rothgar/awesome-tuis` | — | — | — | — | 2026-10-09 |
+| [rekurt/awesome-tuis](https://github.com/rekurt/awesome-tuis) | fork | fork of `rothgar/awesome-tuis` | — | — | — | — | 2026-10-12 |
 | [rekurt/awesome-vcs-tools](https://github.com/rekurt/awesome-vcs-tools) | fork | fork of `postpdm/awesome-vcs-tools` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-vue-3](https://github.com/rekurt/awesome-vue-3) | fork | fork of `gs00s/awesome-vue-3` | — | — | — | — | 2026-10-09 |
 | [rekurt/binance-official-api-docs](https://github.com/rekurt/binance-official-api-docs) | fork | fork of `binance-exchange/binance-official-api-docs` | — | — | — | — | 2019-11-18 |
@@ -63,7 +63,7 @@ Snapshot: 2026-10-12T17:56:49Z
 | [rekurt/chatwoot](https://github.com/rekurt/chatwoot) | fork | fork of `chatwoot/chatwoot` | — | v4.16.2 | — | — | 2026-08-12 |
 | [rekurt/chislo](https://github.com/rekurt/chislo) | primary | original | Rust | v0.3.1 | [open](https://rekurt.github.io/chislo/) | — | 2026-09-06 |
 | [rekurt/command-line-tools](https://github.com/rekurt/command-line-tools) | fork | fork of `linsa-io/command-line-tools` | — | — | — | — | 2026-10-09 |
-| [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v0.6.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-10-10 |
+| [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v0.6.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-10-12 |
 | [rekurt/dadata](https://github.com/rekurt/dadata) | fork | fork of `ekomobile/dadata` | — | — | — | — | 2025-07-23 |
 | [rekurt/dbdiff](https://github.com/rekurt/dbdiff) | primary | original | Rust | v0.2.1 | [open](https://rekurt.github.io/dbdiff/) | — | 2026-10-10 |
 | [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-10-10 |
