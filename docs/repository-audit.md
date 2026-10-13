@@ -1,7 +1,7 @@
 # Public repository audit
 
-Snapshot: 2026-10-13T07:44:00Z
-95 public repositories · 22 original · 73 fork
+Snapshot: 2026-10-13T16:00:55Z
+96 public repositories · 22 original · 74 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
 |---|---|---|---|---|---|---|---|
@@ -40,6 +40,7 @@ Snapshot: 2026-10-13T07:44:00Z
 | [rekurt/awesome-networking-facyber](https://github.com/rekurt/awesome-networking-facyber) | fork | fork of `facyber/awesome-networking` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-networking-nyquist](https://github.com/rekurt/awesome-networking-nyquist) | fork | fork of `nyquist/awesome-networking` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-nlp](https://github.com/rekurt/awesome-nlp) | fork | fork of `keon/awesome-nlp` | — | — | — | — | 2026-10-12 |
+| [rekurt/awesome-open-source-trading](https://github.com/rekurt/awesome-open-source-trading) | fork | fork of `WallStreetPete/awesome-open-source-trading` | — | — | — | — | 2026-10-13 |
 | [rekurt/awesome-openclaw](https://github.com/rekurt/awesome-openclaw) | fork | fork of `rohitg00/awesome-openclaw` | — | — | — | — | 2026-10-03 |
 | [rekurt/awesome-postgresql](https://github.com/rekurt/awesome-postgresql) | fork | fork of `devton/awesome-postgresql` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-quant](https://github.com/rekurt/awesome-quant) | fork | fork of `wilsonfreitas/awesome-quant` | — | — | — | — | 2026-10-11 |

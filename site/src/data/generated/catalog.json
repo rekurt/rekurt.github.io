@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-10-13T07:44:00Z",
+  "syncedAt": "2026-10-13T16:00:55Z",
   "products": [
     {
       "slug": "matching-engine",
@@ -1547,6 +1547,30 @@
         {
           "kind": "source",
           "url": "https://github.com/rekurt/awesome-nlp"
+        }
+      ]
+    },
+    {
+      "nameWithOwner": "rekurt/awesome-open-source-trading",
+      "name": "awesome-open-source-trading",
+      "description": "Curated map of 450+ open-source trading projects (backtesting, IBKR, Kalshi/Polymarket, options, AI agents, data) and 110+ quant strategy papers with reported returns.",
+      "url": "https://github.com/rekurt/awesome-open-source-trading",
+      "visibility": "public",
+      "fork": true,
+      "parent": "WallStreetPete/awesome-open-source-trading",
+      "hasPages": false,
+      "defaultBranch": "main",
+      "headSha": "b505ea84ff40ee78dab4c4008c043168fa92cea9",
+      "license": "CC0-1.0",
+      "updatedAt": "2026-10-13T13:07:32Z",
+      "pushedAt": "2026-10-13T14:06:13Z",
+      "archived": false,
+      "stars": 0,
+      "role": "fork",
+      "links": [
+        {
+          "kind": "source",
+          "url": "https://github.com/rekurt/awesome-open-source-trading"
         }
       ]
     },
@@ -3297,9 +3321,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "7d82c90dd5cd920d3228080e761323999c9aae1b",
-      "updatedAt": "2026-10-13T00:42:25Z",
-      "pushedAt": "2026-10-13T00:42:21Z",
+      "headSha": "bee7f7073ceec9334cef6fa0017618c79cae8bf0",
+      "updatedAt": "2026-10-13T07:44:18Z",
+      "pushedAt": "2026-10-13T07:44:14Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
