@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/rekurt/rekurt.github.io/compare/v0.3.0...v0.4.0) (2026-10-14)
+
+
+### Features
+
+* **site:** publish prt 0.6.0 port ownership walkthrough ([#32](https://github.com/rekurt/rekurt.github.io/issues/32)) ([48ce3a4](https://github.com/rekurt/rekurt.github.io/commit/48ce3a4a11d974d88c41c9a2e9e9e1e558ffcb77))
+
 ## [0.3.0](https://github.com/rekurt/rekurt.github.io/compare/v0.2.2...v0.3.0) (2026-10-14)
 
 
