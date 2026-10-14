@@ -56,8 +56,10 @@ for (const file of await files(root)) {
  assert.ok(schemas.length > 0,fail('structured data'));
  for (const schema of schemas) assert.ok(JSON.parse(text(schema))['@context'],fail('valid structured data'));
  const alternates = all.filter(n => n.tagName === 'link' && attr(n,'rel') === 'alternate' && attr(n,'hreflang'));
- assert.equal(alternates.length,4,fail('three locales plus default'));
- assert.equal(new Set(alternates.map(n => attr(n,'hreflang'))).size,4,fail('no duplicate hreflang'));
+ const englishArticle = path.startsWith('/articles/');
+ if (englishArticle) assert.equal(attr(all.find(n => n.tagName === 'html'), 'lang'), 'en', fail('article language is English'));
+ assert.equal(alternates.length,englishArticle ? 0 : 4,fail('only published translations are advertised'));
+ assert.equal(new Set(alternates.map(n => attr(n,'hreflang'))).size,englishArticle ? 0 : 4,fail('no duplicate hreflang'));
  documents.set(canonical,{alternates,fail});
 }
 const sitemap = await readFile(join(root,'sitemap.xml'),'utf8');
