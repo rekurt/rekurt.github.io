@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Content } from "../../content/articles/git-barber-retrospective.md";
+const title = "Branch cleanup after merge, squash and rebase with git-barber";
+const description = "A disposable-repository walkthrough of git-barber 0.3.0: merge, squash and rebase candidates, worktree protection and the limits of gone-upstream cleanup.";
+const path = "/articles/git-barber-merge-squash-rebase/";
+const schema = {
+  "@context": "https://schema.org", "@type": "TechArticle",
+  headline: title, description, url: `https://rekurt.github.io${path}`,
+  datePublished: "2026-10-15", inLanguage: "en",
+  author: { "@type": "Person", name: "Nikita", url: "https://github.com/rekurt" },
+};
+---
+<BaseLayout title={title} description={description} locale="en" canonicalPath={path} alternateLocales={false} socialSlug="git-barber" jsonLd={schema}>
+  <article class="technical-article">
+    <p class="eyebrow">Retrospective · Checked 18 September 2026 · Published <time datetime="2026-10-15">15 October 2026</time></p>
+    <Content />
+    <p><a href="/projects/git-barber/">Explore git-barber</a> · <a href="/articles/">All articles</a></p>
+  </article>
+</BaseLayout>
+<style>
+  .technical-article { max-width: 76ch; margin-inline: auto; overflow-wrap: anywhere; }
+  .technical-article :global(h1) { max-width: 25ch; margin-bottom: 1.5rem; }
+  .technical-article :global(h2) { margin-top: 2.5rem; margin-bottom: 1rem; }
+  .technical-article :global(pre) { max-width: 100%; overflow-x: auto; padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius); }
+</style>
