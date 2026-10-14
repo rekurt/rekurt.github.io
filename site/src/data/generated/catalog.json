@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-10-13T16:00:55Z",
+  "syncedAt": "2026-10-14T23:56:03Z",
   "products": [
     {
       "slug": "matching-engine",
@@ -1294,7 +1294,7 @@
       "headSha": "5452eb7b2cdde7ef682acb7643354578332f66a2",
       "license": "MIT",
       "updatedAt": "2026-10-08T13:16:47Z",
-      "pushedAt": "2026-10-08T13:16:55Z",
+      "pushedAt": "2026-10-14T21:54:55Z",
       "archived": false,
       "stars": 0,
       "role": "fork",
@@ -2342,7 +2342,7 @@
       "headSha": "d1e8862e280c0b14060d78d11be190c71897ea7f",
       "license": "MIT",
       "updatedAt": "2026-10-10T11:51:03Z",
-      "pushedAt": "2026-10-10T11:50:59Z",
+      "pushedAt": "2026-10-14T22:02:46Z",
       "archived": false,
       "stars": 2,
       "role": "primary",
@@ -2486,7 +2486,7 @@
       "headSha": "74084864b5644f400e7f7b81e3e7bc40643c70f3",
       "license": "Apache-2.0",
       "updatedAt": "2026-10-10T11:54:49Z",
-      "pushedAt": "2026-10-10T11:54:45Z",
+      "pushedAt": "2026-10-14T21:51:51Z",
       "archived": false,
       "stars": 2,
       "role": "primary",
@@ -3197,10 +3197,10 @@
       "language": "JavaScript",
       "hasPages": true,
       "defaultBranch": "master",
-      "headSha": "1562bc3539d6996d4467a15d03c66e27196fe126",
+      "headSha": "afcc70b0186512c3a14d71f32194ce9cfe3bb9a4",
       "license": "MIT",
-      "updatedAt": "2026-10-10T11:55:57Z",
-      "pushedAt": "2026-10-10T11:55:53Z",
+      "updatedAt": "2026-10-14T22:20:17Z",
+      "pushedAt": "2026-10-14T22:20:12Z",
       "archived": false,
       "stars": 1,
       "role": "support",
@@ -3321,16 +3321,16 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "bee7f7073ceec9334cef6fa0017618c79cae8bf0",
-      "updatedAt": "2026-10-13T07:44:18Z",
-      "pushedAt": "2026-10-13T07:44:14Z",
+      "headSha": "dee4fbfa30ffcd7fe8a2051c1e9078cf71909505",
+      "updatedAt": "2026-10-14T23:19:41Z",
+      "pushedAt": "2026-10-14T23:19:37Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
       "version": {
-        "value": "v0.2.2",
+        "value": "v0.4.0",
         "source": "release",
-        "url": "https://github.com/rekurt/rekurt.github.io/releases/tag/v0.2.2"
+        "url": "https://github.com/rekurt/rekurt.github.io/releases/tag/v0.4.0"
       },
       "links": [
         {
@@ -3343,7 +3343,7 @@
         },
         {
           "kind": "release",
-          "url": "https://github.com/rekurt/rekurt.github.io/releases/tag/v0.2.2"
+          "url": "https://github.com/rekurt/rekurt.github.io/releases/tag/v0.4.0"
         }
       ]
     },
@@ -3473,7 +3473,7 @@
       "defaultBranch": "main",
       "headSha": "79f2ff7dc1c3c01d5014ded46351eabfd8780fc6",
       "updatedAt": "2026-10-09T11:04:52Z",
-      "pushedAt": "2026-10-09T11:41:37Z",
+      "pushedAt": "2026-10-14T21:55:56Z",
       "archived": false,
       "stars": 0,
       "role": "fork",

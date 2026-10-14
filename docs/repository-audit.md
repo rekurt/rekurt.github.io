@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-13T16:00:55Z
+Snapshot: 2026-10-14T23:56:03Z
 96 public repositories · 22 original · 74 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -29,7 +29,7 @@ Snapshot: 2026-10-13T16:00:55Z
 | [rekurt/awesome-go-1](https://github.com/rekurt/awesome-go-1) | fork | fork of `uhub/awesome-go` | — | — | — | — | 2026-04-03 |
 | [rekurt/awesome-go-cn](https://github.com/rekurt/awesome-go-cn) | fork | fork of `jobbole/awesome-go-cn` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-go-cn-yinggaozhen](https://github.com/rekurt/awesome-go-cn-yinggaozhen) | fork | fork of `yinggaozhen/awesome-go-cn` | — | 1.4.1 | — | — | 2026-04-08 |
-| [rekurt/awesome-go-security](https://github.com/rekurt/awesome-go-security) | fork | fork of `Binject/awesome-go-security` | — | — | — | — | 2026-10-08 |
+| [rekurt/awesome-go-security](https://github.com/rekurt/awesome-go-security) | fork | fork of `Binject/awesome-go-security` | — | — | — | — | 2026-10-14 |
 | [rekurt/awesome-golang-security](https://github.com/rekurt/awesome-golang-security) | fork | fork of `guardrailsio/awesome-golang-security` | — | — | — | — | 2026-04-08 |
 | [rekurt/awesome-i18n](https://github.com/rekurt/awesome-i18n) | fork | fork of `oh-jon-paul/awesome-i18n` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-i18n-1](https://github.com/rekurt/awesome-i18n-1) | fork | fork of `mrhota/awesome-i18n` | — | — | — | — | 2026-10-09 |
@@ -67,11 +67,11 @@ Snapshot: 2026-10-13T16:00:55Z
 | [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v0.6.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-10-12 |
 | [rekurt/dadata](https://github.com/rekurt/dadata) | fork | fork of `ekomobile/dadata` | — | — | — | — | 2025-07-23 |
 | [rekurt/dbdiff](https://github.com/rekurt/dbdiff) | primary | original | Rust | v0.2.1 | [open](https://rekurt.github.io/dbdiff/) | — | 2026-10-13 |
-| [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-10-10 |
+| [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-10-14 |
 | [rekurt/dev-resources](https://github.com/rekurt/dev-resources) | fork | fork of `marcelscruz/dev-resources` | — | 1.0.0 | — | — | 2026-10-12 |
 | [rekurt/ethereum-etl-postgres](https://github.com/rekurt/ethereum-etl-postgres) | fork | fork of `blockchain-etl/ethereum-etl-postgres` | Shell | — | — | — | 2023-08-25 |
 | [rekurt/gekko](https://github.com/rekurt/gekko) | fork | fork of `askmike/gekko` | — | v0.6.8 | — | — | 2020-02-16 |
-| [rekurt/git-barber](https://github.com/rekurt/git-barber) | primary | original | Rust | v0.3.0 | [open](https://rekurt.github.io/git-barber/) | — | 2026-10-10 |
+| [rekurt/git-barber](https://github.com/rekurt/git-barber) | primary | original | Rust | v0.3.0 | [open](https://rekurt.github.io/git-barber/) | — | 2026-10-14 |
 | [rekurt/gitlab-downloader](https://github.com/rekurt/gitlab-downloader) | primary | original | JavaScript | v0.0.2 | [open](https://rekurt.github.io/gitlab-downloader/) | — | 2026-10-10 |
 | [rekurt/go-awesome](https://github.com/rekurt/go-awesome) | fork | fork of `shockerli/go-awesome` | — | — | — | — | 2026-04-08 |
 | [rekurt/go-propisyu](https://github.com/rekurt/go-propisyu) | primary | original | Go | v0.4.1 | [open](https://rekurt.github.io/go-propisyu/) | — | 2026-10-12 |
@@ -90,14 +90,14 @@ Snapshot: 2026-10-13T16:00:55Z
 | [rekurt/openkline](https://github.com/rekurt/openkline) | primary | original | TypeScript | v0.2.0 | [open](https://rekurt.github.io/openkline/) | — | 2026-10-10 |
 | [rekurt/openkline-react](https://github.com/rekurt/openkline-react) | support | original | TypeScript | 0.1.0 | — | — | 2026-10-09 |
 | [rekurt/openkline-vue](https://github.com/rekurt/openkline-vue) | support | original | TypeScript | 0.1.0 | — | — | 2026-10-09 |
-| [rekurt/openkline.tech](https://github.com/rekurt/openkline.tech) | support | original | JavaScript | v0.1.3 | [open](https://rekurt.github.io/openkline.tech/) | — | 2026-10-10 |
+| [rekurt/openkline.tech](https://github.com/rekurt/openkline.tech) | support | original | JavaScript | v0.1.3 | [open](https://rekurt.github.io/openkline.tech/) | — | 2026-10-14 |
 | [rekurt/prt](https://github.com/rekurt/prt) | primary | original | Rust | v0.6.0 | [open](https://rekurt.github.io/prt/) | — | 2026-10-10 |
 | [rekurt/rekurt](https://github.com/rekurt/rekurt) | unclassified | original | — | — | — | — | 2026-10-10 |
-| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.2.2 | [open](https://rekurt.github.io/) | — | 2026-10-13 |
+| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.4.0 | [open](https://rekurt.github.io/) | — | 2026-10-14 |
 | [rekurt/relax-hub](https://github.com/rekurt/relax-hub) | unclassified | original | Go | — | — | — | 2026-09-22 |
 | [rekurt/sprint-velocity](https://github.com/rekurt/sprint-velocity) | primary | original | Python | — | [open](https://rekurt.github.io/sprint-velocity/) | — | 2026-09-05 |
 | [rekurt/srs](https://github.com/rekurt/srs) | fork | fork of `ossrs/srs` | — | v4.0.8 | — | — | 2020-02-26 |
 | [rekurt/The-NLP-Pandect](https://github.com/rekurt/The-NLP-Pandect) | fork | fork of `ivan-bilan/The-NLP-Pandect` | — | — | — | — | 2026-10-09 |
-| [rekurt/this-week-in-rust](https://github.com/rekurt/this-week-in-rust) | fork | fork of `rust-lang/this-week-in-rust` | — | — | — | — | 2026-10-09 |
+| [rekurt/this-week-in-rust](https://github.com/rekurt/this-week-in-rust) | fork | fork of `rust-lang/this-week-in-rust` | — | — | — | — | 2026-10-14 |
 | [rekurt/tsql](https://github.com/rekurt/tsql) | fork | fork of `fcoury/tsql` | — | — | — | — | 2026-04-17 |
 | [rekurt/ymsdk](https://github.com/rekurt/ymsdk) | primary | original | Go | v0.2.0 | [open](https://rekurt.github.io/ymsdk/) | — | 2026-09-05 |
