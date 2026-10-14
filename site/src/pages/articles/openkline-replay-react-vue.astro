@@ -1,0 +1,61 @@
+---
+import { readFileSync } from "node:fs";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Content as Intro } from "../../content/articles/openkline-replay-intro.md";
+import { Content } from "../../content/articles/openkline-replay.md";
+const title = "OpenKline: replay candles in vanilla JavaScript, React and Vue";
+const description = "A reproducible candle replay using published OpenKline core, React and Vue packages, with forming candles, history navigation and optional live data.";
+const path = "/articles/openkline-replay-react-vue/";
+const examples = [{"name": "Vanilla", "path": "openkline/core/", "file": "core.ts"}, {"name": "React", "path": "openkline/react/", "file": "react.tsx"}, {"name": "Vue", "path": "openkline/vue/", "file": "vue.ts"}].map(example => ({...example, source: readFileSync(new URL(`../../../examples/chart-articles/src/${example.file}`, import.meta.url), "utf8")}));
+const schema = {
+  "@context": "https://schema.org", "@type": "TechArticle",
+  headline: title, description, url: `https://rekurt.github.io${path}`,
+  datePublished: "2026-10-15", inLanguage: "en",
+  author: { "@type": "Person", name: "Nikita", url: "https://github.com/rekurt" },
+};
+---
+<BaseLayout title={title} description={description} locale="en" canonicalPath={path} alternateLocales={false} socialSlug="openkline" jsonLd={schema}>
+  <article class="technical-article">
+    <p class="eyebrow">Technical walkthrough · <time datetime="2026-10-15">15 October 2026</time></p>
+    <Intro />
+<section class="demo">
+  <h2>One replay, three integrations</h2>
+  <div role="tablist" aria-label="OpenKline integration">
+    {['Vanilla','React','Vue'].map((name,i)=><button id={`tab-${i}`} role="tab" aria-selected={i===0 ? 'true':'false'} aria-controls="chart-panel" tabindex={i===0 ? 0:-1} data-framework={['core','react','vue'][i]}>{name}</button>)}
+  </div>
+  <div id="chart-panel" role="tabpanel" aria-labelledby="tab-0">
+    <iframe id="openkline-frame" title="OpenKline Vanilla interactive chart" src="/article-demos/openkline/core/" loading="lazy"></iframe>
+    <p><a id="openkline-open" href="/article-demos/openkline/core/" target="_blank" rel="noopener">Open demo in a full window</a></p>
+  </div>
+</section>
+<script>
+ const tabs=[...document.querySelectorAll<HTMLButtonElement>('[data-framework]')];
+ const choose=(tab:HTMLButtonElement)=>{for(const item of tabs){item.setAttribute('aria-selected',String(item===tab));item.tabIndex=item===tab?0:-1;}
+ const path=`/article-demos/openkline/${tab.dataset.framework}/`;
+ const frame=document.querySelector<HTMLIFrameElement>('#openkline-frame')!;frame.src=path;frame.title=`OpenKline ${tab.textContent} interactive chart`;
+ document.querySelector<HTMLAnchorElement>('#openkline-open')!.href=path;document.querySelector('#chart-panel')!.setAttribute('aria-labelledby',tab.id);};
+ for(const [index,tab] of tabs.entries()){tab.addEventListener('click',()=>choose(tab));tab.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%tabs.length;else if(event.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;event.preventDefault();tabs[next]!.focus();choose(tabs[next]!);});}
+</script>
+<figure><img src="/images/articles/openkline-replay.png" alt="The vanilla demo in line mode with the latest revealed synthetic candles." loading="lazy" width="1440" height="1000" /><figcaption>The vanilla demo in line mode with the latest revealed synthetic candles. Screenshot from the executed example.</figcaption></figure>
+<Content />
+<section><h2>Compiled example source</h2>{examples.map(example => <details><summary>{example.name} · {example.file}</summary><p><a href={`https://github.com/rekurt/rekurt.github.io/blob/main/site/examples/chart-articles/src/${example.file}`}>View {example.file} in the repository</a></p><pre><code class={example.file.endsWith("tsx") ? "language-typescript" : "language-typescript"}>{example.source}</code></pre></details>)}</section>
+    <p><a href="/projects/openkline/">Explore openkline</a> · <a href="/articles/">All articles</a></p>
+  </article>
+</BaseLayout>
+<script>import { attachChartHeight } from "../../lib/article-embed"; attachChartHeight();</script>
+<style>
+  .technical-article { max-width: 76ch; margin-inline: auto; overflow-wrap: anywhere; }
+  .technical-article :global(h1) { max-width: 25ch; margin-bottom: 1.5rem; }
+  .technical-article :global(h2) { margin-top: 2.5rem; margin-bottom: 1rem; }
+  .technical-article :global(pre) { max-width: 100%; overflow-x: auto; padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius); }
+  details { margin-block: 1rem; padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius); }
+  summary { cursor: pointer; font-weight: 600; }
+  figure { margin: 2rem 0; }
+  img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+  figcaption { font-size: .9rem; margin-top: .5rem; }
+  iframe { width: 100%; height: 890px; border: 1px solid var(--border); border-radius: var(--radius); }
+  [role="tablist"] { display: flex; gap: .5rem; margin-block: 1rem; }
+  [role="tab"][aria-selected="true"] { outline: 2px solid var(--accent, #8be1fa); }
+  .demo { margin-block: 2rem; }
+  @media (max-width: 650px) { iframe { height: 1340px; } }
+</style>
