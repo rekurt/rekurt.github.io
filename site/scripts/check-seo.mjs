@@ -18,7 +18,15 @@ const text = node => (node.value || '') + (node.childNodes || []).map(text).join
 const documents = new Map();
 const titles = new Set();
 for (const file of await files(root)) {
- const html = parse(await readFile(file,'utf8'));
+ const source = await readFile(file,'utf8');
+ const verificationName = relative(root,file);
+ if (/^google[0-9a-f]+\.html$/.test(verificationName)) {
+  assert.equal(source.trim(), `google-site-verification: ${verificationName}`, 'Google ownership file must preserve its exact verification content');
+  const sitemap = await readFile(join(root,'sitemap.xml'),'utf8');
+  assert.ok(!sitemap.includes(verificationName), 'ownership file must not appear in sitemap');
+  continue;
+ }
+ const html = parse(source);
  const all = nodes(html);
  const path = '/' + relative(root,file).replace(/index\.html$/, '');
  const fail = message => `${path}: ${message}`;
