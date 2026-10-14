@@ -32,6 +32,15 @@ for (const file of await files(root)) {
  const fail = message => `${path}: ${message}`;
  const tags = all.filter(n => n.tagName === 'meta');
  const meta = key => tags.filter(n => attr(n,'name') === key || attr(n,'property') === key);
+ if (path.startsWith('/article-demos/')) {
+  assert.equal(meta('robots').length,1,fail('one demo robots directive'));
+  assert.equal(attr(meta('robots')[0],'content'),'noindex,follow',fail('standalone demos are not article duplicates'));
+  assert.equal(attr(all.find(n=>n.tagName==='html'),'lang'),'en',fail('demo language'));
+  assert.ok(all.some(n=>n.tagName==='title'&&text(n).trim()),fail('demo title'));
+  const sitemap=await readFile(join(root,'sitemap.xml'),'utf8');
+  assert.ok(!sitemap.includes(`<loc>https://rekurt.github.io${path}</loc>`),fail('demo excluded from sitemap'));
+  continue;
+ }
  const is404 = path === '/404.html';
  assert.equal(meta('robots').length,1,fail('one robots directive'));
  assert.equal(meta('robots')[0] && attr(meta('robots')[0],'content').includes('noindex'),is404,fail('404 must be noindex; real pages must be indexable'));

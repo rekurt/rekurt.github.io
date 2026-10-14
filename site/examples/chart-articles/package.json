@@ -1,0 +1,27 @@
+{
+  "name": "@rekurt/article-demos",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@rekurt/depth": "0.1.0",
+    "@rekurt/openkline-core": "0.2.0",
+    "@rekurt/openkline-react": "0.1.0",
+    "@rekurt/openkline-vue": "0.1.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "vue": "3.5.44"
+  },
+  "devDependencies": {
+    "vite": "^8",
+    "@vitejs/plugin-react": "^6",
+    "@vitejs/plugin-vue": "^6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "vue-tsc": "^3",
+    "typescript": "^6"
+  }
+}

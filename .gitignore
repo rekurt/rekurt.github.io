@@ -6,3 +6,6 @@ test-results/
 site/.astro/
 site/dist/
 site/node_modules/
+
+site/public/article-demos/
+site/examples/chart-articles/node_modules/

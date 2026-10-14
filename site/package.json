@@ -7,9 +7,9 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "check": "astro check && ./node_modules/typescript-native/bin/tsc --noEmit",
+    "check": "npm run check --workspace @rekurt/article-demos && astro check && ./node_modules/typescript-native/bin/tsc --noEmit",
     "test": "vitest run",
-    "build": "astro build",
+    "build": "npm run build --workspace @rekurt/article-demos && astro build",
     "test:e2e": "playwright test",
     "check:links": "node scripts/check-links.mjs",
     "check:seo": "node scripts/check-seo.mjs"
@@ -32,5 +32,8 @@
   "allowScripts": {
     "esbuild@0.28.2": true,
     "fsevents": false
-  }
+  },
+  "workspaces": [
+    "examples/chart-articles"
+  ]
 }
