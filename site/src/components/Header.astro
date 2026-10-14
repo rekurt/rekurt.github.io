@@ -11,6 +11,7 @@ const links = [
   { href: `${prefix}/registry/`, label: t.navRegistry },
   { href: `${prefix}/about/`, label: t.navAbout },
 ];
+if (locale === "en") links.push({ href: "/articles/", label: "Articles" });
 const normalizedPath = currentPath.endsWith("/") ? currentPath : `${currentPath}/`;
 const localeLinks: Array<{ locale: Locale; lang: string; label: string }> = [
   { locale: "en", lang: "en", label: t.languageEnglish },

@@ -13,5 +13,7 @@ export const GET: APIRoute = ({ site }) => {
     const english = escapeXml(String(new URL(alternatePath(path, "en"), site)));
     return `<url><loc>${escapeXml(String(new URL(path, site)))}</loc>${alternates}<xhtml:link rel="alternate" hreflang="x-default" href="${english}"/></url>`;
   }).join("");
-  return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`, { headers: { "Content-Type": "application/xml; charset=utf-8" } });
+  const articles = ["/articles/", "/articles/prt-0-6-0-port-ownership/"]
+    .map((path) => `<url><loc>${escapeXml(String(new URL(path, site)))}</loc></url>`).join("");
+  return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}${articles}</urlset>`, { headers: { "Content-Type": "application/xml; charset=utf-8" } });
 };
