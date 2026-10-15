@@ -38,7 +38,7 @@ const schema = {
 </script>
 <figure><img src="/images/articles/openkline-replay.png" alt="The vanilla demo in line mode with the latest revealed synthetic candles." loading="lazy" width="1440" height="1000" /><figcaption>The vanilla demo in line mode with the latest revealed synthetic candles. Screenshot from the executed example.</figcaption></figure>
 <Content />
-<section><h2>Compiled example source</h2>{examples.map(example => <details><summary>{example.name} · {example.file}</summary><p><a href={`https://github.com/rekurt/rekurt.github.io/blob/main/site/examples/chart-articles/src/${example.file}`}>View {example.file} in the repository</a></p><pre><code class={example.file.endsWith("tsx") ? "language-typescript" : "language-typescript"}>{example.source}</code></pre></details>)}</section>
+<section><h2>Example code</h2>{examples.map(example => <details><summary>{example.name} · {example.file}</summary><p><a href={`https://github.com/rekurt/rekurt.github.io/blob/main/site/examples/chart-articles/src/${example.file}`}>View {example.file} in the repository</a></p><pre><code class={example.file.endsWith("tsx") ? "language-typescript" : "language-typescript"}>{example.source}</code></pre></details>)}</section>
     <p><a href="/projects/openkline/">Explore openkline</a> · <a href="/articles/">All articles</a></p>
   </article>
 </BaseLayout>

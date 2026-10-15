@@ -6,7 +6,7 @@ import { Content } from "../../content/articles/depth-liquidity.md";
 const title = "Depth: what happens when liquidity disappears";
 const description = "An interactive depth-chart lab showing cumulative liquidity, disappearing levels, spread and an optional public live snapshot.";
 const path = "/articles/depth-liquidity-replay/";
-const examples = [{"name": "Depth lab", "path": "depth/", "file": "depth.ts"}, {"name": "Deterministic data and validation", "path": "depth/", "file": "model.ts"}].map(example => ({...example, source: readFileSync(new URL(`../../../examples/chart-articles/src/${example.file}`, import.meta.url), "utf8")}));
+const examples = [{"name": "Depth lab", "path": "depth/", "file": "depth.ts"}, {"name": "Sample data and parsing", "path": "depth/", "file": "model.ts"}].map(example => ({...example, source: readFileSync(new URL(`../../../examples/chart-articles/src/${example.file}`, import.meta.url), "utf8")}));
 const schema = {
   "@context": "https://schema.org", "@type": "TechArticle",
   headline: title, description, url: `https://rekurt.github.io${path}`,
@@ -18,10 +18,10 @@ const schema = {
   <article class="technical-article">
     <p class="eyebrow">Technical walkthrough · <time datetime="2026-10-15">15 October 2026</time></p>
     <Intro />
-<section class="demo"><h2>Depth lab interactive demo</h2><iframe title="Depth lab interactive chart" src="/article-demos/depth/" loading="lazy"></iframe><p><a href="/article-demos/depth/" target="_blank" rel="noopener">Open demo in a full window</a></p></section>
+<section class="demo"><h2>Try the depth chart</h2><iframe title="Depth lab interactive chart" src="/article-demos/depth/" loading="lazy"></iframe><p><a href="/article-demos/depth/" target="_blank" rel="noopener">Open demo in a full window</a></p></section>
 <figure><img src="/images/articles/depth-liquidity.png" alt="Synthetic book after near-touch levels disappear: the spread widens from 2 to 6." loading="lazy" width="1440" height="1000" /><figcaption>Synthetic book after near-touch levels disappear: the spread widens from 2 to 6. Screenshot from the executed example.</figcaption></figure>
 <Content />
-<section><h2>Compiled example source</h2>{examples.map(example => <details><summary>{example.name} · {example.file}</summary><p><a href={`https://github.com/rekurt/rekurt.github.io/blob/main/site/examples/chart-articles/src/${example.file}`}>View {example.file} in the repository</a></p><pre><code class={example.file.endsWith("tsx") ? "language-typescript" : "language-typescript"}>{example.source}</code></pre></details>)}</section>
+<section><h2>Example code</h2>{examples.map(example => <details><summary>{example.name} · {example.file}</summary><p><a href={`https://github.com/rekurt/rekurt.github.io/blob/main/site/examples/chart-articles/src/${example.file}`}>View {example.file} in the repository</a></p><pre><code class={example.file.endsWith("tsx") ? "language-typescript" : "language-typescript"}>{example.source}</code></pre></details>)}</section>
     <p><a href="/projects/depth/">Explore depth</a> · <a href="/articles/">All articles</a></p>
   </article>
 </BaseLayout>
