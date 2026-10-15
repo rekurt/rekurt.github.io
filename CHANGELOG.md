@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/rekurt/rekurt.github.io/compare/v0.4.0...v0.5.0) (2026-10-15)
+
+
+### Features
+
+* publish three retrospective technical walkthroughs ([#34](https://github.com/rekurt/rekurt.github.io/issues/34)) ([64e5184](https://github.com/rekurt/rekurt.github.io/commit/64e51849d92a67acc0dd0d12486a0fca13f10e69))
+
 ## [0.4.0](https://github.com/rekurt/rekurt.github.io/compare/v0.3.0...v0.4.0) (2026-10-14)
 
 
