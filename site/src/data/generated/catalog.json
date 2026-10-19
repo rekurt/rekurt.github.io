@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-10-18T20:45:46Z",
+  "syncedAt": "2026-10-19T15:37:43Z",
   "products": [
     {
       "slug": "matching-engine",
@@ -2291,7 +2291,7 @@
       "headSha": "51bbe1556a2b7e57412e7fc5b3d2a34ea1d40311",
       "license": "MIT",
       "updatedAt": "2026-10-18T20:06:35Z",
-      "pushedAt": "2026-10-13T01:32:38Z",
+      "pushedAt": "2026-10-19T08:54:27Z",
       "archived": false,
       "stars": 2,
       "role": "primary",
@@ -2485,10 +2485,10 @@
       "defaultBranch": "master",
       "headSha": "74084864b5644f400e7f7b81e3e7bc40643c70f3",
       "license": "Apache-2.0",
-      "updatedAt": "2026-10-10T11:54:49Z",
+      "updatedAt": "2026-10-19T08:38:04Z",
       "pushedAt": "2026-10-14T21:51:51Z",
       "archived": false,
-      "stars": 2,
+      "stars": 3,
       "role": "primary",
       "version": {
         "value": "v0.3.0",
@@ -3321,9 +3321,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "ee1932e63eb0c7453594ea895a1ca96086659806",
-      "updatedAt": "2026-10-16T01:22:53Z",
-      "pushedAt": "2026-10-16T18:54:43Z",
+      "headSha": "9e002787f68d9a0fcb4a8d47269e3737f43f0470",
+      "updatedAt": "2026-10-18T20:46:14Z",
+      "pushedAt": "2026-10-18T20:46:09Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
