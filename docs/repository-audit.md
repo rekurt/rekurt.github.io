@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-22T20:08:11Z
+Snapshot: 2026-10-22T23:24:09Z
 96 public repositories · 22 original · 74 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -49,7 +49,7 @@ Snapshot: 2026-10-22T20:08:11Z
 | [rekurt/awesome-russian-it](https://github.com/rekurt/awesome-russian-it) | fork | fork of `unchase/awesome-russian-it` | — | — | — | — | 2025-01-16 |
 | [rekurt/awesome-russian-speech](https://github.com/rekurt/awesome-russian-speech) | fork | fork of `alphacep/awesome-russian-speech` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-rust](https://github.com/rekurt/awesome-rust) | fork | fork of `rust-unofficial/awesome-rust` | — | 0.1.0 | — | — | 2026-04-08 |
-| [rekurt/awesome-rust-tools](https://github.com/rekurt/awesome-rust-tools) | fork | fork of `unpluggedcoder/awesome-rust-tools` | — | — | — | — | 2026-10-09 |
+| [rekurt/awesome-rust-tools](https://github.com/rekurt/awesome-rust-tools) | fork | fork of `unpluggedcoder/awesome-rust-tools` | — | — | — | — | 2026-10-22 |
 | [rekurt/awesome-sql](https://github.com/rekurt/awesome-sql) | fork | fork of `danhuss/awesome-sql` | — | — | — | — | 2026-10-08 |
 | [rekurt/awesome-sqlite](https://github.com/rekurt/awesome-sqlite) | fork | fork of `planetopendata/awesome-sqlite` | — | — | — | — | 2026-10-09 |
 | [rekurt/awesome-sqlite-airsequel](https://github.com/rekurt/awesome-sqlite-airsequel) | fork | fork of `Airsequel/awesome-sqlite` | — | — | — | — | 2026-10-09 |
