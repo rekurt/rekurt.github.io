@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-10-22T15:18:57Z",
+  "syncedAt": "2026-10-22T20:08:11Z",
   "products": [
     {
       "slug": "matching-engine",
@@ -342,7 +342,7 @@
       ],
       "version": {
         "value": "v0.3.1",
-        "source": "tag",
+        "source": "release",
         "url": "https://github.com/rekurt/chislo/releases/tag/v0.3.1"
       },
       "readme": {
@@ -2138,7 +2138,7 @@
       "role": "primary",
       "version": {
         "value": "v0.3.1",
-        "source": "tag",
+        "source": "release",
         "url": "https://github.com/rekurt/chislo/releases/tag/v0.3.1"
       },
       "readme": {
@@ -3321,15 +3321,15 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "8c07bfc49b9cfa81805ff8b1b0291c2e14127007",
-      "updatedAt": "2026-10-19T15:38:14Z",
-      "pushedAt": "2026-10-19T15:38:09Z",
+      "headSha": "d0e734ca7843b826c120e37d3af52c93b7059347",
+      "updatedAt": "2026-10-22T15:19:27Z",
+      "pushedAt": "2026-10-22T15:19:22Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
       "version": {
         "value": "v0.4.0",
-        "source": "tag",
+        "source": "release",
         "url": "https://github.com/rekurt/rekurt.github.io/releases/tag/v0.4.0"
       },
       "links": [
