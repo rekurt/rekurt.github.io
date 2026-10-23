@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-22T23:24:09Z
+Snapshot: 2026-10-23T04:52:04Z
 96 public repositories · 22 original · 74 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -87,7 +87,7 @@ Snapshot: 2026-10-22T23:24:09Z
 | [rekurt/matching-engine](https://github.com/rekurt/matching-engine) | primary | original | Rust | v0.1.0 | [open](https://rekurt.github.io/matching-engine/) | — | 2026-10-15 |
 | [rekurt/mongo-go-driver](https://github.com/rekurt/mongo-go-driver) | fork | fork of `mongodb/mongo-go-driver` | Go | v1.0.4 | — | — | 2019-08-09 |
 | [rekurt/open-source-mac-os-apps](https://github.com/rekurt/open-source-mac-os-apps) | fork | fork of `serhii-londar/open-source-mac-os-apps` | — | — | — | — | 2026-10-03 |
-| [rekurt/openkline](https://github.com/rekurt/openkline) | primary | original | TypeScript | v0.2.0 | [open](https://rekurt.github.io/openkline/) | — | 2026-10-15 |
+| [rekurt/openkline](https://github.com/rekurt/openkline) | primary | original | TypeScript | v0.2.0 | [open](https://rekurt.github.io/openkline/) | — | 2026-10-22 |
 | [rekurt/openkline-react](https://github.com/rekurt/openkline-react) | support | original | TypeScript | 0.1.0 | — | — | 2026-10-09 |
 | [rekurt/openkline-vue](https://github.com/rekurt/openkline-vue) | support | original | TypeScript | 0.1.0 | — | — | 2026-10-09 |
 | [rekurt/openkline.tech](https://github.com/rekurt/openkline.tech) | support | original | JavaScript | v0.1.3 | [open](https://rekurt.github.io/openkline.tech/) | — | 2026-10-14 |
