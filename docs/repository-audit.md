@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-24T18:10:49Z
+Snapshot: 2026-10-25T11:38:25Z
 96 public repositories · 22 original · 74 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -64,7 +64,7 @@ Snapshot: 2026-10-24T18:10:49Z
 | [rekurt/chatwoot](https://github.com/rekurt/chatwoot) | fork | fork of `chatwoot/chatwoot` | — | v4.16.2 | — | — | 2026-08-12 |
 | [rekurt/chislo](https://github.com/rekurt/chislo) | primary | original | Rust | v0.3.1 | [open](https://rekurt.github.io/chislo/) | — | 2026-09-06 |
 | [rekurt/command-line-tools](https://github.com/rekurt/command-line-tools) | fork | fork of `linsa-io/command-line-tools` | — | — | — | — | 2026-10-09 |
-| [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v0.6.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-10-12 |
+| [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v0.6.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-10-25 |
 | [rekurt/dadata](https://github.com/rekurt/dadata) | fork | fork of `ekomobile/dadata` | — | — | — | — | 2025-07-23 |
 | [rekurt/dbdiff](https://github.com/rekurt/dbdiff) | primary | original | Rust | v0.2.2 | [open](https://rekurt.github.io/dbdiff/) | — | 2026-10-24 |
 | [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-10-14 |

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "rekurt",
-  "syncedAt": "2026-10-24T18:10:49Z",
+  "syncedAt": "2026-10-25T11:38:25Z",
   "products": [
     {
       "slug": "matching-engine",
@@ -2212,7 +2212,7 @@
       "headSha": "5adc00313adccc66fba5e9e7d827d5865b3f42b0",
       "license": "MIT",
       "updatedAt": "2026-10-10T11:51:13Z",
-      "pushedAt": "2026-10-12T18:08:40Z",
+      "pushedAt": "2026-10-25T09:32:22Z",
       "archived": false,
       "stars": 1,
       "role": "primary",
@@ -3321,9 +3321,9 @@
       "language": "Go",
       "hasPages": true,
       "defaultBranch": "main",
-      "headSha": "bb2b1defe74ac3d8cb4e10e12802cb9261361e61",
-      "updatedAt": "2026-10-24T11:03:49Z",
-      "pushedAt": "2026-10-24T11:03:46Z",
+      "headSha": "d8db9c0bd5063c6baa1b2142dfb2834e8ae081c4",
+      "updatedAt": "2026-10-24T18:11:09Z",
+      "pushedAt": "2026-10-24T18:11:06Z",
       "archived": false,
       "stars": 0,
       "role": "portfolio-hub",
