@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-26T01:12:02Z
+Snapshot: 2026-10-26T06:16:28Z
 96 public repositories · 22 original · 74 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -74,7 +74,7 @@ Snapshot: 2026-10-26T01:12:02Z
 | [rekurt/git-barber](https://github.com/rekurt/git-barber) | primary | original | Rust | v0.3.0 | [open](https://rekurt.github.io/git-barber/) | — | 2026-10-14 |
 | [rekurt/gitlab-downloader](https://github.com/rekurt/gitlab-downloader) | primary | original | JavaScript | v0.0.2 | [open](https://rekurt.github.io/gitlab-downloader/) | — | 2026-10-10 |
 | [rekurt/go-awesome](https://github.com/rekurt/go-awesome) | fork | fork of `shockerli/go-awesome` | — | — | — | — | 2026-04-08 |
-| [rekurt/go-propisyu](https://github.com/rekurt/go-propisyu) | primary | original | Go | v0.4.1 | [open](https://rekurt.github.io/go-propisyu/) | — | 2026-10-12 |
+| [rekurt/go-propisyu](https://github.com/rekurt/go-propisyu) | primary | original | Go | v0.4.1 | [open](https://rekurt.github.io/go-propisyu/) | — | 2026-10-26 |
 | [rekurt/gocent](https://github.com/rekurt/gocent) | fork | fork of `centrifugal/gocent` | — | v3.2.0 | — | — | 2022-01-26 |
 | [rekurt/gost-crypto](https://github.com/rekurt/gost-crypto) | primary | original | Go | v0.3.0 | [open](https://rekurt.github.io/gost-crypto/) | — | 2026-09-05 |
 | [rekurt/homebrew-cask](https://github.com/rekurt/homebrew-cask) | fork | fork of `Homebrew/homebrew-cask` | — | — | — | — | 2026-09-01 |
@@ -93,7 +93,7 @@ Snapshot: 2026-10-26T01:12:02Z
 | [rekurt/openkline.tech](https://github.com/rekurt/openkline.tech) | support | original | JavaScript | v0.1.3 | [open](https://rekurt.github.io/openkline.tech/) | — | 2026-10-14 |
 | [rekurt/prt](https://github.com/rekurt/prt) | primary | original | Rust | v0.6.1 | [open](https://rekurt.github.io/prt/) | — | 2026-10-24 |
 | [rekurt/rekurt](https://github.com/rekurt/rekurt) | unclassified | original | — | — | — | — | 2026-10-10 |
-| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.4.0 | [open](https://rekurt.github.io/) | — | 2026-10-25 |
+| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.4.0 | [open](https://rekurt.github.io/) | — | 2026-10-26 |
 | [rekurt/relax-hub](https://github.com/rekurt/relax-hub) | unclassified | original | Go | — | — | — | 2026-09-22 |
 | [rekurt/sprint-velocity](https://github.com/rekurt/sprint-velocity) | primary | original | Python | — | [open](https://rekurt.github.io/sprint-velocity/) | — | 2026-09-05 |
 | [rekurt/srs](https://github.com/rekurt/srs) | fork | fork of `ossrs/srs` | — | v4.0.8 | — | — | 2020-02-26 |
