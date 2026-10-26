@@ -153,17 +153,17 @@ products:
     kind: platform
     domain: ai
     accent: violet
-    featured: false
+    featured: true
     maintained_fork: false
     upstream: ""
     summary:
-      en: Experimental Docker Compose setup for testing OpenClaw assistant workspaces, token quotas and inter-assistant messages.
-      ru: Экспериментальный стенд Docker Compose для рабочих пространств ассистентов OpenClaw, квот токенов и обмена сообщениями.
-      zh-cn: Docker Compose 实验环境，用于测试 OpenClaw 助手工作区、令牌配额和助手间消息传递。
+      en: Enterprise multi-tenant control plane for NousResearch Hermes Agent — run 1 to 1,000+ isolated AI assistants with SSE token quotas, inter-agent broker and zero API key exposure.
+      ru: Корпоративная multi-tenant платформа на базе NousResearch Hermes Agent — от 1 до 1 000+ изолированных AI-ассистентов с учётом SSE-токенов, шиной сообщений и изоляцией API-ключей.
+      zh-cn: 基于 NousResearch Hermes Agent 的企业级多租户控制平面 — 支持 1 至 1,000+ 隔离 AI 助手实例、SSE 令牌配额、代理间消息总线与零 API 密钥暴露。
     install:
-      - git clone https://github.com/rekurt/cortex-forge.git
+      - git clone https://github.com/rekurt/cortex-forge.git && cd cortex-forge && make demo
     website: https://rekurt.github.io/cortex-forge/
-    documentation: https://github.com/rekurt/cortex-forge#readme
+    documentation: https://github.com/rekurt/cortex-forge/blob/master/docs/ENTERPRISE_1000_USERS.md
 
   - slug: dbdiff
     primary_repo: rekurt/dbdiff
