@@ -51,7 +51,7 @@ func TestProductionManifestContract(t *testing.T) {
 		t.Fatalf("missing products = %#v", wantPrimary)
 	}
 	slices.Sort(featured)
-	wantFeatured := []string{"git-barber", "gost-crypto", "mac-coffee", "matching-engine", "openkline", "ymsdk"}
+	wantFeatured := []string{"cortex-forge", "git-barber", "gost-crypto", "mac-coffee", "matching-engine", "openkline", "ymsdk"}
 	if !slices.Equal(featured, wantFeatured) {
 		t.Fatalf("featured = %#v, want %#v", featured, wantFeatured)
 	}
