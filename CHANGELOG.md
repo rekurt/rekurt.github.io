@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.0](https://github.com/rekurt/rekurt.github.io/compare/v0.4.0...v0.5.0) (2026-10-30)
+
+
+### Features
+
+* **catalog:** Promote CortexForge v2.0 (Hermes Agent Enterprise) as featured project ([#43](https://github.com/rekurt/rekurt.github.io/issues/43)) ([0afa4bd](https://github.com/rekurt/rekurt.github.io/commit/0afa4bdfa838e2473b0378ab1e33fcc00716e761))
+* publish three retrospective technical walkthroughs ([#34](https://github.com/rekurt/rekurt.github.io/issues/34)) ([64e5184](https://github.com/rekurt/rekurt.github.io/commit/64e51849d92a67acc0dd0d12486a0fca13f10e69))
+
+
+### Bug Fixes
+
+* **catalog:** align featured contract with CortexForge promotion ([#44](https://github.com/rekurt/rekurt.github.io/issues/44)) ([fb3d106](https://github.com/rekurt/rekurt.github.io/commit/fb3d106a8d50edde4e75c85fc347c60f0f8d45e0))
+
 ## [0.4.0](https://github.com/rekurt/rekurt.github.io/compare/v0.3.0...v0.4.0) (2026-10-14)
 
 
