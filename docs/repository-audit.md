@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-10-30T14:10:48Z
+Snapshot: 2026-11-01T15:11:35Z
 103 public repositories · 22 original · 81 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -78,7 +78,7 @@ Snapshot: 2026-10-30T14:10:48Z
 | [rekurt/dev-resources](https://github.com/rekurt/dev-resources) | fork | fork of `marcelscruz/dev-resources` | — | 1.0.0 | — | — | 2026-10-12 |
 | [rekurt/ethereum-etl-postgres](https://github.com/rekurt/ethereum-etl-postgres) | fork | fork of `blockchain-etl/ethereum-etl-postgres` | Shell | — | — | — | 2023-08-25 |
 | [rekurt/gekko](https://github.com/rekurt/gekko) | fork | fork of `askmike/gekko` | — | v0.6.8 | — | — | 2020-02-16 |
-| [rekurt/git-barber](https://github.com/rekurt/git-barber) | primary | original | Rust | v0.3.0 | [open](https://rekurt.github.io/git-barber/) | — | 2026-10-14 |
+| [rekurt/git-barber](https://github.com/rekurt/git-barber) | primary | original | Rust | v0.3.0 | [open](https://rekurt.github.io/git-barber/) | — | 2026-11-01 |
 | [rekurt/gitlab-downloader](https://github.com/rekurt/gitlab-downloader) | primary | original | JavaScript | v0.0.2 | [open](https://rekurt.github.io/gitlab-downloader/) | — | 2026-10-10 |
 | [rekurt/go-awesome](https://github.com/rekurt/go-awesome) | fork | fork of `shockerli/go-awesome` | — | — | — | — | 2026-04-08 |
 | [rekurt/go-propisyu](https://github.com/rekurt/go-propisyu) | primary | original | Go | v0.4.1 | [open](https://rekurt.github.io/go-propisyu/) | — | 2026-10-30 |
