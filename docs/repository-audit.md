@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-11-06T00:39:45Z
+Snapshot: 2026-11-07T08:22:04Z
 103 public repositories · 22 original · 81 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -70,7 +70,7 @@ Snapshot: 2026-11-06T00:39:45Z
 | [rekurt/Chat-API](https://github.com/rekurt/Chat-API) | fork | fork of `domingopa/WhatsAPI-Official` | PHP | v2.5.5 | — | — | 2018-11-15 |
 | [rekurt/chatwoot](https://github.com/rekurt/chatwoot) | fork | fork of `chatwoot/chatwoot` | — | v4.16.2 | — | — | 2026-08-12 |
 | [rekurt/chislo](https://github.com/rekurt/chislo) | primary | original | Rust | v0.3.1 | [open](https://rekurt.github.io/chislo/) | — | 2026-09-06 |
-| [rekurt/command-line-tools](https://github.com/rekurt/command-line-tools) | fork | fork of `linsa-io/command-line-tools` | — | — | — | — | 2026-10-09 |
+| [rekurt/command-line-tools](https://github.com/rekurt/command-line-tools) | fork | fork of `gendotnew/command-line-tools` | — | — | — | — | 2026-10-09 |
 | [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v2.0.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-10-29 |
 | [rekurt/dadata](https://github.com/rekurt/dadata) | fork | fork of `ekomobile/dadata` | — | — | — | — | 2025-07-23 |
 | [rekurt/dbdiff](https://github.com/rekurt/dbdiff) | primary | original | Rust | v0.2.2 | [open](https://rekurt.github.io/dbdiff/) | — | 2026-11-02 |
@@ -90,7 +90,7 @@ Snapshot: 2026-11-06T00:39:45Z
 | [rekurt/lazydocker](https://github.com/rekurt/lazydocker) | fork | fork of `jesseduffield/lazydocker` | Go | v0.5.5 | — | — | 2019-07-19 |
 | [rekurt/Mac-Coffee](https://github.com/rekurt/Mac-Coffee) | maintained-fork | fork of `Elliotwu-7/Mac-Coffee` | Swift | v2.0.4 | [open](https://rekurt.github.io/Mac-Coffee/) | — | 2026-10-26 |
 | [rekurt/maccoffee-dist](https://github.com/rekurt/maccoffee-dist) | support | original | — | v2.0.0 | [open](https://rekurt.github.io/maccoffee-dist/) | — | 2026-10-09 |
-| [rekurt/macos-apps-linsa-io](https://github.com/rekurt/macos-apps-linsa-io) | fork | fork of `linsa-io/macos-apps` | — | — | — | — | 2026-10-09 |
+| [rekurt/macos-apps-linsa-io](https://github.com/rekurt/macos-apps-linsa-io) | fork | fork of `gendotnew/macos-apps` | — | — | — | — | 2026-10-09 |
 | [rekurt/matching-engine](https://github.com/rekurt/matching-engine) | primary | original | Rust | v0.1.0 | [open](https://rekurt.github.io/matching-engine/) | — | 2026-10-15 |
 | [rekurt/mongo-go-driver](https://github.com/rekurt/mongo-go-driver) | fork | fork of `mongodb/mongo-go-driver` | Go | v1.0.4 | — | — | 2019-08-09 |
 | [rekurt/open-source-mac-os-apps](https://github.com/rekurt/open-source-mac-os-apps) | fork | fork of `serhii-londar/open-source-mac-os-apps` | — | — | — | — | 2026-10-03 |
@@ -100,7 +100,7 @@ Snapshot: 2026-11-06T00:39:45Z
 | [rekurt/openkline.tech](https://github.com/rekurt/openkline.tech) | support | original | JavaScript | v0.1.3 | [open](https://rekurt.github.io/openkline.tech/) | — | 2026-10-14 |
 | [rekurt/prt](https://github.com/rekurt/prt) | primary | original | Rust | v0.6.1 | [open](https://rekurt.github.io/prt/) | — | 2026-10-24 |
 | [rekurt/rekurt](https://github.com/rekurt/rekurt) | unclassified | original | — | — | — | — | 2026-10-26 |
-| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.4.0 | [open](https://rekurt.github.io/) | — | 2026-11-02 |
+| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.4.0 | [open](https://rekurt.github.io/) | — | 2026-11-06 |
 | [rekurt/relax-hub](https://github.com/rekurt/relax-hub) | unclassified | original | Go | — | — | — | 2026-09-22 |
 | [rekurt/sprint-velocity](https://github.com/rekurt/sprint-velocity) | primary | original | Python | — | [open](https://rekurt.github.io/sprint-velocity/) | — | 2026-09-05 |
 | [rekurt/srs](https://github.com/rekurt/srs) | fork | fork of `ossrs/srs` | — | v4.0.8 | — | — | 2020-02-26 |
