@@ -1,6 +1,6 @@
 # Public repository audit
 
-Snapshot: 2026-11-12T01:20:56Z
+Snapshot: 2026-11-16T06:44:13Z
 103 public repositories · 22 original · 81 fork
 
 | Repository | Role | Origin | Language | Version | Website | Documentation | Last push |
@@ -71,7 +71,7 @@ Snapshot: 2026-11-12T01:20:56Z
 | [rekurt/chatwoot](https://github.com/rekurt/chatwoot) | fork | fork of `chatwoot/chatwoot` | — | v4.16.2 | — | — | 2026-08-12 |
 | [rekurt/chislo](https://github.com/rekurt/chislo) | primary | original | Rust | v0.3.1 | [open](https://rekurt.github.io/chislo/) | — | 2026-09-06 |
 | [rekurt/command-line-tools](https://github.com/rekurt/command-line-tools) | fork | fork of `gendotnew/command-line-tools` | — | — | — | — | 2026-10-09 |
-| [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v2.0.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-10-29 |
+| [rekurt/cortex-forge](https://github.com/rekurt/cortex-forge) | primary | original | Python | v2.0.0 | [open](https://rekurt.github.io/cortex-forge/) | — | 2026-11-16 |
 | [rekurt/dadata](https://github.com/rekurt/dadata) | fork | fork of `ekomobile/dadata` | — | — | — | — | 2025-07-23 |
 | [rekurt/dbdiff](https://github.com/rekurt/dbdiff) | primary | original | Rust | v0.2.2 | [open](https://rekurt.github.io/dbdiff/) | — | 2026-11-09 |
 | [rekurt/depth](https://github.com/rekurt/depth) | primary | original | TypeScript | v0.1.0 | [open](https://rekurt.github.io/depth/) | — | 2026-10-14 |
@@ -100,7 +100,7 @@ Snapshot: 2026-11-12T01:20:56Z
 | [rekurt/openkline.tech](https://github.com/rekurt/openkline.tech) | support | original | JavaScript | v0.1.3 | [open](https://rekurt.github.io/openkline.tech/) | — | 2026-10-14 |
 | [rekurt/prt](https://github.com/rekurt/prt) | primary | original | Rust | v0.6.1 | [open](https://rekurt.github.io/prt/) | — | 2026-10-24 |
 | [rekurt/rekurt](https://github.com/rekurt/rekurt) | unclassified | original | — | — | — | — | 2026-10-26 |
-| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.4.0 | [open](https://rekurt.github.io/) | — | 2026-11-09 |
+| [rekurt/rekurt.github.io](https://github.com/rekurt/rekurt.github.io) | portfolio-hub | original | Go | v0.4.0 | [open](https://rekurt.github.io/) | — | 2026-11-12 |
 | [rekurt/relax-hub](https://github.com/rekurt/relax-hub) | unclassified | original | Go | — | — | — | 2026-09-22 |
 | [rekurt/sprint-velocity](https://github.com/rekurt/sprint-velocity) | primary | original | Python | — | [open](https://rekurt.github.io/sprint-velocity/) | — | 2026-09-05 |
 | [rekurt/srs](https://github.com/rekurt/srs) | fork | fork of `ossrs/srs` | — | v4.0.8 | — | — | 2020-02-26 |
